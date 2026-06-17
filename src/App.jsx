@@ -283,6 +283,20 @@ export default function SistemaAtendimentos() {
                 { nivel: "2", equipe: "Supervisão - Hermínia Mateus", telefone: "(86) 99970-0474", email: "gestaoisp@mamtech.com.br" },
                 { nivel: "3", equipe: "Diretoria - Daniel Gattai", telefone: "(19) 99460-4503", email: "daniel.gattai@maminfo.com.br" }
               ]
+            },
+            // 👇 INÍCIO DO MANUAL DA SITELBRA 👇
+            {
+              nome: "SITELBRA",
+              emailAbertura: "noc@sitelbra.com.br",
+              template: "SOLICITAÇÃO DE REPARO / ATUALIZAÇÃO\n\nDesignação do Circuito: \nFalha Identificada: \nContato Local: \n\n*IMPORTANTE:\n- Reparos/Atualizações devem ser feitas pelo (61) 3028-6010 Opção 2 ou WhatsApp (61) 99618-8285 (24h).\n- Ligações com ID suprimido não serão atendidas.",
+              escalonamentos: [
+                { nivel: "1", equipe: "N1 – NOC Atendimento", telefone: "(61) 3028-6010", email: "noc@sitelbra.com.br" },
+                { nivel: "2", equipe: "N2 – Ponto Focal NOC (Samile Chagas)", telefone: "(11) 9539-2739", email: "Samile.novaes@sitelbra.com.br" },
+                { nivel: "3", equipe: "N3 – Ponto Focal Cliente (Mateus Francelli)", telefone: "(61) 99319-4390", email: "Mateus.silva@sitelbra.com.br" },
+                { nivel: "4", equipe: "N4 – Gerência (Luana Siqueira)", telefone: "(61) 99116-2725", email: "Luana.siqueira@sitelbra.com.br" },
+                { nivel: "5", equipe: "N5 – Gerente de Contas (Renan Thielke)", telefone: "(64) 9280-8290", email: "renan.thielke@sitelbra.com.br" },
+                { nivel: "6", equipe: "N6 – Vice Presidente (Vanderlei Boschetto)", telefone: "(41) 99997-4060", email: "vanderlei.b@sitelbra.com.br" }
+              ]
             }
           ] 
         },
