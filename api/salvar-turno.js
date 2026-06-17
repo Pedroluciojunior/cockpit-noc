@@ -5,11 +5,6 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, error: 'Método não permitido.' });
   }
 
-  // Verifica se o token existe antes de tentar usar
-  if (!process.env.GITHUB_TOKEN) {
-    return res.status(500).json({ success: false, error: 'GITHUB_TOKEN não configurado no servidor!' });
-  }
-
   try {
     const dadosTurno = req.body;
     const dataFormatada = new Date().toLocaleDateString("pt-BR").replace(/\//g, "-");
@@ -29,8 +24,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ success: true });
   } catch (error) {
-    // Agora o erro detalhado vai aparecer no log da Vercel
-    console.error("ERRO DETALHADO:", error);
+    console.error("ERRO NO BACKEND:", error);
     return res.status(500).json({ success: false, error: error.message });
   }
 }
