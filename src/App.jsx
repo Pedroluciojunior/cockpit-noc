@@ -940,28 +940,45 @@ export default function SistemaAtendimentos() {
     }
   };
 
-  const encerrarExpediente = async () => {
-    if (atendimentos.length === 0) { mostrarToast("Sem dados para exportar.", "erro"); return; }
-    
-    if (!diretorioBackup) {
-       mostrarToast("Você precisa configurar o Diretório de Backup antes de encerrar!", "erro");
-       return;
+const encerrarExpediente = async () => {
+    if (atendimentos.length === 0) { 
+      mostrarToast("Sem dados de atendimentos para exportar.", "erro"); 
+      return; 
     }
 
-    if (window.confirm("Encerrar expediente fará o download de backup e limpará a tela. Confirmar?")) {
-      const d = new Date().toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit', year: '2-digit' }).replace(/\//g, "-");
-      const h = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' }).replace(/:/g, "-");
-      const nomeArquivo = `backup-turno-${d}_${h}.json`;
+    if (window.confirm("CONFIRMAR FECHAMENTO: Os dados do turno atual serão salvos automaticamente no GitHub e a tela será limpa. Prosseguir?")) {
+      mostrarToast("Processando backup em nuvem... Aguarde.");
 
-      const salvoComSucesso = await baixarArquivoNaPasta(nomeArquivo, JSON.stringify(atendimentos, null, 2), "application/json");
-      
-      if(salvoComSucesso) {
-        setAtendimentos([]); 
-        localStorage.removeItem("atendimentos");
+      try {
+        // Faz o disparo seguro para a nossa Serverless Function na Vercel
+        const resposta = await fetch('/api/salvar-turno', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(atendimentos) // Envia a lista de atendimentos atual
+        });
+
+        const resultado = await resposta.json();
+
+        if (resposta.ok && resultado.success) {
+          mostrarToast("✅ Turno salvo com sucesso no GitHub!");
+          
+          // Limpa os dados da tela local com segurança após a confirmação da nuvem
+          setAtendimentos([]); 
+          localStorage.removeItem("atendimentos");
+        } else {
+          console.error("Erro retornado do backend:", resultado);
+          mostrarToast(`Erro: ${resultado.error || "Falha ao processar nuvem"}`, "erro");
+        }
+
+      } catch (erroFatal) {
+        console.error("Falha na comunicação de rede com o backend:", erroFatal);
+        mostrarToast("Erro de conexão com o servidor de backup.", "erro");
       }
     }
   };
-
+  
   const gerarRelatorioTurno = async () => {
     if (atendimentos.length === 0) return;
     if (!diretorioBackup) { mostrarToast("Configure o Diretório de Backup primeiro!", "erro"); return; }
