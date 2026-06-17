@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1781727387676.9075,
+    "protocolo": "ATD-1781727387676-414",
+    "designacao": "ADCFASAFFAS",
+    "gtNome": "NÃO INFORMADO",
+    "resumo": "[17:16] - #0000#\n\nFALHA: INÍCIO:\n\nINÍCIO: NORMALIZAÇÃO: 17/06/26 17:16\n\nNORMALIZAÇÃO: 17/06/26 17:16\n\nCAUSA: SOLUÇÃO:\n\nSOLUÇÃO: NÃO INFORMADO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "17/06/2026, 17:16:27",
+    "ultimaAtualizacao": "17/06/2026, 17:16:27",
+    "historico": [
+      {
+        "data": "17/06/2026, 17:16:27",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781727337285.3997,
+    "protocolo": "ATD-1781727337285-597",
+    "designacao": "GT NOME:",
+    "gtNome": "NÃO INFORMADO",
+    "resumo": "[17:16] - #0000#\n\nFALHA: INÍCIO:\n\nINÍCIO: NORMALIZAÇÃO: 17/06/26 17:16DAD\n\nNORMALIZAÇÃO: 17/06/26 17:16DAD\n\nCAUSA: SOLUÇÃO:\n\nSOLUÇÃO: NÃO INFORMADO\n\n[17:16] - #0000#\n\nFALHA: INÍCIO:\n\nINÍCIO: NORMALIZAÇÃO: 17/06/26 17:16\n\nNORMALIZAÇÃO: 17/06/26 17:16\n\nCAUSA: SOLUÇÃO:\n\nSOLUÇÃO: NÃO INFORMADO\n\n[17:16] - #0000#\n\nFALHA: DFAS\n\nINÍCIO: ASDFASDF\n\nNORMALIZAÇÃO: 17/06/26 17:15WSDC\n\nCAUSA: AWFSOLUÇÃO:\n\nSOLUÇÃO: NÃO INFORMADO\n\n[17:15] - #0000#\n\nFALHA: INÍCIO:\n\nINÍCIO: NORMALIZAÇÃO: 17/06/26 17:15\n\nNORMALIZAÇÃO: 17/06/26 17:15\n\nCAUSA: SOLUÇÃO:\n\nSOLUÇÃO: NÃO INFORMADO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 3,
+    "dataHora": "17/06/2026, 17:15:37",
+    "ultimaAtualizacao": "17/06/2026, 17:16:20",
+    "historico": [
+      {
+        "data": "17/06/2026, 17:16:20",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "17/06/2026, 17:16:13",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "17/06/2026, 17:16:05",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "17/06/2026, 17:15:37",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  }
+]
