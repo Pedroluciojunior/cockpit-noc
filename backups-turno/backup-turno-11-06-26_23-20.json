@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1781226827883,
+    "protocolo": "ATD-1781226827883",
+    "designacao": "GFEGG",
+    "gtNome": "WEGWE",
+    "resumo": "[22:13] - #101#\n\nFALHA: GFWEG\n\nINÍCIO: WEF\n\nNORMALIZAÇÃO: 11/06/26 22:13EFGTWE\n\nCAUSA: WEGWEG\n\nSOLUÇÃO: WEG\newgw",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 22:13:47",
+    "ultimaAtualizacao": "11/06/2026, 22:13:47",
+    "historico": [
+      {
+        "data": "11/06/2026, 22:13:47",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781226385150,
+    "protocolo": "ATD-1781226385150",
+    "designacao": "1234",
+    "gtNome": "1452",
+    "resumo": "[22:06] - #[CÓDIGO]# NÃO INFORMADO\n\nFALHA: QAZX\n\nINÍCIO: ASAQ\n\nNORMALIZAÇÃO: 11/06/26 22:05\n\nCAUSA: AAAA\n\nSOLUÇÃO: zzz",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 22:06:25",
+    "ultimaAtualizacao": "11/06/2026, 22:06:25",
+    "historico": [
+      {
+        "data": "11/06/2026, 22:06:25",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781225917608,
+    "protocolo": "ATD-1781225917608",
+    "designacao": "CPE0470611",
+    "gtNome": "RONALDO-VTAL",
+    "resumo": "[21:58] - NºTT: 416498 // DESCRIÇÃO: //REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 2H//",
+    "status": "Aberto",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 21:58:37",
+    "ultimaAtualizacao": "11/06/2026, 21:58:37",
+    "historico": [
+      {
+        "data": "11/06/2026, 21:58:37",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781214058541,
+    "protocolo": "ATD-1781214058541",
+    "designacao": "SJBI5012174",
+    "gtNome": "MARIANA-VTAL-N1",
+    "resumo": "[20:43] - SJBI5012174 EQP ATUANDO ATV NA MESMA REGIAO// PREVISAO A DE INICIO AS 21H//\n\n[18:40] - ESTA EM TRATAIVA COM EQP DE FIBRA// SEM POSICONAMENTO //ESCALONADO SUP GIOVANNI//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "11/06/2026, 18:40:58",
+    "ultimaAtualizacao": "11/06/2026, 20:43:08",
+    "historico": [
+      {
+        "data": "11/06/2026, 20:43:08",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "11/06/2026, 18:40:58",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781199386135,
+    "protocolo": "ATD-1781199386135",
+    "designacao": "CBA0477000",
+    "gtNome": "MARIANA-VTAL-N1",
+    "resumo": "[20:41] - #[CÓDIGO]# #5320F#\n\nFALHA: FIBRA\n\nINÍCIO: 11/06/2026 10:45\n\nNORMALIZAÇÃO: 11/06/26 20:35\n\nCAUSA: ROMP. CABO OPTICO POR ROEDORES\n\nSOLUÇÃO: REPUXADO RESERVA TECNCIA // CONFC. NOVA CX DE EMENDA\n\n[14:36] - ASSOCIADO FALHA MASSIVA/ GRADIAÇÃO DA TERRA/ EQP AGUARDANDO CHEGADA DE MAQUINARIO PARA LIGAR AS PONTAS // PREVISAO AS 19H",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "11/06/2026, 14:36:26",
+    "ultimaAtualizacao": "11/06/2026, 20:41:20",
+    "historico": [
+      {
+        "data": "11/06/2026, 20:41:20",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "11/06/2026, 14:36:26",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781199819077,
+    "protocolo": "ATD-1781199819077",
+    "designacao": "CBA0477027",
+    "gtNome": "MARIANA-VTAL-N1",
+    "resumo": "[20:35] - #[CÓDIGO]# NÃO INFORMADO\n\nFALHA: FIBRA\n\nINÍCIO: 07/06/2026 09:39\n\nNORMALIZAÇÃO: 11/06/26 18:22\n\nCAUSA: OBRAS DNIT-RETIRARDA DE POSTES\n\nSOLUÇÃO: NORMALIZADO/ REPUXADO SOBRA TEC// CONFC 1FIO FIBRA/\nResumo:  MASSIVO ENCERRADO/ NORMALIZADO/ REPUXADO SOBRA TEC// CONFC 1FIO FIBRA// CAUSA: OBRAS DNIT-RETIRARDA DE POSTES//NORMALIZADO AS 18:22\nInterface: CBA_0477027\nServiço: ies\nID do Serviço: 919002027\nNº Porta: 5/2/2\nÉ Bundle?: Não\nVLAN: 2231\nAddress: 200.101.38.181/30\nNeighbor: 200.101.38.182\nVelocidade (com base no rate): 30mbps\nPing Neighbor: PING com sucesso e sem perdas\nLatência Média: 20.8ms\nINFO: Teste concluído com sucesso\n\n[14:43] - BA REABERTO//SERVIÇO INOPERANTE//REPARO ABERTO PELA AUTOMAÇÃO//CHAMADO SOLICITADO À OPERADORA VTAL//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "11/06/2026, 14:43:39",
+    "ultimaAtualizacao": "11/06/2026, 20:35:10",
+    "historico": [
+      {
+        "data": "11/06/2026, 20:35:10",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "11/06/2026, 14:43:39",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781209693218,
+    "protocolo": "ATD-1781209693218",
+    "designacao": "CBA0479657",
+    "gtNome": "MARIANA-VTAL-N1",
+    "resumo": "[20:29] - NºTT: TT416483 // DESCRIÇÃO: X //REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 2H//\n\n[17:28] - NºTT: TT416396 // DESCRIÇÃO: //REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 2H//",
+    "status": "Aberto",
+    "qtdAtualizacoes": 1,
+    "dataHora": "11/06/2026, 17:28:13",
+    "ultimaAtualizacao": "11/06/2026, 20:29:48",
+    "historico": [
+      {
+        "data": "11/06/2026, 20:29:48",
+        "acao": "Atualizado para [Aberto]"
+      },
+      {
+        "data": "11/06/2026, 17:28:13",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781209651826,
+    "protocolo": "ATD-1781209651826",
+    "designacao": "CBA0490506",
+    "gtNome": "MARIANA-VTAL-N1",
+    "resumo": "[20:27] - #[CÓDIGO]# NÃO INFORMADO\n\nFALHA: CAUSA CLIENTE\n\nINÍCIO: 11/06/2026 16:47\n\nNORMALIZAÇÃO: 11/06/26 18:22\n\nCAUSA: SEM INFORMAÇÕES\n\nSOLUÇÃO: RESPONDENDO A PING\n----\n\n20:27:05 :$ Aguardando execução\n\n20:27:13 :$ Interface\n\nadmin display-config | match CBA | match 0490506 \n\n                description \"CBA_0490506\"\n\n            interface \"CBA_0490506\" create\n\n            description \"CBA CN 0490506; EMPRESA MATOGROSSENSE DE TECNOLOGIA DA INFORMACAO; TC IP CONNECT\"\n\n            interface \"CBA_0490506\" create\n\n                description \"By DFID# = 141292 (CBA CN 0490506; FUNDACAO UNIVERSIDADE DO ESTADO DE MATO GROSSO; 500M; IP CONNECT)\"\n\n \n\n20:27:14 :$ Dados do Serviço\n\nadmin display-config | match CBA_0490506 context all \n\n#--------------------------------------------------\n\n        static-route-entry 191.222.16.128/29\n\n            next-hop 187.4.77.206\n\n                description \"CBA_0490506\"\n\n#--------------------------------------------------\n\n    service\n\n        ies 919009354 name \"IES:77547:919009354:EROI-MT-SER-A01(100.120.4.23)\" customer 2 create\n\n            interface \"CBA_0490506\" create\n\n20:27:14 :$ Finalizado com sucesso\n\n[17:27] - NºTT: TT416395 // DESCRIÇÃO: REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 4H//",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "11/06/2026, 17:27:31",
+    "ultimaAtualizacao": "11/06/2026, 20:27:58",
+    "historico": [
+      {
+        "data": "11/06/2026, 20:27:58",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "11/06/2026, 17:27:31",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781214298664,
+    "protocolo": "ATD-1781214298664",
+    "designacao": "SJBI5012172",
+    "gtNome": "GT NOME:  MARIA LUIZA-VTAL-N1",
+    "resumo": "[18:44] - #[CÓDIGO]# NÃO INFORMADO\n\nFALHA: INICIO FALHA: 11-06-2026 10:11:00\n\nINÍCIO: NÃO INFORMADO\n\nNORMALIZAÇÃO: NÃO INFORMADO\n\nCAUSA: SOLUÇÃO: CLIENTE - REDE INTERNA] FALHA RESTABELECIDA APÓS CORREÇÃO DA REDE INTERNA DO CLIENTE LOG: CHAMADO ENCERRADO ATRAVÉS DO TT 300986. SEM CASO ARS VINCULADO, NAO PASSA POR VALIDAÇÃO DO CLIENTE\n\nSOLUÇÃO: Cliente - Rede Interna] Falha restabelecida após correção da rede interna do cliente LOG: Chamado encerrado através do TT 300986. Sem caso ARS vinculado, nao passa por validação do cliente\nResumo\nInterface: SJBI_5012172\nServiço: vprn\nID do Serviço: 8108\nNº Porta: 4/1/12\nÉ Bundle?: Não\nVLAN: 2156\nAddress: 10.164.224.9/30\nNeighbor: 10.164.224.10\nVelocidade (com base no scheduler-policy): 100_MBPS\nPing Neighbor: ATENÇÃO, link down. 100% de perda",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 18:44:58",
+    "ultimaAtualizacao": "11/06/2026, 18:44:58",
+    "historico": [
+      {
+        "data": "11/06/2026, 18:44:58",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781213915608,
+    "protocolo": "ATD-1781213915608",
+    "designacao": "CBA0475761",
+    "gtNome": "GT NOME:  MARIA LUIZA-VTAL-N1",
+    "resumo": "[18:38] - #[CÓDIGO]# NÃO INFORMADO\n\nFALHA: FIBRA\n\nINÍCIO: 11/06/2026 14:42\n\nNORMALIZAÇÃO: 11/06/26 16:35\n\nCAUSA: ABERTURA INDEVIDA\n\nSOLUÇÃO: ENCERRADO CLBV 16:35// ABERTURA INDEVIDA // CIRCUITO PING NORMAL\n\nResumo\nInterface: CBA_0475761\nServiço: ies\nID do Serviço: 911035089\nNº Porta: 10\nÉ Bundle?: Não\nVLAN: 3986\nVLAN_2: 1137\nAddress: 200.103.107.193/30\nNeighbor: 200.103.107.194\nVelocidade (com base no rate): 97mbps\nPing Neighbor: PING com sucesso e sem perdas\nLatência Média: 5.8ms\nINFO: Teste concluído com sucesso",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 18:38:35",
+    "ultimaAtualizacao": "11/06/2026, 18:38:35",
+    "historico": [
+      {
+        "data": "11/06/2026, 18:38:35",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781213498491,
+    "protocolo": "ATD-1781213498491",
+    "designacao": "NER5016110",
+    "gtNome": "GT NOME:  MARIA LUIZA-VTAL-N1",
+    "resumo": "[18:31] - ENCERRADO //AÇÃO: METALICO// CLIENTE AUTORIZA ENCERRAMENTO //NORMALIZADO AS 14:14H//\n\nInterface: NER_5016110\nServiço: vprn\nID do Serviço: 8331\nNº Porta: 5/2/2\nÉ Bundle?: Não\nVLAN: 1980\nVLAN_2: 0\nAddress: 10.162.197.157/30\nNeighbor: 10.162.197.158\nVelocidade (com base no scheduler-policy): 50_MBPS\nPing Neighbor: PING com sucesso e sem perdas\nLatência Média: 2.52ms\nINFO: Teste concluído com sucesso",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 18:31:38",
+    "ultimaAtualizacao": "11/06/2026, 18:31:38",
+    "historico": [
+      {
+        "data": "11/06/2026, 18:31:38",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781213372008,
+    "protocolo": "ATD-1781213372008",
+    "designacao": "GNA0762334",
+    "gtNome": "MARIA LUIZA-VTAL-N1",
+    "resumo": "[18:29] - ENCERRADO //AÇÃO: METALICO// CLIENTE AUTORIZA ENCERRAMENTO //NORMALIZADO AS 14:14H//",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 18:29:32",
+    "ultimaAtualizacao": "11/06/2026, 18:29:36",
+    "historico": [
+      {
+        "data": "11/06/2026, 18:29:36",
+        "acao": "Status updated: Encerrado"
+      },
+      {
+        "data": "11/06/2026, 18:29:32",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781199431795,
+    "protocolo": "ATD-1781199431795",
+    "designacao": "CBA0477650",
+    "gtNome": "GILCIMARA-VTAL-N1",
+    "resumo": "[14:37] - CBA0477650 ASSOCIADA MASSIVA// RETIRADA DE POSTE// TRATAIVA COM PREVISAO A SER INICIADA AS 18H//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 14:37:11",
+    "ultimaAtualizacao": "11/06/2026, 14:37:11",
+    "historico": [
+      {
+        "data": "11/06/2026, 14:37:11",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781199215700,
+    "protocolo": "ATD-1781199215700",
+    "designacao": "CBA0475798",
+    "gtNome": "GILCIMARA-VTAL-N1",
+    "resumo": "[14:33] - ESTA EM FILA DE ACIONAMENTO//PREV DE ATENDIMENTO A SER INICIADO AS 15H //Prev de normalização as 18h",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "11/06/2026, 14:33:35",
+    "ultimaAtualizacao": "11/06/2026, 14:34:58",
+    "historico": [
+      {
+        "data": "11/06/2026, 14:34:58",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "11/06/2026, 14:33:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
