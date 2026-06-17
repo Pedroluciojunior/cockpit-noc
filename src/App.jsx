@@ -964,7 +964,7 @@ const encerrarExpediente = async () => {
             resultado = { error: textoResposta };
         }
 
-        if (resposta.ok && resultado.success) {
+        if (resposta.ok) {
           mostrarToast("✅ Turno salvo com sucesso no GitHub!");
           setAtendimentos([]); 
           localStorage.removeItem("atendimentos");
