@@ -946,39 +946,43 @@ const encerrarExpediente = async () => {
       return; 
     }
 
-    if (window.confirm("CONFIRMAR FECHAMENTO: Os dados do turno atual serão salvos automaticamente no GitHub e a tela será limpa. Prosseguir?")) {
+    if (window.confirm("CONFIRMAR FECHAMENTO: Os dados serão salvos no GitHub. Prosseguir?")) {
       mostrarToast("Processando backup em nuvem... Aguarde.");
 
       try {
-        // Faz o disparo seguro para a nossa Serverless Function na Vercel
         const resposta = await fetch('/api/salvar-turno', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(atendimentos) // Envia a lista de atendimentos atual
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(atendimentos)
         });
 
-        const resultado = await resposta.json();
+        const textoResposta = await resposta.text();
+        let resultado;
+        try {
+            resultado = JSON.parse(textoResposta);
+        } catch (e) {
+            resultado = { error: textoResposta };
+        }
 
         if (resposta.ok && resultado.success) {
           mostrarToast("✅ Turno salvo com sucesso no GitHub!");
-          
-          // Limpa os dados da tela local com segurança após a confirmação da nuvem
           setAtendimentos([]); 
           localStorage.removeItem("atendimentos");
+          
+          if (diretorioBackup) {
+             await exportarJSON(); 
+          }
         } else {
-          console.error("Erro retornado do backend:", resultado);
-          mostrarToast(`Erro: ${resultado.error || "Falha ao processar nuvem"}`, "erro");
+          console.error("Erro do servidor:", resultado);
+          mostrarToast(`Erro: ${resultado.error || "Falha no servidor"}`, "erro");
         }
-
       } catch (erroFatal) {
-        console.error("Falha na comunicação de rede com o backend:", erroFatal);
+        console.error("Falha de rede:", erroFatal);
         mostrarToast("Erro de conexão com o servidor de backup.", "erro");
       }
     }
   };
-  
+
   const gerarRelatorioTurno = async () => {
     if (atendimentos.length === 0) return;
     if (!diretorioBackup) { mostrarToast("Configure o Diretório de Backup primeiro!", "erro"); return; }
@@ -1369,9 +1373,12 @@ const encerrarExpediente = async () => {
 
               <div className="h-px w-full bg-slate-100 dark:bg-slate-700 my-1"></div>
               
-              <button onClick={encerrarExpediente} title={diretorioBackup ? "Gera o backup final, limpa o painel e prepara o sistema." : "ATENÇÃO: Configure a pasta acima primeiro!"} className={`w-full flex items-center justify-center gap-2 font-black py-2.5 rounded-xl text-xs transition-all uppercase tracking-wide shadow-sm active:scale-[0.98] ${diretorioBackup ? "bg-rose-50 hover:bg-rose-600 dark:bg-rose-900/30 dark:hover:bg-rose-600 text-rose-700 hover:text-white border border-rose-200 dark:border-rose-800" : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed dark:bg-slate-800 dark:border-slate-700 dark:text-slate-600"}`}>
-                🛑 Encerrar Expediente
-              </button>
+<button 
+  onClick={encerrarExpediente} 
+  className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white border border-rose-200 font-black py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-sm active:scale-[0.98]"
+>
+  🛑 Encerrar Expediente
+</button>
             </div>
           </div>
         </div>
