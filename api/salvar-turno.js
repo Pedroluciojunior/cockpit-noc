@@ -7,9 +7,10 @@ export default async function handler(req, res) {
     }
 
     const dadosTurno = req.body;
-    const dataFormatada = new Date().toLocaleDateString("pt-BR").replace(/\//g, "-");
-    const horaFormatada = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' }).replace(/:/g, "-");
-
+const data = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+const dataObj = new Date(data);
+const dataFormatada = dataObj.toLocaleDateString("pt-BR").replace(/\//g, "-");
+const horaFormatada = dataObj.toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' }).replace(/:/g, "-");
     const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
     const content = Buffer.from(JSON.stringify(dadosTurno, null, 2)).toString("base64");
 
