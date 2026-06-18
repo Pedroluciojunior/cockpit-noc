@@ -668,26 +668,38 @@ export default function SistemaAtendimentos() {
     }
   };
 
-  const aplicarMascara = (novoStatus) => {
+const aplicarMascara = (novoStatus) => {
     let novaMascara = "";
-    if (novoStatus === "Aberto") {
-      novaMascara = `DESIGNAÇÃO: \nNºTT: \nGT NOME: \nDESCRIÇÃO: \n`;
-    } else if (novoStatus === "Aberto por E-mail") {
-      novaMascara = `DESIGNAÇÃO: \nGT NOME: \nHR VIA EMAIL: \nDESCRIÇÃO: \n`;
-    } else if (novoStatus === "Em andamento") {
-      novaMascara = `DESIGNAÇÃO: \nGT NOME: \nPOSICIONAMENTO: \n`;
+    
+    if (novoStatus === "Em andamento") {
+      novaMascara = `DESIGNAÇÃO: \nGT NOME: \nPOSICIONAMENTO: FALHA/ //AÇÃO -- //`;
+      
     } else if (novoStatus === "Encerrado") {
       const d = new Date().toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit', year: '2-digit' });
       const h = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
-      novaMascara = `#[CÓDIGO]#\nDESIGNAÇÃO: \nGT NOME: \nFALHA: \nINÍCIO: \nNORMALIZAÇÃO: ${d} ${h}\nCAUSA: \nSOLUÇÃO: \n`;
+      // Mantido com # como você solicitou
+      novaMascara = `#CÓDIGO#\nDESIGNAÇÃO: \nGT NOME: \nFALHA: \nINÍCIO: \nNORMALIZAÇÃO: ${d} ${h}\nCAUSA: \nSOLUÇÃO: \n`;
     }
+    
     setRascunho(novaMascara);
   };
 
-  const handleStatusChange = (e) => {
+const handleStatusChange = (e) => {
     const novoStatus = e.target.value;
     setForm(prev => ({ ...prev, status: novoStatus }));
-    aplicarMascara(novoStatus);
+
+    if (novoStatus === "Aberto") {
+      const ePorEmail = window.confirm("Este chamado foi aberto via e-mail?");
+      
+      if (ePorEmail) {
+        setRascunho(`DESIGNAÇÃO: \nHr envio Email: \nGT NOME: \nDESCRIÇÃO: FALHA - //AÇÃO - //`);
+      } else {
+        setRascunho(`DESIGNAÇÃO: \nNºTT: \nGT NOME: \nDESCRIÇÃO: FALHA - //AÇÃO - //`);
+      }
+    } else {
+      aplicarMascara(novoStatus);
+    }
+    
     setTimeout(() => rascunhoRef.current?.focus(), 50);
   };
 
@@ -709,17 +721,32 @@ export default function SistemaAtendimentos() {
     handleRascunhoChange(novoTexto);
   };
 
-  const copiarMascaraSTC = (codigo) => {
+const copiarMascaraSTC = (codigo) => {
     const dataAtual = new Date().toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit', year: '2-digit' });
     const horaAtual = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
-    const textoCopiado = `#${codigo}#\nDESIGNAÇÃO: \nGT NOME: \nFALHA: \nINÍCIO: \nNORMALIZAÇÃO: ${dataAtual} ${horaAtual}\nCAUSA: \nSOLUÇÃO: `;
+    // Sem colchetes para facilitar a seleção e preenchimento
+    const textoCopiado = `${codigo}\nDESIGNAÇÃO: \nGT NOME: \nFALHA: \nINÍCIO: \nNORMALIZAÇÃO: ${dataAtual} ${horaAtual}\nCAUSA: \nSOLUÇÃO: `;
     navigator.clipboard.writeText(textoCopiado);
-    mostrarToast(`Máscara do STC #${codigo} copiada!`);
+    mostrarToast(`Máscara do STC ${codigo} copiada!`);
   };
 
   const copiarContato = (texto) => {
     navigator.clipboard.writeText(texto);
     mostrarToast(`Contato Copiado!`);
+  };
+
+const devePiscar = (ultimaAtualizacao, status) => {
+    if (!ultimaAtualizacao || status === "Encerrado") return false;
+    
+    const [data, hora] = ultimaAtualizacao.split(" ");
+    const [dia, mes, ano] = data.split("/");
+    const [h, m, s] = hora.split(":");
+    
+    const dataObj = new Date(ano, mes - 1, dia, h, m, s);
+    const agora = new Date();
+    const diferencaMinutos = (agora - dataObj) / 1000 / 60;
+    
+    return diferencaMinutos >= 180; // 3 horas
   };
 
   const adicionarAtendimento = () => {
@@ -942,13 +969,11 @@ export default function SistemaAtendimentos() {
 
 const encerrarExpediente = async () => {
     if (atendimentos.length === 0) { 
-      mostrarToast("Sem dados de atendimentos para exportar.", "erro"); 
+      mostrarToast("Sem dados.", "erro"); 
       return; 
     }
 
-    if (window.confirm("CONFIRMAR FECHAMENTO: Os dados serão salvos no GitHub. Prosseguir?")) {
-      mostrarToast("Processando backup em nuvem... Aguarde.");
-
+    if (window.confirm("Confirmar fechamento no GitHub?")) {
       try {
         const resposta = await fetch('/api/salvar-turno', {
           method: 'POST',
@@ -956,33 +981,22 @@ const encerrarExpediente = async () => {
           body: JSON.stringify(atendimentos)
         });
 
-        const textoResposta = await resposta.text();
-        let resultado;
-        try {
-            resultado = JSON.parse(textoResposta);
-        } catch (e) {
-            resultado = { error: textoResposta };
-        }
+        const data = await resposta.json();
 
-        if (resposta.ok) {
-          mostrarToast("✅ Turno salvo com sucesso no GitHub!");
+        if (resposta.ok && data.success) {
+          mostrarToast("✅ Salvo com sucesso!");
           setAtendimentos([]); 
           localStorage.removeItem("atendimentos");
-          
-          if (diretorioBackup) {
-             await exportarJSON(); 
-          }
         } else {
-          console.error("Erro do servidor:", resultado);
-          mostrarToast(`Erro: ${resultado.error || "Falha no servidor"}`, "erro");
+          throw new Error(data.error || "Erro no servidor");
         }
-      } catch (erroFatal) {
-        console.error("Falha de rede:", erroFatal);
-        mostrarToast("Erro de conexão com o servidor de backup.", "erro");
+      } catch (err) {
+        console.error(err);
+        mostrarToast("Erro: " + err.message, "erro");
       }
     }
   };
-
+  
   const gerarRelatorioTurno = async () => {
     if (atendimentos.length === 0) return;
     if (!diretorioBackup) { mostrarToast("Configure o Diretório de Backup primeiro!", "erro"); return; }
@@ -1234,6 +1248,14 @@ const encerrarExpediente = async () => {
           @keyframes marqueeTimeline {
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-50%, 0, 0); }
+            @keyframes blink-animation {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+  .animate-piscar {
+    animation: blink-animation 1.5s infinite;
+    border: 3px solid #f43f5e !important;
           }
         `}</style>
 
@@ -1269,12 +1291,11 @@ const encerrarExpediente = async () => {
                 
                 <div className="ml-4 flex items-center bg-slate-50 dark:bg-slate-900 border border-slate-200 border-slate-600 rounded-xl px-2 py-1 shadow-inner">
                   <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-2">Status:</label>
-                  <select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
-                    <option value="Aberto">ABERTO</option>
-                    <option value="Aberto por E-mail">ABERTO POR E-MAIL</option>
-                    <option value="Em andamento">EM ANDAMENTO</option>
-                    <option value="Encerrado">ENCERRADO</option>
-                  </select>
+<select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
+    <option value="Aberto">ABERTO</option>
+    <option value="Em andamento">EM ANDAMENTO</option>
+    <option value="Encerrado">ENCERRADO</option>
+</select>
                 </div>
               </div>
 
@@ -1399,10 +1420,8 @@ const encerrarExpediente = async () => {
                 classesBorda = "border-l-4 border-blue-500 shadow-blue-950/5 dark:shadow-none";
               }
 
-              return (
-                <div key={item.id} className={`bg-white dark:bg-slate-800 rounded-2xl border ${classesBorda} p-3.5 shadow-sm hover:shadow-md hover:border-cyan-500/50 transition-all flex flex-col justify-between relative group`}>
-                  
-                        {/* CABEÇALHO DO CARD: DESIGNAÇÃO EM DESTAQUE MÁXIMO E AÇÕES */}
+return (
+  <div key={item.id} className={`bg-white dark:bg-slate-800 rounded-2xl border ${classesBorda} p-3.5 shadow-sm hover:shadow-md hover:border-cyan-500/50 transition-all flex flex-col justify-between relative group ${devePiscar(item.ultimaAtualizacao, item.status) ? "animate-piscar" : ""}`}>                        {/* CABEÇALHO DO CARD: DESIGNAÇÃO EM DESTAQUE MÁXIMO E AÇÕES */}
                         <div className="flex items-start justify-between border-b border-slate-100 dark:border-slate-700/50 pb-2 mb-3">
                           <div className="flex flex-col min-w-0 flex-1 pr-2">
                             {/* DESIGNAÇÃO: Agora no topo, com fonte grande, preta e azul ciano elétrico bem visível */}
