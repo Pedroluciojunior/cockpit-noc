@@ -736,18 +736,23 @@ const copiarMascaraSTC = (codigo) => {
   };
 
 const devePiscar = (ultimaAtualizacao, status) => {
-    if (!ultimaAtualizacao || status === "Encerrado") return false;
-    
-    const [data, hora] = ultimaAtualizacao.split(" ");
-    const [dia, mes, ano] = data.split("/");
-    const [h, m, s] = hora.split(":");
-    
-    const dataObj = new Date(ano, mes - 1, dia, h, m, s);
-    const agora = new Date();
-    const diferencaMinutos = (agora - dataObj) / 1000 / 60;
-    
-    return diferencaMinutos >= 180; // 3 horas
-  };
+  if (!ultimaAtualizacao || status === "Encerrado") return false;
+
+  // Formato esperado: "17/06/2026, 21:50:33"
+  // Remove a vírgula caso exista para facilitar o split
+  const dataLimpa = ultimaAtualizacao.replace(",", ""); 
+  const [data, hora] = dataLimpa.split(" ");
+  const [dia, mes, ano] = data.split("/");
+  const [h, m, s] = hora.split(":");
+
+  const dataObj = new Date(ano, mes - 1, dia, h, m, s);
+  const agora = new Date();
+  
+  // Diferença em minutos
+  const diferencaMinutos = (agora - dataObj) / 1000 / 60;
+  
+  return diferencaMinutos >= 180; // 3 horas
+};
 
   const adicionarAtendimento = () => {
     if (!rascunho || rascunho.trim() === "") {
@@ -1233,7 +1238,7 @@ const encerrarExpediente = async () => {
         </div>
 
         {/* Correção estrutural do CSS de animação */}
-        <style>{`
+<style>{`
           .marquee-container {
             width: 100%;
             overflow: hidden;
@@ -1248,14 +1253,15 @@ const encerrarExpediente = async () => {
           @keyframes marqueeTimeline {
             0% { transform: translate3d(0, 0, 0); }
             100% { transform: translate3d(-50%, 0, 0); }
-            @keyframes blink-animation {
-    0% { opacity: 1; }
-    50% { opacity: 0.4; }
-    100% { opacity: 1; }
-  }
-  .animate-piscar {
-    animation: blink-animation 1.5s infinite;
-    border: 3px solid #f43f5e !important;
+          }
+          @keyframes blink-animation {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+          }
+          .animate-piscar {
+            animation: blink-animation 1.5s infinite;
+            border: 3px solid #f43f5e !important;
           }
         `}</style>
 
