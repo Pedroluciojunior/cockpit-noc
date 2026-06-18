@@ -685,18 +685,21 @@ const aplicarMascara = (novoStatus) => {
   };
 
 const handleStatusChange = (e) => {
-    const novoStatus = e.target.value;
-    setForm(prev => ({ ...prev, status: novoStatus }));
+    let novoStatus = e.target.value;
 
     if (novoStatus === "Aberto") {
       const ePorEmail = window.confirm("Este chamado foi aberto via e-mail?");
       
       if (ePorEmail) {
-        setRascunho(`DESIGNAÇÃO: \nHr envio Email: \nGT NOME: \nDESCRIÇÃO: FALHA - //AÇÃO - //`);
+        novoStatus = "Aberto por E-mail";
+        setForm(prev => ({ ...prev, status: novoStatus }));
+        setRascunho(`DESIGNAÇÃO: \nHR VIA EMAIL: \nGT NOME: \nDESCRIÇÃO: FALHA - //AÇÃO - //`);
       } else {
+        setForm(prev => ({ ...prev, status: novoStatus }));
         setRascunho(`DESIGNAÇÃO: \nNºTT: \nGT NOME: \nDESCRIÇÃO: FALHA - //AÇÃO - //`);
       }
     } else {
+      setForm(prev => ({ ...prev, status: novoStatus }));
       aplicarMascara(novoStatus);
     }
     
@@ -707,9 +710,9 @@ const handleStatusChange = (e) => {
     setRascunho(texto);
     if (texto.includes("#[CÓDIGO]#") || texto.includes("SOLUÇÃO:")) {
       if (form.status !== "Encerrado") setForm(prev => ({ ...prev, status: "Encerrado" }));
-    } else if (texto.includes("E-MAIL PARA:")) {
+} else if (texto.includes("HR VIA EMAIL:")) {
       if (form.status !== "Aberto por E-mail") setForm(prev => ({ ...prev, status: "Aberto por E-mail" }));
-    } else if (texto.includes("POSICIONAMENTO:")) {
+        } else if (texto.includes("POSICIONAMENTO:")) {
       if (form.status !== "Em andamento") setForm(prev => ({ ...prev, status: "Em andamento" }));
     } else if (texto.includes("DESCRIÇÃO:")) {
       if (form.status !== "Aberto" && form.status !== "Aberto por E-mail") setForm(prev => ({ ...prev, status: "Aberto" }));
@@ -788,10 +791,10 @@ const devePiscar = (ultimaAtualizacao, status) => {
       conteudoUtil = `HR VIA EMAIL: ${horaEmail} // DESCRIÇÃO: ${descricaoChamado}`;
     } else if (status === "Em andamento") {
       conteudoUtil = extrairDado(rascunhoEmCaixaAlta, /POSICIONAMENTO:\s*([\s\S]*)/i);
-    } else if (status === "Encerrado") {
-      const codigoMatch = rascunhoEmCaixaAlta.match(/#(\d+)#/i);
+} else if (status === "Encerrado") {
+      const codigoMatch = rascunhoEmCaixaAlta.match(/#([a-zA-Z0-9]+)#/i);
       const codigo = codigoMatch ? `#${codigoMatch[1]}#` : "#0000#";
-      const falha = extrairDado(rascunhoEmCaixaAlta, /FALHA:\s*(.*)/i);
+            const falha = extrairDado(rascunhoEmCaixaAlta, /FALHA:\s*(.*)/i);
       const inicio = extrairDado(rascunhoEmCaixaAlta, /INÍCIO:\s*(.*)/i);
       const normalizacao = extrairDado(rascunhoEmCaixaAlta, /NORMALIZAÇÃO:\s*(.*)/i);
       const causa = extrairDado(rascunhoEmCaixaAlta, /CAUSA:\s*(.*)/i);
@@ -1299,6 +1302,7 @@ const encerrarExpediente = async () => {
                   <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-2">Status:</label>
 <select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
     <option value="Aberto">ABERTO</option>
+    <option value="Aberto por E-mail">ABERTO POR E-MAIL</option>
     <option value="Em andamento">EM ANDAMENTO</option>
     <option value="Encerrado">ENCERRADO</option>
 </select>
