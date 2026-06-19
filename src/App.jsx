@@ -91,6 +91,8 @@ export default function SistemaAtendimentos() {
 
   const [dadosOEMP, setDadosOEMP] = useState(() => {
     const baseNativaOEMP = [
+      // ONDE INSERIR: Logo no início do array baseNativaOEMP, ou no final dele.
+      { n: "MAMTECH", l: ["Suporte Técnico | (86) 3142-0494 | chamados@mamtech.com.br", "Supervisão - Hermínia Mateus | (86) 99970-0474 | gestaoisp@mamtech.com.br", "Diretoria - Daniel Gattai | (19) 99460-4503 | daniel.gattai@maminfo.com.br", ] },
       { n: "ASCENTY", l: ["NOC - (19) 3517 7777 | 19 3517-7600 opção #1 e #4  | ticket@ascenty.com  | Após 1h - Rogerio Sanchez  | Contato: (19) 35177600 Ramal 1143  |(19) 97117 6129  | rogerio.sanchez@ascenty.com", "Rodrigo Radaieski - Diretor de Serviços  | rodrigo.radaieski@ascenty.com  | (19)35177600 Ramal 2224  | (19) 998471550  | Sergio Abela -  Diretor de Operações Data Centers  | sergio.abela@ascenty.com  | Telefone +55 19 3517-7600 ramal 2236 | Celular +55 11 99330-8881", "Marcos Siqueira - Vice Presidente  | marcos.siqueira@ascenty.com  | (19)3517 7600 Ramal 1308 | (11) 95252 7950", "Gustavo Sousa  | gustavo.sousa@ascenty.com  | (11) 96564-8530", ] },
       { n: "ATIVA", l: ["Atendimento via telefone: 31 2342-1467  | Via Whatsapp: 31999773480  | e-mail: noc@ativatelecom.net.br  | Atendimento 24hrs - 7/7 - Apos as 18:00hrs Andre e Wender revesam o plantao. Disponiveis remotamente.", "Andre -  (31) 98108-5365 | andre.silva@ativatelecom.net.br  | Wender Silva -  (31) 99529-4022 |  wender.silva@ativatelecom.net.br  | Marco Tulio - (31) 99901-9178", "Thyeres (31) 99443-2572  | thyeres@ativatelecom.net.br  | Caroline Lima - 317146-3263  | caroline.lima@ativatelecom.net.br", "Wellington - Diretor  | (31) 99105-4491 - wellington@ativatelecom.net.br", "Robson - Diretor  | (31) 99230-1984  - robson@ativatelecom.net.br", ] },
       { n: "VOGEL (PARCEIRA DESCONTINUADA)", l: ["Parceira Vogel deixou de existir.  | Circuitos Vogel são Tratados pela Algar Telecom.", ] },
@@ -133,8 +135,18 @@ export default function SistemaAtendimentos() {
       { n: "NAVA", l: ["11 40837491 Opcao 2  | reparo.oi@nava.com.br", "Alex Mendes - 11 94395-5400 | Seg-Sex / 09:00 - 18:00  | alex.mendes@nava.com.br", "Estevao Cezario Silva  | 11 93466-5212  | estevao.silva@nava.com.br", "Flávio Gomes - 11 91165-6122  | flavio.gomes@nava.com.br  | Thiago Ezsias - 11 99915-8737  | thiago.ezsias@nava.com.br", "Jairo Abrantes  | 11 96399-5158  | jairo.abrantes@nava.com.br", ] },
       { n: "WEBFOCO (WT TELECOM)", l: ["Abertura de chamado (24h) | 0800 000 2029 | 99975-6009  | Acompanhamento de chamado | 71 99975-6009  WHATSAPP  | ops@webfoco.net", "Quem atender  | 71 99975-6009", "Amilton araujo  | 71 99625-3664  | amilton@webfoco.net", "Odemar Junior  | (74) 9 9974-1460", "Carlos Alberto  | 71) 9 9966-3664", ] },
       { n: "NEW MASTER", l: ["WhatsApp: 64 92001-9352  | Atendimento: 0800 454 5141  | comercialpj@newmastertelecom.com.br", "Hugo Soares - (64) 99978-0014  | Felipe Martins -  (62) 98329-8349", "Rogério de Lima  | (62) 93300-4216", ] },
-      { n: "SITELBRA", l: ["NOC 61 3028-6010 / 0800 740 7808  | Whatsapp 61 99618-8285  | e-mail: noc@sitelbra.com.br", "Marcelo Heringer - Supervisor do NOC  | marcelo.heringer@sitelbra.com.br  | (61) 9 9952-2754", "Felipe Caixeta - Gerência do NOC  | felipe.caixeta@sitelbra.com.br  | 61 9 9840-0279", "Eduardo Batista - Gerência de Operações  | eduardo.batista@sitelbra.com.br  | (61) 9 9260-5675", "Vanderlei Boschetto - Diretor  | vanderlei.b@sitelbra.com.br  | (41) 9 9997-4060", ] },
-      { n: "OTRS GRUPO ARION", l: ["0800 878 8230  | Whatsapp: 0800 878 8230  | atendimento@grupoarion.com.br", "Central de Atendimento - até 24h  | 0800 878 8230  | noc@grupoarion.com.br", "Supervisor NOC - Felipe Moretti - Após 24h  | (19) 9 8841-1041  | felipe.moretti@grupoarion.com.br", "Gestor de Operações - Herick Lara - após 36h  | (31) 9 7569-0039  | herick.lara@grupoarion.com.br", "Diretor de Operações - Marcos Cortez - após 42h  | (11) 9 6467-2526  | marcos.cortez@grupoarion.com.br", ] },
+{ 
+        n: "SITELBRA", 
+        t: "SOLICITAÇÃO DE REPARO / ATUALIZAÇÃO\n\nDesignação do Circuito: \nFalha Identificada: \nContato Local: \n\n*IMPORTANTE:\n- Reparos/Atualizações devem ser feitas pelo (61) 3028-6010 Opção 2 ou WhatsApp (61) 99618-8285 (24h).\n- Ligações com ID suprimido não serão atendidas.",
+        l: [
+          "N1 – NOC Atendimento | (61) 3028-6010 | noc@sitelbra.com.br",
+          "N2 – Ponto Focal NOC (Samile Chagas) | (11) 9539-2739 | Samile.novaes@sitelbra.com.br",
+          "N3 – Ponto Focal Cliente (Mateus Francelli) | (61) 99319-4390 | Mateus.silva@sitelbra.com.br",
+          "N4 – Gerência (Luana Siqueira) | (61) 99116-2725 | Luana.siqueira@sitelbra.com.br",
+          "N5 – Gerente de Contas (Renan Thielke) | (64) 9280-8290 | renan.thielke@sitelbra.com.br",
+          "N6 – Vice Presidente (Vanderlei Boschetto) | (41) 99997-4060 | vanderlei.b@sitelbra.com.br"
+        ] 
+      },      { n: "OTRS GRUPO ARION", l: ["0800 878 8230  | Whatsapp: 0800 878 8230  | atendimento@grupoarion.com.br", "Central de Atendimento - até 24h  | 0800 878 8230  | noc@grupoarion.com.br", "Supervisor NOC - Felipe Moretti - Após 24h  | (19) 9 8841-1041  | felipe.moretti@grupoarion.com.br", "Gestor de Operações - Herick Lara - após 36h  | (31) 9 7569-0039  | herick.lara@grupoarion.com.br", "Diretor de Operações - Marcos Cortez - após 42h  | (11) 9 6467-2526  | marcos.cortez@grupoarion.com.br", ] },
       { n: "NET TURBO", l: ["(19) 3515-7204 (whatsapp)  | suportecorporativo@netturbo.com.br", "Supervisor NOC - (apos 2 horas do SLA)  | Felipe Turcatti  - 19 3515-7204  | felipe.turcatti@netturbo.com.br", "Coordenador NOC - Apos 2 horas do SLA  | Alexandre Borges - 19 999534431  | alexandre.borges@netturbo.com.br", "Diretor NOC - Apos 4 horas do SLA  | Vinicius Garcia - 19 998761065  | vinicius.garcia@netturbo.com.br", ] },
       { n: "G8 (MEGA TELECOM)", l: ["N1 SUPORTE TECNICO - Abertura de Chamado  | 11 2110-1001  | noc@g8.net.br", "N2 Operation (Data/Voice) - de 2h a 5h:  | 11 2110-1001  | informar nº do chamado", "N3 DADOS - de 5h a 8h  | 11 97213-3698  | noc@megatelecom.com", "N4 DADOS - de 8h a 10h  | Guilherme  Labadessa - 14 99633 - 8761  | guilherme.labadessa@megatelecom.com", "N5 DADOS E VOZ - Acimda de 10h  | Flavio Barros - 17 98128 - 0400  | flavio.barros@megatelecom.com", ] },
       { n: "OSI", l: ["Sempre que necessario  | URA (11) 5070-7070 - Opcao 1 e Opcao 7  | noc@ositelecom.com.br", "30 minutos apos o registro do chamado  | Atendimento (11) 5070-7070 - Opcao 1 e Opcao 7  | (47) 3368-3512 | (47) 3263-8600  | atendimento@ositelecom.com.br", "1 hora apos o registro do chamado  | Gerencia de NOC - David  | (11) 5070-9476 - (47) 99287-8282  | noc@ositelecom.com.br", "2 horas apos o registro do chamado  | Projetos Especiais - Rogerio  | (11) 5070-9473 - (47) 99170 0067  | josue@ositelecom.com.br", "3 horas apos o registro do chamado  | Tecnologia - Josue  | (11) 5070-8002 - (11) 98693-8650  | josue@ositelecom.com.br", ] },
@@ -269,37 +281,7 @@ export default function SistemaAtendimentos() {
     {
       categoria: "MANUAIS / POSICIONAMENTOS",
       artigos: [
-        { 
-          id: "manuais_recorrencias", 
-          titulo: "Acionamentos e Recorrências", 
-          tipo: "recorrencia_master", 
-          dados: [
-            {
-              nome: "MAMTECH",
-              emailAbertura: "chamado@mamtech.com.br",
-              template: "Nome do Cliente: \nEndereço: \nCircuito: \nHorário de Funcionamento: \nDescrição do Problema: \nContato Local: ",
-              escalonamentos: [
-                { nivel: "1", equipe: "Suporte Técnico", telefone: "(86) 3142-0494", email: "chamados@mamtech.com.br" },
-                { nivel: "2", equipe: "Supervisão - Hermínia Mateus", telefone: "(86) 99970-0474", email: "gestaoisp@mamtech.com.br" },
-                { nivel: "3", equipe: "Diretoria - Daniel Gattai", telefone: "(19) 99460-4503", email: "daniel.gattai@maminfo.com.br" }
-              ]
-            },
-            // 👇 INÍCIO DO MANUAL DA SITELBRA 👇
-            {
-              nome: "SITELBRA",
-              emailAbertura: "noc@sitelbra.com.br",
-              template: "SOLICITAÇÃO DE REPARO / ATUALIZAÇÃO\n\nDesignação do Circuito: \nFalha Identificada: \nContato Local: \n\n*IMPORTANTE:\n- Reparos/Atualizações devem ser feitas pelo (61) 3028-6010 Opção 2 ou WhatsApp (61) 99618-8285 (24h).\n- Ligações com ID suprimido não serão atendidas.",
-              escalonamentos: [
-                { nivel: "1", equipe: "N1 – NOC Atendimento", telefone: "(61) 3028-6010", email: "noc@sitelbra.com.br" },
-                { nivel: "2", equipe: "N2 – Ponto Focal NOC (Samile Chagas)", telefone: "(11) 9539-2739", email: "Samile.novaes@sitelbra.com.br" },
-                { nivel: "3", equipe: "N3 – Ponto Focal Cliente (Mateus Francelli)", telefone: "(61) 99319-4390", email: "Mateus.silva@sitelbra.com.br" },
-                { nivel: "4", equipe: "N4 – Gerência (Luana Siqueira)", telefone: "(61) 99116-2725", email: "Luana.siqueira@sitelbra.com.br" },
-                { nivel: "5", equipe: "N5 – Gerente de Contas (Renan Thielke)", telefone: "(64) 9280-8290", email: "renan.thielke@sitelbra.com.br" },
-                { nivel: "6", equipe: "N6 – Vice Presidente (Vanderlei Boschetto)", telefone: "(41) 99997-4060", email: "vanderlei.b@sitelbra.com.br" }
-              ]
-            }
-          ] 
-        },
+       
         { id: "manuais_encerramentos", titulo: "Códigos de Encerramento (STC_ARS)", tipo: "cards_stcars_master", dados: dadosStcArsMaster },
         { id: "twilio_fix", titulo: "Árvore de Códigos FIX", tipo: "tabela_fix", dados: dadosFix },
         { 
@@ -1818,50 +1800,100 @@ return (
                       <textarea value={textoImportacao} onChange={(e) => setTextoImportacao(e.target.value)} placeholder="Cole dados adicionais aqui..." className="w-full max-w-3xl min-h-[140px] bg-slate-50 border rounded-xl p-4 text-xs outline-none dark:bg-slate-900 dark:text-white mb-6 font-mono border-slate-300 dark:border-slate-700" />
                       <button onClick={processarColagemOEMP} className="bg-cyan-600 hover:bg-cyan-500 text-white font-black py-3 px-8 rounded-xl text-xs uppercase tracking-widest transition-all shadow-md active:scale-95">Injetar Contatos</button>
                     </div>
-                  ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 gap-4 w-full">
-                      {artigoRenderizado.dados.map((parceira, pIdx) => (
-                        <div key={pIdx} className="bg-white dark:bg-slate-800 border-t-4 border-t-cyan-600 border-x border-b border-slate-200 dark:border-slate-700/60 rounded-2xl p-4 shadow-sm hover:shadow-md hover:border-cyan-500/50 transition-all flex flex-col justify-between group relative min-h-[280px]">
-                          
-                          <div>
-                            {/* Topo do Mini-Card */}
-                            <div className="flex items-start justify-between mb-3 border-b border-slate-100 dark:border-slate-700/40 pb-2 select-none">
-                              <h3 className="text-[11px] font-black text-cyan-800 dark:text-cyan-400 uppercase tracking-tight leading-tight font-sans truncate pr-1" title={parceira.n}>
-                                🏢 {parceira.n}
-                              </h3>
-                              <span className="text-[7px] font-black px-1 py-0.5 rounded bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-400 border border-cyan-100 dark:border-cyan-900/30 uppercase tracking-widest flex-shrink-0">
-                                OEMP
-                              </span>
-                            </div>
+) : (
+                    <div className="flex flex-col gap-6 w-full">
+                      {artigoRenderizado.dados.map((parceira, pIdx) => {
+// Extrator de e-mail para destacar no cabeçalho
+                        const emailMatch = parceira.l.join(' ').match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i);
+                        const emailPrincipal = emailMatch ? emailMatch[1] : "E-mail principal não detectado";
+                        
+                        // VARIÁVEL INTELIGENTE: Puxa o template exclusivo da parceira se existir, senão usa o padrão
+                        const templateDisparo = parceira.t || `SOLICITAÇÃO DE SUPORTE / REPARO\nParceira: ${parceira.n}\n\nDesignação do Circuito: \nEndereço da Ponta: \nFalha Identificada: \nContato Local: `;
 
-                            {/* Listagem de Escalonamentos Críticos */}
-                            <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1 scrollbar-thin">
-                              {parceira.l && parceira.l.map((linha, lIdx) => (
-                                <div key={lIdx} className="border-l border-slate-200 dark:border-slate-700 pl-2 py-0.5 hover:border-cyan-500 dark:hover:border-cyan-400 transition-colors">
-                                  <p className="text-[10px] font-mono font-medium text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-wrap select-all break-words">
-                                    {linha}
+                        return (
+                          <div key={pIdx} className="bg-slate-900 border border-slate-700/80 rounded-3xl p-6 shadow-xl relative overflow-hidden flex flex-col xl:flex-row gap-8 transition-all hover:border-cyan-500/30 group">
+                            
+                            {/* Fundo decorativo neon (Azul/Cyan para OEMP) */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-3xl rounded-full pointer-events-none"></div>
+
+                            {/* Bloco da Esquerda: Template e Nome */}
+                            <div className="flex-1 flex flex-col gap-4 relative z-10">
+                              <div className="flex items-center gap-3 mb-1">
+                                <span className="text-3xl drop-shadow-md">🏢</span>
+                                <div>
+                                  <h3 className="text-[16px] font-black text-white uppercase tracking-wider leading-tight">{parceira.n}</h3>
+                                  <p className="text-[10px] font-bold text-cyan-400 font-mono tracking-widest mt-0.5 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-800/50 inline-block truncate max-w-[300px]">
+                                    TO: {emailPrincipal}
                                   </p>
                                 </div>
-                              ))}
+                              </div>
+
+                              <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 flex-1 shadow-inner relative group/caixa">
+                                <span className="absolute top-2 right-3 text-[9px] font-black text-slate-600 uppercase tracking-widest">Template de Disparo</span>
+                                <pre className="text-[11px] font-mono font-medium text-slate-300 whitespace-pre-wrap leading-loose mt-2">
+                                  {templateDisparo}
+                                </pre>
+                              </div>
+                              
+                              <button 
+                                onClick={() => {
+                                  navigator.clipboard.writeText(`Para: ${emailPrincipal !== "E-mail principal não detectado" ? emailPrincipal : ""}\n\n${templateDisparo}`);
+                                  mostrarToast(`Template da operadora ${parceira.n} copiado!`);
+                                }}
+                                className="w-full py-3.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-black text-[11px] uppercase tracking-widest transition-all active:scale-95 shadow-[0_0_15px_rgba(8,145,178,0.2)] flex items-center justify-center gap-2"
+                              >
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                Copiar Template de Acionamento
+                              </button>
+                                                          </div>
+
+                            {/* Divisor Vertical */}
+                            <div className="hidden xl:block w-px bg-slate-700/50"></div>
+
+                            {/* Bloco da Direita: Escalonamento Ativo */}
+                            <div className="flex-1 flex flex-col gap-4 relative z-10">
+                              <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 border-b border-slate-700/50 pb-2 flex items-center gap-2">
+                                <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                                Linha de Escalonamento Ativo
+                              </h4>
+                              
+                              <div className="flex flex-col gap-3.5 h-full overflow-y-auto max-h-[350px] pr-2 scrollbar-thin">
+                                {parceira.l.map((linha, lIdx) => (
+                                  <div key={lIdx} className="bg-slate-800/80 rounded-xl p-4 border-l-4 border-cyan-500 border-r border-y border-slate-700/50 hover:border-cyan-400 transition-all hover:translate-x-1 hover:bg-slate-800 shadow-sm flex flex-col">
+                                    <div className="flex items-center gap-2 mb-2">
+                                      <span className="bg-cyan-500/20 text-cyan-300 text-[10px] font-black px-1.5 py-0.5 rounded uppercase border border-cyan-500/30">Nível {lIdx + 1}</span>
+                                    </div>
+                                    <div className="flex flex-col gap-1.5 text-[10.5px] font-mono font-medium text-slate-300">
+                                      {/* O extrator inteligente divide o texto pelo pipe | e injeta ícones */}
+                                      {linha.split('|').map((parte, i) => {
+                                        const p = parte.trim();
+                                        if(!p) return null;
+                                        
+                                        let icone = "🔹";
+                                        if(p.includes('@')) icone = "✉️";
+                                        else if(/(\d{3,}|\d\d\s\d)/.test(p)) icone = "📞";
+                                        else if(p.toLowerCase().includes('após') || p.toLowerCase().includes('nivel') || p.toLowerCase().includes('gerente') || p.toLowerCase().includes('diretor')) icone = "👤";
+
+                                        return (
+                                          <div key={i} className="flex items-start gap-2 group/linha hover:text-white transition-colors cursor-text">
+                                            <span className="mt-0.5 text-[13px]">{icone}</span> 
+                                            <span className="break-words flex-1 leading-relaxed">{p}</span>
+                                            {/* Botão de cópia específico do fragmento */}
+                                            <button onClick={() => { navigator.clipboard.writeText(p); mostrarToast("Dado copiado!"); }} className="opacity-0 group-hover/linha:opacity-100 text-cyan-500 hover:text-cyan-300 transition-opacity active:scale-95 ml-2" title="Copiar este dado">
+                                              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                            </button>
+                                          </div>
+                                        )
+                                      })}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
                             </div>
-                          </div>
 
-                          {/* Botão de Cópia Rápida */}
-                          <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700/50 flex justify-end select-none">
-                            <button 
-                              onClick={() => { 
-                                const listaContatos = parceira.l ? parceira.l.join('\n') : '';
-                                navigator.clipboard.writeText(`--- DIRETÓRIO DE ESCALONAMENTO: ${parceira.n} ---\n${listaContatos}`); 
-                                mostrarToast(`Árvore de ${parceira.n} copiada!`); 
-                              }} 
-                              className="text-[9px] font-black text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 uppercase tracking-widest transition-colors flex items-center gap-1 active:scale-95"
-                            >
-                              📋 Copiar Árvore
-                            </button>
                           </div>
-
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                 </div>

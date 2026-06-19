@@ -1,0 +1,631 @@
+[
+  {
+    "id": 1780015364104,
+    "protocolo": "ATD-1780015364104",
+    "resumo": "GT NOME:  Vtal: DATA: 28/05/2026 18:09 \nPOSICIONAMENTO: Atividade reagendada para 29/05/2026 às 09:00 devido à indisponibilidade de acesso ao ambiente do cliente após encerramento do expediente.",
+    "designacao": "CBA0478853",
+    "gtNome": " Vtal: DATA: 28/05/2026 18:09 ",
+    "posicionamento": "Atividade reagendada para 29/05/2026 às 09:00 devido à indisponibilidade de acesso ao ambiente do cliente após encerramento do expediente.",
+    "status": "Em andamento",
+    "dataHora": "28/05/2026, 21:42:44",
+    "ultimaAtualizacao": "28/05/2026, 21:42:44",
+    "historico": [
+      {
+        "data": "28/05/2026, 21:42:44",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780010321243,
+    "protocolo": "ATD-1780010321243",
+    "resumo": "GT NOME: MARIA LUIZA\nPOSICIONAMENTO: ENCERRADO 28/05-12:41 // INFORMA QUE É ATENDIDO PELA OP. ALGAR //CTT COM CASSI_ARTHUR// VALIDADO //NORMALIZADO AS 21:22H",
+    "designacao": "SPO5245309",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "ENCERRADO 28/05-12:41 // INFORMA QUE É ATENDIDO PELA OP. ALGAR //CTT COM CASSI_ARTHUR// VALIDADO //NORMALIZADO AS 21:22H",
+    "status": "Encerrado",
+    "dataHora": "28/05/2026, 20:18:41",
+    "ultimaAtualizacao": "28/05/2026, 20:18:41",
+    "historico": [
+      {
+        "data": "28/05/2026, 20:18:41",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780008307282,
+    "protocolo": "ATD-1780008307282",
+    "resumo": "GT NOME:  Histórico Web: \nPOSICIONAMENTO: Em conferência com Daniel 021 999058147, Carlos Santos 011956480500 e Jesiel 011946572246, foram realizados testes e estes informam que estão enxergando o circuito e pingando até a WAN. No entanto não conseguem pingar na Lan do cliente. Consideram ser falha de roteador e estão direcionando o chamado para o PARC para envio de técnico ao local. Mostrar Menos",
+    "designacao": "SLS5362431",
+    "gtNome": " Histórico Web: ",
+    "posicionamento": "Em conferência com Daniel 021 999058147, Carlos Santos 011956480500 e Jesiel 011946572246, foram realizados testes e estes informam que estão enxergando o circuito e pingando até a WAN. No entanto não conseguem pingar na Lan do cliente. Consideram ser falha de roteador e estão direcionando o chamado para o PARC para envio de técnico ao local. Mostrar Menos",
+    "status": "Em andamento",
+    "dataHora": "28/05/2026, 19:45:07",
+    "ultimaAtualizacao": "28/05/2026, 19:45:07",
+    "historico": [
+      {
+        "data": "28/05/2026, 19:45:07",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780007885299,
+    "protocolo": "ATD-1780007885299",
+    "resumo": "GT NOME: WEB\nPOSICIONAMENTO: Vtal: DATA: 28/05/2026 17:10 MENSAGEM: ENCERRAMENTO DO CHAMADO - CAUSA DA FALHA:CARGA ALTA / ACAO CORRETIVA: lançado 200Mtrs de cabo 12FO e duas caixa de 1. 2fibras/ VALIDADO COM:ENCERRADO EM PROCESSO OFFLINE SUP NILTON 65 8436-6170 SOLICITA ENCERRAMENTO O MESMO CIENTE. #! Mostrar Menos",
+    "designacao": "CBA0464274",
+    "gtNome": "WEB",
+    "posicionamento": "Vtal: DATA: 28/05/2026 17:10 MENSAGEM: ENCERRAMENTO DO CHAMADO - CAUSA DA FALHA:CARGA ALTA / ACAO CORRETIVA: lançado 200Mtrs de cabo 12FO e duas caixa de 1. 2fibras/ VALIDADO COM:ENCERRADO EM PROCESSO OFFLINE SUP NILTON 65 8436-6170 SOLICITA ENCERRAMENTO O MESMO CIENTE. #! Mostrar Menos",
+    "status": "Encerrado",
+    "dataHora": "28/05/2026, 19:38:05",
+    "ultimaAtualizacao": "28/05/2026, 19:38:05",
+    "historico": [
+      {
+        "data": "28/05/2026, 19:38:05",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780007093442,
+    "protocolo": "ATD-1780007093442",
+    "resumo": "GT NOME: WEB\nPOSICIONAMENTO: EM PROCESSO DE ENCERRAMENTO, APÓS TRATATIVA",
+    "designacao": "RJO60022067",
+    "gtNome": "WEB",
+    "posicionamento": "EM PROCESSO DE ENCERRAMENTO, APÓS TRATATIVA",
+    "status": "Encerrado",
+    "dataHora": "28/05/2026, 19:24:53",
+    "ultimaAtualizacao": "28/05/2026, 19:24:53",
+    "historico": [
+      {
+        "data": "28/05/2026, 19:24:53",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780006838318,
+    "protocolo": "ATD-1780006838318",
+    "resumo": "GT NOME: VINICIUS-VTAL\nPOSICIONAMENTO: NºTT: 410722 //CONFORME CTT Brayan-Cassi: NÃO VALIDA- CONTINUA ALARMADO //",
+    "designacao": "CTA0826943",
+    "gtNome": "VINICIUS-VTAL",
+    "posicionamento": "NºTT: 410722 //CONFORME CTT Brayan-Cassi: NÃO VALIDA- CONTINUA ALARMADO //",
+    "status": "Aberto",
+    "dataHora": "28/05/2026, 19:20:38",
+    "ultimaAtualizacao": "28/05/2026, 19:20:38",
+    "historico": [
+      {
+        "data": "28/05/2026, 19:20:38",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780006361197,
+    "protocolo": "ATD-1780006361197",
+    "resumo": "GT NOME: MARIA LUIZA\nPOSICIONAMENTO: ENCERRADO / NORMALIZADO 27/05 15:53 // EM CTT Brayan-Cassi: NÃO VALIDA- CONTINUA ALARMADO //CHAMADO RETONANDO PARA CONTRATADA",
+    "designacao": "CTA0826943",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "ENCERRADO / NORMALIZADO 27/05 15:53 // EM CTT Brayan-Cassi: NÃO VALIDA- CONTINUA ALARMADO //CHAMADO RETONANDO PARA CONTRATADA",
+    "status": "Em andamento",
+    "dataHora": "28/05/2026, 19:12:41",
+    "ultimaAtualizacao": "28/05/2026, 19:12:41",
+    "historico": [
+      {
+        "data": "28/05/2026, 19:12:41",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780005987090,
+    "protocolo": "ATD-1780005987090",
+    "resumo": "GT NOME: #S6124# MARIA LUIZA\nPOSICIONAMENTO: #S6124# FALHA:TROCA DE DROP INICIO:27/05/2026 19:06 NORMALIZACAO: 28/05/2026 14:13 Causa: sem intervenção SOLUCAO:  Falha restabelecida após troca/fusão de fibra ocasionada por atenuação.",
+    "designacao": "CBA0478848",
+    "gtNome": "#S6124# MARIA LUIZA",
+    "posicionamento": "#S6124# FALHA:TROCA DE DROP INICIO:27/05/2026 19:06 NORMALIZACAO: 28/05/2026 14:13 Causa: sem intervenção SOLUCAO:  Falha restabelecida após troca/fusão de fibra ocasionada por atenuação.",
+    "status": "Encerrado",
+    "dataHora": "28/05/2026, 19:06:27",
+    "ultimaAtualizacao": "28/05/2026, 19:06:27",
+    "historico": [
+      {
+        "data": "28/05/2026, 19:06:27",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780005543227,
+    "protocolo": "ATD-1780005543227",
+    "resumo": "GT NOME:  #015#  MARIA LUIZA\nPOSICIONAMENTO: FALHA: SEM FALHA INICIO:25/05/2026 12:14 NORMALIZACAO: 28/05/2026 12:29 Causa: sem intervenção SOLUCAO: [Link Encontrado OK] Falha restabelecida após efetuar testes no link ENCERRADO // NORMALIZADO 28/05 AS 14:05// GPON -NAF //SEM FALHA //CAUSA CLIENTE //",
+    "designacao": "CBA0475914",
+    "gtNome": " #015#  MARIA LUIZA",
+    "posicionamento": "FALHA: SEM FALHA INICIO:25/05/2026 12:14 NORMALIZACAO: 28/05/2026 12:29 Causa: sem intervenção SOLUCAO: [Link Encontrado OK] Falha restabelecida após efetuar testes no link ENCERRADO // NORMALIZADO 28/05 AS 14:05// GPON -NAF //SEM FALHA //CAUSA CLIENTE //",
+    "status": "Encerrado",
+    "dataHora": "28/05/2026, 18:59:03",
+    "ultimaAtualizacao": "28/05/2026, 18:59:03",
+    "historico": [
+      {
+        "data": "28/05/2026, 18:59:03",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780005388422,
+    "protocolo": "ATD-1780005388422",
+    "resumo": "GT NOME: MARIA LUIZA\nPOSICIONAMENTO: #015# FALHA: SEM FALHA INICIO:25/05/2026 12:14 NORMALIZACAO: 28/05/2026 12:29 Causa: sem intervenção SOLUCAO: [Link Encontrado OK] Falha restabelecida após efetuar testes no link ENCERRADO // NORMALIZADO 28/05 AS 12:29// GPON -NAF //SEM FALHA //CAUSA CLIENTE",
+    "designacao": "CBA0475921",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "#015# FALHA: SEM FALHA INICIO:25/05/2026 12:14 NORMALIZACAO: 28/05/2026 12:29 Causa: sem intervenção SOLUCAO: [Link Encontrado OK] Falha restabelecida após efetuar testes no link ENCERRADO // NORMALIZADO 28/05 AS 12:29// GPON -NAF //SEM FALHA //CAUSA CLIENTE",
+    "status": "Encerrado",
+    "dataHora": "28/05/2026, 18:56:28",
+    "ultimaAtualizacao": "28/05/2026, 18:56:28",
+    "historico": [
+      {
+        "data": "28/05/2026, 18:56:28",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780004522666,
+    "protocolo": "ATD-1780004522666",
+    "resumo": "GT NOME: MARIA LUIZA _VTAL-N1\nPOSICIONAMENTO: ENCERRADO // NORMALIZADO 28/05 AS 12:30// GPON--NAF //SEM FALHA //CAUSA CLIENTE",
+    "designacao": "CBA0476184",
+    "gtNome": "MARIA LUIZA _VTAL-N1",
+    "posicionamento": "ENCERRADO // NORMALIZADO 28/05 AS 12:30// GPON--NAF //SEM FALHA //CAUSA CLIENTE",
+    "status": "Aberto",
+    "dataHora": "28/05/2026, 18:42:02",
+    "ultimaAtualizacao": "28/05/2026, 18:42:02",
+    "historico": [
+      {
+        "data": "28/05/2026, 18:42:02",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780003131251,
+    "protocolo": "ATD-1780003131251",
+    "resumo": "GT NOME: *WEB*\nPOSICIONAMENTO: #5116D# FALHA:  INICIO:28/05/2026 12:13 NORMALIZACAO: 28/05/2026 17:27 Causa: sem intervenção SOLUCAO: [Backbone Config] Falha restabelecida após reconfiguração de receptor/transmissor na estação",
+    "designacao": "SLS5370616",
+    "gtNome": "*WEB*",
+    "posicionamento": "#5116D# FALHA:  INICIO:28/05/2026 12:13 NORMALIZACAO: 28/05/2026 17:27 Causa: sem intervenção SOLUCAO: [Backbone Config] Falha restabelecida após reconfiguração de receptor/transmissor na estação",
+    "status": "Encerrado",
+    "dataHora": "28/05/2026, 18:18:51",
+    "ultimaAtualizacao": "28/05/2026, 18:18:51",
+    "historico": [
+      {
+        "data": "28/05/2026, 18:18:51",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1780001995998,
+    "protocolo": "ATD-1780001995998",
+    "resumo": "GT NOME: VINICIUS-VTAL // \nPOSICIONAMENTO: ABERTO PARA TRATATIVA DE EVENTO DE VULTO EM BACKHAUL/ACESSO, COM PREVISÃO DE NORMALIZAÇÃO EM 29/05/2026 ÀS 04:43.",
+    "designacao": "ULA5015720",
+    "gtNome": "VINICIUS-VTAL // ",
+    "posicionamento": "ABERTO PARA TRATATIVA DE EVENTO DE VULTO EM BACKHAUL/ACESSO, COM PREVISÃO DE NORMALIZAÇÃO EM 29/05/2026 ÀS 04:43.",
+    "status": "Aberto",
+    "dataHora": "28/05/2026, 17:59:55",
+    "ultimaAtualizacao": "28/05/2026, 17:59:55",
+    "historico": [
+      {
+        "data": "28/05/2026, 17:59:55",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779998674182,
+    "protocolo": "ATD-1779998674182",
+    "resumo": "Designação: SLS5362431\nGT NOME: VINIUS-VTAL\nPOSICIONAMENTO: #ENCERRADO AS 16:05 // estação DESATIVADA A 9 MESES // **Histórico Web: Escalado Louyse Vtal 0800 que informou que foi associado esse caso há uma falha de estação desativada indevidamente. Ela está reabrindo o chamado para que a equipe dê continuidade na tratativa.# //** NOVO TT:410691//ENCAMINHADO PARA TRIAGEM/",
+    "designacao": "SLS5362431",
+    "gtNome": "VINIUS-VTAL",
+    "posicionamento": "#ENCERRADO AS 16:05 // estação DESATIVADA A 9 MESES // **Histórico Web: Escalado Louyse Vtal 0800 que informou que foi associado esse caso há uma falha de estação desativada indevidamente. Ela está reabrindo o chamado para que a equipe dê continuidade na tratativa.# //** NOVO TT:410691//ENCAMINHADO PARA TRIAGEM/",
+    "status": "Em andamento",
+    "dataHora": "28/05/2026, 17:04:34",
+    "ultimaAtualizacao": "28/05/2026, 17:04:34",
+    "historico": [
+      {
+        "data": "28/05/2026, 17:04:34",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779997972146,
+    "protocolo": "ATD-1779997972146",
+    "resumo": "Designação: SJBI5012174\nGT NOME: VINIUS-VTAL\nPOSICIONAMENTO:  Nº do TT: 410683//ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H",
+    "designacao": "SJBI5012174",
+    "gtNome": "VINIUS-VTAL",
+    "posicionamento": " Nº do TT: 410683//ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H",
+    "status": "Aberto",
+    "dataHora": "28/05/2026, 16:52:52",
+    "ultimaAtualizacao": "28/05/2026, 16:52:52",
+    "historico": [
+      {
+        "data": "28/05/2026, 16:52:52",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779997561175,
+    "protocolo": "ATD-1779997561175",
+    "resumo": "Designação: SPO5245309\nGT NOME: Vinicius-VTLA\nPOSICIONAMENTO: CIRCUITO EM ESTADO OPERACIONAL (“UP”) // PERMANECENDO EM MONITORAMENTO E AGUARDANDO EXECUÇÃO DA AÇÃO CORRETIVA PARA CONCLUSÃO E ENCERRAMENTO DEFINITIVO DO REPARO.// SEM PREVISAO",
+    "designacao": "SPO5245309",
+    "gtNome": "Vinicius-VTLA",
+    "posicionamento": "CIRCUITO EM ESTADO OPERACIONAL (“UP”) // PERMANECENDO EM MONITORAMENTO E AGUARDANDO EXECUÇÃO DA AÇÃO CORRETIVA PARA CONCLUSÃO E ENCERRAMENTO DEFINITIVO DO REPARO.// SEM PREVISAO",
+    "status": "Em andamento",
+    "dataHora": "28/05/2026, 16:46:01",
+    "ultimaAtualizacao": "28/05/2026, 16:46:01",
+    "historico": [
+      {
+        "data": "28/05/2026, 16:46:01",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779995325393,
+    "protocolo": "ATD-1779995325393",
+    "resumo": "Designação: SPO0445981\nGT NOME: VINICIUS-VTAL\nPOSICIONAMENTO: Nº do TT:  410660//ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H",
+    "designacao": "SPO0445981",
+    "gtNome": "VINICIUS-VTAL",
+    "posicionamento": "Nº do TT:  410660//ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H",
+    "status": "Aberto",
+    "dataHora": "28/05/2026, 16:08:45",
+    "ultimaAtualizacao": "28/05/2026, 16:08:45",
+    "historico": [
+      {
+        "data": "28/05/2026, 16:08:45",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932848173,
+    "protocolo": "ATD-1779932848173",
+    "resumo": "Designação: SLS5362431\nGT NOME: MARIA - N2\nPOSICIONAMENTO: Nº do TT:410268 // INFORMA QUE O CHAMDO SERÁ REABERTO // CONTENDO AS INFORMAÇÕES DO CLIENTE (ARTHUR - CASSI - *POSICIONAMENTO: NÃO VALIDA// CONTINUA ALARMADO) // DIRECIONADO A EQUIPE DE TRIAGEM//",
+    "designacao": "SLS5362431",
+    "gtNome": "MARIA - N2",
+    "posicionamento": "Nº do TT:410268 // INFORMA QUE O CHAMDO SERÁ REABERTO // CONTENDO AS INFORMAÇÕES DO CLIENTE (ARTHUR - CASSI - *POSICIONAMENTO: NÃO VALIDA// CONTINUA ALARMADO) // DIRECIONADO A EQUIPE DE TRIAGEM//",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:47:28",
+    "ultimaAtualizacao": "27/05/2026, 22:47:28",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:47:28",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932821012,
+    "protocolo": "ATD-1779932821012",
+    "resumo": "Designação: SPO5245301\nGT NOME: ARTHUR - CASSI\nPOSICIONAMENTO: INFORMA NORMALIZADO 27/05 AS 16:53//VALIDADO -----------------",
+    "designacao": "SPO5245301",
+    "gtNome": "ARTHUR - CASSI",
+    "posicionamento": "INFORMA NORMALIZADO 27/05 AS 16:53//VALIDADO -----------------",
+    "status": "Concluído",
+    "dataHora": "27/05/2026, 22:47:01",
+    "ultimaAtualizacao": "27/05/2026, 22:47:01",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:47:01",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932802439,
+    "protocolo": "ATD-1779932802439",
+    "resumo": "Designação: CBA0477000\nGT NOME: LOUIZE\nPOSICIONAMENTO: FALHA MASSIVA ENCERRADA //FOI ROMP BR163 SORRISO-SENTIDO SINOP - PROX TREVO DE VERA// DISTANC. ROMPITURA 70KM DE SINOP//AGUARDANDO VALIDAÇÃO//SEM PREVISAO",
+    "designacao": "CBA0477000",
+    "gtNome": "LOUIZE",
+    "posicionamento": "FALHA MASSIVA ENCERRADA //FOI ROMP BR163 SORRISO-SENTIDO SINOP - PROX TREVO DE VERA// DISTANC. ROMPITURA 70KM DE SINOP//AGUARDANDO VALIDAÇÃO//SEM PREVISAO",
+    "status": "Em andamento",
+    "dataHora": "27/05/2026, 22:46:42",
+    "ultimaAtualizacao": "27/05/2026, 22:46:42",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:46:42",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932790983,
+    "protocolo": "ATD-1779932790983",
+    "resumo": "Designação: CBA0478848\nGT NOME: LOUISE\nPOSICIONAMENTO: *Nº do TT:410221--ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H -----------------",
+    "designacao": "CBA0478848",
+    "gtNome": "LOUISE",
+    "posicionamento": "*Nº do TT:410221--ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H -----------------",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:46:30",
+    "ultimaAtualizacao": "27/05/2026, 22:46:30",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:46:30",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932768798,
+    "protocolo": "ATD-1779932768798",
+    "resumo": "Designação: CBA0477059\nGT NOME: DANIEL\nPOSICIONAMENTO: Nº do TT:410172--ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H",
+    "designacao": "CBA0477059",
+    "gtNome": "DANIEL",
+    "posicionamento": "Nº do TT:410172--ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:46:08",
+    "ultimaAtualizacao": "27/05/2026, 22:46:08",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:46:08",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932744040,
+    "protocolo": "ATD-1779932744040",
+    "resumo": "Designação: CBA0475921\nGT NOME: DANIEL\nPOSICIONAMENTO: Nº do TT:410144// ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H// -----------------",
+    "designacao": "CBA0475921",
+    "gtNome": "DANIEL",
+    "posicionamento": "Nº do TT:410144// ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H// -----------------",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:45:44",
+    "ultimaAtualizacao": "27/05/2026, 22:45:44",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:45:44",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932719050,
+    "protocolo": "ATD-1779932719050",
+    "resumo": "Designação: CBA0475914\nGT NOME: Daniel\nPOSICIONAMENTO: *Nº do TT:410138-ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H//  -----------------",
+    "designacao": "CBA0475914",
+    "gtNome": "Daniel",
+    "posicionamento": "*Nº do TT:410138-ABERTO// ENCAMINHADO PARA TRIAGEM// RETORNA PARA POSICIONAMENTO EM 2H//  -----------------",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:45:19",
+    "ultimaAtualizacao": "27/05/2026, 22:45:19",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:45:19",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932687293,
+    "protocolo": "ATD-1779932687293",
+    "resumo": "Designação: CBA0477655\nGT NOME: LOUIZE - N1 \nPOSICIONAMENTO: FALHA MASSIVA // EQUIP FIBRA//SUPERVISOR LUAN SEM CONTATO COM A EQUIPE // AREA DE SOMBRA// SEM PREVISAO//",
+    "designacao": "CBA0477655",
+    "gtNome": "LOUIZE - N1 ",
+    "posicionamento": "FALHA MASSIVA // EQUIP FIBRA//SUPERVISOR LUAN SEM CONTATO COM A EQUIPE // AREA DE SOMBRA// SEM PREVISAO//",
+    "status": "Em andamento",
+    "dataHora": "27/05/2026, 22:44:47",
+    "ultimaAtualizacao": "27/05/2026, 22:44:47",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:44:47",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932670752,
+    "protocolo": "ATD-1779932670752",
+    "resumo": "Designação: CBA0477013\nGT NOME: LOUIZE- N1\nPOSICIONAMENTO: FALHA MASSIVA // EQUIP FIBRA//SUPERVISOR LUAN SEM CONTATO COM A EQUIPE // AREA DE SOMBRA// SEM PREVISAO//",
+    "designacao": "CBA0477013",
+    "gtNome": "LOUIZE- N1",
+    "posicionamento": "FALHA MASSIVA // EQUIP FIBRA//SUPERVISOR LUAN SEM CONTATO COM A EQUIPE // AREA DE SOMBRA// SEM PREVISAO//",
+    "status": "Em andamento",
+    "dataHora": "27/05/2026, 22:44:30",
+    "ultimaAtualizacao": "27/05/2026, 22:44:30",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:44:30",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932649630,
+    "protocolo": "ATD-1779932649630",
+    "resumo": "Designação: CBA0475648\nGT NOME: LOUIZE - N1\nPOSICIONAMENTO:  FALHA MASSIVA // EQUIP FIBRA//SUPERVISOR LUAN SEM CONTATO COM A EQUIPE // AREA DE SOMBRA// SEM PREVISAO//",
+    "designacao": "CBA0475648",
+    "gtNome": "LOUIZE - N1",
+    "posicionamento": " FALHA MASSIVA // EQUIP FIBRA//SUPERVISOR LUAN SEM CONTATO COM A EQUIPE // AREA DE SOMBRA// SEM PREVISAO//",
+    "status": "Em andamento",
+    "dataHora": "27/05/2026, 22:44:09",
+    "ultimaAtualizacao": "27/05/2026, 22:44:09",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:44:09",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932618422,
+    "protocolo": "ATD-1779932618422",
+    "resumo": "Designação: CBA0490532\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO:  (INFORMA QUE QUE ESTA NO CLDV // ESCALONADO // técnico efetuando outra atividade em araputanga e, assim que finalizar, dará início na tratativa do link.//SEM PREVISAO",
+    "designacao": "CBA0490532",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": " (INFORMA QUE QUE ESTA NO CLDV // ESCALONADO // técnico efetuando outra atividade em araputanga e, assim que finalizar, dará início na tratativa do link.//SEM PREVISAO",
+    "status": "Em andamento",
+    "dataHora": "27/05/2026, 22:43:38",
+    "ultimaAtualizacao": "27/05/2026, 22:43:38",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:43:38",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932608080,
+    "protocolo": "ATD-1779932608080",
+    "resumo": "Designação: CBA0464274\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO: EM TESTE REMOTO// INVESTIGANDO CAUSA RAIZ// PREVISAO APOS AS 19H",
+    "designacao": "CBA0464274",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "EM TESTE REMOTO// INVESTIGANDO CAUSA RAIZ// PREVISAO APOS AS 19H",
+    "status": "Em andamento",
+    "dataHora": "27/05/2026, 22:43:28",
+    "ultimaAtualizacao": "27/05/2026, 22:43:28",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:43:28",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932587958,
+    "protocolo": "ATD-1779932587958",
+    "resumo": "Designação: CBA0475791\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO: MASSIVA // INFORMA QUE EQUIPE ATUANDO// AREA DE SOMBRA// AGUARDANDO RETORNO// SEM PREVISAO//",
+    "designacao": "CBA0475791",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "MASSIVA // INFORMA QUE EQUIPE ATUANDO// AREA DE SOMBRA// AGUARDANDO RETORNO// SEM PREVISAO//",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:43:07",
+    "ultimaAtualizacao": "27/05/2026, 22:43:07",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:43:07",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932572002,
+    "protocolo": "ATD-1779932572002",
+    "resumo": "Designação: CBA0476184\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO: NORMALIZA 27/05/26  16:25// VALIDADO POR FABIO MANSHETY// EQUIPAMENTO DESLIGADO NO CLIENTE",
+    "designacao": "CBA0476184",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "NORMALIZA 27/05/26  16:25// VALIDADO POR FABIO MANSHETY// EQUIPAMENTO DESLIGADO NO CLIENTE",
+    "status": "Concluído",
+    "dataHora": "27/05/2026, 22:42:52",
+    "ultimaAtualizacao": "27/05/2026, 22:42:52",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:42:52",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932556957,
+    "protocolo": "ATD-1779932556957",
+    "resumo": "Designação: CBA0477000\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO:  MASSIVA // INFORMA QUE EQUIPE ATUANDO// AREA DE SOMBRA// AGUARDANDO RETORNO// SEM PREVISAO//",
+    "designacao": "CBA0477000",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": " MASSIVA // INFORMA QUE EQUIPE ATUANDO// AREA DE SOMBRA// AGUARDANDO RETORNO// SEM PREVISAO//",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:42:36",
+    "ultimaAtualizacao": "27/05/2026, 22:42:36",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:42:36",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932518870,
+    "protocolo": "ATD-1779932518870",
+    "resumo": "Designação: IIE5046994\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO: NORMALIZADO 27/05/26 12:48//REALIZADO TESTE REF. CN:31/CH:3045-9650//",
+    "designacao": "IIE5046994",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "NORMALIZADO 27/05/26 12:48//REALIZADO TESTE REF. CN:31/CH:3045-9650//",
+    "status": "Concluído",
+    "dataHora": "27/05/2026, 22:41:58",
+    "ultimaAtualizacao": "27/05/2026, 22:41:58",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:41:58",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932501579,
+    "protocolo": "ATD-1779932501579",
+    "resumo": "Designação: NTL5255859\nGT NOME:  MARIA LUIZA\nPOSICIONAMENTO:  NORMALIZADO 27/05/26 12:13// FIBRA OK//SEM ATUAÇÃO//",
+    "designacao": "NTL5255859",
+    "gtNome": " MARIA LUIZA",
+    "posicionamento": " NORMALIZADO 27/05/26 12:13// FIBRA OK//SEM ATUAÇÃO//",
+    "status": "Concluído",
+    "dataHora": "27/05/2026, 22:41:41",
+    "ultimaAtualizacao": "27/05/2026, 22:41:41",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:41:41",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932483780,
+    "protocolo": "ATD-1779932483780",
+    "resumo": "Designação: BSA0770290\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO:  INFORMA MASSIVA DE TRANSMISSÃO // SEM PREVISAO // FEITO ESACALONAMENTO//retorno para posicionamento em 2h",
+    "designacao": "BSA0770290",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": " INFORMA MASSIVA DE TRANSMISSÃO // SEM PREVISAO // FEITO ESACALONAMENTO//retorno para posicionamento em 2h",
+    "status": "Em andamento",
+    "dataHora": "27/05/2026, 22:41:23",
+    "ultimaAtualizacao": "27/05/2026, 22:41:23",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:41:23",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932456714,
+    "protocolo": "ATD-1779932456715",
+    "resumo": "Designação: CTA0826943\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO: GT NOME: MARIA LUIZA *POSICIONAMENTO: NORMALIZADO 27/05/26 12:39 EQ. TRANSMISSÃO //CIRCUITO MIGRADO DE ESTAÇÃO//VALIDADO COM VINICIUS-CASSI// PERSONALIZADO - PERÍMETRO: VTAL AUTORIZADOR: CAIXA DE ASSISTENCIA DOS FUNCIONARIOS DO BANCO DO - TEL: 32125023 INICIO FALHA: 26-05-2026 12:50:17 FIM FALHA: 27-05-2026 14:45:45 NORMALIZACAO LINK: 27-05-2026 14:45:45 DESCRIÇÃO: [COMUNICAÇÃO DE DADOS] ACESSO BRT-SEM CONECTIVIDADE LOG: Teste de Triagem não realizado. OBSERVAÇÃO: *GT NOME: MARIA LUIZA -----------------",
+    "designacao": "CTA0826943",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "GT NOME: MARIA LUIZA *POSICIONAMENTO: NORMALIZADO 27/05/26 12:39 EQ. TRANSMISSÃO //CIRCUITO MIGRADO DE ESTAÇÃO//VALIDADO COM VINICIUS-CASSI// PERSONALIZADO - PERÍMETRO: VTAL AUTORIZADOR: CAIXA DE ASSISTENCIA DOS FUNCIONARIOS DO BANCO DO - TEL: 32125023 INICIO FALHA: 26-05-2026 12:50:17 FIM FALHA: 27-05-2026 14:45:45 NORMALIZACAO LINK: 27-05-2026 14:45:45 DESCRIÇÃO: [COMUNICAÇÃO DE DADOS] ACESSO BRT-SEM CONECTIVIDADE LOG: Teste de Triagem não realizado. OBSERVAÇÃO: *GT NOME: MARIA LUIZA -----------------",
+    "status": "Concluído",
+    "dataHora": "27/05/2026, 22:40:56",
+    "ultimaAtualizacao": "27/05/2026, 22:40:56",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:40:56",
+        "acao": "Atendimento criado"
+      }
+    ]
+  },
+  {
+    "id": 1779932420337,
+    "protocolo": "ATD-1779932420337",
+    "resumo": "Designação: SPO5245301\nGT NOME: MARIA LUIZA\nPOSICIONAMENTO: INFORMA MASSIVA DE TRANSMISSÃO // SEM PREVISAO // FEITO ESACALONAMENTO SUP.LUCAS-DF//Retorno para posicionamento em 2h",
+    "designacao": "SPO5245301",
+    "gtNome": "MARIA LUIZA",
+    "posicionamento": "INFORMA MASSIVA DE TRANSMISSÃO // SEM PREVISAO // FEITO ESACALONAMENTO SUP.LUCAS-DF//Retorno para posicionamento em 2h",
+    "status": "Aberto",
+    "dataHora": "27/05/2026, 22:40:20",
+    "ultimaAtualizacao": "27/05/2026, 22:40:20",
+    "historico": [
+      {
+        "data": "27/05/2026, 22:40:20",
+        "acao": "Atendimento criado"
+      }
+    ]
+  }
+]
