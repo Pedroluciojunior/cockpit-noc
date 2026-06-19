@@ -1,0 +1,186 @@
+[
+  {
+    "id": 1781058194004,
+    "protocolo": "ATD-1781058194004",
+    "designacao": "CBA0477016",
+    "gtNome": "MARIA-VTAL-N2",
+    "resumo": "INFORMA QUE ESTAVA ASSOCIADO A MASSIVO // FALHA CAUSA ROEDOR -CABO OPTICO-// APOS FUSAO NORMALIZADO AS 22:02//EM PROCESSO DE ENCERRAMENTO\n",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "09/06/2026, 23:23:14",
+    "ultimaAtualizacao": "09/06/2026, 23:23:36",
+    "historico": [
+      {
+        "data": "09/06/2026, 23:23:36",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "09/06/2026, 23:23:14",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781058130361,
+    "protocolo": "ATD-1781058130361",
+    "designacao": "CBA0477027",
+    "gtNome": "MARIANA-VTAL-N2",
+    "resumo": "[em trataiva posto de fibra // inf que equip vai iniciar trataiva // prev de teste dna fibra na estaç no dia 10/06 apartoir das 12:30h\n",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "09/06/2026, 23:22:10",
+    "ultimaAtualizacao": "09/06/2026, 23:22:35",
+    "historico": [
+      {
+        "data": "09/06/2026, 23:22:35",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "09/06/2026, 23:22:10",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781029711562,
+    "protocolo": "ATD-09062026152831",
+    "resumo": "[23:21] - \n\n[15:28] - EM TRATATIVA EQUIPE DE DADOS// ESCALONADO SUP DE DADOS, SR LUIZ// SEM PREVISAO//",
+    "designacao": "CBA0475297",
+    "gtNome": "AUREA-VTAL -N1",
+    "status": "Encerrado",
+    "text": "ATD-09062026152831",
+    "qtdAtualizacoes": 1,
+    "dataHora": "09/06/2026, 15:28:31",
+    "ultimaAtualizacao": "09/06/2026, 23:21:25",
+    "protocolosLista": [
+      {
+        "numero": "ATD-09062026152831",
+        "data": "09/06/26 - 15:28"
+      }
+    ],
+    "historico": [
+      {
+        "data": "09/06/2026, 23:21:25",
+        "acao": "Status updated: Encerrado"
+      },
+      {
+        "data": "09/06/2026, 23:21:10",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "09/06/2026, 15:28:31",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781058049603,
+    "protocolo": "ATD-1781058049603",
+    "designacao": "CBA0475397",
+    "gtNome": "MARIANA-VTAL-N2",
+    "resumo": "[23:20] - ",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "09/06/2026, 23:20:49",
+    "ultimaAtualizacao": "09/06/2026, 23:20:52",
+    "historico": [
+      {
+        "data": "09/06/2026, 23:20:52",
+        "acao": "Status updated: Encerrado"
+      },
+      {
+        "data": "09/06/2026, 23:20:49",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781058021883,
+    "protocolo": "ATD-1781058021883",
+    "designacao": "CBA0475652",
+    "gtNome": "AUREA-VTAL",
+    "resumo": "[23:20] - ",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "09/06/2026, 23:20:21",
+    "ultimaAtualizacao": "09/06/2026, 23:20:21",
+    "historico": [
+      {
+        "data": "09/06/2026, 23:20:21",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781031107462,
+    "protocolo": "ATD-09062026155147",
+    "resumo": "[15:51] - NºTT:  300068//REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 2H//",
+    "designacao": "OCO5011732",
+    "gtNome": "VINICIUS-VTAL",
+    "status": "Em andamento",
+    "text": "ATD-09062026155147",
+    "qtdAtualizacoes": 0,
+    "dataHora": "09/06/2026, 15:51:47",
+    "ultimaAtualizacao": "09/06/2026, 15:51:47",
+    "protocolosLista": [
+      {
+        "numero": "ATD-09062026155147",
+        "data": "09/06/26 - 15:51"
+      }
+    ],
+    "historico": [
+      {
+        "data": "09/06/2026, 15:51:47",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781030657225,
+    "protocolo": "ATD-09062026154417",
+    "resumo": "[15:44] - ESTA COM EQUIOE DE DADOS EM TRATIVA / LINK DOWN// FOI ESCALONADO PARA AVERIGUAÇÃO // ESCALONADO SUP LUIZ, DADOS PARA MELHORES TRATATIVAS//",
+    "designacao": "CBA0477186",
+    "gtNome": "AUREA-VTAL-N1",
+    "status": "Em andamento",
+    "text": "ATD-09062026154417",
+    "qtdAtualizacoes": 0,
+    "dataHora": "09/06/2026, 15:44:17",
+    "ultimaAtualizacao": "09/06/2026, 15:44:17",
+    "protocolosLista": [
+      {
+        "numero": "ATD-09062026154417",
+        "data": "09/06/26 - 15:44"
+      }
+    ],
+    "historico": [
+      {
+        "data": "09/06/2026, 15:44:17",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781024867844,
+    "protocolo": "ATD-09062026140747",
+    "resumo": "[14:07] - SERVIÇO INOPERANTE//REPARO ABERTO PELA AUTOMAÇÃO//CHAMADO SOLICITADO À OPERADORA VTAL //com data promessa 09/06/2026 20:43.",
+    "designacao": "CBA0475761",
+    "gtNome": "WEB-VTAL",
+    "status": "Em andamento",
+    "text": "ATD-09062026140747",
+    "qtdAtualizacoes": 0,
+    "dataHora": "09/06/2026, 14:07:47",
+    "ultimaAtualizacao": "09/06/2026, 14:07:47",
+    "protocolosLista": [
+      {
+        "numero": "ATD-09062026140747",
+        "data": "09/06/26 - 14:07"
+      }
+    ],
+    "historico": [
+      {
+        "data": "09/06/2026, 14:07:47",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]

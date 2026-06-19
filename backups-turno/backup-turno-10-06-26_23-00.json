@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1781135386543,
+    "protocolo": "ATD-1781135386543",
+    "designacao": "BSA0768669",
+    "gtNome": "MARIA-VTAL-N1",
+    "resumo": "[22:18] - NORMALIZADO AS 21:14 VIA SUAP APOS PARCEIRIA CONJUNTA DAS VTAL COM OP VIVO// ESCALONADO SIP WAGNER AMARIO//EQP FAZENDO LANÇ 700MT CABO FIBRA// REALIZANDO 33 FUSÕES EM CADA EMENDA//ISSO //LINK UP//Resumo\nINFO: Teste concluído com sucesso\nPing Neighbor: PING com sucesso e sem perdas\nLatência Média: 8.97ms\nServiço: ies\nID do Serviço: 912002315\nNº Porta: 4/2/1\nÉ Bundle?: Não\nVLAN: 2043\nAddress: 200.199.249.241/30\nNeighbor: 200.199.249.242\nVelocidade (com base no rate): 15mbps\nInterface: BSA_0768669\n\n[20:49] - MASSIVO FIBRA // EM PARCEIRIA CONJUNTA DAS VTAL COM OP VIVO// ESCALONADO SIP WAGNER AMARIO//EQP FAZENDO LANÇ 700MT CABO FIBRA// REALIZANDO 33 FUSÕES EM CADA EMENDA//  SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "10/06/2026, 20:49:46",
+    "ultimaAtualizacao": "10/06/2026, 22:18:07",
+    "historico": [
+      {
+        "data": "10/06/2026, 22:18:07",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "10/06/2026, 20:49:46",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781135657854,
+    "protocolo": "ATD-1781135657854",
+    "designacao": "CBA0475798",
+    "gtNome": "WEB-VTAL",
+    "resumo": "[20:54] - Vtal: DATA: 10/06/2026 18:43 MENSAGEM: Foi necessário um agendamento das atividades para continuidade da tratativa do chamado pelo seguinte motivo: necessario agendamento com o cliente para continuacao da tratativa. Expediente do cliente encerrado, retorno 11/06/2026 08:00. A data para retomada da atividade 11/06/2026 09:00",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 20:54:17",
+    "ultimaAtualizacao": "10/06/2026, 20:54:17",
+    "historico": [
+      {
+        "data": "10/06/2026, 20:54:17",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781135321078,
+    "protocolo": "ATD-1781135321078",
+    "designacao": "RPO5012498",
+    "gtNome": "MARIANA-VTAL-N2",
+    "resumo": "[20:48] - ENCERRADO POSTO DE DADOS// NORMALIZAÇÃO POR TESTE REMOTO// \n----ARTHUR CASSI\nResumo\nInterface: RPO_5012498\nServiço: ies\nID do Serviço: 176263\nNº Porta: 5/2/9\nÉ Bundle?: Não\nVLAN: 2027\nAddress: 200.187.156.173/30\nNeighbor: 200.187.156.174\nVelocidade (com base no rate): 20mbps\nPing Neighbor: PING com sucesso e sem perdas\nLatência Média: 1.11ms\nINFO: Teste concluído com sucesso",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 20:48:41",
+    "ultimaAtualizacao": "10/06/2026, 21:48:29",
+    "historico": [
+      {
+        "data": "10/06/2026, 21:48:29",
+        "acao": "Status updated: Encerrado"
+      },
+      {
+        "data": "10/06/2026, 20:48:41",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781134882522,
+    "protocolo": "ATD-1781134882522",
+    "designacao": "CBA0475797",
+    "gtNome": "MARIANA-VTAL-N2",
+    "resumo": "[20:41] - massivo em aberto //massivo posto Fibras//EQP NO LOCAL// FALHA PROVOCADA POR IMPLANTAÇÃO DE POSTES//AGUARDANDO TERCEIRTOS PARA LIBERAÇÃO DAS PONTAS // SEM PREVISAO//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 20:41:22",
+    "ultimaAtualizacao": "10/06/2026, 20:48:29",
+    "historico": [
+      {
+        "data": "10/06/2026, 20:48:29",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "10/06/2026, 20:43:41",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "10/06/2026, 20:41:22",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781134636019,
+    "protocolo": "ATD-1781134636019",
+    "designacao": "CBA0477027",
+    "gtNome": "MARIANA-VTAL-N2",
+    "resumo": "[20:37] - ENCERRADO EQP FIBRAS//CAUSA ROMPIMENTO-CARGA ALTYA/AÇÃO LANÇ 200MT CABOS E 2CX DE EMENDA//UP AS 16:38//VALIDADO COM CLIENTE//",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 20:37:16",
+    "ultimaAtualizacao": "10/06/2026, 20:37:19",
+    "historico": [
+      {
+        "data": "10/06/2026, 20:37:19",
+        "acao": "Status updated: Encerrado"
+      },
+      {
+        "data": "10/06/2026, 20:37:16",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781134287620,
+    "protocolo": "ATD-1781134287620",
+    "designacao": "CBA0477186",
+    "gtNome": "MARIANA-VTAL-N2",
+    "resumo": "[20:31] - ENCERRADO NO POSTO DE DADOS AS 14:18H // TEC INFORMA QUE CLIENTE DESLIGOU EQUIPAMENTO//APOS RE-LIGAR CIRCUITO UP//COD ENCERRAMENTO 231//TODAVIA AGUARDANDO VALIDAÇÃO DO CLIENTE POIS CONSTA DOWN//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 20:31:27",
+    "ultimaAtualizacao": "10/06/2026, 20:31:27",
+    "historico": [
+      {
+        "data": "10/06/2026, 20:31:27",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781119803863,
+    "protocolo": "ATD-1781119803863",
+    "designacao": "CBA0475777",
+    "gtNome": "NÃO INFORMADO",
+    "resumo": "[16:30] - OCORRÊNCIA EM TRIAGEM NA REDE//IDENTIFICAÇÃO DA FALHA EM ANDAMENTO// Vtal em 10/06/2026 16:10, com data promessa 11/06/2026 03:13.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 16:30:03",
+    "ultimaAtualizacao": "10/06/2026, 16:30:03",
+    "historico": [
+      {
+        "data": "10/06/2026, 16:30:03",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781119707886,
+    "protocolo": "ATD-1781119707886",
+    "designacao": "NXV5010048",
+    "gtNome": "NÃO INFORMADO",
+    "resumo": "[16:28] - Encaminhado e-mail em 10/06 16:24 para equipe da MAMInfo solicitando Posicionamento.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 16:28:27",
+    "ultimaAtualizacao": "10/06/2026, 16:28:27",
+    "historico": [
+      {
+        "data": "10/06/2026, 16:28:27",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781116743258,
+    "protocolo": "ATD-1781116743258",
+    "designacao": "CBA0490488",
+    "gtNome": "AUREA -VTAL-N1",
+    "resumo": "[15:39] - REALIZADO POSICIONAMNETO EQP GT VTAL -CLIENTE MANTEVE CONTATO ATRAVES DO 0800 INFORMANDO:-CLIENTE INFORMA QUE A CENTRAL TELEFÔNICA FOI SUBMETIDA À MANUTENÇÃO E RECONFIGURAÇÃO POR EMPRESA ESPECIALIZADA, NORMALIZANDO AS CHAMADAS LOCAIS PARA FIXO E MÓVEL. // PERSISTE FALHA APENAS EM LIGAÇÕES INTERURBANAS (DDD). // SEGUNDO O RESPONSÁVEL TÉCNICO, A CENTRAL ENCONTRA-SE DEVIDAMENTE CONFIGURADA E LIBERADA PARA ESTE TIPO DE TRÁFEGO. // INDICANDO POSSÍVEL INCONSISTÊNCIA DE ROTEAMENTO NA REDE DA OPERADORA. // ---CASO ESCALONADO PARA COB2B. // SOLICITADA PRIORIDADE NO TRATAMENTO. // SEM PREVISÃO DE NORMALIZAÇÃO ATÉ O MOMENTO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 15:39:03",
+    "ultimaAtualizacao": "10/06/2026, 15:39:03",
+    "historico": [
+      {
+        "data": "10/06/2026, 15:39:03",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781114456229,
+    "protocolo": "ATD-1781114456229",
+    "designacao": "CBA0476182",
+    "gtNome": "VINICIUS",
+    "resumo": "[15:00] - SERVIÇO INOPERANTE//REPARO ABERTO PELA AUTOMAÇÃO//CHAMADO SOLICITADO À OPERADORA VTAL//SEM PREVISÃO DE NORMALIZAÇÃO//RETORNO DE  POSICIONAMENTO  EM 2H//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "10/06/2026, 15:00:56",
+    "ultimaAtualizacao": "10/06/2026, 15:00:56",
+    "historico": [
+      {
+        "data": "10/06/2026, 15:00:56",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
