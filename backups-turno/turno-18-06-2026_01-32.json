@@ -1,0 +1,346 @@
+[
+  {
+    "id": 1781802279704.8452,
+    "protocolo": "ATD-1781802279704-791",
+    "designacao": "KAS5010086",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[22:21] - // REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL ÀS ÁREAS RESPONSÁVEIS  // ATÉ O MOMENTO, NÃO HOUVE RETORNO OU ATUALIZAÇÃO DAS TRATATIVAS POR PARTE DA OPERADORA/EQUIPE RESPONSÁVEL. // CHAMADO PERMANECE EM ACOMPANHAMENTO. // O CASO SERÁ RETOMADO E ACOMPANHADO NO PRÓXIMO DIA ÚTIL, AGUARDANDO POSICIONAMENTO DAS ÁREAS ENVOLVIDAS QUANTO AO ANDAMENTO E PREVISÃO DE NORMALIZAÇÃO. //\n\n[20:11] - FALHA: INOPERANTE  AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS// SEM RESPOSTA DA PARCEIRA  QUICK// ENCAMINHADO E-MAIL\n\n[17:07] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (17:07) ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[14:04] - FALHA: INOPERANTE AÇÃO: EM TRIAGEM NA PROVEDORA PARCEIRA.//\nSOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL (14:03H) À ÁREA COMPETENTE, AGUARDANDO RETORNO WITH ESTIMATIVA DE NORMALIZAÇÃO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "18/06/2026, 14:04:39",
+    "ultimaAtualizacao": "18/06/2026, 22:21:40",
+    "historico": [
+      {
+        "data": "18/06/2026, 22:21:40",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 20:11:33",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 17:07:41",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 14:04:39",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781812939460.3896,
+    "protocolo": "ATD-1781812939460-700",
+    "designacao": "PTP5010073",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[22:21] - // REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL ÀS ÁREAS RESPONSÁVEIS  // ATÉ O MOMENTO, NÃO HOUVE RETORNO OU ATUALIZAÇÃO DAS TRATATIVAS POR PARTE DA OPERADORA/EQUIPE RESPONSÁVEL. // CHAMADO PERMANECE EM ACOMPANHAMENTO. // O CASO SERÁ RETOMADO E ACOMPANHADO NO PRÓXIMO DIA ÚTIL, AGUARDANDO POSICIONAMENTO DAS ÁREAS ENVOLVIDAS QUANTO AO ANDAMENTO E PREVISÃO DE NORMALIZAÇÃO. //\n\n[20:07] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL  20:06H ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[17:02] - NºTT: NÃO INFORMADO // DESCRIÇÃO: SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK/MEGALINK VIA EMAIL 17:00H\n//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "18/06/2026, 17:02:19",
+    "ultimaAtualizacao": "18/06/2026, 22:21:40",
+    "historico": [
+      {
+        "data": "18/06/2026, 22:21:40",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 20:07:21",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 17:02:19",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781831867510.388,
+    "protocolo": "ATD-1781831867510-531",
+    "designacao": "BLM5701787",
+    "gtNome": "RONAN (CASSI)",
+    "resumo": "[22:17] - #015#\n\nFALHA: ENCONTRADO OK - SEM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 18/06/2026 18:26\n\nNORMALIZAÇÃO: 18/06/26 17:24\n\nCAUSA: .---\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA APÓS EFETUAR TESTES NO LINK// RONAN (CASSI)  VALIDOU NORMALIZAÇÃO// NORMALIDO AS 17:24H",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 22:17:47",
+    "ultimaAtualizacao": "18/06/2026, 22:17:47",
+    "historico": [
+      {
+        "data": "18/06/2026, 22:17:47",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781810215312.0247,
+    "protocolo": "ATD-1781810215312-601",
+    "designacao": "ROI5010299",
+    "gtNome": "MEGA TELECOM",
+    "resumo": "[21:53] - #00105#\n\nFALHA: ENCONTRADO OK - COM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 18/06/2026 15:52\n\nNORMALIZAÇÃO: 18/06/26 16:00\n\nCAUSA: .NÃO INFORMADA\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA SEM INTERVENÇÃO TÉCNICA NO LINK\n\n[20:41] - // FALHA IDENTIFICADA PELA OPERADORA: DUPLO ROMPIMENTO NO BACKBONE. // EQUIPES TÉCNICAS MOBILIZADAS PARA ATUAÇÃO EM CAMPO. // CONFORME ÚLTIMA ATUALIZAÇÃO, UM DOS PONTOS DE ROMPIMENTO JÁ FOI LOCALIZADO. // TRABALHOS DE IDENTIFICAÇÃO E REPARO DO SEGUNDO PONTO SEGUEM EM ANDAMENTO. // PREVISÃO DE NORMALIZAÇÃO (ETR) INFORMADA PARA **18/06/2026 ÀS 22:00**. // CHAMADO PERMANECE EM ACOMPANHAMENTO AGUARDANDO CONCLUSÃO DOS REPAROS E RESTABELECIMENTO DO SERVIÇO. //\n\n[18:37] - SOLICITADO APOIO DA EQUIPE SOC POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL (18:37), AGUARDANDO RETORNO PARA CONTINUIDADE DA ANÁLISE.\n\n[16:26] - // RECEBIDO RETORNO REFERENTE AO TICKET Nº 188389. // SOLICITAÇÃO ANALISADA E ENCAMINHADA PARA A EQUIPE DE NOC PARA CONTINUIDADE DAS ATIVIDADES. // DEMANDAS RELACIONADAS ÀS CONFIGURAÇÕES ENCONTRAM-SE SOB RESPONSABILIDADE DO NOC. // AGUARDANDO ATUAÇÃO DA EQUIPE ESPECIALIZADA E ATUALIZAÇÃO SOBRE O ANDAMENTO DA CONFIGURAÇÃO. // CHAMADO PERMANECE EM ACOMPANHAMENTO. //\n\n[16:16] - NºTT: NÃO INFORMADO // DESCRIÇÃO: SERVIÇO INOPERANTE////CHAMADO SOLICITADO À OPERADORA MEGA TELECOM\n//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 4,
+    "dataHora": "18/06/2026, 16:16:55",
+    "ultimaAtualizacao": "18/06/2026, 21:53:18",
+    "historico": [
+      {
+        "data": "18/06/2026, 21:53:18",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "18/06/2026, 20:41:15",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 18:37:40",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 16:26:25",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 16:16:55",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781818154027.6064,
+    "protocolo": "ATD-1781818154027-229",
+    "designacao": "NBAN5010040",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[20:38] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (20:38) ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[18:29] - NºTT: NÃO INFORMADO // DESCRIÇÃO: SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK VIA EMAIL (18:28)//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "18/06/2026, 18:29:14",
+    "ultimaAtualizacao": "18/06/2026, 20:38:50",
+    "historico": [
+      {
+        "data": "18/06/2026, 20:38:50",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 18:29:14",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781814015060.5115,
+    "protocolo": "ATD-1781814015060-867",
+    "designacao": "TGS5010129",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[20:32] - // VERIFICADO QUE O CIRCUITO TGS5010129 (TGSMT100669) ENCONTRA-SE UP EM FERRAMENTA DE MONITORAMENTO. // SOLICITADO POSICIONAMENTO À OPERADORA QUANTO AO STATUS DO REPARO. // REQUISITADO DETALHAMENTO DAS AÇÕES EXECUTADAS PARA RESTABELECIMENTO DO SERVIÇO (VIAEMAIL-20:31). // INFORMAÇÃO NECESSÁRIA PARA VALIDAÇÃO DA NORMALIZAÇÃO E POSSÍVEL ENCERRAMENTO DO CHAMADO. // AGUARDANDO RETORNO DA OPERADORA COM EVIDÊNCIAS E DESCRIÇÃO DA TRATATIVA REALIZADA. // CHAMADO PERMANECE EM ACOMPANHAMENTO. //\n\n[17:20] - NºTT: NÃO INFORMADO // DESCRIÇÃO: SERVIÇO INOPERANTE////CHAMADO SOLICITADO À OPERADORA QUICK-17:19_VIA-EMAIL//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "18/06/2026, 17:20:15",
+    "ultimaAtualizacao": "18/06/2026, 20:32:24",
+    "historico": [
+      {
+        "data": "18/06/2026, 20:32:24",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 17:20:15",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781802657636.4321,
+    "protocolo": "ATD-1781802657636-296",
+    "designacao": "CCS5010225",
+    "gtNome": "MAGNO",
+    "resumo": "[20:22] - // ENCAMINHADO E-MAIL AO GESTOR MAGNO SOLICITANDO VALIDAÇÃO DA SITUAÇÃO DO CIRCUITO CCS5010225 JUNTO AO CLIENTE. // EM TESTES REALIZADOS POR NOSSA EQUIPE, O CIRCUITO PERMANECE DOWN. // ENTRETANTO, A OPERADORA/PARCEIRA INFORMA QUE O CIRCUITO ENCONTRA-SE UP. // SOLICITADA CONFIRMAÇÃO DO STATUS REAL DO SERVIÇO JUNTO AO CLIENTE PARA ALINHAMENTO DAS PRÓXIMAS TRATATIVAS. // CHAMADO PERMANECE EM ACOMPANHAMENTO AGUARDANDO RETORNO DO GESTOR E VALIDAÇÃO DO CLIENTE. //\n\n[17:39] - VIA EMAIL 15H// RECEBIDO RETORNO DA OPERADORA REFERENTE AO CIRCUITO **OI CCS 5010225**. // PROTOCOLO **MAMTECH2026061807** PERMANECE EM TRATAMENTO. // CIRCUITO ENCONTRA-SE **INOPERANTE**. // OPERADORA INFORMA QUE A CAUSA DA FALHA ESTÁ EM PROCESSO DE INVESTIGAÇÃO. // EQUIPES TÉCNICAS ATUANDO PARA IDENTIFICAÇÃO E CORREÇÃO DO INCIDENTE. // ATÉ O MOMENTO, NÃO HÁ PREVISÃO DE NORMALIZAÇÃO INFORMADA. // CHAMADO SEGUE EM ACOMPANHAMENTO AGUARDANDO NOVAS ATUALIZAÇÕES DA OPERADORA. //\n\n[15:11] - CIRCUITO OI CCS 5010225 ENCONTRA-SE INOPERANTE. CHAMADO REGISTRADO SOB O PROTOCOLO MAMTECH2026061807. A OPERADORA INFORMOU QUE A CAUSA DA FALHA AINDA ESTÁ EM INVESTIGAÇÃO E QUE EQUIPES TÉCNICAS ESTÃO ATUANDO PARA IDENTIFICAR E CORRIGIR O PROBLEMA. ATÉ O MOMENTO, NÃO HÁ PREVISÃO DE NORMALIZAÇÃO DO SERVIÇO. AGUARDANDO ATUALIZAÇÃO DA OPERADORA.\n\n[14:10] - NºTT: NÃO INFORMADO // DESCRIÇÃO: FALHA -INOPERANCIA //AÇÃO - //\n//CHAMADO SOLICITADO À OPERADORA MAMTECH\n//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "18/06/2026, 14:10:57",
+    "ultimaAtualizacao": "18/06/2026, 20:22:24",
+    "historico": [
+      {
+        "data": "18/06/2026, 20:22:24",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 17:39:18",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 15:11:10",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 14:10:57",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781805643871.7903,
+    "protocolo": "ATD-1781805643871-628",
+    "designacao": "AGPL5010001",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[17:36] - FALHA/ INOPERANTE// ENCAMINHADO SOLICITAÇÃO DE POSICIONAMENTO DA PERCEIRA // CIRCUITO UP//POREM PRECISAMOS DAS TRATAIVAS PARA PROCESSO DE ENCERRAMENTO//EMAIL ENVIAL 17:35H\n\n[15:00] - NºTT: NÃO INFORMADO // DESCRIÇÃO: FALHA - SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK/MEGALINK\n//SEM PREVISÃO DE NORMALIZAÇÃO//RETORNO PARA POSICIONAMENTO EM 3H",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "18/06/2026, 15:00:43",
+    "ultimaAtualizacao": "18/06/2026, 17:36:37",
+    "historico": [
+      {
+        "data": "18/06/2026, 17:36:37",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 15:00:43",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781814569289.6138,
+    "protocolo": "ATD-1781814569289-646",
+    "designacao": "CDE5010095",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[17:29] - #00105#\n\nFALHA: ENCONTRADO OK - COM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 12/06/2026 18:44\n\nNORMALIZAÇÃO: 18/06/26 13:45\n\nCAUSA: .NÃO INFORMADA\n\nSOLUÇÃO: // RECEBIDO RETORNO DO GESTOR INFORMANDO A NORMALIZAÇÃO DO CIRCUITO **CDE5010095**. // SERVIÇO RESTABELECIDO EM **18/06/2026 ÀS 13:45**. // NORMALIZAÇÃO VALIDADA JUNTO AO CLIENTE. // CIRCUITO OPERANDO DENTRO DA NORMALIDADE. // CHAMADO PASSÍVEL DE ENCERRAMENTO APÓS CONFIRMAÇÃO DOS REGISTROS. //",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 17:29:29",
+    "ultimaAtualizacao": "18/06/2026, 17:29:29",
+    "historico": [
+      {
+        "data": "18/06/2026, 17:29:29",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781814277368.4712,
+    "protocolo": "ATD-1781814277368-674",
+    "designacao": "NMGA5010014",
+    "gtNome": "CLIENTE ELESSANDRO",
+    "resumo": "[17:24] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL 17:24H ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 17:24:37",
+    "ultimaAtualizacao": "18/06/2026, 17:24:37",
+    "historico": [
+      {
+        "data": "18/06/2026, 17:24:37",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781809757820.595,
+    "protocolo": "ATD-1781809757820-364",
+    "designacao": "TXU5010017",
+    "gtNome": "MAMTECH",
+    "resumo": "[16:09] - SOLICITADO APOIO DA EQUIPE MAMTECH (ANA SILVA 16:08H)POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL, AGUARDANDO RETORNO PARA CONTINUIDADE DA ANÁLISE.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 16:09:17",
+    "ultimaAtualizacao": "18/06/2026, 16:09:17",
+    "historico": [
+      {
+        "data": "18/06/2026, 16:09:17",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781809048525.0242,
+    "protocolo": "ATD-1781809048525-274",
+    "designacao": "YTESTETTSTFHASCJHABJC",
+    "gtNome": "NÃO INFORMADO",
+    "resumo": "[15:57] - #123#\n\nFALHA: INÍCIO:\n\nINÍCIO: NORMALIZAÇÃO: 18/06/26 15:57\n\nNORMALIZAÇÃO: 18/06/26 15:57\n\nCAUSA: SOLUÇÃO:\n\nSOLUÇÃO: NÃO INFORMADO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 15:57:28",
+    "ultimaAtualizacao": "18/06/2026, 15:57:28",
+    "historico": [
+      {
+        "data": "18/06/2026, 15:57:28",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1781808566514.1936,
+    "protocolo": "ATD-1781808566514-403",
+    "designacao": "AUH5010005",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[15:49] - S: EM ACOMPANHAMENTO, AGUARDANDO RETORNO DO GESTOR COM POSICIONAMENTO ATUALIZADO. // PREVISÃO: AGUARDANDO INFORMAÇÃO DA OPERADORA. // ESCALADO: VIA E-MAIL. 17/06  15:52H #!",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 15:49:26",
+    "ultimaAtualizacao": "18/06/2026, 15:49:26",
+    "historico": [
+      {
+        "data": "18/06/2026, 15:49:26",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781806033242.8613,
+    "protocolo": "ATD-1781806033242-852",
+    "designacao": "SQU5010044",
+    "gtNome": "PORFÍRIO DOS SANTOS — TEL: (65) 99911-2599",
+    "resumo": "[15:38] -// Contato realizado com o cliente Sr. Porfírio dos Santos ((65) 99911-2599). // Cliente informa que a unidade passou por reforma predial durante aproximadamente 60 dias e que o link Oi está sem utilização. // Atualmente opera por meio de link redundante de outra operadora. // Solicita visita técnica para apoio na montagem, configuração e validação dos equipamentos. // Disponibilidade para atendimento em 19/06, das 07h30 às 11h30 ou das 13h às 17h. // Aguardando agendamento da equipe técnica. //\n\n[15:07] - NºTT: NÃO INFORMADO // DESCRIÇÃO: FALHA - \nSERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK/MEGALINK\n//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "18/06/2026, 15:07:13",
+    "ultimaAtualizacao": "18/06/2026, 15:41:38",
+    "historico": [
+      {
+        "data": "18/06/2026, 15:41:38",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "18/06/2026, 15:38:58",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "18/06/2026, 15:07:13",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1781807291315.7751,
+    "protocolo": "ATD-1781807291315-576",
+    "designacao": "QUICK/MEGALINK",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[15:28] - // CIRCUITO ENCONTRA-SE NORMALIZADO. // NÃO HOUVE NECESSIDADE DE ATUAÇÃO TÉCNICA POR PARTE DE NOSSA EQUIPE DURANTE O PERÍODO. // NÃO FORAM IDENTIFICADAS FALHAS NA INFRAESTRUTURA SOB NOSSA RESPONSABILIDADE. // RECOMENDAMOS A REALIZAÇÃO DE VERIFICAÇÕES NO AMBIENTE LOCAL DO CLIENTE, INCLUINDO EQUIPAMENTO FORTINET, CABEAMENTO FÍSICO, INTERFACES DE REDE E DEMAIS CONFIGURAÇÕES INTERNAS. // A MEDIDA VISA GARANTIR A ESTABILIDADE E O PLENO FUNCIONAMENTO DO CIRCUITO. // CHAMADO ENCERRADO COM SERVIÇO OPERANDO NORMALMENTE. //SERA MANTIDO CTT COM CLIENTE ATRAVES  CLIENTE: PORFÍRIO DOS SANTOS — TEL: (65) 99911-2599",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 15:28:11",
+    "ultimaAtualizacao": "18/06/2026, 15:28:11",
+    "historico": [
+      {
+        "data": "18/06/2026, 15:28:11",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781806566137.9941,
+    "protocolo": "ATD-1781806566137-973",
+    "designacao": "SZY5010018",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[15:16] - #0000#\n\nFALHA: REDE DE DADOS (OEMP) - TESTES DE TRANSMISSÃO\n\nINÍCIO: 18/06/2026 11:28\n\nNORMALIZAÇÃO: 18/06/26 14:48\n\nCAUSA: NÃO INFORMADO\n\nSOLUÇÃO: [OEMP RESET] FALHA RESTABELECIDA APÓS RESET NOS EQUIPAMENTOS//CIRCUITO RESTABELECIDO E OPERANDO NORMALMENTE.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "18/06/2026, 15:16:06",
+    "ultimaAtualizacao": "18/06/2026, 15:16:06",
+    "historico": [
+      {
+        "data": "18/06/2026, 15:16:06",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  }
+<<<<<<< HEAD
+]
+=======
+]
+>>>>>>> 43052b5385fa4eb6ffaac04cb114df3110d70e0a

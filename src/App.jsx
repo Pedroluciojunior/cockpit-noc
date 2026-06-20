@@ -210,6 +210,7 @@ export default function SistemaAtendimentos() {
 
   const [categoriaExpandida, setCategoriaExpandida] = useState("DIA A DIA"); 
   const [artigoAtivo, setArtigoAtivo] = useState("dia_ferramentas");
+const [escalaExpandida, setEscalaExpandida] = useState(null);
 
   const baseConhecimento = [
     {
@@ -269,27 +270,35 @@ export default function SistemaAtendimentos() {
             { id: "stc", sistema: "Sistema STC", usuario: "J48435", senha: "Não requer / Padrão", obs: "Controle de Chamados", icone: "📡", cor: "bg-emerald-500" }
           ] 
         },
-        {
+{
           id: "dia_escala",
-          titulo: "Escala Operacional",
-          tipo: "tabela",
-          colunas: ["Colaborador / Turno", "Status Atual"],
-          dados: [["(M) FABIO ROBERTO", "J2"], ["(T) PEDRO LUCIO", "N27"]]
+          titulo: "Escala Operacional (Junho 2026)",
+          tipo: "escala_inteligente",
+          manha: [
+            { nome: "Fabio Roberto Ribeiro de Alvarenga", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Raymundo Serrate dos Santos Neto", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 19:'SAB', 22:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Girlene de Lima Silva", turno: "J2", horario: "07:00 as 16:00", escala: { 1:'BH', 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Lucas Ribeiro Araujo", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 12:'SAB', 15:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Samara de Lima", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Antonio Davi Silva de Araujo", turno: "J3", horario: "08:00 as 17:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Winnie Lidsley Perales Villamonte", turno: "J3", horario: "08:00 as 17:00", escala: { 1:'FERIAS', 2:'FERIAS', 3:'FERIAS', 4:'FERIAS', 5:'FERIAS', 6:'FERIAS', 7:'FERIAS', 8:'FERIAS', 9:'FERIAS', 10:'FERIAS', 12:'SAB', 13:'DOM', 19:'SAB', 20:'DOM', 26:'SAB', 29:'DOM' } },
+            { nome: "Julian Brendon Fortunato Alves", turno: "J3", horario: "08:00 as 17:00", escala: { 2:'SAB', 9:'DOM', 12:'SAB', 13:'DOM', 19:'SAB', 20:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Charlie Magiver Perales Villamontes", turno: "J5", horario: "09:00 as 18:00", escala: { 1:'FERIAS', 2:'FERIAS', 3:'FERIAS', 4:'FERIAS', 5:'FERIAS', 6:'FERIAS', 7:'FERIAS', 8:'FERIAS', 9:'FERIAS', 10:'FERIAS', 11:'FERIAS', 12:'FERIAS', 13:'FERIAS', 14:'FERIAS', 15:'FERIAS', 16:'FERIAS', 17:'FERIAS', 18:'FERIAS', 19:'FERIAS', 20:'FERIAS', 21:'FERIAS', 22:'FERIAS', 27:'SAB', 28:'DOM' } }
+          ],
+          tarde: [
+{ nome: "Gleison de Torres Loiola", turno: "J9", horario: "14:00 as 23:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 19:'SAB', 22:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Miguel Alexsander do Nascimento", turno: "J9", horario: "14:00 as 23:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 26:'SAB', 29:'DOM' } },            { nome: "Isaac Nogueira Veras Damasceno", turno: "J9", horario: "14:00 as 23:00", escala: { 1:'FERIAS', 2:'FERIAS', 3:'SAB', 8:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
+            { nome: "Pedro Lucio Cardoso Matos Junior", turno: "J9", horario: "14:00 as 23:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 12:'SAB', 15:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } }
+          ]
         }
-      ]
+                        ]
     },
     {
       categoria: "MANUAIS / POSICIONAMENTOS",
       artigos: [
-       
         { id: "manuais_encerramentos", titulo: "Códigos de Encerramento (STC_ARS)", tipo: "cards_stcars_master", dados: dadosStcArsMaster },
         { id: "twilio_fix", titulo: "Árvore de Códigos FIX", tipo: "tabela_fix", dados: dadosFix },
-        { 
-          id: "guia_stc", 
-          titulo: "Guia Rápido STC Master", 
-          tipo: "guia_stc_premium", 
-          regiao1: [
-            { posto: "CLD", desc: "Nova Oi - envio de técnico" },
+            { id: "guia_stc", titulo: "Guia Rápido STC Master", tipo: "guia_stc_premium", regiao1: [            { posto: "CLD", desc: "Nova Oi - envio de técnico" },
             { posto: "CLDV", desc: "Vital - envio de técnico" },
             { posto: "REDEA", desc: "Rede de cabos metálicos" },
             { posto: "TX", desc: "Transmissão Nova Oi" },
@@ -1782,6 +1791,134 @@ return (
                 </div>
               )}
 
+{/* RENDERIZADOR PREMIUM DE ESCALA INTELIGENTE (TEMPO REAL + HEATMAP) */}
+              {artigoRenderizado.tipo === "escala_inteligente" && (
+                <div className="flex flex-col gap-6 w-full animate-fade-in">
+                  <div className="flex items-center gap-3 bg-cyan-900/30 border border-cyan-800/50 p-4 rounded-2xl shadow-inner">
+                    <span className="text-2xl animate-pulse">📡</span>
+                    <div>
+                      <h3 className="text-cyan-400 font-black text-sm uppercase tracking-widest">Painel de Escala e Mapa de Calor</h3>
+                      <p className="text-slate-400 text-[10px] font-bold mt-0.5">Clique em um analista para visualizar a jornada mensal. O status cruza o relógio com as regras de folga e férias.</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 w-full">
+                    
+                    {/* Renderizador Genérico de Colunas */}
+                    {[
+                      { id: 'm', label: "🌅 TURNO MANHÃ", dados: artigoRenderizado.manha, cor: "amber" },
+                      { id: 't', label: "🌙 TURNO TARDE", dados: artigoRenderizado.tarde, cor: "indigo" }
+                    ].map((coluna) => (
+                      <div key={coluna.id} className="bg-slate-900 border border-slate-700/80 rounded-3xl p-6 shadow-xl relative overflow-hidden flex flex-col">
+                        <div className={`absolute top-0 right-0 w-48 h-48 bg-${coluna.cor}-500/10 blur-3xl rounded-full pointer-events-none`}></div>
+                        <h4 className={`text-[12px] font-black text-${coluna.cor}-400 uppercase tracking-widest mb-4 border-b border-slate-700/50 pb-3`}>
+                          {coluna.label}
+                        </h4>
+                        
+                        <div className="flex flex-col gap-3 relative z-10">
+                          {coluna.dados.map((colab, idx) => {
+                            const diaHoje = horaGeral.getDate();
+                            const statusHoje = colab.escala[diaHoje];
+                            
+                            let isOnline = false;
+                            let textoStatus = "💤 OFFLINE";
+                            let corStatus = "bg-slate-900 text-slate-500 border-slate-700";
+
+                            if (statusHoje === "FERIAS") {
+                                textoStatus = "🏖️ FÉRIAS";
+                                corStatus = "bg-rose-500/10 text-rose-400 border-rose-500/30";
+                            } else if (["SAB", "DOM", "F", "BH"].includes(statusHoje)) {
+                                textoStatus = "☕ FOLGA";
+                                corStatus = "bg-blue-500/10 text-blue-400 border-blue-500/30";
+                            } else {
+                                const [hI, mI] = colab.horario.split("as")[0].trim().split(":").map(Number);
+                                const [hF, mF] = colab.horario.split("as")[1].trim().split(":").map(Number);
+                                const minAgora = horaGeral.getHours() * 60 + horaGeral.getMinutes();
+                                isOnline = minAgora >= (hI * 60 + mI) && minAgora <= (hF * 60 + mF);
+                                if (isOnline) {
+                                    textoStatus = "🟢 ONLINE";
+                                    corStatus = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.2)]";
+                                }
+                            }
+
+                            return (
+                              <div key={idx} onClick={() => setEscalaExpandida(escalaExpandida === colab.nome ? null : colab.nome)} className={`bg-slate-800/60 border ${escalaExpandida === colab.nome ? `border-${coluna.cor}-500/50 bg-slate-800` : "border-slate-700"} rounded-xl p-3 flex flex-col hover:border-${coluna.cor}-500/40 cursor-pointer transition-all shadow-sm group`}>
+                                <div className="flex items-center justify-between">
+                                  <div className="flex items-center gap-3">
+                                    <div className={`w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-black text-slate-300 uppercase shadow-inner group-hover:bg-${coluna.cor}-500/20 group-hover:text-${coluna.cor}-400 transition-colors`}>
+                                      {colab.nome.charAt(0)}
+                                    </div>
+                                    <div className="flex flex-col">
+                                      <span className="text-[11px] font-bold text-slate-200 uppercase tracking-tight">{colab.nome}</span>
+                                      <span className="text-[9px] font-mono text-slate-400">{colab.turno} | {colab.horario}</span>
+                                    </div>
+                                  </div>
+                                  <div className={`px-2 py-1 rounded border text-[8px] font-black tracking-widest uppercase ${corStatus}`}>
+                                    {textoStatus}
+                                  </div>
+                                </div>
+
+                                {/* SANFONA DO CALENDÁRIO */}
+                                {escalaExpandida === colab.nome && (
+                                  <div className="mt-4 pt-3 border-t border-slate-700/50 animate-fade-in cursor-default" onClick={(e) => e.stopPropagation()}>
+                                    
+                                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-3">
+                                      <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">MAPA DE CALOR: JUNHO 2026</span>
+                                      <div className="flex flex-wrap gap-2 text-[8px] font-bold uppercase">
+                                        <span className="flex items-center gap-1 text-slate-400"><div className="w-1.5 h-1.5 rounded-full bg-slate-600"></div> Trab</span>
+                                        <span className="flex items-center gap-1 text-blue-400"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> S/D</span>
+                                        <span className="flex items-center gap-1 text-emerald-400"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> Feriado</span>
+                                        <span className="flex items-center gap-1 text-amber-400"><div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div> Banco</span>
+                                        <span className="flex items-center gap-1 text-rose-400"><div className="w-1.5 h-1.5 rounded-full bg-rose-500"></div> Férias</span>
+                                      </div>
+                                    </div>
+                                    
+                                    <div className="grid grid-cols-7 gap-1.5">
+                                      {['SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB', 'DOM'].map((diaSemana, i) => (
+                                        <div key={i} className="text-[8px] text-center font-black text-slate-500 pb-1">{diaSemana}</div>
+                                      ))}
+                                      
+                                      {Array.from({ length: 30 }, (_, i) => i + 1).map(dia => {
+                                        const tipo = colab.escala[dia];
+                                        let corBg = "bg-slate-800 border-slate-700 text-slate-400"; // Padrão
+                                        let label = dia;
+
+                                        if (tipo === 'FERIAS') {
+                                          corBg = "bg-rose-500/10 text-rose-400 border-rose-500/30";
+                                        } else if (tipo === 'F') {
+                                          corBg = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
+                                          label = "F";
+                                        } else if (tipo === 'BH') {
+                                          corBg = "bg-amber-500/10 text-amber-400 border-amber-500/30";
+                                          label = "BH";
+                                        } else if (tipo === 'SAB' || tipo === 'DOM') {
+                                          corBg = "bg-blue-500/10 text-blue-400 border-blue-500/30";
+                                        }
+
+                                        // Glow no dia de hoje
+                                        if (dia === diaHoje) corBg += " ring-2 ring-cyan-400 ring-offset-1 ring-offset-slate-900 scale-110 z-10";
+
+                                        return (
+                                          <div key={dia} className={`flex items-center justify-center py-2 rounded border text-[10px] font-mono font-bold transition-all ${corBg}`} title={`Dia ${dia} - ${tipo || 'Trabalho'}`}>
+                                            {label}
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
+                                  </div>
+                                )}
+
+                              </div>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
+
+                  </div>
+                </div>
+              )}
+              
               {/* RENDERIZADOR PREMIUM DE PARCEIRAS (4 A 5 CARDS POR COLUNA) */}
               {artigoRenderizado.tipo === "cards_oemp" && (
                 <div className="flex flex-col gap-5 w-full">

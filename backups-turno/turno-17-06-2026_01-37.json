@@ -1,0 +1,161 @@
+[
+  {
+    "id": 1781721614953.8457,
+    "protocolo": "ATD-1781721614953-798",
+    "designacao": "KAS5010086",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[22:15] - SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL//SEM RESPOSTA\n\n[19:47] - SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL À ÁREA COMPETENTE, AGUARDANDO RETORNO WITH ESTIMATIVA DE NORMALIZAÇÃO.\n\n[15:40] - FALHA--INOPERANTE // AÇÃO--SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK/MEGALINK (VIA EMAIL-15:39H)\n//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "17/06/2026, 15:40:14",
+    "ultimaAtualizacao": "17/06/2026, 22:15:40",
+    "historico": [
+      {
+        "data": "17/06/2026, 22:15:40",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 19:47:51",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 15:40:14",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781716843778.034,
+    "protocolo": "ATD-1781716843778-525",
+    "designacao": "CSSU5010048",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[22:14] - SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL (19:30H)//SEM RESPOSTA\n\n[19:31] - SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL (19:30H) À ÁREA COMPETENTE, AGUARDANDO RETORNO WITH ESTIMATIVA DE NORMALIZAÇÃO.\n\n[14:20] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (14:20)ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "17/06/2026, 14:20:43",
+    "ultimaAtualizacao": "17/06/2026, 22:14:07",
+    "historico": [
+      {
+        "data": "17/06/2026, 22:14:07",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 19:31:40",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 14:20:43",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781745167227.2986,
+    "protocolo": "ATD-1781745167227-943",
+    "designacao": "GT NOME: QUICK",
+    "gtNome": "QUICK",
+    "resumo": "[22:12] - : SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL (19:50) //SEM RESPOSTA//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "17/06/2026, 22:12:47",
+    "ultimaAtualizacao": "17/06/2026, 22:12:47",
+    "historico": [
+      {
+        "data": "17/06/2026, 22:12:47",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781723030190.4976,
+    "protocolo": "ATD-1781723030190-856",
+    "designacao": "MTK5010090",
+    "gtNome": "QUICK",
+    "resumo": "[19:50] - SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL (19:50) À ÁREA COMPETENTE, AGUARDANDO RETORNO WITH ESTIMATIVA DE NORMALIZAÇÃO.\n\n[17:34] - SERVIÇO INOPERANTE//RECEBEMOS SUA SOLICITAÇÃO E INFORMAMOS QUE O CHAMADO FOI ABERTO COM SUCESSO.//SEGUE O NÚMERO DO PROTOCOLO PARA ACOMPANHAMENTO: 26064211//NOSSA EQUIPE JÁ ESTÁ ANALISANDO O CASO E EM BREVE RETORNAREMOS COM UM FEEDBACK OU SOLUÇÃO.\n\n[16:03] - SERVIÇO INOPERANTE////CHAMADO SOLICITADO À OPERADORA QUICK VIA EMAIL (16:05H)//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "17/06/2026, 16:03:50",
+    "ultimaAtualizacao": "17/06/2026, 19:50:20",
+    "historico": [
+      {
+        "data": "17/06/2026, 19:50:20",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 17:34:39",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 16:03:50",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781717877043.1445,
+    "protocolo": "ATD-1781717877043-418",
+    "designacao": "AUH5010005",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[19:41] - CASO ESCALONADO AO GESTOR TÉCNICO PARA OBTENÇÃO DO CONTATO DA LOCALIDADE E CONTINUIDADE DAS VALIDAÇÕES TÉCNICAS, AGUARDANDO RETORNO.\n\n[15:51] - FALHA--INOPERANTE // AÇÃO--CIRCUITO 8004885 // CONFIGURAÇÃO DO IP 177.107.33.66/30 E GATEWAY 177.107.33.65 REALIZADA COM SUCESSO // TESTES DE CONECTIVIDADE (ICMP) OK // IDENTIFICADA AUSÊNCIA DE APRENDIZADO ARP NA INTERFACE ETH1/8, EMBORA A INTERFACE ESTEJA UP // POSSÍVEL FALHA DE COMUNICAÇÃO EM CAMADA 2 // SOLICITADO CONTATO DA EQUIPE DO CLIENTE PARA TESTES CONJUNTOS E CONTINUIDADE DO DIAGNÓSTICO // CHAMADO ESCALADO AO NOC PARA PROSSEGUIMENTO DA ANÁLISE // GESTOR DO CONTRATO ACIONADO PARA APOIO NA TRATATIVA.\n\n[14:37] - FALHA--INOPERANTE // AÇÃO--REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (14:36H)ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "17/06/2026, 14:37:57",
+    "ultimaAtualizacao": "17/06/2026, 19:41:46",
+    "historico": [
+      {
+        "data": "17/06/2026, 19:41:46",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 15:51:19",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 14:37:57",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781717377718.9084,
+    "protocolo": "ATD-1781717377718-287",
+    "designacao": "NMGA5010014",
+    "gtNome": "\"PIMENTELPMMT@GMAIL.COM\"",
+    "resumo": "[19:40] - NÃO HOUVE RETORNO ATE PRESENTE MOMENTO// SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL À ÁREA COMPETENTE, AGUARDANDO RETORNO WITH ESTIMATIVA DE NORMALIZAÇÃO.\n\n[14:29] - !FALHA: INOPERANTE// REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (14:28H) ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "17/06/2026, 14:29:37",
+    "ultimaAtualizacao": "17/06/2026, 19:40:03",
+    "historico": [
+      {
+        "data": "17/06/2026, 19:40:03",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 14:29:37",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1781717137353.257,
+    "protocolo": "ATD-1781717137353-649",
+    "designacao": "CDE5010095",
+    "gtNome": "@ALEXSANDROSILVA@SES.MT.GOV.BR",
+    "resumo": "[19:38] - POSICIONAMENTO: AGUARDANDO EVIDÊNCIAS DO EQUIPAMENTO DA LOCALIDADE.//REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL(19:37) ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[14:25] - AGUARDANDO EVIDÊNCIAS DO EQUIPAMENTO DA LOCALIDADE.//REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL(08:52) ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "17/06/2026, 14:25:37",
+    "ultimaAtualizacao": "17/06/2026, 19:38:07",
+    "historico": [
+      {
+        "data": "17/06/2026, 19:38:07",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "17/06/2026, 14:25:37",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
