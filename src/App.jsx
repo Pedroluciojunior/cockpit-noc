@@ -37,23 +37,216 @@ export default function SistemaAtendimentos() {
     try { const salvo = localStorage.getItem("sistema_wiki_fix"); return salvo ? JSON.parse(salvo) : []; } catch(e) { return []; }
   });
 
-  const [dadosStcArsMaster, setDadosStcArsMaster] = useState(() => {
+const [dadosStcArsMaster, setDadosStcArsMaster] = useState(() => {
     const dadosLocais = [
       ["015", "ENCONTRADO OK", "SEM REALIZAÇÃO DE TESTE FÍSICO", "-", ".", "[Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Este fechamento só deve ser utilizado para os casos em que o técnico de campo foi despachado e encontre o circuito normalizado e o cliente PERMITIU parar o circuito para realização de testes, PORÉM NÃO FOI POSSÍVEL IDENTIFICAR A CAUSA DA FALHA"],
       ["00105", "ENCONTRADO OK", "COM REALIZAÇÃO DE TESTE FÍSICO", "-", ".", "[Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Este fechamento só deve ser utilizado para os casos em que o técnico de campo foi despachado e encontre o circuito normalizado e o cliente NÃO permitiu parar o circuito para realização de testes."],
-      ["00514", "CLIENTE", "FALHA DE ENERGIA", "-", "Pública", "[Cliente - Falha Elétrica Energia] Falha elétrica no cliente por parte da concessionária de energia", "Falha causada por falta de energia da concessionária no ambiente do cliente"],
+      ["00514", "CLIENTE", "FALTA DE ENERGIA", "-", "Pública", "[Cliente - Falha Elétrica Energia] Falha elétrica no cliente por parte da concessionária de energia", "Falha causada por falta de energia da concessionária no ambiente do cliente"],
       ["00534", "CLIENTE", "REDE INTERNA", "-", ".", "[Cliente - Rede Interna] Falha restabelecida após correção da rede interna do cliente", "Falha causada por defeito na rede interna (quadros, blocos de interligação, cabos, rack) ou infra-estrutura (infiltrações, incêndio, etc) no ambiente do cliente"],
-      ["00554", "CLIENTE", "REDE ELÉTRICA", "-", "Aterramento", "[Cliente - Rede Elétrica Aterramento] Falha na rede elétrica/aterramento no ambiente do cliente", "Falha causada por problemas de aterramento na rede elétrica interna do cliente"],
+      ["00554", "CLIENTE", "REDE ELÉTRICA", "-", "Aterramento", "[Cliente - Falha Eletrica Energia] Falha elétrica ou fora dos padrões na rede do cliente", "Falha causada por defeito na rede elétrica (tomada, aterramento, no-break, retificador, disjuntor) ou climatização no ambiente do cliente"],
+      ["00584", "CLIENTE", "EQUIPAMENTO DESLIGADO", "-", ".", "[Cliente - Eqpto desligado] Falha restabelecida após religar equipamento do cliente", "Falha causada por desligamento de equipamentos de responsabilidade da Oi (modem, roteador, PABX, conversor, etc) no ambiente do cliente. Teclas de modem pressionadas no cliente."],
+      ["00506", "CLIENTE", "FALHA EQUIPAMENTO CLIENTE", "-", ".", "[Cliente - Eqpto Defeito] Falha restabelecida após trocar equipamento do cliente", "Falha causada por defeito em equipamentos de responsabilidade do cliente (switch, roteador, LAN, ataque de hacker, alta utilização, desconfiguração)"],
+      ["00594", "CLIENTE", "FALHA EQUIPAMENTO CLIENTE", "-", ".", "[Cliente - Eqpto Defeito] Falha restabelecida após trocar equipamento do cliente", "Falha causada por defeito em equipamentos de responsabilidade do cliente (switch, roteador, LAN, ataque de hacker, alta utilização, desconfiguração)"],
+      ["3001", "REDE METÁLICA", "DG", "ROUBO/ VANDALISMO", ".", "[VOZ Vandalismo] Falha restabelecida após equipamentos substituídos devido vandalismo por roubo/furto", "Falha causada por defeito nos blocos, estrutura metálica, aterramento, módulos/fusíveis no DG (predial ou URA) devido a roubo ou vandalismo, tendo sido solucionado através de recuperação, substituição ou reconexão do elemento danificado"],
+      ["3002", "REDE METÁLICA", "DG", "JUMPER/CONEXÃO", ".", "[VOZ Jumper] Falha restabelecida após troca de jumper no acesso cliente", "Falha causada por defeito, desconexão ou falta de jumper e/ou fusível/módulo no DG (predial ou URA), tendo sido solucionado através da substituição, recuperação, reposição ou reconexão de jumper e/ou fusível/módulo"],
+      ["3005", "REDE METÁLICA", "DG", "ACIDENTE", ".", "[VOZ Acidente] Falha restabelecida após fusão de cabo metalico no DG ocasionado por acidente ou obras", "Falha causada por defeito nos blocos, estrutura metálica, aterramento, módulos/fusíveis no DG (predial ou URA) devido a acidente por obras de terceiros, colisão de veículos, obras da contratada, fenômenos naturais, incêndio ou ataque de animais, tendo sido solucionado através de recuperação, substituição ou reconexão do elemento danificado"],
+      ["3006", "REDE METÁLICA", "DG", "DEGRADAÇÃO", ".", "[VOZ Degradação] Falha restabelecida após troca/manobra de par metalico desgastado no DG", "Falha causada por degradação, desgaste, oxidação ou atenuação nos blocos, estrutura metálica, aterramento, módulos/fusíveis no DG (predial ou URA), tendo sido solucionado através da substituição ou recuperação do elemento danificado"],
+      ["4385", "COMUTAÇÃO", "RESET", "-", "Reinicialização", "[Comutação] Falha restabelecida após reset no equipamento na Estação", "Falha normalizada após reset físico ou lógico de qualquer elemento da rede comutada"],
+      ["4696", "COMUTAÇÃO", "RECONFIGURAÇÃO (REDE)", "-", "Configuração", "[Comutação] Falha restabelecida após configuração no DDR na Estação", "Falha causada por erro ou perda de configuração, bloqueio indevido, falhas de encaminhamento, tendo sido solucionado após reconfiguração da REDE nas centrais de comutação de responsabilidade da Oi"],
+      ["4697", "COMUTAÇÃO", "RECONFIGURAÇÃO (DDR)", "-", "Configuração", "[Comutação] Falha restabelecida após configuração no DDR na Estação", "Falha causada por erro de configuração, bloqueio indevido, tendo sido solucionado após reconfiguração do DDR nas centrais de comutação de responsabilidade da Oi"],
+      ["43173", "COMUTAÇÃO", "PLACA OU PORTA/PORTA", "-", "Placa", "[Comutação Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA da rede comutada, tendo sido solucionada através de substituição de PLACA OU PORTA ou troca de facilidade (troca de porta)"],
+      ["43373", "COMUTAÇÃO", "CHASSI/FONTE", "-", "Fonte", "[Comutação Fonte] Falha restabelecida após troca de fonte na estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, rack, bastidor ou sub da rede comutada, tendo sido solucionada através de substituição ou recuperação do elemento"],
+      ["43473", "COMUTAÇÃO", "CABO/CONECTOR", "-", "Cabo/Conector", "[Comutação Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha causada por defeito, desgaste, desconexão, solda fria, nos cabos/conectores e terminações de DID de facilidades da rede comutada, tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do cabo/conector"],
+      ["80055", "ACESSO DADOS", "OUTROS EQUIPAMENTOS", "RESET", "Reinicialização", "[Modem Reset] Falha restabelecida após modem reiniciado", "Falha normalizada após reset físico ou lógico de modem (analógico, banda-base, HDSL, SHDSL, DTU/NTU ou VSAT). Teclas pressionadas na estação"],
+      ["80058", "ACESSO DADOS", "OUTROS EQUIPAMENTOS", "RECONFIGURAÇÃO", "Configuração", "[Modem Config] Falha restabelecida após configuração do modem", "Falha causada por erro ou perda de configuração de modem óptico, tendo sido solucionado após reconfiguração."],
+      ["81005", "ACESSO DADOS", "MODEM ÓPTICO", "RESET", "Reinicialização", "[Modem Reset] Falha restabelecida após modem reiniciado", "Falha normalizada após reset físico ou lógico de modem (analógico, banda-base, HDSL, SHDSL, DTU/NTU ou VSAT). Teclas pressionadas na estação"],
+      ["81008", "ACESSO DADOS", "MODEM ÓPTICO", "RECONFIGURAÇÃO", "Configuração", "[Modem Config] Falha restabelecida após configuração do modem", "Falha causada por erro ou perda de configuração de modem óptico, tendo sido solucionado após reconfiguração."],
+      ["81102", "ACESSO DADOS", "MODEM ÓPTICO", "PLACA OU PORTA", "Porta", "[Modem Troca] Falha restabelecida após troca de placa/porta na Estação ou Cliente", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA de modem óptico, tendo sido solucionada através de substituição do elemento em falha ou troca de porta/tributário"],
+      ["81106", "ACESSO DADOS", "MODEM ÓPTICO", "RECONFIGURAÇÃO", "Configuração", "[Modem Config] Falha restabelecida após configuração do modem", "Falha causada por erro ou perda de configuração de modem óptico, tendo sido solucionado após reconfiguração."],
+      ["81302", "ACESSO DADOS", "MODEM ÓPTICO", "CHASSI/FONTE", "Equipamento com defeito", "[Modem Ótico Cabo] Falha restabelecida após troca de cabo/conector no modem", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, rack ou sub rack de modem óptico, tendo sido solucionada através de substituição do elemento em falha"],
+      ["81402", "ACESSO DADOS", "MODEM ÓPTICO", "CABO/CONECTOR", "Cabo", "[Modem Cabo] Falha restabelecida após troca de cabo/conector no modem", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores ou terminações de DID de modens ópticos, tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["81712", "ACESSO DADOS", "MODEM ÓPTICO", "-", "Cabo", "[Modem Cabo] Falha restabelecida após troca de cabo/conector no modem", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores ou terminações de DID de modens ópticos, tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["82005", "ACESSO DADOS", "MODEM", "RESET", "Reinicialização", "[Modem Reset] Falha restabelecida após modem reiniciado", "Falha normalizada após reset físico ou lógico de modem (analógico, banda-base, HDSL, SHDSL, DTU/NTU ou VSAT). Teclas pressionadas na estação"],
+      ["82006", "ACESSO DADOS", "MODEM", "RECONFIGURAÇÃO", "Configuração", "[Modem Config] Falha restabelecida após configuração do modem", "Falha causada por erro ou perda de configuração de modem (analógico, banda-base, HDSL, SHDSL, DTU/NTU ou VSAT), tendo sido solucionado após reconfiguração."],
+      ["82008", "ACESSO DADOS", "MODEM", "RECONFIGURAÇÃO", "Configuração", "[Modem Config] Falha restabelecida após configuração do modem", "Falha causada por erro ou perda de configuração de modem (analógico, banda-base, HDSL, SHDSL, DTU/NTU ou VSAT), tendo sido solucionado após reconfiguração."],
+      ["82045", "ACESSO DADOS", "CONVERSOR DE INTERFACE (MÍDIA)", "RESET", "Reinicialização", "[Modem Reset] Falha restabelecida após reinicialização do conversor", "Falha normalizada após reset físico do conversor de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet). Este encerramento aplica-se quando o conversor é utilizado como solução de Acesso."],
+      ["82048", "ACESSO DADOS", "CONVERSOR DE INTERFACE (MÍDIA)", "RECONFIGURAÇÃO", "Configuração", "[Modem Config] Falha restabelecida após configuração do modem", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, (estrapes) do conversor de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet). Este encerramento aplica-se quando o conversor é utilizado como solução de Acesso."],
+      ["82102", "ACESSO DADOS", "MODEM", "PLACA OU PORTA", "Porta", "[Modem Troca] Falha restabelecida após troca de placa/porta na Estação ou Cliente", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA de modem (analógico, banda-base, HDSL, SHDSL, DTU/NTU ou VSAT), tendo sido solucionada através de substituição do elemento em falha"],
+      ["82142", "ACESSO DADOS", "CONVERSOR DE INTERFACE (MÍDIA)", "PLACA OU PORTA", "Porta", "[Conversor Troca] Falha restabelecida após troca de conversor na Estação ou Cliente", "Falha causada por defeito, desgaste ou queima/curto do conversor de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet), tendo sido solucionada através de substituição do conversor. Este encerramento aplica-se quando o conversor é utilizado como solução de Acesso."],
+      ["82302", "ACESSO DADOS", "MODEM", "CHASSI/FONTE", "Equipamento com defeito", "[Modem Cabo] Falha restabelecida após troca de cabo/conector no modem", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, gabinete, rack ou sub rack de modem, tendo sido solucionada através de substituição do elemento em falha"],
+      ["82342", "ACESSO DADOS", "CONVERSOR DE INTERFACE (MÍDIA)", "CHASSI/FONTE", "Equipamento com defeito", "[Conversor Fonte] Falha restabelecida após troca de fonte na Estação ou Cliente", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, rack, chassi, bastidor/sub/terminação DID de conversores de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet), tendo sido solucionada através de substituição ou recuperação do elemento em falha. Este encerramento aplica-se quando o conversor é utilizado como solução de Acesso."],
+      ["82402", "ACESSO DADOS", "MODEM", "CABO/CONECTOR", "Cabo", "[Modem Cabo] Falha restabelecida após troca de cabo/conector no modem", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, conectores, terminações de DID, régua/cabo/adaptador de interface de modens (analógico, banda-base, HDSL, SHDSL, DTU/NTU ou VSAT), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["82442", "ACESSO DADOS", "CONVERSOR DE INTERFACE (MÍDIA)", "CABO/CONECTOR", "Cabo", "[Modem Cabo] Falha restabelecida após troca de cabo/conector no modem", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos ou conectores de conversores de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha. Este encerramento aplica-se quando o conversor é utilizado como solução de Acesso."],
+      ["84282", "REDE DE DADOS", "REDE MULTISERVIÇOS", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA de qualquer elemento da RMS (roteadores, switches, servidor de autenticação de senha, RAS, BRAS, etc), tendo sido solucionada através de substituição de PLACA OU PORTA ou troca de facilidade (troca de porta)"],
+      ["84285", "REDE DE DADOS", "REDE MULTISERVIÇOS", "RESET", "Reinicialização", "[Backbone Reset] Falha restabelecida após reset no equipamento na Estação", "Falha normalizada após reset físico ou lógico de qualquer elemento da RMS (roteadores, switches, servidor de autenticação de senha, RAS, BRAS, etc)"],
+      ["84286", "REDE DE DADOS", "REDE MULTISERVIÇOS", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após configuração na Estação", "Falha causada por erro ou perda de configuração, bloqueio indevido (blacklist) ou falhas de roteamento, tendo sido solucionado após reconfiguração/roteamento de qualquer elemento da RMS (roteadores, switches, servidor de autenticação de senha, RAS, BRAS, etc)"],
+      ["84288", "REDE DE DADOS", "REDE MULTISERVIÇOS", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após configuração na Estação", "Falha causada por erro ou perda de configuração, bloqueio indevido (blacklist) ou falhas de roteamento, tendo sido solucionado após reconfiguração/roteamento de qualquer elemento da RMS (roteadores, switches, servidor de autenticação de senha, RAS, BRAS, etc)"],
+      ["84782", "REDE DE DADOS", "REDE MULTISERVIÇOS", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores, terminações de DID, régua/cabo/adaptador de interface nos elementos da RMS (roteadores, switches, servidor de autenticação de senha, RAS, BRAS, etc), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["84982", "REDE DE DADOS", "REDE MULTISERVIÇOS", "CHASSI/FONTE", "Fonte", "[Backbone Fonte] Falha restabelecida após troca de fonte na Estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi, bastidor ou sub de qualquer elemento da RMS (roteadores, switches, servidor de autenticação de senha, RAS, BRAS, etc), tendo sido solucionada através de substituição ou recuperação do elemento em falha"],
+      ["85282", "REDE DE DADOS", "REDE METRO", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA ou módulo (GBIC, SFP) de switches da Rede Metro Ethernet, tendo sido solucionada através de substituição de PLACA OU PORTA/módulo ou troca de facilidade (troca de porta)"],
+      ["85285", "REDE DE DADOS", "REDE METRO", "RESET", "Reinicialização", "[Backbone Reset] Falha restabelecida após reset no equipamento na Estação", "Falha normalizada após reset físico ou lógico de switches da Rede Metro Ethernet."],
+      ["85288", "REDE DE DADOS", "REDE METRO", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após configuração na Estação", "Falha causada por erro ou perda de configuração, tendo sido solucionado após reconfiguração de switches da Rede Metro Ethernet"],
+      ["85782", "REDE DE DADOS", "REDE METRO", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão ou mau contato nos cabos UTP, conectores RJ45, cordões monofibra nos switches da Rede Metro Ethernet, tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["85982", "REDE DE DADOS", "REDE METRO", "CHASSI/FONTE", "Fonte", "[Backbone Fonte] Falha restabelecida após troca de fonte na Estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi ou bastidor de switches da Rede Metro Ethernet, tendo sido solucionada através de substituição ou recuperação do elemento em falha"],
+      ["86282", "REDE DE DADOS", "REDES ESPECIALIZADAS", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA de qualquer elemento das Redes Especializadas (determinística, estatística, ATM, frame-relay, x25, etc) de qualquer fabricante (Newbridge, Alcatel, Datacom, Huawei, DXX, Nortel, etc), tendo sido solucionada através de substituição de PLACA OU PORTA ou troca de facilidade (troca de porta)"],
+      ["86285", "REDE DE DADOS", "REDES ESPECIALIZADAS", "RESET", "Reinicialização", "[Backbone Reset] Falha restabelecida após reset no equipamento na Estação", "Falha normalizada após reset físico ou lógico de qualquer elemento das Redes Especializadas (determinística, estatística, ATM, frame-relay, x25, etc) de qualquer fabricante (Newbridge, Alcatel, Datacom, Huawei, DXX, Nortel, etc)"],
+      ["86288", "REDE DE DADOS", "REDES ESPECIALIZADAS", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após configuração na Estação", "Falha causada por erro ou perda de configuração, bloqueio indevido, loop, tendo sido solucionado após reconfiguração/roteamento de qualquer elemento das Redes Especializadas (determinística, estatística, ATM, frame-relay, x25, etc) de qualquer fabricante (Newbridge, Alcatel, Datacom, Huawei, DXX, Nortel, etc)"],
+      ["86782", "REDE DE DADOS", "REDES ESPECIALIZADAS", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores, terminações de DID, régua/cabo/adaptador de interface nos elementos das Redes Especializadas (determinística, estatística, ATM, frame-relay, x25, etc) de qualquer fabricante (Newbridge, Alcatel, Datacom, Huawei, DXX, Nortel, etc), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["86982", "REDE DE DADOS", "REDES ESPECIALIZADAS", "CHASSI/FONTE", "Fonte", "[Backbone Fonte] Falha restabelecida após troca de fonte na Estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi, bastidor ou sub de qualquer elemento das Redes Especializadas (determinística, estatística, ATM, frame-relay, x25, etc) de qualquer fabricante (Newbridge, Alcatel, Datacom, Huawei, DXX, Nortel, etc), tendo sido solucionada através de substituição ou recuperação do elemento em falha"],
+      ["88105", "ACESSO DADOS", "CPE", "RESET", "Reinicialização", "[Roteador Reset] Falha restabelecida após reinicialização do CPE - Roteador no cliente", "Falha normalizada após reset físico ou lógico de CPE (Roteador, PABX, Encoder/Decoder, Camera, etc)"],
+      ["88108", "ACESSO DADOS", "CPE", "RECONFIGURAÇÃO", "Configuração", "[Roteador Config] Falha restabelecida após configuração do roteador", "Falha causada por erro ou perda de configuração de CPE (Roteador, PABX, Encoder/Decoder, Camera, etc), tendo sido solucionado após reconfiguração."],
+      ["88112", "ACESSO DADOS", "CPE", "PLACA OU PORTA", "Placa", "[Roteador Placa] Falha restabelecida após troca de placa/porta no acesso", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA de CPE (Roteador, PABX, Encoder/Decoder, Camera, etc), tendo sido solucionada através de substituição do elemento em falha"],
+      ["88122", "ACESSO DADOS", "CPE", "CHASSI/FONTE", "Equipamento com defeito", "[Roteador Troca] Falha restabelecida após troca do CPE - Roteador no cliente", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, gabinete, rack ou sub rack de CPE (Roteador, PABX, Encoder/Decoder, Camera, etc), tendo sido solucionada através de substituição do elemento em falha"],
+      ["88142", "ACESSO DADOS", "CPE", "CABO/CONECTOR", "Cabo", "[Roteador Cabo] Normalizado após troca/reconfiguração de switch.", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, conectores de CPE (Roteador, PABX, Encoder/Decoder, Camera, etc), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["2N0091", "REDE METÁLICA", "REDE PRIMÁRIA/SECUNDÁRIA", "RECUPERAÇÃO DE PAR", "Par Metálico", "[Par Metalico] Falha restabelecida após recuperação de par metalico no acesso cliente", "Falha causada por degradação, desgaste, oxidação ou atenuação em qualquer elemento da rede primária, secundária ou rígida (cabos, caixas de emenda, conectores, subida lateral, etc), tendo sido solucionado através da substituição, RECUPERAÇÃO do elemento degradado"],
+      ["2N3012", "REDE METÁLICA", "REDE PRIMÁRIA/SECUNDÁRIA", "ROUBO/ VANDALISMO", "Par Metálico", "[Par Metálico] Falha restabelecida após refazer o cabo metalico ocasionado por vandalismo", "Falha causada por rompimento de cabo primário, cabo secundário ou rede rígida/dedicada devido a roubo ou vandalismo, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo."],
+      ["2N3022", "REDE METÁLICA", "REDE PRIMÁRIA/SECUNDÁRIA", "JUMPER/CONEXÃO", "Par Metálico", "[Par Metálico] Falha restabelecidade após refazer jumper", "Falha causada por defeito, desconexão ou falta de CABO/CONECTOR em caixas de emenda pertencentes a rede primária, secundária ou rede rígida/dedicada, tendo sido solucionado através da substituição, recuperação, reposição ou reconexão de jumper"],
+      ["2N3052", "REDE METÁLICA", "REDE PRIMÁRIA/SECUNDÁRIA", "ACIDENTE", "Par Metálico", "[Par Metálico] Falha restabelecida após fusão de cabo metalico ocasionado por acidente", "Falha causada por rompimento de cabo primário, cabo secundário ou rede rígida/dedicada devido a acidente por obras de terceiros, colisão de veículos, obras da contratada, fenômenos naturais, incêndio ou ataque de animais, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo."],
+      ["2N7012", "REDE METÁLICA", "ARMÁRIO", "ROUBO/ VANDALISMO", "Par Metálico", "[Par Metálico] Falha restabelecida após refazer o cabo metalico ocasionado por vandalismo", "Falha causada por defeito nos blocos, jumpers, estrutura metálica, aterramento nos armários de distribuição devido a roubo ou vandalismo, tendo sido solucionado através de recuperação, substituição ou reconexão do elemento danificado"],
+      ["2N7022", "REDE METÁLICA", "ARMÁRIO", "JUMPER/CONEXÃO", "Par Metálico", "[Par Metálico] Falha restabelecidade após refazer jumper", "Falha causada por defeito, desconexão ou falta de jumper nos armários de distribuição, tendo sido solucionado através da substituição, recuperação, reposição ou reconexão de jumper"],
+      ["2N7052", "REDE METÁLICA", "ARMÁRIO", "ACIDENTE", "Par Metálico", "[Par Metálico] Falha restabelecida após fusão de cabo metalico ocasionado por acidente", "Falha causada por defeito nos blocos, estrutura metálica, aterramento nos armários de distribuição devido a acidente por obras de terceiros, colisão de veículos, obras da contratada, fenômenos naturais, incêndio ou ataque de animais, tendo sido solucionado através de recuperação, substituição ou reconexão do elemento danificado"],
+      ["2N7062", "REDE METÁLICA", "ARMÁRIO", "DEGRADAÇÃO", "Par Metálico", "[Par Metálico] Falha restabelecida após corrigir degradação do par metálico", "Falha causada por degradação, desgaste, oxidação ou atenuação nos blocos, estrutura metálica, aterramento nos armários de distribuição, tendo sido solucionado através da substituição ou recuperação do elemento danificado"],
+      ["2S", "REDE METÁLICA", "REDE PRIMÁRIA/SECUNDÁRIA", "MANOBRA DE PAR", "Par Metálico", "[Par Metalico] Falha restabelecida após troca/manobra de par metalico no acesso cliente", "Falha causada por degradação, desgaste, oxidação ou atenuação em qualquer elemento da rede primária, secundária ou rígida (cabos, caixas de emenda, conectores, subida lateral, etc), tendo sido solucionado através de MANOBRA DE PAR (remanejamento) do elemento degradado."],
+      ["5009A", "INFRA-ESTRUTURA", "ENERGIA", "-", ".", "[Backbone Falha Elétrica] Falha restabelecida após estabilizar a rede elétrica na estação", "Falha na rede elétrica da estação Oi (USCA, USCC, retificador, bateria, no break, fusível) podendo ter sido causado por vandalismo, descarga elétrica/atmosférica, sobrecarga, falta de energia, etc"],
+      ["5089A", "INFRA-ESTRUTURA", "CLIMATIZAÇÃO", "-", ".", "[Backbone Climatização] Falha restabelecida após estabilizar climatização na Estação", "Falha na climatização da estação Oi, podendo ter sido causado por vandalismo, descarga elétrica/atmosférica, sobrecarga, etc"],
+      ["5099A", "INFRA-ESTRUTURA", "CIVIL/PREDIAL", "-", ".", "[Backbone Predial] Falha restabelecida após correção de infraestrutura na Estação", "Falha de infra-estrutura civil/predial da estação Oi, podendo ter sido causado por infiltrações, vandalismo, incêndio, ataque de insetos, etc"],
+      ["5116D", "REDE DE TRANSPORTE", "WDM / DWDM", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após reconfiguração de receptor/transmissor na estação", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte WDM/DWDM"],
+      ["5148A", "REDE DE TRANSPORTE", "SDH / PDH (MUX)", "CHASSI/FONTE", "Equipamento com defeito", "[Backbone Fonte] Falha restabelecida após troca de fonte de alimentação na Rede de Transporte SDH/PDH (Mux)", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi, bastidor ou sub de qualquer elemento da Rede de Transporte SDH/PDH (Mux), tendo sido solucionada através de substituição ou recuperação do elemento em falha."],
+      ["5152A", "REDE DE TRANSPORTE", "WDM / DWDM", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após refeito cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores, terminações de DID de qualquer elemento da Rede de Transporte WDM/DWDM, tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["5155A", "REDE DE TRANSPORTE", "WDM / DWDM", "CHASSI/FONTE", "Fonte", "[Backbone Fonte] Falha restabelecida após troca de fonte na estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi, bastidor ou sub de qualquer elemento da Rede de Transporte WDM/DWDM, tendo sido solucionada através de substituição ou recuperação do elemento em falha"],
+      ["5158A", "REDE DE TRANSPORTE", "WDM / DWDM", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA OU PORTA óptica, PLACA OU PORTA OU PORTA de tributário, PLACA OU PORTA OU PORTA de dados 64k, modulador, demodulador, transmissor, receptor, guia de onda ou antena de qualquer elemento da Rede de Transporte WDM/DWDM, tendo sido solucionada através de substituição de PLACA OU PORTA OU PORTA ou troca de facilidade (troca de porta)"],
+      ["5158D", "REDE DE TRANSPORTE", "WDM / DWDM", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após reconfiguração de receptor/transmissor na estação", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte WDM/DWDM"],
+      ["5158G", "REDE DE TRANSPORTE", "WDM / DWDM", "RESET", "Reinicialização", "[Backbone Reset] Falha restabelecida após reset de receptor/transmissor na estação", "Falha normalizada após reset físico ou lógico de qualquer elemento da Rede de Transporte WDM/DWDM"],
+      ["5188A", "REDE DE TRANSPORTE", "SDH / PDH (MUX)", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após refeito cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores, terminações de DID de qualquer elemento da Rede de Transporte SDH/PDH (Mux), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["5198A", "REDE DE TRANSPORTE", "SDH / PDH (MUX)", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA OU PORTA óptica, PLACA OU PORTA OU PORTA de tributário, modulador, demodulador, PLACA OU PORTA OU PORTA de relógio, controladora, transmissor, receptor, transponder, guia de onda ou antena de qualquer elemento da Rede de Transporte SDH/PDH (Mux), tendo sido solucionada através de substituição de PLACA OU PORTA OU PORTA ou troca de facilidade (troca de porta)."],
+      ["5198D", "REDE DE TRANSPORTE", "SDH / PDH (MUX)", "RECONFIGURAÇÃO", "Configuração", "[Backbone Roteado] Falha restabelecida após roteado na transmissão", "Falha causada por erro ou perda de configuração, bloqueio indevido (loop), tendo sido solucionado após reconfiguração de qualquer elemento da Rede de Transporte SDH/PDH (Mux) ou comutação de rota/anel."],
+      ["5198G", "REDE DE TRANSPORTE", "SDH / PDH (MUX)", "RESET", "Reinicialização", "[Backbone Reset] Falha restabelecida após reset no equipamento na Estação", "Falha normalizada após reset físico ou lógico de qualquer elemento da Rede de Transporte SDH/PDH (Mux)."],
+      ["5248A", "REDE DE TRANSPORTE", "SDH / PDH (RÁDIO)", "CHASSI/FONTE", "Fonte", "[Backbone Fonte] Falha restabelecida após troca de fonte na estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi, bastidor ou sub de qualquer elemento da Rede de Transporte SDH/PDH (Radio), tendo sido solucionada através de substituição ou recuperação do elemento em falha."],
+      ["5288A", "REDE DE TRANSPORTE", "SDH / PDH (RÁDIO)", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após refeito cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores, terminações de DID de qualquer elemento da Rede de Transporte SDH/PDH (Radio), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha."],
+      ["5298A", "REDE DE TRANSPORTE", "SDH / PDH (RÁDIO)", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA OU PORTA óptica, PLACA OU PORTA OU PORTA de tributário, PLACA OU PORTA OU PORTA de dados 64k, modulador, demodulador, transmissor, receptor, guia de onda ou antena de qualquer elemento da Rede de Transporte PDH (Mux, Rádio, Modem Óptico), tendo sido solucionada através de substituição de PLACA OU PORTA OU PORTA ou troca de facilidade (troca de porta)."],
+      ["5298D", "REDE DE TRANSPORTE", "SDH / PDH (RÁDIO)", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após configuração de modem óptico na Estação", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte SDH/PDH (Radio)."],
+      ["5298G", "REDE DE TRANSPORTE", "SDH / PDH (RÁDIO)", "RESET", "Reinicialização", "[Backbone Reset] Falha restabelecida após reset no equipamento na Estação", "Falha normalizada após reset físico ou lógico de qualquer elemento da Rede de Transporte SDH/PDH (Radio)."],
+      ["5301F", "REDE ÓPTICA", "ACESSO", "ROUBO/ VANDALISMO", "Fibra", "[Fibra Acidente] Falha restabelecida após fusão de fibra ocasionado por roubo/furto", "Falha causada por rompimento de cabo óptico devido a roubo ou vandalismo, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo óptico."],
+      ["5302F", "REDE ÓPTICA", "ACESSO", "ACIDENTE", "Fibra", "[Fibra Acidente] Falha restabelecida após fusão de fibra ocasionado por acidente", "Falha causada por rompimento de cabo óptico devido a acidente por obras de terceiros, colisão de veículos, obras da contratada, fenômenos naturais, incêndio ou ataque de animais, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo óptico."],
+      ["5305F", "REDE ÓPTICA", "ACESSO", "DEGRADAÇÃO", "Fibra", "[Fibra Desgaste] Falha restabelecida após troca/fusão de fibra ocasionada por atenuação.", "Falha causada por degradação, desgaste ou atenuação em qualquer elemento da rede óptica (cabos, caixas de emenda, conectores, DGO, cordões monofibra, etc), tendo sido solucionado através da substituição, recuperação ou limpeza do elemento degradado"],
+      ["5307F", "REDE ÓPTICA", "ACESSO", "JUMPER/CONEXÃO", "Fibra", "[Fibra Jumper] Falha restabelecida após troca de jumper no acesso cliente", "Falha causada por defeito, desconexão ou falta de cordão monofibra/conector, tendo sido solucionado através da substituição, recuperação, reposição ou reconexão"],
+      ["5311F", "REDE ÓPTICA", "BACKBONE NACIONAL", "ROUBO/ VANDALISMO", "Fibra", "[Backbone Fibra Acidente] Falha restabelecida após fusão de fibra ocasionado por roubo/furto", "Falha causada por rompimento de cabo óptico devido a roubo ou vandalismo, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo óptico."],
+      ["5312F", "REDE ÓPTICA", "BACKBONE NACIONAL", "ACIDENTE", "Fibra", "[Backbone Fibra Acidente] Rompimento de fibra ocasionado por acidente", "Falha causada por rompimento de cabo óptico devido a acidente por obras de terceiros, colisão de veículos, obras da contratada, fenômenos naturais, incêndio ou ataque de animais, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo óptico."],
+      ["5315F", "REDE ÓPTICA", "BACKBONE NACIONAL", "DEGRADAÇÃO", "Fibra", "[Backbone Fibra Desgaste] Falha restabelecida após troca/fusão de fibra ocasionada por atenuação.", "Falha causada por degradação, desgaste ou atenuação em qualquer elemento da rede óptica (cabos, caixas de emenda, conectores, DGO, cordões monofibra, etc), tendo sido solucionado através da substituição, recuperação ou limpeza do elemento degradado"],
+      ["5317F", "REDE ÓPTICA", "BACKBONE NACIONAL", "JUMPER/CONEXÃO", "Fibra", "[Backbone Fibra Jumper] Falha restabelecida após troca de jumper/conector na Estação", "Falha causada por defeito, desconexão ou falta de cordão monofibra/conector, tendo sido solucionado através da substituição, recuperação, reposição ou reconexão"],
+      ["5321F", "REDE ÓPTICA", "BACKBONE REGIONAL", "ROUBO/ VANDALISMO", "Fibra", "[Backbone Fibra Acidente] Falha restabelecida após fusão de fibra ocasionado por roubo/furto", "Falha causada por rompimento de cabo óptico devido a roubo ou vandalismo, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo óptico."],
+      ["5322F", "REDE ÓPTICA", "BACKBONE REGIONAL", "ACIDENTE", "Fibra", "[Backbone Fibra Acidente] Rompimento de fibra ocasionado por acidente", "Falha causada por rompimento de cabo óptico devido a acidente por obras de terceiros, colisão de veículos, obras da contratada, fenômenos naturais, incêndio ou ataque de animais, tendo sido solucionado através de recuperação, lançamento e/ou emenda de cabo óptico."],
+      ["5325F", "REDE ÓPTICA", "BACKBONE REGIONAL", "DEGRADAÇÃO", "Fibra", "[Backbone Fibra Desgaste] Falha restabelecida após troca/fusão de fibra ocasionada por atenuação.", "Falha causada por degradação, desgaste ou atenuação em qualquer elemento da rede óptica (cabos, caixas de emenda, conectores, DGO, cordões monofibra, etc), tendo sido solucionado através da substituição, recuperação ou limpeza do elemento degradado"],
+      ["5327F", "REDE ÓPTICA", "BACKBONE REGIONAL", "JUMPER/CONEXÃO", "Fibra", "[Backbone Fibra Jumper] Falha restabelecida após troca de jumper/conector na Estação", "Falha causada por defeito, desconexão ou falta de cordão monofibra/conector, tendo sido solucionado através da substituição, recuperação, reposição ou reconexão"],
+      ["5407A", "REDE DE TRANSPORTE", "SDH / PDH (MODEM ÓPTICO)", "CHASSI/FONTE", "Fonte", "[Backbone Fonte] Falha restabelecida após troca de fonte na estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi, bastidor ou sub de qualquer elemento da Rede de Transporte SDH/PDH (Modem Óptico), tendo sido solucionada através de substituição ou recuperação do elemento em falha"],
+      ["5407D", "REDE DE TRANSPORTE", "SDH / PDH (MODEM ÓPTICO)", "RECONFIGURAÇÃO", "Configuração", "[Backbone Config] Falha restabelecida após configuração de modem óptico na Estação", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte SDH/PDH (Modem Óptico)"],
+      ["5407G", "REDE DE TRANSPORTE", "SDH / PDH (MODEM ÓPTICO)", "RESET", "Reinicialização", "[Backbone Reset] Falha restabelecida após reset no equipamento na Estação", "Falha normalizada após reset físico ou lógico de qualquer elemento da Rede de Transporte SDH/PDH (Modem Óptico)"],
+      ["5417A", "REDE DE TRANSPORTE", "SDH / PDH (MODEM ÓPTICO)", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA OU PORTA óptica, PLACA OU PORTA OU PORTA de tributário, PLACA OU PORTA OU PORTA de dados 64k, modulador, demodulador, transmissor, receptor, guia de onda ou antena de qualquer elemento da Rede de Transporte SDH/PDH (Modem Óptico), tendo sido solucionada através de substituição de PLACA OU PORTA OU PORTA ou troca de facilidade (troca de porta)"],
+      ["5437A", "REDE DE TRANSPORTE", "SDH / PDH (MODEM ÓPTICO)", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após refeito cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos, conectores, terminações de DID de qualquer elemento da Rede de Transporte SDH/PDH (Modem Óptico), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["5500A", "REDE DE TRANSPORTE", "SATÉLITE", "PLACA OU PORTA", "Equipamento Satélite", "[Satélite Configuração] Falha restabelecida após troca da placa/porta do equipamento satélite", "Falha causada por defeito, desgaste ou queima/curto de PLACA OU PORTA OU PORTA de qualquer elemento da Rede de Transporte Satélite (modem, amplificador de RF, guia de onda, antena), tendo sido solucionada através de substituição de PLACA OU PORTA OU PORTA ou troca de facilidade (troca de porta)"],
+      ["5509A", "REDE DE TRANSPORTE", "SATÉLITE", "CHASSI/FONTE", "Equipamento Satélite", "[Satélite Configuração] Falha restabelecida após troca da fonte do equipamento satélite", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, sistema de ventilação forçada, rack, chassi, bastidor ou sub de qualquer elemento da Rede de Transporte Satélite (passport, modem satélite, controladora, amplificador de RF, guia de onda/alimentador, antena), tendo sido solucionada através de substituição ou recuperação do elemento em falha"],
+      ["5509D", "REDE DE TRANSPORTE", "SATÉLITE", "RECONFIGURAÇÃO", "Equipamento Satélite", "[Satélite Configuração] Falha restabelecida após configuração de equipamento satélite", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte Satélite (passport, modem satélite, controladora, amplificador de RF, guia de onda/alimentador, antena)"],
+      ["5509G", "REDE DE TRANSPORTE", "SATÉLITE", "RESET", "Equipamento Satélite", "[Satélite Reset] Falha restabelecida após reset no equipamento satélite na Estação", "Falha normalizada após reset físico ou lógico de qualquer elemento da Rede de Transporte Satélite (passport, modem satélite, controladora, amplificador de RF, guia de onda/alimentador, antena)"],
+      ["5539A", "REDE DE TRANSPORTE", "SATÉLITE", "CABO/CONECTOR", "Equipamento Satélite", "[Satélite Cabo] Falha restabelecida após troca de cabo/conector satélite na Estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, conectores, terminações de DID de qualquer elemento da Rede de Transporte Satélite (passport, modem satélite, controladora, amplificador de RF, guia de onda/alimentador, antena), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha"],
+      ["5670D", "REDE DE TRANSPORTE", "CONVERSOR INTERFACE", "RECONFIGURAÇÃO", "Configuração", "[Backbone Rádio] Falha restabelecida após configuração/troca do conversor", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, (estrapes) do conversor de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet). Este encerramento aplica-se quando o conversor é utilizado como solução de Rede de Transporte."],
+      ["5670G", "REDE DE TRANSPORTE", "CONVERSOR INTERFACE", "RESET", "Reinicialização", "[Backbone Rádio] Falha restabelecida reinciar equipamentos na estação", "Falha normalizada após reset físico do conversor de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet). Este encerramento aplica-se quando o conversor é utilizado como solução de Rede de Transporte."],
+      ["5672A", "REDE DE TRANSPORTE", "CONVERSOR INTERFACE", "CABO/CONECTOR", "Cabo/Conector", "[Backbone Cabo] Falha restabelecida após refeito cabo/conector na estação", "Falha causada por defeito, manuseio indevido, má qualidade da instalação/confecção/material utilizado, desgaste, desconexão, mau contato ou solda fria nos cabos, cordões ópticos ou conectores de conversores de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet), tendo sido solucionada através de substituição, recuperação, reposição ou reconexão do elemento em falha. Este encerramento aplica-se quando o conversor é utilizado como solução de Rede de Transporte."],
+      ["5674A", "REDE DE TRANSPORTE", "CONVERSOR INTERFACE", "CHASSI/FONTE", "Fonte", "[Backbone Fonte] Falha restabelecida após troca de fonte na estação", "Falha causada por defeito, desgaste ou queima/curto de fonte, fusível, rack, chassi, bastidor/sub/terminação DID de cconversores de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet), tendo sido solucionada através de substituição ou recuperação do elemento em falha. Este encerramento aplica-se quando o conversor é utilizado como solução de Rede de Transporte."],
+      ["5679A", "REDE DE TRANSPORTE", "CONVERSOR INTERFACE", "PLACA OU PORTA", "Placa", "[Backbone Placa] Falha restabelecida após troca de placa/porta na estação", "Falha causada por defeito, desgaste ou queima/curto do conversor de interface/mídia (G703<=>V35, G703<=>Ethernet, óptico<=>G703, óptico<=>Ethernet), tendo sido solucionada através de substituição do conversor. Este encerramento aplica-se quando o conversor é utilizado como solução de Rede de Transporte."],
+      ["S1420", "REDE DE TRANSPORTE", "SDH / PDH (MUX)", "RECONFIGURAÇÃO", "Configuração", "[OEMP Backbone Config] Falha restabelecida após configuração de modem óptico na Estação (Rede basica)", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte Basica SDH/PDH"],
+      ["S1440", "REDE DE TRANSPORTE", "SDH / PDH (MUX)", "RECONFIGURAÇÃO", "Configuração", "[OEMP Backbone Config] Falha restabelecida após configuração de modem óptico na Estação (Rede movel)", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte Movel SDH/PDH"],
+      ["S3520", "BACKBONE IP", "CONFIGURAÇÃO", "OUTROS", "Configuração", "[OEMP Backbone Config] Falha restabelecida após configuração de modem óptico na Estação (Rede movel)", "Falha causada por erro de configuração tendo sido solucionado após reconfiguração, ajustes de nível de canal de qualquer elemento da Rede de Transporte Movel SDH/PDH"],
+      ["S4520", "COMUTAÇÃO (OEMP)", "CONFIGURAÇÃO", "OUTROS", "Configuração", "[OEMP - Comutação] Falha restabelecida após configuração na Rede na Estação", "Falha de configuração após testes da operadora"],
+      ["S4528", "COMUTAÇÃO (OEMP)", "CONFIGURAÇÃO", "SEM AÇÃO", "Configuração", "[OEMP - Comutação] Falha restabelecida após configuração na Rede na Estação", "Falha de configuração onde não houve atuação da operadora."],
+      ["S4540", "COMUTAÇÃO (OEMP)", "CONFIGURAÇÃO", "OUTROS", "Configuração", "[OEMP - Comutação] Falha restabelecida após configuração na Estação", "Falha de configuração após testes da operadora"],
+      ["S4620", "COMUTAÇÃO (OEMP)", "ENCAMINHAMENTO", "OUTROS", "Configuração", "[OEMP - Comutação] Falha restabelecida após ajuste de encaminhamento na Rede", "Falha de encaminhamento após testes da operadora"],
+      ["S4628", "COMUTAÇÃO (OEMP)", "ENCAMINHAMENTO", "SEM AÇÃO", "Configuração", "[OEMP - Comutação] Falha restabelecida após ajuste de encaminhamento na Rede", "Falha de encaminhamento onde não houve atuação da operadora."],
+      ["S5120", "EQUIPAMENTO", "MODEM", "OUTROS", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S5420", "EQUIPAMENTO", "EQUIPAMENTO DESLIGADO", "OUTROS", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S6124", "REDE EXTERNA", "FIBRA ÓTICA", "OUTROS", "Fibra", "[OEMP Fibra Desgaste] Falha restabelecida após troca/fusão de fibra ocasionada por atenuação.", "Falha causada por degradação, desgaste ou atenuação em qualquer elemento da rede óptica (cabos, caixas de emenda, conectores, DGO, cordões monofibra, etc), tendo sido solucionado através da substituição, recuperação ou limpeza do elemento degradado"],
+      ["S8120", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S8121", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S8122", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8123", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S8124", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
+      ["S8125", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
+      ["S8126", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
+      ["S8127", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
+      ["S8128", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
+      ["S820", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S821", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S822", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8220", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S8221", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S8222", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8223", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S8224", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
+      ["S8225", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
+      ["S8226", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
+      ["S8227", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
+      ["S8228", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
+      ["S823", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S824", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
+      ["S825", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
+      ["S826", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
+      ["S827", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
+      ["S828", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
+      ["S8320", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S8321", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S8322", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8323", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S8324", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
+      ["S8325", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
+      ["S8326", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
+      ["S8327", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
+      ["S8328", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
+      ["S8420", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S8421", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S8422", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8423", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S8424", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
+      ["S8425", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
+      ["S8426", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
+      ["S8427", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
+      ["S8428", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
+      ["S8520", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S8521", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S8522", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8523", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S8524", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
+      ["S8525", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
+      ["S8526", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
+      ["S8527", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
+      ["S8528", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
+      ["S8620", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S8621", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S8622", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8623", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S8624", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
+      ["S8625", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
+      ["S8626", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
+      ["S8627", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
+      ["S8628", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
+      ["S8720", "REDE DE DADOS (OEMP)", "OUTROS", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida após efetuar testes no link", "Falha de dados para outra operadora onde não há expecificação na última coluna (utilizamos o campo de descrição livre para detalhar)."],
+      ["S8721", "REDE DE DADOS (OEMP)", "RECONFIGURADO O EQUIPAMENTO", "-", "Configuração", "[OEMP Config] Falha restabelecida após reconfiguração na estação", "Falha de dados para outra operadora onde foi reconfigurado algum equipamento."],
+      ["S8722", "REDE DE DADOS (OEMP)", "RESET NO EQUIPAMENTO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi efetuado reset em algum equipamento."],
+      ["S8723", "REDE DE DADOS (OEMP)", "SUBSTITUÍDO O EQUIPAMENTO", "-", "Equipamento com defeito", "[OEMP Equipamento] Falha restabelecida após troca equipamento", "Falha de dados para outra operadora onde foi substituído algum equipamento."],
+      ["S8724", "REDE DE DADOS (OEMP)", "RECUPERADO O CABO", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi recuperado algum cabo."],
       ["S8725", "REDE DE DADOS (OEMP)", "MANOBRADOS OS PARES", "-", "Par Metálico", "[OEMP Par Metálico] Falha restabelecida após refeito cabo/conector na estação", "Falha de dados para outra operadora onde foi manobrado algum par."],
       ["S8726", "REDE DE DADOS (OEMP)", "CONEXÕES REFEITAS", "-", "Cabo/Conector", "[OEMP Cabo] Falha restabelecida após troca de cabo/conector na estação", "Falha de dados para outra operadora onde foi refeita alguma conexão."],
       ["S8727", "REDE DE DADOS (OEMP)", "TESTES DE TRANSMISSÃO", "-", "Reinicialização", "[OEMP Reset] Falha restabelecida após reset nos equipamentos", "Falha de dados para outra operadora onde foi feito algum teste de transmissão."],
       ["S8728", "REDE DE DADOS (OEMP)", "SEM AÇÃO", "-", ".", "[OEMP Link Encontrado OK] Falha restabelecida sem intervenção técnica no link", "Falha de dados para outra operadora onde não houve intervenção da mesma para normalizar o link."],
       ["S9120", "INFRA-ESTRUTURA", "FALTA ENERGIA", "EQUIPAMENTO DESLIGADO", ".", "[OEMP - Falha Elétrica Energia] Falha restabelecida após estabilizar a rede elétrica na estação", "Falha causada por falta de energia na operadora"],
-      ["S9140", "INFRA-ESTRUTURA", "FALTA ENERGIA", "EQUIPAMENTO DESLIGADO", ".", "[OEMP - Falha Elétrica Energia] Falha restabelecida após estabilizar a rede elétrica na estação", "Falha causada por falta de energia na infraestrutura interna da rede"]
+      ["S9140", "INFRA-ESTRUTURA", "FALTA ENERGIA", "EQUIPAMENTO DESLIGADO", ".", "[OEMP - Falha Elétrica Energia] Falha restabelecida após estabilizar a rede elétrica na estação", "Falha causada por falta de energia na infraestrutura interna da rede"],
+      ["S9440", "COMUTAÇÃO", "CLIMATIZAÇÃO", "-", ".", "[OEMP Backbone Climatização] Falha restabelecida após estabilizar climatização na Estação", "Falha na climatização da estação terceiros, podendo ter sido causado por vandalismo, descarga elétrica/atmosférica, sobrecarga, etc"]
     ];
     
     try {
       const salvo = localStorage.getItem("sistema_wiki_stcars_master");
+      if (salvo && salvo.includes("N_A")) {
+        localStorage.removeItem("sistema_wiki_stcars_master");
+        return dadosLocais;
+      }
       return salvo ? JSON.parse(salvo) : dadosLocais;
     } catch(e) {
       return dadosLocais;
@@ -208,12 +401,13 @@ export default function SistemaAtendimentos() {
     { label: "Abertura Automação (Operadora)", texto: "SERVIÇO INOPERANTE//REPARO ABERTO PELA AUTOMAÇÃO//CHAMADO SOLICITADO À OPERADORA XXX//SEM PREVISÃO DE NORMALIZAÇÃO" }
   ];
 
-  const [categoriaExpandida, setCategoriaExpandida] = useState("DIA A DIA"); 
+const [categoriaExpandida, setCategoriaExpandida] = useState("DIA A DIA"); 
   const [artigoAtivo, setArtigoAtivo] = useState("dia_ferramentas");
-const [escalaExpandida, setEscalaExpandida] = useState(null);
+  const [escalaExpandida, setEscalaExpandida] = useState(null);
+  const [modoNoc, setModoNoc] = useState(false); // NOVO GATILHO
 
   const baseConhecimento = [
-    {
+        {
       categoria: "CONTATOS",
       artigos: [
         { id: "contatos_oemp", titulo: "OEMP / Parceiras", tipo: "cards_oemp", dados: dadosOEMP },
@@ -1177,15 +1371,32 @@ const encerrarExpediente = async () => {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
               ) : (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-              )}
+)}
             </button>
+
+            {/* BOTÃO MODO NOC (TELAS GRANDES) */}
             {viewAtiva === "operacional" && (
-              <>
+              <button onClick={() => setModoNoc(!modoNoc)} title={modoNoc ? "Sair do Modo NOC" : "Ativar Modo NOC (Tela Cheia)"} className={`p-2 rounded-xl border transition-all hover:scale-105 shadow-inner ${modoNoc ? "bg-cyan-600 border-cyan-500 text-white shadow-[0_0_15px_rgba(8,145,178,0.4)]" : "bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-cyan-600 dark:text-cyan-500"}`}>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+              </button>
+            )}
+
+            {viewAtiva === "operacional" && (
+              <div className="flex items-center gap-3">
+                {/* PÍLULAS RÁPIDAS DE STATUS (QUICK FILTERS) */}
+                <div className="hidden lg:flex items-center bg-slate-100 dark:bg-slate-900/80 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700/80 shadow-inner gap-1">
+                  {["Todos", "Aberto", "Em andamento", "Encerrado"].map(st => (
+                    <button key={st} onClick={() => setStatusFiltro(st)} className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all ${statusFiltro === st ? (st === "Aberto" ? "bg-emerald-500 text-white shadow-md" : st === "Em andamento" ? "bg-amber-500 text-white shadow-md" : st === "Encerrado" ? "bg-blue-500 text-white shadow-md" : "bg-white dark:bg-slate-700 text-cyan-800 dark:text-cyan-300 shadow-sm") : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800"}`}>
+                      {st === "Aberto por E-mail" ? "E-MAIL" : st}
+                    </button>
+                  ))}
+                </div>
+
                 <div className="flex items-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 shadow-sm focus-within:border-cyan-500 transition-all">
                   <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                   <input type="text" placeholder="Pesquisar Chamados..." value={filtro} onChange={(e) => setFiltro(e.target.value)} className="py-2.5 px-2 text-xs w-48 outline-none bg-transparent text-slate-800 dark:text-white" />
                 </div>
-              </>
+              </div>
             )}
           </div>
         </header>
@@ -1275,139 +1486,141 @@ const encerrarExpediente = async () => {
     </div>
   );
 
-  function viewAtView_operacional() {
+function viewAtView_operacional() {
     if (viewAtiva !== "operacional") return null;
     return (
       <>
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
-
-          {/* PAINEL DE INSERÇÃO COM BLOCO DE NOTAS INTEGRADO */}
-          <div className="xl:col-span-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-3 transition-colors">
-            
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-700 pb-4">
-              <div className="flex items-center gap-3 w-full md:w-auto">
-                <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
-                <h2 className="text-sm font-black text-slate-800 dark:text-white uppercase tracking-widest">Event Intake</h2>
-                
-                <div className="ml-4 flex items-center bg-slate-50 dark:bg-slate-900 border border-slate-200 border-slate-600 rounded-xl px-2 py-1 shadow-inner">
-                  <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-2">Status:</label>
-<select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
-    <option value="Aberto">ABERTO</option>
-    <option value="Aberto por E-mail">ABERTO POR E-MAIL</option>
-    <option value="Em andamento">EM ANDAMENTO</option>
-    <option value="Encerrado">ENCERRADO</option>
-</select>
+        {/* =========================================================
+            GATILHO DO MODO NOC: Oculta o painel superior (Event Intake)
+            ========================================================= */}
+        {!modoNoc && (
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start mb-6 animate-fade-in">
+            {/* PAINEL DE INSERÇÃO COM BLOCO DE NOTAS INTEGRADO */}
+            <div className="xl:col-span-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-3 transition-colors">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-700 pb-4">
+                <div className="flex items-center gap-3 w-full md:w-auto">
+                  <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
+                  <h2 className="text-sm font-black text-slate-800 dark:text-white uppercase tracking-widest">Event Intake</h2>
+                  
+                  <div className="ml-4 flex items-center bg-slate-50 dark:bg-slate-900 border border-slate-200 border-slate-600 rounded-xl px-2 py-1 shadow-inner">
+                    <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-2">Status:</label>
+                    <select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
+                        <option value="Aberto">ABERTO</option>
+                        <option value="Aberto por E-mail">ABERTO POR E-MAIL</option>
+                        <option value="Em andamento">EM ANDAMENTO</option>
+                        <option value="Encerrado">ENCERRADO</option>
+                    </select>
+                  </div>
                 </div>
+
+                <button onClick={adicionarAtendimento} title="Extrair dados do rascunho e salvar na tabela de registros oficiais. Atualiza automaticamente se a designação já existir." className="w-full md:w-auto px-6 py-2.5 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-xs uppercase tracking-widest transition-all shadow-md active:scale-[0.97] whitespace-nowrap">
+                  New Ticket
+                </button>
               </div>
 
-              <button onClick={adicionarAtendimento} title="Extrair dados do rascunho e salvar na tabela de registros oficiais. Atualiza automaticamente se a designação já existir." className="w-full md:w-auto px-6 py-2.5 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-xs uppercase tracking-widest transition-all shadow-md active:scale-[0.97] whitespace-nowrap">
-                New Ticket
-              </button>
+              {/* Sub-Grid: Divide o espaço interno horizontalmente entre o Extrator e o Rascunho */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-2">
+                {/* Coluna do Extrator de Dados Principal */}
+                <div className="lg:col-span-8 flex flex-col">
+                  <div className="flex items-center justify-between mb-2 ml-1">
+                    <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Auto-Extrator de Dados (Ctrl + Enter para Enviar)</label>
+                    <select onChange={(e) => { if(e.target.value){ adicionarMacro(e.target.value); e.target.value = ""; } }} className="text-[9px] font-bold bg-slate-50 hover:bg-cyan-50 text-cyan-800 dark:bg-slate-700 dark:text-cyan-400 border border-slate-200 dark:border-slate-600 rounded-lg px-2 py-1 outline-none cursor-pointer">
+                      <option value="">⚡ INSERIR MACRO RÁPIDA...</option>
+                      {macrosAvancadas.map((m, idx) => <option key={idx} value={m.texto}>{m.label}</option>)}
+                    </select>
+                  </div>
+                  <textarea 
+                    ref={rascunhoRef}
+                    value={rascunho} 
+                    onChange={(e) => handleRascunhoChange(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.ctrlKey && e.key === 'Enter') {
+                        e.preventDefault();
+                        adicionarAtendimento();
+                      }
+                    }}
+                    placeholder="Preencha a máscara aqui. O sistema extrairá a Designação e o GT Nome automaticamente..." 
+                    className="w-full min-h-[180px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium rounded-xl p-4 text-xs outline-none focus:border-cyan-500 resize-y leading-relaxed transition-colors shadow-inner" 
+                  />
+                </div>
+
+                {/* Coluna da Área de Anotações Temporárias (Bloco de Notas Independente) */}
+                <div className="lg:col-span-4 flex flex-col">
+                  <div className="flex items-center justify-between mb-2 ml-1">
+                    <label className="text-[9px] font-black text-amber-500 dark:text-amber-400 uppercase tracking-widest font-mono">📝 Rascunho Temporário NOC</label>
+                    <button 
+                      onClick={() => { if(window.confirm("Limpar rascunho temporário?")) setBlocoNotasTemporario(""); }} 
+                      className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider transition-colors"
+                      title="Apagar todas as anotações rápidas"
+                    >
+                      Limpar
+                    </button>
+                  </div>
+                  <textarea 
+                    value={blocoNotasTemporario}
+                    onChange={(e) => setBlocoNotasTemporario(e.target.value)}
+                    placeholder="Cole aqui listas de circuitos, dados de ligações ou informações pendentes da Oi/Vital para processar depois..." 
+                    className="w-full min-h-[180px] bg-amber-50/20 dark:bg-amber-950/10 border border-amber-200/60 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed shadow-inner placeholder-slate-400" 
+                  />
+                </div>
+              </div>
             </div>
-
-            {/* Sub-Grid: Divide o espaço interno horizontalmente entre o Extrator e o Rascunho */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-2">
-              
-              {/* Coluna do Extrator de Dados Principal */}
-              <div className="lg:col-span-8 flex flex-col">
-                <div className="flex items-center justify-between mb-2 ml-1">
-                  <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Auto-Extrator de Dados (Ctrl + Enter para Enviar)</label>
-                  <select onChange={(e) => { if(e.target.value){ adicionarMacro(e.target.value); e.target.value = ""; } }} className="text-[9px] font-bold bg-slate-50 hover:bg-cyan-50 text-cyan-800 dark:bg-slate-700 dark:text-cyan-400 border border-slate-200 dark:border-slate-600 rounded-lg px-2 py-1 outline-none cursor-pointer">
-                    <option value="">⚡ INSERIR MACRO RÁPIDA...</option>
-                    {macrosAvancadas.map((m, idx) => <option key={idx} value={m.texto}>{m.label}</option>)}
-                  </select>
-                </div>
-                <textarea 
-                  ref={rascunhoRef}
-                  value={rascunho} 
-                  onChange={(e) => handleRascunhoChange(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.ctrlKey && e.key === 'Enter') {
-                      e.preventDefault();
-                      adicionarAtendimento();
-                    }
-                  }}
-                  placeholder="Preencha a máscara aqui. O sistema extrairá a Designação e o GT Nome automaticamente..." 
-                  className="w-full min-h-[180px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium rounded-xl p-4 text-xs outline-none focus:border-cyan-500 resize-y leading-relaxed transition-colors shadow-inner" 
-                />
-              </div>
-
-              {/* Coluna da Área de Anotações Temporárias (Bloco de Notas Independente) */}
-              <div className="lg:col-span-4 flex flex-col">
-                <div className="flex items-center justify-between mb-2 ml-1">
-                  <label className="text-[9px] font-black text-amber-500 dark:text-amber-400 uppercase tracking-widest font-mono">📝 Rascunho Temporário NOC</label>
-                  <button 
-                    onClick={() => { if(confirm("Limpar rascunho temporário?")) setBlocoNotasTemporario(""); }} 
-                    className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider transition-colors"
-                    title="Apagar todas as anotações rápidas"
-                  >
-                    Limpar
+            
+            {/* PAINEL DIREITO: MÉTRICAS E CONTROLE */}
+            <div className="xl:col-span-4 flex flex-col gap-6">
+              <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm transition-colors">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Métricas do Turno</h3>
+                  
+                  {/* INDICADOR DE PASTA CONFIGURADA */}
+                  <button onClick={escolherPastaBackup} title="Clique para reconfigurar a pasta de destino" className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all border shadow-inner active:scale-95 ${diretorioBackup ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:border-emerald-800 dark:text-emerald-400" : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800 dark:text-rose-400 hover:bg-rose-100"}`}>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
+                    {diretorioBackup ? nomeDiretorio : "Pasta Pendente"}
                   </button>
                 </div>
-                <textarea 
-                  value={blocoNotasTemporario}
-                  onChange={(e) => setBlocoNotasTemporario(e.target.value)}
-                  placeholder="Cole aqui listas de circuitos, dados de ligações ou informações pendentes da Oi/Vital para processar depois..." 
-                  className="w-full min-h-[180px] bg-amber-50/20 dark:bg-amber-950/10 border border-amber-200/60 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed shadow-inner placeholder-slate-400" 
-                />
-              </div>
 
-            </div>
-          </div>
-          {/* PAINEL DIREITO: MÉTRICAS E CONTROLE */}
-          <div className="xl:col-span-4 flex flex-col gap-6">
-            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm transition-colors">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Métricas do Turno</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center">
+                    <span className="text-2xl font-black text-slate-800 dark:text-white">{atendimentosFiltrados.length}</span>
+                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-0.5">Listados</span>
+                  </div>
+                  <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/50 rounded-xl p-3 flex flex-col items-center justify-center">
+                    <span className="text-2xl font-black text-amber-700 dark:text-amber-500">{abertos}</span>
+                    <span className="text-[10px] font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider mt-0.5">Abertos</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-2.5 transition-colors">
+                <button onClick={gerarRelatorioTurno} title="Gerar e baixar o relatório completo da passagem de turno em .txt." className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-3 rounded-xl text-xs uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm">
+                   Gerar Relatório de Turno
+                </button>
                 
-                {/* INDICADOR DE PASTA CONFIGURADA */}
-                <button onClick={escolherPastaBackup} title="Clique para reconfigurar a pasta de destino" className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all border shadow-inner active:scale-95 ${diretorioBackup ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:border-emerald-800 dark:text-emerald-400" : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800 dark:text-rose-400 hover:bg-rose-100"}`}>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
-                  {diretorioBackup ? nomeDiretorio : "Pasta Pendente"}
+                <div className="grid grid-cols-2 gap-2.5">
+                  <button onClick={exportarJSON} title="Fazer o download de todo o histórico atual em formato .json." className="flex items-center justify-center gap-1.5 w-full bg-slate-50 hover:bg-cyan-50 dark:bg-slate-700 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-600 hover:text-cyan-800 dark:text-slate-300 dark:hover:text-white font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all">
+                    Exportar Backup
+                  </button>
+                  <label title="Restaurar um backup salvo anteriormente (.json)." className="flex items-center justify-center gap-1.5 w-full bg-slate-50 hover:bg-cyan-50 dark:bg-slate-700 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-600 hover:text-cyan-800 dark:text-slate-300 dark:hover:text-white font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all cursor-pointer">
+                    Importar <input type="file" accept=".json" onChange={importarBackup} className="hidden" />
+                  </label>
+                </div>
+
+                <div className="h-px w-full bg-slate-100 dark:bg-slate-700 my-1"></div>
+                
+                <button 
+                  onClick={encerrarExpediente} 
+                  className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white border border-rose-200 font-black py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-sm active:scale-[0.98]"
+                >
+                  🛑 Encerrar Expediente
                 </button>
               </div>
-
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center">
-                  <span className="text-2xl font-black text-slate-800 dark:text-white">{atendimentosFiltrados.length}</span>
-                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-0.5">Listados</span>
-                </div>
-                <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/50 rounded-xl p-3 flex flex-col items-center justify-center">
-                  <span className="text-2xl font-black text-amber-700 dark:text-amber-500">{abertos}</span>
-                  <span className="text-[10px] font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider mt-0.5">Abertos</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-2.5 transition-colors">
-              <button onClick={gerarRelatorioTurno} title="Gerar e baixar o relatório completo da passagem de turno em .txt." className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-3 rounded-xl text-xs uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm">
-                 Gerar Relatório de Turno
-              </button>
-              
-              <div className="grid grid-cols-2 gap-2.5">
-                <button onClick={exportarJSON} title="Fazer o download de todo o histórico atual em formato .json." className="flex items-center justify-center gap-1.5 w-full bg-slate-50 hover:bg-cyan-50 dark:bg-slate-700 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-600 hover:text-cyan-800 dark:text-slate-300 dark:hover:text-white font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all">
-                  Exportar Backup
-                </button>
-                <label title="Restaurar um backup salvo anteriormente (.json)." className="flex items-center justify-center gap-1.5 w-full bg-slate-50 hover:bg-cyan-50 dark:bg-slate-700 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-600 hover:text-cyan-800 dark:text-slate-300 dark:hover:text-white font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all cursor-pointer">
-                  Importar <input type="file" accept=".json" onChange={importarBackup} className="hidden" />
-                </label>
-              </div>
-
-              <div className="h-px w-full bg-slate-100 dark:bg-slate-700 my-1"></div>
-              
-<button 
-  onClick={encerrarExpediente} 
-  className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white border border-rose-200 font-black py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-sm active:scale-[0.98]"
->
-  🛑 Encerrar Expediente
-</button>
             </div>
           </div>
-        </div>
+        )}
 
-        {/* HISTÓRICO EM CARDS DINÂMICOS LADO A LADO (COMPACTO COM BORDAS DINÂMICAS) */}
+        {/* HISTÓRICO EM CARDS DINÂMICOS LADO A LADO (COMPACTO COM BORDAS DINÂMICAS E AUTO-EXPANSÍVEL) */}
         <div className="mt-2">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
             {atendimentosFiltrados.map((item) => {
               
               let classesBorda = "border-slate-200 dark:border-slate-700/80"; 
@@ -1421,50 +1634,63 @@ const encerrarExpediente = async () => {
                 classesBorda = "border-l-4 border-blue-500 shadow-blue-950/5 dark:shadow-none";
               }
 
-return (
-  <div key={item.id} className={`bg-white dark:bg-slate-800 rounded-2xl border ${classesBorda} p-3.5 shadow-sm hover:shadow-md hover:border-cyan-500/50 transition-all flex flex-col justify-between relative group ${devePiscar(item.ultimaAtualizacao, item.status) ? "animate-piscar" : ""}`}>                        {/* CABEÇALHO DO CARD: DESIGNAÇÃO EM DESTAQUE MÁXIMO E AÇÕES */}
-                        <div className="flex items-start justify-between border-b border-slate-100 dark:border-slate-700/50 pb-2 mb-3">
-                          <div className="flex flex-col min-w-0 flex-1 pr-2">
-                            {/* DESIGNAÇÃO: Agora no topo, com fonte grande, preta e azul ciano elétrico bem visível */}
-                            <span className="font-mono font-black text-sm text-cyan-600 dark:text-cyan-400 tracking-tight uppercase truncate select-all block" title={item.designacao}>
-                              📡 {item.designacao}
-                            </span>
-                            {/* PROTOCOLO: Jogado para baixo, menor e discreto, mas ainda disponível */}
-                            <span className="text-slate-400 dark:text-slate-500 font-mono text-[9px] mt-0.5 tracking-wider truncate block">
-                              ID: {item.protocolo}
-                            </span>
-                          </div>
+              return (
+                <div key={item.id} className={`bg-white dark:bg-slate-800 rounded-2xl border ${classesBorda} p-3.5 shadow-sm hover:shadow-md hover:border-cyan-500/50 transition-all flex flex-col justify-between relative group ${devePiscar(item.ultimaAtualizacao, item.status) ? "animate-piscar" : ""}`}>
+                  
+                  {/* CABEÇALHO DO CARD: DESIGNAÇÃO EM DESTAQUE MÁXIMO E AÇÕES */}
+                  <div className="flex items-start justify-between border-b border-slate-100 dark:border-slate-700/50 pb-2 mb-3">
+                    <div className="flex flex-col min-w-0 flex-1 pr-2">
+                      <span className="font-mono font-black text-sm text-cyan-600 dark:text-cyan-400 tracking-tight uppercase truncate select-all block" title={item.designacao}>
+                        📡 {item.designacao}
+                      </span>
+                      <span className="text-slate-400 dark:text-slate-500 font-mono text-[9px] mt-0.5 tracking-wider truncate block">
+                        ID: {item.protocolo}
+                      </span>
+                    </div>
 
-                          {/* CONTROLES E STATUS */}
-                          <div className="flex items-center gap-1 flex-shrink-0">
-                            <select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className="border rounded-md px-1 py-0.5 text-[9px] font-black focus:outline-none dark:bg-slate-900 cursor-pointer shadow-sm">
-                              <option value="Aberto">Aberto</option>
-                              <option value="Aberto por E-mail">Aberto por E-mail</option>
-                              <option value="Em andamento">Em andamento</option>
-                              <option value="Encerrado">Encerrado</option>
-                            </select>
-                            <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 bg-slate-50 dark:bg-slate-900 p-1 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-colors" title="Editar Chamado">
-                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-                            </button>
-                            <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 bg-slate-50 dark:bg-slate-900 p-1 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-colors" title="Excluir Chamado">
-                              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                            </button>
-                          </div>
-                        </div>
+                    {/* CONTROLES E STATUS */}
+                    <div className="flex items-center gap-1 flex-shrink-0">
+                      <select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className="border rounded-md px-1 py-0.5 text-[9px] font-black focus:outline-none dark:bg-slate-900 cursor-pointer shadow-sm">
+                        <option value="Aberto">Aberto</option>
+                        <option value="Aberto por E-mail">Aberto por E-mail</option>
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Encerrado">Encerrado</option>
+                      </select>
+                      
+                      {/* BOTÃO QUICK-ADD (+ NOTA) AUTOMÁTICO */}
+                      <button onClick={() => {
+                        const hora = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
+                        setRascunho(`DESIGNAÇÃO: ${item.designacao}\nGT NOME: ${item.gtNome}\nPOSICIONAMENTO: \n\n[${hora}] - `);
+                        setForm(prev => ({...prev, status: "Em andamento"}));
+                        if (modoNoc) setModoNoc(false); // Sai do modo tela cheia para digitar
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => rascunhoRef.current?.focus(), 100);
+                      }} className="text-cyan-600 bg-cyan-50 dark:bg-cyan-900/30 p-1 px-2 rounded border border-cyan-200 dark:border-cyan-800 active:scale-95 transition-colors text-[9px] font-black uppercase flex items-center gap-1" title="Atualização Rápida (Puxar para Rascunho)">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg> Nota
+                      </button>
 
-                        {/* CORPO DO CARD: DETALHES COMPLEMENTARES */}
-                        <div className="grid grid-cols-2 gap-2 mb-3 bg-slate-50/60 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-700/40">
-                          <div>
-                            <span className="text-[8px] font-black text-slate-400 dark:text-slate-500 uppercase block tracking-wider">Grupo Técnico</span>
-                            <span className="font-bold text-[11px] text-slate-800 dark:text-slate-200 truncate block">{item.gtNome}</span>
-                          </div>
-                          <div>
-                            <span className="text-[8px] font-black text-slate-400 dark:text-slate-500 uppercase block tracking-wider">Data / Hora</span>
-                            <span className="font-mono text-[9px] text-slate-500 dark:text-slate-400 block mt-0.5">
-                              {item.dataHora ? item.dataHora.split(',')[0] : ''} <span className="text-slate-300 dark:text-slate-600">|</span> {item.dataHora ? item.dataHora.split(',')[1]?.trim() : ''}
-                            </span>
-                          </div>
-                        </div>
+                      <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 bg-slate-50 dark:bg-slate-900 p-1 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-colors" title="Editar Chamado">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+                      </button>
+                      <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 bg-slate-50 dark:bg-slate-900 p-1 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-colors" title="Excluir Chamado">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* CORPO DO CARD: DETALHES COMPLEMENTARES */}
+                  <div className="grid grid-cols-2 gap-2 mb-3 bg-slate-50/60 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-700/40">
+                    <div>
+                      <span className="text-[8px] font-black text-slate-400 dark:text-slate-500 uppercase block tracking-wider">Grupo Técnico</span>
+                      <span className="font-bold text-[11px] text-slate-800 dark:text-slate-200 truncate block">{item.gtNome}</span>
+                    </div>
+                    <div>
+                      <span className="text-[8px] font-black text-slate-400 dark:text-slate-500 uppercase block tracking-wider">Data / Hora</span>
+                      <span className="font-mono text-[9px] text-slate-500 dark:text-slate-400 block mt-0.5">
+                        {item.dataHora ? item.dataHora.split(',')[0] : ''} <span className="text-slate-300 dark:text-slate-600">|</span> {item.dataHora ? item.dataHora.split(',')[1]?.trim() : ''}
+                      </span>
+                    </div>
+                  </div>
 
                   {/* LINHA DO TEMPO INTERNA DO CARD */}
                   <div className="relative flex-1">
@@ -1499,23 +1725,18 @@ return (
                           const restanteMascara = linhas.slice(1).join("\n"); 
                           textoFinal = `${tagCodigo}\nGT NOME: ${item.gtNome}\n${restanteMascara}`;
                        } else if (conteudoLimpo.includes("HR VIA EMAIL:")) {
-  // Captura as 3 informações exigidas pelo NOC: GT + Hora do Envio + Descrição/Posicionamento
-  textoFinal = `GT NOME: ${item.gtNome}\n${conteudoLimpo}`;
-} else if (conteudoLimpo.includes("NºTT:") && conteudoLimpo.includes("DESCRIÇÃO:")) {
-  textoFinal = `GT NOME: ${item.gtNome}\n${conteudoLimpo}`;
-} else 
-  {
-      // Isola e remove as tags estruturais antigas caso existam, preservando o miolo do texto
-      let posicionamentoUtil = conteudoLimpo
-        .replace(/DESIGNA[ÇC][AÃ]O:.*\n?/gi, "")
-        .replace(/GT NOME:.*\n?/gi, "")
-        .trim();
-      
-      // Se o texto útil extraído já começar com a palavra POSICIONAMENTO, removemos para não duplicar
-      posicionamentoUtil = posicionamentoUtil.replace(/^POSICIONAMENTO:\s*/i, "");
-
-      textoFinal = `GT NOME: ${item.gtNome}\nPOSICIONAMENTO: ${posicionamentoUtil}`;
-    }
+                          textoFinal = `GT NOME: ${item.gtNome}\n${conteudoLimpo}`;
+                        } else if (conteudoLimpo.includes("NºTT:") && conteudoLimpo.includes("DESCRIÇÃO:")) {
+                          textoFinal = `GT NOME: ${item.gtNome}\n${conteudoLimpo}`;
+                        } else  {
+                          let posicionamentoUtil = conteudoLimpo
+                            .replace(/DESIGNA[ÇC][AÃ]O:.*\n?/gi, "")
+                            .replace(/GT NOME:.*\n?/gi, "")
+                            .trim();
+                          
+                          posicionamentoUtil = posicionamentoUtil.replace(/^POSICIONAMENTO:\s*/i, "");
+                          textoFinal = `GT NOME: ${item.gtNome}\nPOSICIONAMENTO: ${posicionamentoUtil}`;
+                        }
 
                         navigator.clipboard.writeText(textoFinal.replace(/\n\n/g, "\n")); 
                         mostrarToast("Encerramento estruturado copiado!"); 
@@ -1523,7 +1744,7 @@ return (
                       className="absolute top-1.5 right-1.5 text-slate-400 hover:text-cyan-700 bg-slate-50 dark:bg-slate-800 hover:bg-cyan-50 dark:hover:bg-slate-700 p-1 rounded transition-all shadow-sm opacity-0 group-hover:opacity-100 active:scale-95 border dark:border-slate-700" 
                       title="Copiar Informações Formatadas"
                     >
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                     </button>
                   </div>
 
@@ -1544,7 +1765,7 @@ return (
       </>
     );
   }
-
+  
   function viewAtView_wiki() {
     if (viewAtiva !== "wiki") return null;
     return (
@@ -1701,20 +1922,31 @@ return (
                                 <span className="font-mono font-black text-sm text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-slate-900 px-2.5 py-1 rounded-lg border border-cyan-100 dark:border-slate-800">
                                   NOC COD: #{row[0]}
                                 </span>
-                              </div>
+</div>
                               <button 
                                 onClick={() => { 
-                                  const d = new Date().toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit', year: '2-digit' });
-                                  const h = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
+                                  const d = new Date().toLocaleDateString("pt-BR", { day: '2-digit', month: '2-digit', year: '2-digit' });                                  const h = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
                                   const textoFinal = `#${row[0]}#\nDESIGNAÇÃO: \nGT NOME: \nFALHA: ${row[1]} - ${row[2]}\nINÍCIO: \nNORMALIZAÇÃO: ${d} ${h}\nCAUSA: ${row[4] !== "-" ? row[4] : "REDE EXTERNA"}\nSOLUÇÃO: ${row[5]}`;
+                                  
+                                  // 1. Copia para a área de transferência
                                   navigator.clipboard.writeText(textoFinal); 
-                                  mostrarToast(`Máscara #${row[0]} copiada!`); 
+                                  
+                                  // 2. Cola automaticamente no extrator de rascunhos
+                                  setRascunho(textoFinal);
+                                  
+                                  // 3. Altera o status do seletor para Encerrado
+                                  setForm(prev => ({ ...prev, status: "Encerrado" }));
+                                  
+                                  // 4. Redireciona a tela de volta para o Operacional
+                                  setViewAtiva("operacional");
+                                  
+                                  mostrarToast(`Máscara #${row[0]} enviada direto para o Extrator!`); 
                                 }} 
                                 className="text-[9px] font-black uppercase tracking-wider bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-emerald-950/40 p-2 rounded-xl border border-slate-200 dark:border-slate-600 transition-all active:scale-95"
                               >
                                 📋 Copiar Máscara
                               </button>
-                            </div>
+                                                          </div>
 
                             <div className="flex flex-wrap items-center gap-1 mb-4 bg-slate-50 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-700/50 select-none">
                               <span className="text-[9px] font-black text-slate-500 uppercase tracking-tight">{row[1]}</span>
@@ -1972,14 +2204,18 @@ return (
                                 </pre>
                               </div>
                               
-                              <button 
+<button 
                                 onClick={() => {
-                                  navigator.clipboard.writeText(`Para: ${emailPrincipal !== "E-mail principal não detectado" ? emailPrincipal : ""}\n\n${templateDisparo}`);
-                                  mostrarToast(`Template da operadora ${parceira.n} copiado!`);
+                                  const templatePronto = `Para: ${emailPrincipal !== "E-mail principal não detectado" ? emailPrincipal : ""}\n\n${templateDisparo}`;
+                                  navigator.clipboard.writeText(templatePronto);
+                                  setRascunho(`DESIGNAÇÃO: \nGT NOME: \nPOSICIONAMENTO: FALHA/ //AÇÃO - ACIONADA PARCEIRA ${parceira.n} VIA E-MAIL E PREV. PASSADA AO CLIENTE//`);
+                                  setForm(prev => ({ ...prev, status: "Em andamento" }));
+                                  setViewAtiva("operacional");
+                                  mostrarToast(`E-mail copiado! Tela preparada para registro da ${parceira.n}!`);
                                 }}
                                 className="w-full py-3.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-black text-[11px] uppercase tracking-widest transition-all active:scale-95 shadow-[0_0_15px_rgba(8,145,178,0.2)] flex items-center justify-center gap-2"
                               >
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                                 Copiar Template de Acionamento
                               </button>
                                                           </div>
