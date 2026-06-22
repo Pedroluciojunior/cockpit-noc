@@ -874,17 +874,14 @@ const handleStatusChange = (e) => {
 
     if (novoStatus === "Aberto") {
       const ePorEmail = window.confirm("Este chamado foi aberto via e-mail?");
-      
+      setForm(prev => ({ ...prev, status: "Aberto" }));
       if (ePorEmail) {
-        novoStatus = "Aberto por E-mail";
-        setForm(prev => ({ ...prev, status: novoStatus }));
         setRascunho(`DESIGNAÇÃO: \nHR VIA EMAIL: \nGT NOME: \nDESCRIÇÃO: FALHA - //AÇÃO - //`);
       } else {
-        setForm(prev => ({ ...prev, status: novoStatus }));
         setRascunho(`DESIGNAÇÃO: \nNºTT: \nGT NOME: \nDESCRIÇÃO: FALHA - //AÇÃO - //`);
       }
     } else {
-      setForm(prev => ({ ...prev, status: novoStatus }));
+            setForm(prev => ({ ...prev, status: novoStatus }));
       aplicarMascara(novoStatus);
     }
     
@@ -896,9 +893,9 @@ const handleStatusChange = (e) => {
     if (texto.includes("#[CÓDIGO]#") || texto.includes("SOLUÇÃO:")) {
       if (form.status !== "Encerrado") setForm(prev => ({ ...prev, status: "Encerrado" }));
 } else if (texto.includes("HR VIA EMAIL:")) {
-      if (form.status !== "Aberto por E-mail") setForm(prev => ({ ...prev, status: "Aberto por E-mail" }));
-        } else if (texto.includes("POSICIONAMENTO:")) {
-      if (form.status !== "Em andamento") setForm(prev => ({ ...prev, status: "Em andamento" }));
+      if (form.status !== "Aberto") setForm(prev => ({ ...prev, status: "Aberto" }));
+    } else if (texto.includes("POSICIONAMENTO:")) {
+            if (form.status !== "Em andamento") setForm(prev => ({ ...prev, status: "Em andamento" }));
     } else if (texto.includes("DESCRIÇÃO:")) {
       if (form.status !== "Aberto" && form.status !== "Aberto por E-mail") setForm(prev => ({ ...prev, status: "Aberto" }));
     }
@@ -965,17 +962,19 @@ const devePiscar = (ultimaAtualizacao, status) => {
     const status = form.status;
     const dataHora = new Date().toLocaleString("pt-BR");
     
-    let conteudoUtil = "";
+let conteudoUtil = "";
     if (status === "Aberto") {
-      const numeroTT = extrairDado(rascunhoEmCaixaAlta, /N[º°]TT:\s*(.*)/i);
-      const descricaoChamado = extrairDado(rascunhoEmCaixaAlta, /DESCRI[ÇC][AÃ]O:\s*([\s\S]*)/i);
-      conteudoUtil = `NºTT: ${numeroTT} // DESCRIÇÃO: ${descricaoChamado}`;
-    } else if (status === "Aberto por E-mail") {
-      const horaEmail = extrairDado(rascunhoEmCaixaAlta, /HR VIA EMAIL:\s*(.*)/i);
-      const descricaoChamado = extrairDado(rascunhoEmCaixaAlta, /DESCRI[ÇC][AÃ]O:\s*([\s\S]*)/i);
-      conteudoUtil = `HR VIA EMAIL: ${horaEmail} // DESCRIÇÃO: ${descricaoChamado}`;
+      if (rascunhoEmCaixaAlta.includes("HR VIA EMAIL:")) {
+        const horaEmail = extrairDado(rascunhoEmCaixaAlta, /HR VIA EMAIL:\s*(.*)/i);
+        const descricaoChamado = extrairDado(rascunhoEmCaixaAlta, /DESCRI[ÇC][AÃ]O:\s*([\s\S]*)/i);
+        conteudoUtil = `HR VIA EMAIL: ${horaEmail} // DESCRIÇÃO: ${descricaoChamado}`;
+      } else {
+        const numeroTT = extrairDado(rascunhoEmCaixaAlta, /N[º°]TT:\s*(.*)/i);
+        const descricaoChamado = extrairDado(rascunhoEmCaixaAlta, /DESCRI[ÇC][AÃ]O:\s*([\s\S]*)/i);
+        conteudoUtil = `NºTT: ${numeroTT} // DESCRIÇÃO: ${descricaoChamado}`;
+      }
     } else if (status === "Em andamento") {
-      conteudoUtil = extrairDado(rascunhoEmCaixaAlta, /POSICIONAMENTO:\s*([\s\S]*)/i);
+            conteudoUtil = extrairDado(rascunhoEmCaixaAlta, /POSICIONAMENTO:\s*([\s\S]*)/i);
 } else if (status === "Encerrado") {
       const codigoMatch = rascunhoEmCaixaAlta.match(/#([a-zA-Z0-9]+)#/i);
       const codigo = codigoMatch ? `#${codigoMatch[1]}#` : "#0000#";
@@ -1385,12 +1384,12 @@ const encerrarExpediente = async () => {
               <div className="flex items-center gap-3">
                 {/* PÍLULAS RÁPIDAS DE STATUS (QUICK FILTERS) */}
                 <div className="hidden lg:flex items-center bg-slate-100 dark:bg-slate-900/80 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700/80 shadow-inner gap-1">
-                  {["Todos", "Aberto", "Em andamento", "Encerrado"].map(st => (
+{["Todos", "Aberto", "Em andamento", "Encerrado"].map(st => (
                     <button key={st} onClick={() => setStatusFiltro(st)} className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all ${statusFiltro === st ? (st === "Aberto" ? "bg-emerald-500 text-white shadow-md" : st === "Em andamento" ? "bg-amber-500 text-white shadow-md" : st === "Encerrado" ? "bg-blue-500 text-white shadow-md" : "bg-white dark:bg-slate-700 text-cyan-800 dark:text-cyan-300 shadow-sm") : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800"}`}>
-                      {st === "Aberto por E-mail" ? "E-MAIL" : st}
+                      {st}
                     </button>
                   ))}
-                </div>
+                                  </div>
 
                 <div className="flex items-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 shadow-sm focus-within:border-cyan-500 transition-all">
                   <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -1504,12 +1503,11 @@ function viewAtView_operacional() {
                   
                   <div className="ml-4 flex items-center bg-slate-50 dark:bg-slate-900 border border-slate-200 border-slate-600 rounded-xl px-2 py-1 shadow-inner">
                     <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-2">Status:</label>
-                    <select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
-                        <option value="Aberto">ABERTO</option>
-                        <option value="Aberto por E-mail">ABERTO POR E-MAIL</option>
-                        <option value="Em andamento">EM ANDAMENTO</option>
-                        <option value="Encerrado">ENCERRADO</option>
-                    </select>
+<select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
+    <option value="Aberto">ABERTO</option>
+    <option value="Em andamento">EM ANDAMENTO</option>
+    <option value="Encerrado">ENCERRADO</option>
+</select>
                   </div>
                 </div>
 
@@ -1623,13 +1621,11 @@ function viewAtView_operacional() {
           <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
             {atendimentosFiltrados.map((item) => {
               
-              let classesBorda = "border-slate-200 dark:border-slate-700/80"; 
+let classesBorda = "border-slate-200 dark:border-slate-700/80"; 
               if (item.status === "Aberto") {
                 classesBorda = "border-l-4 border-emerald-500 shadow-emerald-950/5 dark:shadow-none";
-              } else if (item.status === "Aberto por E-mail") {
-                classesBorda = "border-l-4 border-fuchsia-500 shadow-fuchsia-950/5 dark:shadow-none";
               } else if (item.status === "Em andamento") {
-                classesBorda = "border-l-4 border-amber-500 shadow-amber-950/5 dark:shadow-none";
+                                classesBorda = "border-l-4 border-amber-500 shadow-amber-950/5 dark:shadow-none";
               } else if (item.status === "Encerrado") {
                 classesBorda = "border-l-4 border-blue-500 shadow-blue-950/5 dark:shadow-none";
               }
@@ -1650,13 +1646,12 @@ function viewAtView_operacional() {
 
                     {/* CONTROLES E STATUS */}
                     <div className="flex items-center gap-1 flex-shrink-0">
-                      <select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className="border rounded-md px-1 py-0.5 text-[9px] font-black focus:outline-none dark:bg-slate-900 cursor-pointer shadow-sm">
+<select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className="border rounded-md px-1 py-0.5 text-[9px] font-black focus:outline-none dark:bg-slate-900 cursor-pointer shadow-sm">
                         <option value="Aberto">Aberto</option>
-                        <option value="Aberto por E-mail">Aberto por E-mail</option>
                         <option value="Em andamento">Em andamento</option>
                         <option value="Encerrado">Encerrado</option>
                       </select>
-                      
+                                            
                       {/* BOTÃO QUICK-ADD (+ NOTA) AUTOMÁTICO */}
                       <button onClick={() => {
                         const hora = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
