@@ -403,11 +403,12 @@ const [dadosStcArsMaster, setDadosStcArsMaster] = useState(() => {
 
 const [categoriaExpandida, setCategoriaExpandida] = useState("DIA A DIA"); 
   const [artigoAtivo, setArtigoAtivo] = useState("dia_ferramentas");
-  const [escalaExpandida, setEscalaExpandida] = useState(null);
+const [escalaExpandida, setEscalaExpandida] = useState(null);
   const [modoNoc, setModoNoc] = useState(false); // NOVO GATILHO
+  const [circuitoExpandido, setCircuitoExpandido] = useState(null); // CONTROLE DA GAVETA
 
   const baseConhecimento = [
-        {
+            {
       categoria: "CONTATOS",
       artigos: [
         { id: "contatos_oemp", titulo: "OEMP / Parceiras", tipo: "cards_oemp", dados: dadosOEMP },
@@ -1279,10 +1280,10 @@ const encerrarExpediente = async () => {
     }
   };
 
-  return (
+return (
     <div className={`${darkMode ? "dark" : ""}`}>
-      <div className="min-h-screen bg-slate-50/80 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-cyan-200 dark:selection:bg-cyan-800 flex flex-col transition-colors duration-300">
-        
+      {/* Fundo alterado de slate-50/80 para slate-100 fixo, tirando o reflexo agressivo da tela */}
+      <div className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-cyan-200 dark:selection:bg-cyan-800 flex flex-col transition-colors duration-300">        
         {/* Notificações */}
         <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none">
           {toasts.map((toast) => (
@@ -1492,33 +1493,30 @@ function viewAtView_operacional() {
         {/* =========================================================
             GATILHO DO MODO NOC: Oculta o painel superior (Event Intake)
             ========================================================= */}
-        {!modoNoc && (
+{!modoNoc && (
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start mb-6 animate-fade-in">
-            {/* PAINEL DE INSERÇÃO COM BLOCO DE NOTAS INTEGRADO */}
-            <div className="xl:col-span-8 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-3 transition-colors">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-700 pb-4">
+            {/* Bloco de Entrada de Dados Principal alterado para bg-slate-50 no modo claro */}
+            <div className="xl:col-span-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-3 transition-colors">              <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-700 pb-4">
                 <div className="flex items-center gap-3 w-full md:w-auto">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
                   <h2 className="text-sm font-black text-slate-800 dark:text-white uppercase tracking-widest">Event Intake</h2>
                   
-                  <div className="ml-4 flex items-center bg-slate-50 dark:bg-slate-900 border border-slate-200 border-slate-600 rounded-xl px-2 py-1 shadow-inner">
+                  <div className="ml-4 flex items-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-2 py-1 shadow-inner">
                     <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-2">Status:</label>
-<select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
-    <option value="Aberto">ABERTO</option>
-    <option value="Em andamento">EM ANDAMENTO</option>
-    <option value="Encerrado">ENCERRADO</option>
-</select>
+                    <select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
+                        <option value="Aberto">ABERTO</option>
+                        <option value="Em andamento">EM ANDAMENTO</option>
+                        <option value="Encerrado">ENCERRADO</option>
+                    </select>
                   </div>
                 </div>
 
-                <button onClick={adicionarAtendimento} title="Extrair dados do rascunho e salvar na tabela de registros oficiais. Atualiza automaticamente se a designação já existir." className="w-full md:w-auto px-6 py-2.5 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-xs uppercase tracking-widest transition-all shadow-md active:scale-[0.97] whitespace-nowrap">
+                <button onClick={adicionarAtendimento} title="Extrair dados do rascunho e salvar na tabela de registros oficiais." className="w-full md:w-auto px-6 py-2.5 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-xs uppercase tracking-widest transition-all shadow-md active:scale-[0.97] whitespace-nowrap">
                   New Ticket
                 </button>
               </div>
 
-              {/* Sub-Grid: Divide o espaço interno horizontalmente entre o Extrator e o Rascunho */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-2">
-                {/* Coluna do Extrator de Dados Principal */}
                 <div className="lg:col-span-8 flex flex-col">
                   <div className="flex items-center justify-between mb-2 ml-1">
                     <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Auto-Extrator de Dados (Ctrl + Enter para Enviar)</label>
@@ -1538,45 +1536,34 @@ function viewAtView_operacional() {
                       }
                     }}
                     placeholder="Preencha a máscara aqui. O sistema extrairá a Designação e o GT Nome automaticamente..." 
-                    className="w-full min-h-[180px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium rounded-xl p-4 text-xs outline-none focus:border-cyan-500 resize-y leading-relaxed transition-colors shadow-inner" 
+                    className="w-full min-h-[150px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium rounded-xl p-4 text-xs outline-none focus:border-cyan-500 resize-y leading-relaxed transition-colors shadow-inner" 
                   />
                 </div>
 
-                {/* Coluna da Área de Anotações Temporárias (Bloco de Notas Independente) */}
                 <div className="lg:col-span-4 flex flex-col">
                   <div className="flex items-center justify-between mb-2 ml-1">
                     <label className="text-[9px] font-black text-amber-500 dark:text-amber-400 uppercase tracking-widest font-mono">📝 Rascunho Temporário NOC</label>
-                    <button 
-                      onClick={() => { if(window.confirm("Limpar rascunho temporário?")) setBlocoNotasTemporario(""); }} 
-                      className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider transition-colors"
-                      title="Apagar todas as anotações rápidas"
-                    >
-                      Limpar
-                    </button>
+                    <button onClick={() => { if(window.confirm("Limpar rascunho temporário?")) setBlocoNotasTemporario(""); }} className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider transition-colors">Limpar</button>
                   </div>
                   <textarea 
                     value={blocoNotasTemporario}
                     onChange={(e) => setBlocoNotasTemporario(e.target.value)}
-                    placeholder="Cole aqui listas de circuitos, dados de ligações ou informações pendentes da Oi/Vital para processar depois..." 
-                    className="w-full min-h-[180px] bg-amber-50/20 dark:bg-amber-950/10 border border-amber-200/60 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed shadow-inner placeholder-slate-400" 
+                    placeholder="Cole aqui listas de circuitos, dados de ligações ou informações pendentes..." 
+                    className="w-full min-h-[150px] bg-amber-50/10 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed shadow-inner placeholder-slate-400" 
                   />
                 </div>
               </div>
             </div>
             
-            {/* PAINEL DIREITO: MÉTRICAS E CONTROLE */}
+            {/* Bloco de Métricas e Turno à Direita */}
             <div className="xl:col-span-4 flex flex-col gap-6">
-              <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm transition-colors">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm transition-colors">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Métricas do Turno</h3>
-                  
-                  {/* INDICADOR DE PASTA CONFIGURADA */}
-                  <button onClick={escolherPastaBackup} title="Clique para reconfigurar a pasta de destino" className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all border shadow-inner active:scale-95 ${diretorioBackup ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:border-emerald-800 dark:text-emerald-400" : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800 dark:text-rose-400 hover:bg-rose-100"}`}>
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" /></svg>
+                  <button onClick={escolherPastaBackup} className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all border shadow-inner active:scale-95 ${diretorioBackup ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:border-emerald-800" : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800"}`}>
                     {diretorioBackup ? nomeDiretorio : "Pasta Pendente"}
                   </button>
                 </div>
-
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center">
                     <span className="text-2xl font-black text-slate-800 dark:text-white">{atendimentosFiltrados.length}</span>
@@ -1589,26 +1576,19 @@ function viewAtView_operacional() {
                 </div>
               </div>
               
-              <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-2.5 transition-colors">
-                <button onClick={gerarRelatorioTurno} title="Gerar e baixar o relatório completo da passagem de turno em .txt." className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-3 rounded-xl text-xs uppercase tracking-wider transition-all active:scale-[0.98] shadow-sm">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-2.5 transition-colors">
+                <button onClick={gerarRelatorioTurno} className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-sm">
                    Gerar Relatório de Turno
                 </button>
                 
                 <div className="grid grid-cols-2 gap-2.5">
-                  <button onClick={exportarJSON} title="Fazer o download de todo o histórico atual em formato .json." className="flex items-center justify-center gap-1.5 w-full bg-slate-50 hover:bg-cyan-50 dark:bg-slate-700 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-600 hover:text-cyan-800 dark:text-slate-300 dark:hover:text-white font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all">
-                    Exportar Backup
-                  </button>
-                  <label title="Restaurar um backup salvo anteriormente (.json)." className="flex items-center justify-center gap-1.5 w-full bg-slate-50 hover:bg-cyan-50 dark:bg-slate-700 dark:hover:bg-slate-600 border border-slate-200 dark:border-slate-600 text-slate-600 hover:text-cyan-800 dark:text-slate-300 dark:hover:text-white font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all cursor-pointer">
+                  <button onClick={exportarJSON} className="flex items-center justify-center gap-1.5 w-full bg-slate-50 border border-slate-200 text-slate-600 font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all">Exportar Backup</button>
+                  <label className="flex items-center justify-center gap-1.5 w-full bg-slate-50 border border-slate-200 text-slate-600 font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all cursor-pointer">
                     Importar <input type="file" accept=".json" onChange={importarBackup} className="hidden" />
                   </label>
                 </div>
-
                 <div className="h-px w-full bg-slate-100 dark:bg-slate-700 my-1"></div>
-                
-                <button 
-                  onClick={encerrarExpediente} 
-                  className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white border border-rose-200 font-black py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-sm active:scale-[0.98]"
-                >
+                <button onClick={encerrarExpediente} className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white border border-rose-200 font-black py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-sm">
                   🛑 Encerrar Expediente
                 </button>
               </div>
@@ -1616,151 +1596,168 @@ function viewAtView_operacional() {
           </div>
         )}
 
-        {/* HISTÓRICO EM CARDS DINÂMICOS LADO A LADO (COMPACTO COM BORDAS DINÂMICAS E AUTO-EXPANSÍVEL) */}
-        <div className="mt-2">
-          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))' }}>
-            {atendimentosFiltrados.map((item) => {
-              
-let classesBorda = "border-slate-200 dark:border-slate-700/80"; 
-              if (item.status === "Aberto") {
-                classesBorda = "border-l-4 border-emerald-500 shadow-emerald-950/5 dark:shadow-none";
-              } else if (item.status === "Em andamento") {
-                                classesBorda = "border-l-4 border-amber-500 shadow-amber-950/5 dark:shadow-none";
-              } else if (item.status === "Encerrado") {
-                classesBorda = "border-l-4 border-blue-500 shadow-blue-950/5 dark:shadow-none";
-              }
+{/* GRIDE CENTRAL DE ALTA DENSIDADE (ESTILO HISTÓRICO DE TICKETS DE GRANDE MONITOR) */}
+        <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden transition-colors">          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse whitespace-nowrap">
+              <thead>
+                <tr className="bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700 select-none">
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[12%]">Designação</th>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[18%]">Identificador / Protocolo</th>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[15%]">Grupo Técnico</th>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[12%]">Data / Hora</th>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider">Último Posicionamento Técnico</th>
+                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider text-center w-[15%]">Ações táticas</th>
+                </tr>
+              </thead>
+<tbody className="text-xs divide-y divide-slate-100 dark:divide-slate-700/60">
+                {atendimentosFiltrados.length === 0 ? (
+                  <tr>
+                    <td colSpan="6" className="px-4 py-8 text-center text-slate-400 font-medium font-mono select-none">Nenhum circuito em tratamento listado no momento.</td>
+                  </tr>
+                ) : (
+                  atendimentosFiltrados.map((item) => {
+                    let corStatusBg = "bg-slate-100 text-slate-600 dark:bg-slate-900 dark:text-slate-400";
+                    if (item.status === "Aberto") corStatusBg = "bg-emerald-500 text-white font-black";
+                    else if (item.status === "Em andamento") corStatusBg = "bg-amber-500 text-white font-black";
+                    else if (item.status === "Encerrado") corStatusBg = "bg-blue-500 text-white font-black";
 
-              return (
-                <div key={item.id} className={`bg-white dark:bg-slate-800 rounded-2xl border ${classesBorda} p-3.5 shadow-sm hover:shadow-md hover:border-cyan-500/50 transition-all flex flex-col justify-between relative group ${devePiscar(item.ultimaAtualizacao, item.status) ? "animate-piscar" : ""}`}>
-                  
-                  {/* CABEÇALHO DO CARD: DESIGNAÇÃO EM DESTAQUE MÁXIMO E AÇÕES */}
-                  <div className="flex items-start justify-between border-b border-slate-100 dark:border-slate-700/50 pb-2 mb-3">
-                    <div className="flex flex-col min-w-0 flex-1 pr-2">
-                      <span className="font-mono font-black text-sm text-cyan-600 dark:text-cyan-400 tracking-tight uppercase truncate select-all block" title={item.designacao}>
-                        📡 {item.designacao}
-                      </span>
-                      <span className="text-slate-400 dark:text-slate-500 font-mono text-[9px] mt-0.5 tracking-wider truncate block">
-                        ID: {item.protocolo}
-                      </span>
-                    </div>
+                    const scaleOpen = circuitoExpandido === item.id;
+                    const notasArray = item.resumo.split('\n\n');
+                    const ultimaNotaBruta = jackpot_obterTextoUtil(notasArray[0]);
 
-                    {/* CONTROLES E STATUS */}
-                    <div className="flex items-center gap-1 flex-shrink-0">
-<select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className="border rounded-md px-1 py-0.5 text-[9px] font-black focus:outline-none dark:bg-slate-900 cursor-pointer shadow-sm">
-                        <option value="Aberto">Aberto</option>
-                        <option value="Em andamento">Em andamento</option>
-                        <option value="Encerrado">Encerrado</option>
-                      </select>
-                                            
-                      {/* BOTÃO QUICK-ADD (+ NOTA) AUTOMÁTICO */}
-                      <button onClick={() => {
-                        const hora = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
-                        setRascunho(`DESIGNAÇÃO: ${item.designacao}\nGT NOME: ${item.gtNome}\nPOSICIONAMENTO: \n\n[${hora}] - `);
-                        setForm(prev => ({...prev, status: "Em andamento"}));
-                        if (modoNoc) setModoNoc(false); // Sai do modo tela cheia para digitar
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        setTimeout(() => rascunhoRef.current?.focus(), 100);
-                      }} className="text-cyan-600 bg-cyan-50 dark:bg-cyan-900/30 p-1 px-2 rounded border border-cyan-200 dark:border-cyan-800 active:scale-95 transition-colors text-[9px] font-black uppercase flex items-center gap-1" title="Atualização Rápida (Puxar para Rascunho)">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg> Nota
-                      </button>
-
-                      <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 bg-slate-50 dark:bg-slate-900 p-1 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-colors" title="Editar Chamado">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-                      </button>
-                      <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 bg-slate-50 dark:bg-slate-900 p-1 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-colors" title="Excluir Chamado">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* CORPO DO CARD: DETALHES COMPLEMENTARES */}
-                  <div className="grid grid-cols-2 gap-2 mb-3 bg-slate-50/60 dark:bg-slate-900/40 p-2 rounded-xl border border-slate-100 dark:border-slate-700/40">
-                    <div>
-                      <span className="text-[8px] font-black text-slate-400 dark:text-slate-500 uppercase block tracking-wider">Grupo Técnico</span>
-                      <span className="font-bold text-[11px] text-slate-800 dark:text-slate-200 truncate block">{item.gtNome}</span>
-                    </div>
-                    <div>
-                      <span className="text-[8px] font-black text-slate-400 dark:text-slate-500 uppercase block tracking-wider">Data / Hora</span>
-                      <span className="font-mono text-[9px] text-slate-500 dark:text-slate-400 block mt-0.5">
-                        {item.dataHora ? item.dataHora.split(',')[0] : ''} <span className="text-slate-300 dark:text-slate-600">|</span> {item.dataHora ? item.dataHora.split(',')[1]?.trim() : ''}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* LINHA DO TEMPO INTERNA DO CARD */}
-                  <div className="relative flex-1">
-                    <div className="bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 rounded-xl p-2.5 text-[11px] font-medium text-slate-700 dark:text-slate-200 whitespace-pre-wrap leading-relaxed shadow-inner max-h-[140px] overflow-y-auto pr-7 select-all">
-                      
-                      {item.resumo.split('\n\n').map((bloco, bIdx) => {
-                        const matchHora = bloco.match(/^\[([0-9]{2}:[0-9]{2})\]\s*-\s*([\s\S]*)/);
-                        if (matchHora) {
-                          return (
-                            <div key={bIdx} className="mb-2 last:mb-0 border-l border-cyan-500/40 pl-2 relative">
-                              <span className="inline-block bg-cyan-50 dark:bg-slate-800 text-cyan-800 dark:text-cyan-400 text-[8px] font-black px-1 py-0.5 rounded mb-0.5 border border-cyan-100/20 dark:border-slate-700 font-mono">
-                                🕒 {matchHora[1]}
-                              </span>
-                              <p className="text-slate-800 dark:text-slate-200 text-[10.5px] font-medium leading-normal">{matchHora[2]}</p>
-                            </div>
-                          );
-                        }
-                        return <p key={bIdx} className="text-slate-500 dark:text-slate-400 text-[10.5px] my-0.5">{bloco}</p>;
-                      })}
-
-                    </div>
-
-                    {/* BOTÃO COPIAR RÁPIDO DENTRO DO CARD */}
-                    <button 
-                      onClick={() => { 
-                        let conteudoLimpo = item.resumo.replace(/\[\d{2}:\d{2}\]\s*-\s*/g, "").trim();
-                        let textoFinal = "";
-
-                        if (conteudoLimpo.startsWith("#") || conteudoLimpo.includes("FALHA:")) {
-                          const linhas = conteudoLimpo.split("\n\n");
-                          const tagCodigo = linhas[0]; 
-                          const restanteMascara = linhas.slice(1).join("\n"); 
-                          textoFinal = `${tagCodigo}\nGT NOME: ${item.gtNome}\n${restanteMascara}`;
-                       } else if (conteudoLimpo.includes("HR VIA EMAIL:")) {
-                          textoFinal = `GT NOME: ${item.gtNome}\n${conteudoLimpo}`;
-                        } else if (conteudoLimpo.includes("NºTT:") && conteudoLimpo.includes("DESCRIÇÃO:")) {
-                          textoFinal = `GT NOME: ${item.gtNome}\n${conteudoLimpo}`;
-                        } else  {
-                          let posicionamentoUtil = conteudoLimpo
-                            .replace(/DESIGNA[ÇC][AÃ]O:.*\n?/gi, "")
-                            .replace(/GT NOME:.*\n?/gi, "")
-                            .trim();
+                    return (
+                      <React.Fragment key={item.id}>
+                        {/* LINHA PRINCIPAL: Muda de cor entre Modo Claro (Fundo Branco/Cinza) e Modo Escuro */}
+                        <tr 
+                          onClick={() => setCircuitoExpandido(scaleOpen ? null : item.id)}
+                          className={`border-b border-slate-200 dark:border-slate-700/60 transition-colors group cursor-pointer ${
+                            scaleOpen 
+                              ? "bg-slate-100 dark:bg-slate-700/30" 
+                              : "bg-white hover:bg-slate-50/80 dark:bg-slate-800 dark:hover:bg-slate-700/30"
+                          } ${devePiscar(item.ultimaAtualizacao, item.status) ? "bg-rose-500/10 dark:bg-rose-500/10 animate-pulse" : ""}`}
+                        >
+                          {/* COLUNA 1: DESIGNAÇÃO */}
+                          <td className="px-4 py-3.5 font-mono font-black text-cyan-600 dark:text-cyan-400 select-all flex items-center gap-2">
+                            <span className={`text-slate-400 transition-transform duration-200 text-[10px] ${scaleOpen ? "rotate-90 text-cyan-500" : ""}`}>▶</span>
+                            📡 {item.designacao}
+                          </td>
                           
-                          posicionamentoUtil = posicionamentoUtil.replace(/^POSICIONAMENTO:\s*/i, "");
-                          textoFinal = `GT NOME: ${item.gtNome}\nPOSICIONAMENTO: ${posicionamentoUtil}`;
-                        }
+                          {/* COLUNA 2: PROTOCOLO */}
+                          <td className="px-4 py-3.5 font-mono text-slate-600 dark:text-slate-400 text-[11px]">
+                            {item.protocolo}
+                          </td>
+                          
+                          {/* COLUNA 3: GRUPO TÉCNICO */}
+                          <td className="px-4 py-3.5 font-black text-slate-700 dark:text-slate-300">
+                            {item.gtNome}
+                          </td>
+                          
+                          {/* COLUNA 4: DATA / HORA */}
+                          <td className="px-4 py-3.5 font-mono text-slate-600 dark:text-slate-400 text-[11px]">
+                            {item.dataHora ? item.dataHora.replace(', ', ' | ') : ''}
+                          </td>
+                          
+                          {/* COLUNA 5: ÚLTIMA NOTA */}
+                          <td className="px-4 py-3.5 text-slate-700 dark:text-slate-300 max-w-xl truncate">
+                            <div className="flex items-center gap-1.5 overflow-hidden">
+                              <span className="bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-cyan-400 text-[9px] font-black px-1 rounded border border-slate-300 dark:border-cyan-100/20 font-mono flex-shrink-0">
+                                LATEST
+                              </span>
+                              <span className="truncate font-bold dark:font-medium">{ultimaNotaBruta}</span>
+                            </div>
+                          </td>
+                          
+                          {/* COLUNA 6: AÇÕES TÁTICAS */}
+                          <td className="px-4 py-3.5 text-center" onClick={(e) => e.stopPropagation()}>
+                            <div className="flex items-center justify-center gap-2">
+                              <select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className={`border rounded-md px-1.5 py-0.5 text-[9px] uppercase tracking-wide focus:outline-none cursor-pointer border-slate-200 dark:border-slate-600 dark:bg-slate-900 shadow-sm ${corStatusBg}`}>
+                                <option value="Aberto">Aberto</option>
+                                <option value="Em andamento">Em andamento</option>
+                                <option value="Encerrado">Encerrado</option>
+                              </select>
 
-                        navigator.clipboard.writeText(textoFinal.replace(/\n\n/g, "\n")); 
-                        mostrarToast("Encerramento estruturado copiado!"); 
-                      }} 
-                      className="absolute top-1.5 right-1.5 text-slate-400 hover:text-cyan-700 bg-slate-50 dark:bg-slate-800 hover:bg-cyan-50 dark:hover:bg-slate-700 p-1 rounded transition-all shadow-sm opacity-0 group-hover:opacity-100 active:scale-95 border dark:border-slate-700" 
-                      title="Copiar Informações Formatadas"
-                    >
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
-                    </button>
-                  </div>
+                              <button onClick={() => {
+                                const hora = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
+                                setRascunho(`DESIGNAÇÃO: ${item.designacao}\nGT NOME: ${item.gtNome}\nPOSICIONAMENTO: \n\n[${hora}] - `);
+                                setForm(prev => ({...prev, status: "Em andamento"}));
+                                if (modoNoc) setModoNoc(false);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                setTimeout(() => rascunhoRef.current?.focus(), 100);
+                              }} className="text-cyan-600 bg-cyan-50 hover:bg-cyan-100 dark:bg-cyan-900/20 dark:text-cyan-400 p-1 px-2 rounded border border-cyan-200 dark:border-cyan-800 active:scale-95 transition-all text-[9px] font-black uppercase flex items-center gap-1" title="Adicionar nota rápida de posicionamento">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg> + Nota
+                              </button>
 
-                  {/* MÉTRICA DE ATUALIZAÇÕES NO RODAPÉ DO CARD */}
-                  {item.qtdAtualizacoes > 0 && (
-                    <div className="mt-2 text-right">
-                      <span className="text-[8px] font-black text-cyan-600 dark:text-cyan-400 uppercase tracking-wider bg-cyan-50 dark:bg-cyan-950/40 px-1.5 py-0.5 rounded border border-cyan-100/10 dark:border-cyan-900/20">
-                        {item.qtdAtualizacoes} ATZ
-                      </span>
-                    </div>
-                  )}
+                              <button onClick={() => {
+                                let conteudoLimpo = item.resumo.replace(/\[\d{2}:\d{2}\]\s*-\s*/g, "").trim();
+                                let textoFinal = "";
+                                if (conteudoLimpo.startsWith("#") || conteudoLimpo.includes("FALHA:")) {
+                                  const linhas = conteudoLimpo.split("\n\n");
+                                  textoFinal = `${linhas[0]}\nGT NOME: ${item.gtNome}\n${linhas.slice(1).join("\n")}`;
+                                } else {
+                                  let posUtil = conteudoLimpo.replace(/DESIGNA[ÇC][AÃ]O:.*\n?/gi, "").replace(/GT NOME:.*\n?/gi, "").trim().replace(/^POSICIONAMENTO:\s*/i, "");
+                                  textoFinal = `GT NOME: ${item.gtNome}\nPOSICIONAMENTO: ${posUtil}`;
+                                }
+                                navigator.clipboard.writeText(textoFinal.replace(/\n\n/g, "\n"));
+                                mostrarToast("Encerramento estruturado copiado!");
+                              }} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-all">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                              </button>
 
-                </div>
-              );
-            })}
+                              <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-all">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+                              </button>
+
+                              <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-all">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+
+                        {/* GAVETA DE NOTAS EXPANSIBLE */}
+                        {scaleOpen && (
+                          <tr className="bg-slate-50 dark:bg-slate-900/60 border-l-4 border-l-cyan-500 animate-fade-in">
+                            <td colSpan="6" className="p-4">
+                              <div className="flex flex-col gap-3 max-w-7xl">
+                                <div className="text-[10px] font-black text-cyan-600 dark:text-cyan-400 uppercase tracking-widest font-sans flex items-center gap-1.5 select-none">
+                                   Adilson Roteiro de Notas (Histórico do Circuito)
+                                </div>
+                                <div className="bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4 font-bold dark:font-medium text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed shadow-inner max-h-[250px] overflow-y-auto pr-6 font-mono select-all">
+                                  {item.resumo.split('\n\n').map((notaBloco, nIdx) => {
+                                    const matchHoraNota = notaBloco.match(/^\[([0-9]{2}:[0-9]{2})\]\s*-\s*([\s\S]*)/);
+                                    if (matchHoraNota) {
+                                      return (
+                                        <div key={nIdx} className="mb-3 last:mb-0 border-l border-cyan-500/30 dark:border-cyan-500/30 pl-3 relative py-0.5">
+                                          <span className="inline-block bg-white dark:bg-slate-800 text-cyan-800 dark:text-cyan-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 font-mono mb-1">
+                                            🕒 {matchHoraNota[1]}
+                                          </span>
+                                          <p className="text-slate-900 dark:text-slate-200 text-[11px] leading-relaxed">{matchHoraNota[2]}</p>
+                                        </div>
+                                      );
+                                    }
+                                    return <p key={nIdx} className="text-slate-500 dark:text-slate-400 text-[11px] my-1">{notaBloco}</p>;
+                                  })}
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                      </React.Fragment>
+                    );
+                  })
+                )}
+              </tbody>
+                                        </table>
           </div>
         </div>
       </>
     );
   }
-  
+
+  function jackpot_obterTextoUtil(blocoTexto) {
+    if (!blocoTexto) return "";
+    return blocoTexto.replace(/^\[[0-9]{2}:[0-9]{2}\]\s*-\s*/, "").trim();
+  }  
   function viewAtView_wiki() {
     if (viewAtiva !== "wiki") return null;
     return (
