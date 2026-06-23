@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1782147983361.5627,
+    "protocolo": "ATD-1782147983361-272",
+    "designacao": "VTA5260330",
+    "gtNome": "MARIA LUIZA-VTAL-N1",
+    "resumo": "[20:47] - FALHA-FALTA DE ENERGIA/ //AÇÃO -- //EM AÇÃO COM EQP  POSTO DE DESMOBILIZAÇÃO //SEGMENTO NOVA OI// DESLIGAMENTO DE ENERGIA DA ESTAÇÃO// SEM PREVISAO DE NORMALZIAÇÃO//\n\n[18:29] - FALHA-INOPERANTE //AÇÃO -- //EM TRATAIVA  POSTO DE MOBILIZAÇÃO POR FALTA DE ENERGIA NA ESTAÇÃO // SEM PREVISAO.\n\n[14:06] - NºTT: 305880 // DESCRIÇÃO: INOPERANCIIA//REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 3H//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "22/06/2026, 14:06:23",
+    "ultimaAtualizacao": "22/06/2026, 20:47:18",
+    "historico": [
+      {
+        "data": "22/06/2026, 20:47:18",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "22/06/2026, 18:29:01",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "22/06/2026, 14:06:23",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782159448677.8032,
+    "protocolo": "ATD-1782159448677-635",
+    "designacao": "SRR5011124",
+    "gtNome": "MARIA LUIZA-NI-VTAL",
+    "resumo": "[20:45] - #5302F#\n\nFALHA: REDE ÓPTICA - ACESSO\n\nINÍCIO: 22/06/2026 16:14\n\nNORMALIZAÇÃO: 22/06/26 18:00\n\nCAUSA: FIBRA\n\nSOLUÇÃO: [FIBRA ACIDENTE] FALHA RESTABELECIDA APÓS FUSÃO DE FIBRA OCASIONADO POR ACIDENTE// FIBRA//AÇÃO --  ROMP DE FIBRA NA AREA DA OPER CLARO // FEITO A FUSAO/ NORMALZIADO AS 19:24// VALIDADO COM CLIENTE,  RONAN (CASSI) E INFORMA NORMALZIAÇÃO AS 18H\n\n[20:42] - FALHA/- FIBRA//AÇÃO --  ROMP DE FIBRA NA AREA DA OPER CLARO // FEITO A FUSAO/ NORMALZIADO AS 19:24// VALIDADO COM CLIENTE,  RONAN (CASSI) E INFORMA NORMALZIAÇÃO AS 18H\n\n[18:25] - FALHA- INOPERANTE/ //AÇÃOMASSIVO EQP SUAP// EM TRATATIVA CONJUNTA COM OPERADORA CLARO//SEM PREVISAO//\n\n[17:17] - NºTT: 420849 // DESCRIÇÃO: FALHA - INOPERANTE//AÇÃO - //REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 2H//",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 3,
+    "dataHora": "22/06/2026, 17:17:28",
+    "ultimaAtualizacao": "22/06/2026, 20:45:45",
+    "historico": [
+      {
+        "data": "22/06/2026, 20:45:45",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "22/06/2026, 20:42:56",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "22/06/2026, 18:25:35",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "22/06/2026, 17:17:28",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782163651394.5054,
+    "protocolo": "ATD-1782163651394-802",
+    "designacao": "TTA5012082",
+    "gtNome": "MARIANA-VTAL-N2",
+    "resumo": "[18:27] - #4385#\n\nFALHA: COMUTAÇÃO - RESET\n\nINÍCIO: 22/06/2026 09:22\n\nNORMALIZAÇÃO: 22/06/26 15:00\n\nCAUSA: REINICIALIZAÇÃO\n\nSOLUÇÃO: [COMUTAÇÃO] FALHA RESTABELECIDA APÓS RESET NO EQUIPAMENTO NA ESTAÇÃO//MASSIVO EQP TX/ REALZIADO RESET PLACA S64 CARUARU// NORMALIZADO AS 15H// TESTE PING OK//RESUMO\nINTERFACE: TTA_5012082-SERVIÇO: IES-\nID DO SERVIÇO: 911034233-Nº PORTA: 2/1/1-É BUNDLE?: NÃO-VLAN: 2802-VLAN_2: 0-ADDRESS: 201.18.28.101/30-NEIGHBOR: 201.18.28.102-VELOCIDADE (COM BASE NO RATE): 8MBPS-PING NEIGHBOR: PING COM SUCESSO E SEM PERDAS-LATÊNCIA MÉDIA: 6.85MS-\nINFO: TESTE CONCLUÍDO COM SUCESSO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "22/06/2026, 18:27:31",
+    "ultimaAtualizacao": "22/06/2026, 18:27:31",
+    "historico": [
+      {
+        "data": "22/06/2026, 18:27:31",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1782154680481.3027,
+    "protocolo": "ATD-1782154680481-216",
+    "designacao": "RJO60022067",
+    "gtNome": "VTAL-MARIA",
+    "resumo": "[15:58] - #015#\n\nFALHA: ENCONTRADO OK - SEM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 22/06/2026 11:39\n\nNORMALIZAÇÃO: 22/06/26 12:55\n\nCAUSA: .INOPERANTE\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA APÓS EFETUAR TESTES NO LINK//RESUMO\nINTERFACE: RJO_60022067\nSERVIÇO: VPRN\nID DO SERVIÇO: 11779\nNº PORTA: 30\nÉ BUNDLE?: NÃO\nVLAN: 1121\nVLAN_2: 1437\nADDRESS: 100.124.127.1/30\nNEIGHBOR: 100.124.127.2\nVELOCIDADE (COM BASE NO SCHEDULER-POLICY): 2_MBPS\nPING NEIGHBOR: PING COM SUCESSO E SEM PERDAS\nLATÊNCIA MÉDIA: 1.35MS\nINFO: TESTE CONCLUÍDO COM SUCESSO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "22/06/2026, 15:58:00",
+    "ultimaAtualizacao": "22/06/2026, 15:58:00",
+    "historico": [
+      {
+        "data": "22/06/2026, 15:58:00",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1782153344392.905,
+    "protocolo": "ATD-1782153344392-534",
+    "designacao": "BLM5701787",
+    "gtNome": "GUSTAVO (CASSI)",
+    "resumo": "[15:41] - #00105#\n\nFALHA: ENCONTRADO OK - COM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 22/06/2026 11:54\n\nNORMALIZAÇÃO: 22/06/26 15:36\n\nCAUSA: . PERDA DE PACOTE\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA SEM INTERVENÇÃO TÉCNICA NO LINK//GUSTAVO(CASSI)// NORMALIZADO AS 15:36H//VALIDADO//\n\n[15:35] - FALHA-PERDA DE PACOTE// ACESSO AGEPON ALINHADO SEM ALARMES// PIN OK//NORMALIZADO AS 12:24// VALIDANDO COM CLIENTE",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "22/06/2026, 15:35:44",
+    "ultimaAtualizacao": "22/06/2026, 15:41:08",
+    "historico": [
+      {
+        "data": "22/06/2026, 15:41:08",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "22/06/2026, 15:35:44",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
