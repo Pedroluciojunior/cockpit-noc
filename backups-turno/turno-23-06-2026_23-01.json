@@ -1,0 +1,308 @@
+[
+  {
+    "id": 1782254871076.613,
+    "protocolo": "ATD-1782254871076-368",
+    "designacao": "PCK5010129",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[22:15] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL(22:15) ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[19:47] - HR VIA EMAIL: 19:47 // DESCRIÇÃO: FALHA - INOPERANTE //REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 3H//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 19:47:51",
+    "ultimaAtualizacao": "23/06/2026, 22:15:56",
+    "historico": [
+      {
+        "data": "23/06/2026, 22:15:56",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 19:47:51",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782259117485.968,
+    "protocolo": "ATD-1782259117485-116",
+    "designacao": "BLM5701787",
+    "gtNome": "VALIDADO PELOS CLIENTES EDNALDO, RAFAEL E BRYAN CASSI.",
+    "resumo": "[20:58] - #S8328#\n\nFALHA: REDE DE DADOS (OEMP) - SEM AÇÃO\n\nINÍCIO: 22/06/2026 11:54\n\nNORMALIZAÇÃO: 23/06/26 17:27\n\nCAUSA: . MAL CONTATO NO CABEAMENTO INTERNO\n\nSOLUÇÃO: NOSSOS ANALISTAS SOLICITARAM PARA O CLIENTE CASSI QUE SE POSSÍVEL SEJA ABERTO CHAMADO JUNTO A VIVO.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "23/06/2026, 20:58:37",
+    "ultimaAtualizacao": "23/06/2026, 20:58:37",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:58:37",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835128.3691,
+    "protocolo": "ATD-1782241835124-429",
+    "designacao": "BAG5010138",
+    "gtNome": "QUICK",
+    "resumo": "[20:48] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\nROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\nFALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 20:48:54",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:48:54",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835127.9314,
+    "protocolo": "ATD-1782241835124-69",
+    "designacao": "BAG5010156",
+    "gtNome": "QUICK",
+    "resumo": "[20:48] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\nROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\nFALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 20:48:54",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:48:54",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835126.849,
+    "protocolo": "ATD-1782241835124-383",
+    "designacao": "BAG5010146",
+    "gtNome": "QUICK",
+    "resumo": "[20:48] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\nROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\nFALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 20:48:54",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:48:54",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782244591077.199,
+    "protocolo": "ATD-1782244591077-665",
+    "designacao": "SJDX5010021",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[19:53] - FALHA-INOPERANTE//REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (19:53)ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[16:56] - HR VIA EMAIL: 16:56 // DESCRIÇÃO: FALHA -SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 16:56:31",
+    "ultimaAtualizacao": "23/06/2026, 19:53:32",
+    "historico": [
+      {
+        "data": "23/06/2026, 19:53:32",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:56:31",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782239186210.809,
+    "protocolo": "ATD-1782239186210-968",
+    "designacao": "MIS5010051",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[19:44] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 12:16\n\nNORMALIZAÇÃO: 23/06/26 18:31\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE/IDENTIFICADO ROMPIMENTO COMO CAUSA DA FALHA. //ROMPIMENTO CORRIGIDO COM SUCESSO. //SERVIÇO RESTABELECIDO E OPERANDO NORMALMENTE. //\n\n[15:26] - CIRCUITO MIS5010051 // MIRASSOL D'OESTE/MT // IP 177.222.233.114 // CIRCUITO PERMANECE INOPERANTE // FALHA OCASIONADA POR ROMPIMENTO DE FIBRA DURANTE ATIVIDADE DE SUBSTITUIÇÃO DE POSTES REALIZADA PELA ENERGISA // SERVIÇOS DA CONCESSIONÁRIA AINDA EM ANDAMENTO // AGUARDANDO LIBERAÇÃO DA ÁREA PARA EXECUÇÃO DOS REPAROS E POSTERIOR NORMALIZAÇÃO DO CIRCUITO.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 15:26:26",
+    "ultimaAtualizacao": "23/06/2026, 19:44:28",
+    "historico": [
+      {
+        "data": "23/06/2026, 19:44:28",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 15:26:26",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782246553913.5647,
+    "protocolo": "ATD-1782246553913-906",
+    "designacao": "AGPL5010001",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[19:41] - #015#\n\nFALHA: ENCONTRADO OK - SEM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 23/06/2026 17:14\n\nNORMALIZAÇÃO: 23/06/26 18:52\n\nCAUSA: .TRAVAMENTO DO EQUIPAMENTO,\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA APÓS EFETUAR TESTES NO LINK//IDENTIFICADO TRAVAMENTO DO EQUIPAMENTO COMO CAUSA DA FALHA. //REALIZADO REINÍCIO DO EQUIPAMENTO COM SUCESSO. //SERVIÇO RESTABELECIDO E OPERANDO NORMALMENTE. //\n\n[17:29] - HR VIA EMAIL: 17:29 // DESCRIÇÃO: FALHA - SERVIÇO INOPERANTE////CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 17:29:13",
+    "ultimaAtualizacao": "23/06/2026, 19:41:37",
+    "historico": [
+      {
+        "data": "23/06/2026, 19:41:37",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 17:29:13",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782237225807.8267,
+    "protocolo": "ATD-1782237225807-881",
+    "designacao": "APT5010030",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[17:01] - REITERADA SOLICITAÇÃO DE APOIO À GESTÃO TÉCNICA POR MEIO DE E-MAIL PARA AVANÇO DAS TRATATIVAS, PERMANECENDO NO AGUARDO DE RETORNO.\n\n[14:53] - CIRCUITO APT5010030 // ARAPUTANGA/MT // IP 187.103.16.170 // CIRCUITO RESTABELECIDO E OPERANDO NORMALMENTE // TENTATIVAS DE CONTATO COM OS RESPONSÁVEIS LOCAIS SEM SUCESSO // SOLICITADA VALIDAÇÃO (VIA EMAIL 14:52)DO SERVIÇO NA PONTA DO CLIENTE PARA CONFIRMAÇÃO DA NORMALIZAÇÃO OU IDENTIFICAÇÃO DE EVENTUAL ANORMALIDADE REMANESCENTE.// AGUARDANDO VALIDAÇÃO DO CLIENTE//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 14:53:45",
+    "ultimaAtualizacao": "23/06/2026, 17:01:01",
+    "historico": [
+      {
+        "data": "23/06/2026, 17:01:01",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 14:53:45",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782236163090.4866,
+    "protocolo": "ATD-1782236163090-581",
+    "designacao": "NMGA5010014",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[16:58] - SEM RETORNO DO CLIENTE CLIENTE ELESSANDRO//AGUARANDADO RETORNO DO GESTOR MAGNO\n\n[14:36] - // AGUARDANDO ENVIO DAS FOTOS DO EQUIPAMENTO E DE SUAS CONEXÕES PARA ANÁLISE TÉCNICA. // SOLICITAÇÃO ENCAMINHADA AO CLIENTE PARA COLETA DAS EVIDÊNCIAS NECESSÁRIAS. // ACIONADO TAMBÉM O GESTOR MAGNO OI, COM SOLICITAÇÃO DE APOIO PARA CONTATO COM O CLIENTE E VALIDAÇÃO DOS EQUIPAMENTOS ENVOLVIDOS. // CHAMADO PERMANECE EM ACOMPANHAMENTO AGUARDANDO RETORNO PARA CONTINUIDADE DAS TRATATIVAS. //",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 14:36:03",
+    "ultimaAtualizacao": "23/06/2026, 16:58:45",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:58:45",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 14:36:03",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835124.1318,
+    "protocolo": "ATD-1782241835124-378",
+    "designacao": "BAG5010148",
+    "gtNome": "QUICK",
+    "resumo": "[16:46] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 16:46:33",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:46:33",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835125.9805,
+    "protocolo": "ATD-1782241835124-479",
+    "designacao": "BAG5010158",
+    "gtNome": "QUICK",
+    "resumo": "[16:46] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 16:46:33",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:46:33",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782235959649.8408,
+    "protocolo": "ATD-1782235959649-569",
+    "designacao": "SJK5010047",
+    "gtNome": "QUICK",
+    "resumo": "[16:38] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (16:37)ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[14:32] - FALHA-PERMANECE INOPERANTE. // CONFORME ATUALIZAÇÃO DA OPERADORA, O CIRCUITO ENCONTRA-SE EM PROCESSO DE MUDANÇA DE ENDEREÇO NA PRESENTE DATA. // A INDISPONIBILIDADE DO SERVIÇO É PREVISTA DURANTE A EXECUÇÃO DA MIGRAÇÃO DA INFRAESTRUTURA. // RESTABELECIMENTO CONDICIONADO À CONCLUSÃO DA MUDANÇA E À REALIZAÇÃO DOS TESTES DE VALIDAÇÃO NO NOVO ENDEREÇO. // CHAMADO SEGUE EM ACOMPANHAMENTO AGUARDANDO FINALIZAÇÃO DA ATIVIDADE E NORMALIZAÇÃO DO CIRCUITO. //",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 14:32:39",
+    "ultimaAtualizacao": "23/06/2026, 16:38:05",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:38:05",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 14:32:39",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782242691051.9153,
+    "protocolo": "ATD-1782242691051-911",
+    "designacao": "PTP5010073",
+    "gtNome": "SOC",
+    "resumo": "[16:24] - SOC,-CHAMADO WO0000001183239 CONCLUÍDO COM SUCESSO. //TRATATIVA REALIZADA NA DATA AGENDADA E FINALIZADA COM SUCESSO. //CHAMADO ENCERRADO APÓS CONCLUSÃO DAS TRATATIVAS. //ENC. GESTOR MAGNO PARA VALIDAR JUNTO AO CLIENTE",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "23/06/2026, 16:24:51",
+    "ultimaAtualizacao": "23/06/2026, 16:24:51",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:24:51",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
