@@ -1333,90 +1333,81 @@ return (
           </div>
         )}
 
-        {/* HEADER GLOBAL */}
-        <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 shadow-sm sticky top-0 z-40 px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
-          <div className="flex items-center gap-8 w-full md:w-auto">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-cyan-700 dark:bg-cyan-600 rounded-lg flex items-center justify-center shadow-inner">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+{/* =========================================================================
+            HEADER GLOBAL INTEGRADO TÁTICO (Métricas e Turno Consolidados)
+            ========================================================================= */}
+        <header className="bg-slate-900 border-b border-slate-700 shadow-md px-6 py-2 flex flex-col md:flex-row items-center justify-between gap-4 transition-colors z-40 sticky top-0 select-none">
+          <div className="flex items-center gap-6 w-full md:w-auto justify-between md:justify-start">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 bg-cyan-600 rounded-lg flex items-center justify-center shadow-inner">
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
               <div>
-                <h1 className="text-base font-black text-slate-900 dark:text-white leading-tight tracking-tight">COCKPIT <span className="text-cyan-700 dark:text-cyan-400">NOC</span></h1>
-                <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest leading-none mt-0.5">Gestão de Atendimentos</p>
+                <h1 className="text-xs font-black text-white tracking-tighter leading-none">COCKPIT <span className="text-cyan-400">NOC</span></h1>
+                <p className="text-[8px] font-bold text-slate-500 uppercase tracking-widest leading-none mt-0.5">Gestão de Atendimentos</p>
               </div>
             </div>
 
-            <div className="flex bg-slate-100 dark:bg-slate-900 p-1 rounded-xl border border-slate-200/60 dark:border-slate-700 shadow-inner">
-              <button onClick={() => setViewAtiva("operacional")} title="Acesse o painel principal para tabulação de triagem e controle de chamados." className={`py-1.5 px-4 rounded-lg text-[11px] font-black tracking-wide transition-all ${viewAtiva === "operacional" ? "bg-white dark:bg-slate-700 text-cyan-800 dark:text-cyan-300 shadow-sm" : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300"}`}>OPERACIONAL</button>
-              <button onClick={() => setViewAtiva("wiki")} title="Acesse a Base de Conhecimento, diretórios de contatos e manuais." className={`py-1.5 px-4 rounded-lg text-[11px] font-black tracking-wide transition-all ${viewAtiva === "wiki" ? "bg-white dark:bg-slate-700 text-cyan-800 dark:text-cyan-300 shadow-sm" : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300"}`}>BASE DE CONHECIMENTO</button>
+            <div className="flex bg-slate-800 p-0.5 rounded-lg border border-slate-700 shadow-inner ml-2">
+              <button onClick={() => setViewAtiva("operacional")} className={`py-1 px-3 rounded-md text-[10px] font-black tracking-wide transition-all ${viewAtiva === "operacional" ? "bg-slate-700 text-cyan-400 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}>OPERACIONAL</button>
+              <button onClick={() => setViewAtiva("wiki")} className={`py-1 px-3 rounded-md text-[10px] font-black tracking-wide transition-all ${viewAtiva === "wiki" ? "bg-slate-700 text-cyan-400 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}>BASE DE CONHECIMENTO</button>
             </div>
           </div>
-          <div className="flex items-center gap-3 w-full md:w-auto flex-wrap">
-            {/* RELÓGIO DIGITAL OPERACIONAL */}
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 dark:bg-slate-900 border border-slate-200/60 dark:border-slate-700 rounded-xl shadow-inner font-mono select-none">
-              <span className="text-[11px] font-black text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-slate-800 px-2 py-0.5 rounded border border-cyan-100/30 font-sans tracking-wide">
-                NOC
-              </span>
-              <span className="text-slate-500 dark:text-slate-400 text-xs font-bold">
-                {dataNocFormatada}
-              </span>
-              <span className="text-slate-300 dark:text-slate-600 font-bold text-xs">|</span>
-              <span className="text-slate-800 dark:text-white text-xs font-black tracking-tight">
-                {horaNocFormatada}
-              </span>
+
+          {/* PAINEL CENTRAL DE MÉTRICAS E BOTÕES DO TURNO (Consolidados no Topo) */}
+          {viewAtiva === "operacional" && (
+            <div className="flex items-center gap-6 flex-wrap md:flex-nowrap justify-center animate-fade-in">
+              <div className="flex gap-4 border-r border-slate-700 pr-6">
+                <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider flex items-center gap-1.5">Listados: <strong className="text-white text-sm font-mono bg-slate-800 px-2 py-0.5 rounded border border-slate-700 shadow-inner">{atendimentosFiltrados.length}</strong></span>
+                <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider flex items-center gap-1.5">Abertos: <strong className="text-amber-400 text-sm font-mono bg-amber-950/30 px-2 py-0.5 rounded border border-amber-900/30 shadow-inner">{abertos}</strong></span>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <button onClick={gerarRelatorioTurno} title="Baixar relatório do turno em .txt" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 border border-slate-700 px-2.5 py-1.5 rounded-lg transition-colors active:scale-95 shadow-sm">Gerar Relatório</button>
+                <button onClick={exportarJSON} title="Exportar Backup do Banco de Dados" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 border border-slate-700 px-2.5 py-1.5 rounded-lg transition-colors active:scale-95 shadow-sm">Exportar Backup</button>
+                <label title="Importar Backup anterior" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 border border-slate-700 px-2.5 py-1.5 rounded-lg transition-colors active:scale-95 shadow-sm cursor-pointer">
+                  Importar <input type="file" accept=".json" onChange={importarBackup} className="hidden" />
+                </label>
+                <button onClick={encerrarExpediente} className="text-[9px] font-black text-white uppercase tracking-wider bg-rose-600 hover:bg-rose-500 px-3 py-1.5 rounded-lg transition-all active:scale-95 shadow-md flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Encerrar Expediente
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Lado Direito: Relógio, Filtro e Modos */}
+          <div className="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end">
+            <div className="flex items-center gap-2 px-2.5 py-1 bg-slate-800 border border-slate-700 rounded-lg shadow-inner font-mono text-[10px]">
+              <span className="text-slate-400 font-bold">{dataNocFormatada}</span>
+              <span className="text-slate-600">|</span>
+              <span className="text-white font-black">{horaNocFormatada}</span>
             </div>
 
-            <button onClick={() => setDarkMode(!darkMode)} title={darkMode ? "Mudar para Modo Claro" : "Mudar para Modo Escuro"} className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-amber-500 dark:text-amber-400 shadow-inner transition-all hover:scale-105">
-              {darkMode ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-)}
+            <button onClick={() => setDarkMode(!darkMode)} title={darkMode ? "Modo Claro" : "Modo Escuro"} className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-amber-400 hover:scale-105 transition-all shadow-inner">
+              {darkMode ? "☀️" : "🌙"}
+            </button>
+            <button onClick={() => setModoNoc(!modoNoc)} title={modoNoc ? "Sair da Tela Cheia" : "Modo NOC Monitor Gigante"} className={`p-1.5 rounded-lg border transition-all hover:scale-105 shadow-inner ${modoNoc ? "bg-cyan-600 border-cyan-500 text-white animate-pulse" : "bg-slate-800 border-slate-700 text-cyan-400"}`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0lorder l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
             </button>
 
-            {/* BOTÃO MODO NOC (TELAS GRANDES) */}
             {viewAtiva === "operacional" && (
-              <button onClick={() => setModoNoc(!modoNoc)} title={modoNoc ? "Sair do Modo NOC" : "Ativar Modo NOC (Tela Cheia)"} className={`p-2 rounded-xl border transition-all hover:scale-105 shadow-inner ${modoNoc ? "bg-cyan-600 border-cyan-500 text-white shadow-[0_0_15px_rgba(8,145,178,0.4)]" : "bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-cyan-600 dark:text-cyan-500"}`}>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
-              </button>
-            )}
-
-            {viewAtiva === "operacional" && (
-              <div className="flex items-center gap-3">
-                {/* PÍLULAS RÁPIDAS DE STATUS (QUICK FILTERS) */}
-                <div className="hidden lg:flex items-center bg-slate-100 dark:bg-slate-900/80 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700/80 shadow-inner gap-1">
-{["Todos", "Aberto", "Em andamento", "Encerrado"].map(st => (
-                    <button key={st} onClick={() => setStatusFiltro(st)} className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all ${statusFiltro === st ? (st === "Aberto" ? "bg-emerald-500 text-white shadow-md" : st === "Em andamento" ? "bg-amber-500 text-white shadow-md" : st === "Encerrado" ? "bg-blue-500 text-white shadow-md" : "bg-white dark:bg-slate-700 text-cyan-800 dark:text-cyan-300 shadow-sm") : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800"}`}>
-                      {st}
-                    </button>
-                  ))}
-                                  </div>
-
-                <div className="flex items-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-3 shadow-sm focus-within:border-cyan-500 transition-all">
-                  <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                  <input type="text" placeholder="Pesquisar Chamados..." value={filtro} onChange={(e) => setFiltro(e.target.value)} className="py-2.5 px-2 text-xs w-48 outline-none bg-transparent text-slate-800 dark:text-white" />
-                </div>
+              <div className="flex items-center bg-slate-800 border border-slate-700 rounded-lg px-2.5 shadow-inner focus-within:border-cyan-500/50 transition-all">
+                <svg className="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                <input type="text" placeholder="Pesquisar..." value={filtro} onChange={(e) => setFiltro(e.target.value)} className="py-1.5 px-2 text-[11px] w-32 outline-none bg-transparent text-white placeholder-slate-500" />
               </div>
             )}
           </div>
         </header>
 
-        {/* LETREIRO DINÂMICO NOC (COMPACTADO EM LINHA ÚNICA) */}
+        {/* LETREIRO DINÂMICO NOC */}
         <div className="w-full bg-slate-900 border-b border-cyan-950 text-slate-300 text-[11px] font-mono py-2 overflow-hidden shadow-inner relative flex items-center select-none z-30 h-8">
-          {/* Tag Fixa Indicadora */}
           <div className="absolute left-0 top-0 bottom-0 bg-cyan-950 px-3 flex items-center text-cyan-400 font-black tracking-widest z-20 border-r border-cyan-800 uppercase text-[9px] shadow-md h-full">
             📡 Live Feed
           </div>
-          
-          {/* Container de Movimento Contínuo e Strict Inline */}
           <div className="marquee-container flex items-center whitespace-nowrap">
             <div className="marquee-content flex items-center gap-12 pl-[110px]">
-              
-              {/* Bloco Financeiro */}
               <span className="inline-flex items-center gap-1.5">💵 USD: <strong className="text-emerald-400">R$ 5,82</strong></span>
               <span className="inline-flex items-center gap-1.5">💶 EUR: <strong className="text-cyan-400">R$ 6,12</strong></span>
-              
-              {/* Contatos Reais do Turno */}
               <span className="text-slate-600 font-bold">|</span>
               <span className="inline-flex items-center gap-1.5">📞 VTAL: <strong className="text-white">0800 125 5060</strong></span>
               <span className="inline-flex items-center gap-1.5">🩺 CASSI VALIDAÇÃO: <strong className="text-amber-400">(61) 3212-5023</strong></span>
@@ -1428,50 +1419,21 @@ return (
               <span className="inline-flex items-center gap-1.5">🛡️ OI SOC: <strong className="text-rose-400">oi-soc@oi.net.br</strong></span>
               <span className="inline-flex items-center gap-1.5">🌐 NOC MEGATELECOM: <strong className="text-white">noc@megatelecom.com.br | (11) 2110-1001</strong></span>
               <span className="inline-flex items-center gap-1.5">🚀 NOC G8: <strong className="text-emerald-400">noc@g8.net.br</strong></span>
-
-              {/* Loop Duplicado Sem Quebra para efeito infinito */}
-              <span className="text-slate-600 font-bold">|</span>
-              <span className="inline-flex items-center gap-1.5">💵 USD: <strong className="text-emerald-400">R$ 5,82</strong></span>
-              <span className="inline-flex items-center gap-1.5">📞 VTAL: <strong className="text-white">0800 125 5060</strong></span>
-              <span className="inline-flex items-center gap-1.5">🩺 CASSI VALIDAÇÃO: <strong className="text-amber-400">(61) 3212-5023</strong></span>
-              <span className="inline-flex items-center gap-1.5">📡 MTI: <strong className="text-white">0800 031 0133</strong></span>
-              <span className="inline-flex items-center gap-1.5">🌐 NOC MEGATELECOM: <strong className="text-white">noc@megatelecom.com.br</strong></span>
-              <span className="inline-flex items-center gap-1.5">🚀 NOC G8: <strong className="text-emerald-400">noc@g8.net.br</strong></span>
-
             </div>
           </div>
         </div>
 
         {/* Correção estrutural do CSS de animação */}
-<style>{`
-          .marquee-container {
-            width: 100%;
-            overflow: hidden;
-          }
-          .marquee-content {
-            display: inline-flex;
-            animation: marqueeTimeline 35s linear infinite;
-          }
-          .marquee-content:hover {
-            animation-play-state: paused;
-          }
-          @keyframes marqueeTimeline {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-50%, 0, 0); }
-          }
-          @keyframes blink-animation {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-          }
-          .animate-piscar {
-            animation: blink-animation 1.5s infinite;
-            border: 3px solid #f43f5e !important;
-          }
+        <style>{`
+          .marquee-container { width: 100%; overflow: hidden; }
+          .marquee-content { display: inline-flex; animation: marqueeTimeline 35s linear infinite; }
+          .marquee-content:hover { animation-play-state: paused; }
+          @keyframes marqueeTimeline { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-50%, 0, 0); } }
+          @keyframes blink-animation { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+          .animate-piscar { animation: blink-animation 1.5s infinite; border: 3px solid #f43f5e !important; }
         `}</style>
 
-        <div className="max-w-[1600px] mx-auto w-full flex-1 flex flex-col p-6 space-y-6">
-
+        <div className="max-w-[1600px] mx-auto w-full flex-1 flex flex-col p-4 space-y-4">
           {/* =========================================================================
               MÓDULO 1: COCKPIT OPERACIONAL
               ========================================================================= */}
@@ -1486,133 +1448,113 @@ return (
     </div>
   );
 
-function viewAtView_operacional() {
+  function viewAtView_operacional() {
     if (viewAtiva !== "operacional") return null;
     return (
       <>
-        {/* =========================================================
-            GATILHO DO MODO NOC: Oculta o painel superior (Event Intake)
-            ========================================================= */}
-{!modoNoc && (
-          <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start mb-6 animate-fade-in">
-            {/* Bloco de Entrada de Dados Principal alterado para bg-slate-50 no modo claro */}
-            <div className="xl:col-span-8 bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200/80 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-3 transition-colors">              <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-700 pb-4">
-                <div className="flex items-center gap-3 w-full md:w-auto">
-                  <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse"></div>
-                  <h2 className="text-sm font-black text-slate-800 dark:text-white uppercase tracking-widest">Event Intake</h2>
-                  
-                  <div className="ml-4 flex items-center bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-2 py-1 shadow-inner">
-                    <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-2">Status:</label>
-                    <select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-700 dark:text-cyan-400 font-black text-xs outline-none cursor-pointer pr-4 focus:ring-0">
-                        <option value="Aberto">ABERTO</option>
-                        <option value="Em andamento">EM ANDAMENTO</option>
-                        <option value="Encerrado">ENCERRADO</option>
-                    </select>
-                  </div>
-                </div>
-
-                <button onClick={adicionarAtendimento} title="Extrair dados do rascunho e salvar na tabela de registros oficiais." className="w-full md:w-auto px-6 py-2.5 flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-xs uppercase tracking-widest transition-all shadow-md active:scale-[0.97] whitespace-nowrap">
-                  New Ticket
-                </button>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-2">
-                <div className="lg:col-span-8 flex flex-col">
-                  <div className="flex items-center justify-between mb-2 ml-1">
-                    <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Auto-Extrator de Dados (Ctrl + Enter para Enviar)</label>
-                    <select onChange={(e) => { if(e.target.value){ adicionarMacro(e.target.value); e.target.value = ""; } }} className="text-[9px] font-bold bg-slate-50 hover:bg-cyan-50 text-cyan-800 dark:bg-slate-700 dark:text-cyan-400 border border-slate-200 dark:border-slate-600 rounded-lg px-2 py-1 outline-none cursor-pointer">
-                      <option value="">⚡ INSERIR MACRO RÁPIDA...</option>
-                      {macrosAvancadas.map((m, idx) => <option key={idx} value={m.texto}>{m.label}</option>)}
-                    </select>
-                  </div>
-                  <textarea 
-                    ref={rascunhoRef}
-                    value={rascunho} 
-                    onChange={(e) => handleRascunhoChange(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.ctrlKey && e.key === 'Enter') {
-                        e.preventDefault();
-                        adicionarAtendimento();
-                      }
-                    }}
-                    placeholder="Preencha a máscara aqui. O sistema extrairá a Designação e o GT Nome automaticamente..." 
-                    className="w-full min-h-[150px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium rounded-xl p-4 text-xs outline-none focus:border-cyan-500 resize-y leading-relaxed transition-colors shadow-inner" 
-                  />
-                </div>
-
-                <div className="lg:col-span-4 flex flex-col">
-                  <div className="flex items-center justify-between mb-2 ml-1">
-                    <label className="text-[9px] font-black text-amber-500 dark:text-amber-400 uppercase tracking-widest font-mono">📝 Rascunho Temporário NOC</label>
-                    <button onClick={() => { if(window.confirm("Limpar rascunho temporário?")) setBlocoNotasTemporario(""); }} className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider transition-colors">Limpar</button>
-                  </div>
-                  <textarea 
-                    value={blocoNotasTemporario}
-                    onChange={(e) => setBlocoNotasTemporario(e.target.value)}
-                    placeholder="Cole aqui listas de circuitos, dados de ligações ou informações pendentes..." 
-                    className="w-full min-h-[150px] bg-amber-50/10 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed shadow-inner placeholder-slate-400" 
-                  />
-                </div>
+        {/* FILTROS DE STATUS INTEGRADOS EM BARRA ÚNICA */}
+        {!modoNoc && (
+          <div className="bg-white dark:bg-slate-800 rounded-xl p-2 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between gap-4 animate-fade-in select-none">
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Filtros Táticos:</span>
+              <div className="flex bg-slate-100 dark:bg-slate-900 p-0.5 rounded-lg border border-slate-200/60 dark:border-slate-700/80 gap-1">
+                {["Todos", "Aberto", "Em andamento", "Encerrado"].map(st => (
+                  <button key={st} onClick={() => setStatusFiltro(st)} className={`px-4 py-1 rounded-md text-[10px] font-black uppercase tracking-wider transition-all ${statusFiltro === st ? (st === "Aberto" ? "bg-emerald-500 text-white shadow-sm" : st === "Em andamento" ? "bg-amber-500 text-white shadow-sm" : st === "Encerrado" ? "bg-blue-500 text-white shadow-sm" : "bg-white dark:bg-slate-700 text-cyan-800 dark:text-cyan-300 shadow-sm") : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-300"}`}>
+                    {st}
+                  </button>
+                ))}
               </div>
             </div>
             
-            {/* Bloco de Métricas e Turno à Direita */}
-            <div className="xl:col-span-4 flex flex-col gap-6">
-              <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm transition-colors">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Métricas do Turno</h3>
-                  <button onClick={escolherPastaBackup} className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all border shadow-inner active:scale-95 ${diretorioBackup ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:border-emerald-800" : "bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/30 dark:border-rose-800"}`}>
-                    {diretorioBackup ? nomeDiretorio : "Pasta Pendente"}
-                  </button>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-700 rounded-xl p-3 flex flex-col items-center justify-center">
-                    <span className="text-2xl font-black text-slate-800 dark:text-white">{atendimentosFiltrados.length}</span>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-0.5">Listados</span>
-                  </div>
-                  <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/50 rounded-xl p-3 flex flex-col items-center justify-center">
-                    <span className="text-2xl font-black text-amber-700 dark:text-amber-500">{abertos}</span>
-                    <span className="text-[10px] font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider mt-0.5">Abertos</span>
-                  </div>
+            <div className="flex items-center bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-2 py-0.5 shadow-inner mr-2">
+              <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-1">Filtro Data:</label>
+              <select value={dataFiltro} onChange={(e) => setDataFiltro(e.target.value)} className="bg-transparent text-slate-800 dark:text-slate-200 font-bold text-[11px] outline-none cursor-pointer pr-2 focus:ring-0 border-none py-1">
+                <option value={new Date().toLocaleDateString("pt-BR")}>HOJE</option>
+                <option value="Todas">TODAS AS DATAS</option>
+              </select>
+            </div>
+          </div>
+        )}
+
+        {/* EVENT INTAKE - 100% LARGURA TOTAL COM TEXTAREAS COMPACTOS FOCUS-EXPANSÍVEIS */}
+        {!modoNoc && (
+          <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm transition-colors animate-fade-in">
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-3 mb-3">
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse"></div>
+                <h2 className="text-xs font-black text-slate-800 dark:text-white uppercase tracking-widest">Event Intake</h2>
+                <div className="ml-3 flex items-center bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-2.5 py-0.5 shadow-inner">
+                  <label className="text-[9px] font-black text-slate-400 uppercase mr-2">Estágio:</label>
+                  <select name="status" value={form.status} onChange={handleStatusChange} className="bg-transparent text-cyan-600 dark:text-cyan-400 font-black text-[11px] outline-none cursor-pointer border-none py-1 focus:ring-0 pr-4">
+                      <option value="Aberto">ABERTO</option>
+                      <option value="Em andamento">EM ANDAMENTO</option>
+                      <option value="Encerrado">ENCERRADO</option>
+                  </select>
                 </div>
               </div>
-              
-              <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm flex flex-col gap-2.5 transition-colors">
-                <button onClick={gerarRelatorioTurno} className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-sm">
-                   Gerar Relatório de Turno
-                </button>
-                
-                <div className="grid grid-cols-2 gap-2.5">
-                  <button onClick={exportarJSON} className="flex items-center justify-center gap-1.5 w-full bg-slate-50 border border-slate-200 text-slate-600 font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all">Exportar Backup</button>
-                  <label className="flex items-center justify-center gap-1.5 w-full bg-slate-50 border border-slate-200 text-slate-600 font-bold py-2.5 rounded-xl text-[10px] uppercase tracking-wide transition-all cursor-pointer">
-                    Importar <input type="file" accept=".json" onChange={importarBackup} className="hidden" />
-                  </label>
+
+              <button onClick={adicionarAtendimento} className="px-6 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-[11px] uppercase tracking-widest transition-all shadow-md active:scale-95 whitespace-nowrap">
+                Injetar Registro (New Ticket)
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+              {/* Auto-Extrator: Altura inteligente para liberar o monitor */}
+              <div className="lg:col-span-8 flex flex-col">
+                <div className="flex items-center justify-between mb-1.5 ml-1">
+                  <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Auto-Extrator de Dados (Ctrl + Enter)</label>
+                  <select onChange={(e) => { if(e.target.value){ adicionarMacro(e.target.value); e.target.value = ""; } }} className="text-[9px] font-bold bg-slate-50 text-cyan-800 dark:bg-slate-700 dark:text-cyan-400 border border-slate-200 dark:border-slate-600 rounded-lg px-2 py-0.5 outline-none cursor-pointer">
+                    <option value="">⚡ INSERIR MACRO RÁPIDA...</option>
+                    {macrosAvancadas.map((m, idx) => <option key={idx} value={m.texto}>{m.label}</option>)}
+                  </select>
                 </div>
-                <div className="h-px w-full bg-slate-100 dark:bg-slate-700 my-1"></div>
-                <button onClick={encerrarExpediente} className="w-full flex items-center justify-center gap-2 bg-rose-50 hover:bg-rose-600 text-rose-700 hover:text-white border border-rose-200 font-black py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-sm">
-                  🛑 Encerrar Expediente
-                </button>
+                <textarea 
+                  ref={rascunhoRef}
+                  value={rascunho} 
+                  onChange={(e) => handleRascunhoChange(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); adicionarAtendimento(); }
+                  }}
+                  placeholder="Preencha a máscara aqui..." 
+                  className="w-full h-[90px] focus:h-[200px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-mono text-xs rounded-xl p-3 outline-none focus:border-cyan-500 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
+                />
+              </div>
+
+              {/* Rascunho Temporário: Altura inteligente expansível */}
+              <div className="lg:col-span-4 flex flex-col">
+                <div className="flex items-center justify-between mb-1.5 ml-1">
+                  <label className="text-[9px] font-black text-amber-500 uppercase tracking-widest font-mono">📝 Bloco de Apoio Rápido</label>
+                  <button onClick={() => { if(window.confirm("Limpar anotações?")) setBlocoNotasTemporario(""); }} className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider">Limpar</button>
+                </div>
+                <textarea 
+                  value={blocoNotasTemporario}
+                  onChange={(e) => setBlocoNotasTemporario(e.target.value)}
+                  placeholder="Cole listas de circuitos ou dados avulsos aqui..." 
+                  className="w-full h-[90px] focus:h-[200px] bg-amber-50/10 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
+                />
               </div>
             </div>
           </div>
         )}
 
-{/* GRIDE CENTRAL DE ALTA DENSIDADE (ESTILO HISTÓRICO DE TICKETS DE GRANDE MONITOR) */}
-        <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden transition-colors">          <div className="overflow-x-auto">
+        {/* TABELA DE ALTA DENSIDADE CORPORATIVA (Ocupa o espaço máximo em 100% de zoom) */}
+        <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden transition-colors">
+          <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse whitespace-nowrap">
               <thead>
                 <tr className="bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700 select-none">
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[12%]">Designação</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[18%]">Identificador / Protocolo</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[15%]">Grupo Técnico</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider w-[12%]">Data / Hora</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider">Último Posicionamento Técnico</th>
-                  <th className="px-4 py-3 text-[10px] font-black uppercase tracking-wider text-center w-[15%]">Ações táticas</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[12%]">Designação</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[18%]">Identificador / Protocolo</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[15%]">Grupo Técnico</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[12%]">Data / Hora</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider">Último Posicionamento Técnico</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider text-center w-[15%]">Ações táticas</th>
                 </tr>
               </thead>
-<tbody className="text-xs divide-y divide-slate-100 dark:divide-slate-700/60">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60 text-xs font-bold">
                 {atendimentosFiltrados.length === 0 ? (
                   <tr>
-                    <td colSpan="6" className="px-4 py-8 text-center text-slate-400 font-medium font-mono select-none">Nenhum circuito em tratamento listado no momento.</td>
+                    <td colSpan="6" className="px-4 py-8 text-center text-slate-400 font-medium font-mono select-none">Nenhum circuito em tratamento listado para os filtros aplicados.</td>
                   </tr>
                 ) : (
                   atendimentosFiltrados.map((item) => {
@@ -1627,48 +1569,24 @@ function viewAtView_operacional() {
 
                     return (
                       <React.Fragment key={item.id}>
-                        {/* LINHA PRINCIPAL: Muda de cor entre Modo Claro (Fundo Branco/Cinza) e Modo Escuro */}
                         <tr 
                           onClick={() => setCircuitoExpandido(scaleOpen ? null : item.id)}
-                          className={`border-b border-slate-200 dark:border-slate-700/60 transition-colors group cursor-pointer ${
-                            scaleOpen 
-                              ? "bg-slate-100 dark:bg-slate-700/30" 
-                              : "bg-white hover:bg-slate-50/80 dark:bg-slate-800 dark:hover:bg-slate-700/30"
-                          } ${devePiscar(item.ultimaAtualizacao, item.status) ? "bg-rose-500/10 dark:bg-rose-500/10 animate-pulse" : ""}`}
+                          className={`border-b border-slate-200 dark:border-slate-700/60 transition-colors group cursor-pointer ${scaleOpen ? "bg-slate-200/60 dark:bg-slate-700/40" : "bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700/30"}`}
                         >
-                          {/* COLUNA 1: DESIGNAÇÃO */}
-                          <td className="px-4 py-3.5 font-mono font-black text-cyan-600 dark:text-cyan-400 select-all flex items-center gap-2">
-                            <span className={`text-slate-400 transition-transform duration-200 text-[10px] ${scaleOpen ? "rotate-90 text-cyan-500" : ""}`}>▶</span>
+                          <td className="px-4 py-2.5 font-mono font-black text-cyan-600 dark:text-cyan-400 select-all flex items-center gap-1.5">
+                            <span className={`text-slate-400 transition-transform duration-200 text-[8px] ${scaleOpen ? "rotate-90 text-cyan-500" : ""}`}>▶</span>
                             📡 {item.designacao}
                           </td>
-                          
-                          {/* COLUNA 2: PROTOCOLO */}
-                          <td className="px-4 py-3.5 font-mono text-slate-600 dark:text-slate-400 text-[11px]">
-                            {item.protocolo}
-                          </td>
-                          
-                          {/* COLUNA 3: GRUPO TÉCNICO */}
-                          <td className="px-4 py-3.5 font-black text-slate-700 dark:text-slate-300">
-                            {item.gtNome}
-                          </td>
-                          
-                          {/* COLUNA 4: DATA / HORA */}
-                          <td className="px-4 py-3.5 font-mono text-slate-600 dark:text-slate-400 text-[11px]">
-                            {item.dataHora ? item.dataHora.replace(', ', ' | ') : ''}
-                          </td>
-                          
-                          {/* COLUNA 5: ÚLTIMA NOTA */}
-                          <td className="px-4 py-3.5 text-slate-700 dark:text-slate-300 max-w-xl truncate">
+                          <td className="px-4 py-2.5 font-mono text-slate-500 dark:text-slate-400 text-[11px] font-normal">{item.protocolo}</td>
+                          <td className="px-4 py-2.5 text-slate-700 dark:text-slate-300">{item.gtNome}</td>
+                          <td className="px-4 py-2.5 font-mono text-slate-500 dark:text-slate-400 text-[11px] font-normal">{item.dataHora ? item.dataHora.replace(', ', ' | ') : ''}</td>
+                          <td className="px-4 py-2.5 text-slate-700 dark:text-slate-300 max-w-xl truncate font-normal">
                             <div className="flex items-center gap-1.5 overflow-hidden">
-                              <span className="bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-cyan-400 text-[9px] font-black px-1 rounded border border-slate-300 dark:border-cyan-100/20 font-mono flex-shrink-0">
-                                LATEST
-                              </span>
-                              <span className="truncate font-bold dark:font-medium">{ultimaNotaBruta}</span>
+                              <span className="bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-cyan-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-300 dark:border-cyan-100/10 font-mono flex-shrink-0">LATEST</span>
+                              <span className="truncate font-medium">{ultimaNotaBruta}</span>
                             </div>
                           </td>
-                          
-                          {/* COLUNA 6: AÇÕES TÁTICAS */}
-                          <td className="px-4 py-3.5 text-center" onClick={(e) => e.stopPropagation()}>
+                          <td className="px-4 py-2.5 text-center" onClick={(e) => e.stopPropagation()}>
                             <div className="flex items-center justify-center gap-2">
                               <select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className={`border rounded-md px-1.5 py-0.5 text-[9px] uppercase tracking-wide focus:outline-none cursor-pointer border-slate-200 dark:border-slate-600 dark:bg-slate-900 shadow-sm ${corStatusBg}`}>
                                 <option value="Aberto">Aberto</option>
@@ -1683,7 +1601,7 @@ function viewAtView_operacional() {
                                 if (modoNoc) setModoNoc(false);
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                                 setTimeout(() => rascunhoRef.current?.focus(), 100);
-                              }} className="text-cyan-600 bg-cyan-50 hover:bg-cyan-100 dark:bg-cyan-900/20 dark:text-cyan-400 p-1 px-2 rounded border border-cyan-200 dark:border-cyan-800 active:scale-95 transition-all text-[9px] font-black uppercase flex items-center gap-1" title="Adicionar nota rápida de posicionamento">
+                              }} className="text-cyan-600 bg-cyan-50 hover:bg-cyan-100 dark:bg-cyan-900/20 dark:text-cyan-400 p-1 px-2 rounded border border-cyan-200 dark:border-cyan-800 active:scale-95 text-[9px] font-black uppercase flex items-center gap-1">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg> + Nota
                               </button>
 
@@ -1699,39 +1617,40 @@ function viewAtView_operacional() {
                                 }
                                 navigator.clipboard.writeText(textoFinal.replace(/\n\n/g, "\n"));
                                 mostrarToast("Encerramento estruturado copiado!");
-                              }} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-all">
+                              }} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                               </button>
 
-                              <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-all">
+                              <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
                               </button>
 
-                              <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 transition-all">
+                              <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                               </button>
                             </div>
                           </td>
                         </tr>
 
-                        {/* GAVETA DE NOTAS EXPANSIBLE */}
+                        {/* SUB-LINHA / GAVETA COMPLETA (ROLAGEM INTELIGENTE SEM LIMITES) */}
                         {scaleOpen && (
-                          <tr className="bg-slate-50 dark:bg-slate-900/60 border-l-4 border-l-cyan-500 animate-fade-in">
+                          <tr className="bg-slate-100/50 dark:bg-slate-900/60 border-l-4 border-l-cyan-500 animate-fade-in">
                             <td colSpan="6" className="p-4">
-                              <div className="flex flex-col gap-3 max-w-7xl">
+                              <div className="flex flex-col gap-2.5 max-w-7xl">
                                 <div className="text-[10px] font-black text-cyan-600 dark:text-cyan-400 uppercase tracking-widest font-sans flex items-center gap-1.5 select-none">
-                                   Adilson Roteiro de Notas (Histórico do Circuito)
+                                   Adilson Roteiro de Notas (Histórico Completo do Circuito)
                                 </div>
-                                <div className="bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4 font-bold dark:font-medium text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed shadow-inner max-h-[250px] overflow-y-auto pr-6 font-mono select-all">
+                                <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4 font-semibold text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed shadow-inner max-h-[300px] overflow-y-auto pr-6 font-mono select-all">
                                   {item.resumo.split('\n\n').map((notaBloco, nIdx) => {
-                                    const matchHoraNota = notaBloco.match(/^\[([0-9]{2}:[0-9]{2})\]\s*-\s*([\s\S]*)/);
+                                    const matchHoraNota = notaBloco.match(/^\[([0-9]{2}:[0-9]{2})\]\s*-\s*/);
                                     if (matchHoraNota) {
+                                      const textoInterno = notaBloco.substring(matchHoraNota[0].length);
                                       return (
-                                        <div key={nIdx} className="mb-3 last:mb-0 border-l border-cyan-500/30 dark:border-cyan-500/30 pl-3 relative py-0.5">
-                                          <span className="inline-block bg-white dark:bg-slate-800 text-cyan-800 dark:text-cyan-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 font-mono mb-1">
+                                        <div key={nIdx} className="mb-3 last:mb-0 border-l border-cyan-500/40 pl-3 relative py-0.5">
+                                          <span className="inline-block bg-slate-100 dark:bg-slate-800 text-cyan-800 dark:text-cyan-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-200/50 dark:border-slate-700 font-mono mb-1">
                                             🕒 {matchHoraNota[1]}
                                           </span>
-                                          <p className="text-slate-900 dark:text-slate-200 text-[11px] leading-relaxed">{matchHoraNota[2]}</p>
+                                          <p className="text-slate-900 dark:text-slate-200 text-[11px] leading-relaxed">{textoInterno}</p>
                                         </div>
                                       );
                                     }
@@ -1747,7 +1666,7 @@ function viewAtView_operacional() {
                   })
                 )}
               </tbody>
-                                        </table>
+                                                      </table>
           </div>
         </div>
       </>
