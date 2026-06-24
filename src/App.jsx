@@ -379,28 +379,22 @@ const [dadosStcArsMaster, setDadosStcArsMaster] = useState(() => {
     }
   });
 
-  const macrosAvancadas = [
-    { label: "Acionamento Operadora", texto: "REALIZADO ACIONAMENTO DA OPERADORA PARA ABERTURA E ACOMPANHAMENTO DO REPARO, PERMANECENDO EM ANÁLISE PELA EQUIPE RESPONSÁVEL." },
-    { label: "Apoio SOC (E-mail)", texto: "SOLICITADO APOIO DA EQUIPE SOC POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL, AGUARDANDO RETORNO PARA CONTINUIDADE DA ANÁLISE." },
-    { label: "Encaminhado SOC (Validação)", texto: "ENCAMINHADO CASO PARA ANÁLISE DA EQUIPE SOC APÓS VALIDAÇÕES SEM EVIDÊNCIAS DE FALHA NO CIRCUITO, PERMANECENDO EM ACOMPANHAMENTO." },
-    { label: "Apoio Cliente (Firewall/Infra)", texto: "SOLICITADO APOIO DO CLIENTE PARA VALIDAÇÃO DO FIREWALL E DA INFRAESTRUTURA LOCAL, AGUARDANDO RETORNO DAS VERIFICAÇÕES." },
-    { label: "Verificação Equipamentos (Local)", texto: "NECESSÁRIA VERIFICAÇÃO DOS EQUIPAMENTOS NA LOCALIDADE PARA CONTINUIDADE DA ANÁLISE, AGUARDANDO RETORNO DAS VALIDAÇÕES EM CAMPO." },
-    { label: "Envio de Fotos (Localidade)", texto: "SOLICITADO ENVIO DE FOTOS DOS EQUIPAMENTOS PARA APOIO NA ANÁLISE TÉCNICA, AGUARDANDO EVIDÊNCIAS DA LOCALIDADE." },
-    { label: "Reforço GRC (Rede Interna)", texto: "REFORÇADA SOLICITAÇÃO DE INFORMAÇÕES DA REDE INTERNA JUNTO À GESTÃO RESPONSÁVEL, AGUARDANDO RETORNO PARA PROSSEGUIMENTO DAS TRATATIVAS." },
-    { label: "Escalonamento Gestor (Contatos)", texto: "CASO ESCALONADO AO GESTOR TÉCNICO PARA OBTENÇÃO DO CONTATO DA LOCALIDADE E CONTINUIDADE DAS VALIDAÇÕES TÉCNICAS, AGUARDANDO RETORNO." },
-    { label: "Cobrança Formal (E-mail)", texto: "REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS." },
-    { label: "Escalonamento (Previsão/Status)", texto: "MANTIDO ESCALONAMENTO JUNTO ÀS EQUIPES ENVOLVIDAS PARA ATUALIZAÇÃO DO STATUS DA OCORRÊNCIA E PREVISÃO DE NORMALIZAÇÃO, AGUARDANDO POSICIONAMENTO." },
-    { label: "Reiteração Apoio (Gestão)", texto: "REITERADA SOLICITAÇÃO DE APOIO À GESTÃO TÉCNICA POR MEIO DE E-MAIL PARA AVANÇO DAS TRATATIVAS, PERMANECENDO NO AGUARDO DE RETORNO." },
-    { label: "Follow-up Responsáveis", texto: "EFETUADO FOLLOW-UP JUNTO AOS RESPONSÁVEIS PELA ANÁLISE DA FALHA, AGUARDANDO ATUALIZAÇÃO E DEFINIÇÃO DOS PRÓXIMOS PASSOS." },
-    { label: "Solicitação Atualização (E-mail)", texto: "SOLICITAÇÃO DE ATUALIZAÇÃO DO INCIDENTE ENCAMINHADA VIA E-MAIL À ÁREA COMPETENTE, AGUARDANDO RETORNO WITH ESTIMATIVA DE NORMALIZAÇÃO." },
-    { label: "Template NºTT", texto: "NºTT:  XXXX //REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 2H//" },
-    { label: "Escalonamento (Sem Previsão)", texto: "REALIZADO ESCALONAMENTO PARA EQUIPE RESPONSÁVEL//AGUARDANDO ATUALIZAÇÃO DA OCORRÊNCIA//PREVISÃO DE NORMALIZAÇÃO PENDENTE" },
-    { label: "Análise Equipe Fibra", texto: "REPARO EM ANÁLISE PELA EQUIPE DE FIBRA//FALHA EM APURAÇÃO//AGUARDANDO RETORNO TÉCNICO" },
-    { label: "Triagem na Rede (Atz 3h)", texto: "OCORRÊNCIA EM TRIAGEM NA REDE//IDENTIFICAÇÃO DA FALHA EM ANDAMENTO//PRÓXIMA ATUALIZAÇÃO EM 3H" },
-    { label: "Atuação Técnica Local", texto: "ACIONAMENTO TÉCNICO EM VERIFICAÇÃO//ATENDIMENTO PENDENTE NO AMBIENTE DO CLIENTE//AGUARDANDO ATUAÇÃO" },
-    { label: "Abertura Automação (Operadora)", texto: "SERVIÇO INOPERANTE//REPARO ABERTO PELA AUTOMAÇÃO//CHAMADO SOLICITADO À OPERADORA XXX//SEM PREVISÃO DE NORMALIZAÇÃO" }
+const macrosAvancadas = [
+    { label: "Acionamento de Operadora", texto: "Chamado de reparo aberto junto à operadora responsável. // Ocorrência em acompanhamento. // Aguardando análise e posicionamento técnico para continuidade das tratativas." },
+    { label: "Solicitação de Apoio SOC (E-mail)", texto: "Acionado apoio da equipe SOC por meio de comunicação formal via e-mail (às XX:XXh). // Solicitação em acompanhamento. // Aguardando retorno para prosseguimento da análise." },
+    { label: "Encaminhamento para Validação SOC", texto: "Caso direcionado à equipe SOC após validações iniciais sem indícios de falha no circuito. // Ocorrência sob análise especializada. // Aguardando parecer técnico." },
+    { label: "Apoio Cliente – Firewall e Infraestrutura", texto: "Solicitado apoio do cliente para validação do firewall e da infraestrutura local. // Necessária confirmação dos testes realizados. // Aguardando retorno para continuidade da investigação." },
+    { label: "Validação de Equipamentos em Campo", texto: "Necessária verificação dos equipamentos instalados na localidade. // Procedimento requerido para avanço da análise. // Aguardando retorno das validações." },
+    { label: "Solicitação de Evidências Fotográficas", texto: "Solicitado envio de fotos dos equipamentos e conexões para apoio à análise técnica. // Evidências pendentes de recebimento. // Aguardando retorno da localidade." },
+    { label: "Escalonamento à Gestão Técnica", texto: "Caso escalonado ao gestor responsável para apoio na obtenção de contatos e validações junto à localidade. // Tratativa em acompanhamento. // Aguardando retorno." },
+    { label: "Apoio da Gestão", texto: "Solicitado apoio da gestão técnica por meio de e-mail (às XX:XXh). // Demanda em acompanhamento. // Aguardando posicionamento para avanço das tratativas." },
+    { label: "Follow-up das Tratativas", texto: "Realizado follow-up junto às equipes responsáveis pela análise da ocorrência. // Caso permanece em monitoramento. // Aguardando atualização das ações em andamento." },
+    { label: "Solicitação de Atualização", texto: "Solicitada atualização do incidente via e-mail (às XX:XXh). // Aguardando posicionamento da área responsável. // Pendente estimativa para normalização do serviço." },
+    { label: "Análise da Equipe de Fibra", texto: "Ocorrência em análise pela equipe de fibra. // Causa da falha em apuração. // Aguardando retorno técnico com diagnóstico." },
+    { label: "Triagem de Rede", texto: "Incidente em processo de triagem na rede. // Identificação da causa em andamento. // Próxima atualização prevista em 3 horas." },
+    { label: "Atuação Técnica Local", texto: "Equipe técnica acionada para atendimento na localidade. // Verificações em andamento no ambiente do cliente. // Aguardando conclusão da atuação e retorno técnico." }
   ];
-
+  
 const [categoriaExpandida, setCategoriaExpandida] = useState("DIA A DIA"); 
   const [artigoAtivo, setArtigoAtivo] = useState("dia_ferramentas");
 const [escalaExpandida, setEscalaExpandida] = useState(null);
@@ -1334,68 +1328,77 @@ return (
         )}
 
 {/* =========================================================================
-            HEADER GLOBAL INTEGRADO TÁTICO (Métricas e Turno Consolidados)
+            HEADER GLOBAL INTEGRADO TÁTICO (Otimização de Margem e Botões Premium)
             ========================================================================= */}
-        <header className="bg-slate-900 border-b border-slate-700 shadow-md px-6 py-2 flex flex-col md:flex-row items-center justify-between gap-4 transition-colors z-40 sticky top-0 select-none">
-          <div className="flex items-center gap-6 w-full md:w-auto justify-between md:justify-start">
+        <header className="bg-slate-900 border-b border-slate-700 shadow-md px-4 py-1.5 flex flex-col md:flex-row items-center justify-between gap-2 transition-colors z-40 sticky top-0 select-none h-auto md:h-12">
+          
+          {/* Lado Esquerdo: Identidade e Seletor de Módulos */}
+          <div className="flex items-center gap-4 flex-shrink-0">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-cyan-600 rounded-lg flex items-center justify-center shadow-inner">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              <div className="w-5 h-5 bg-cyan-600 rounded-md flex items-center justify-center shadow-inner">
+                <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
               <div>
-                <h1 className="text-xs font-black text-white tracking-tighter leading-none">COCKPIT <span className="text-cyan-400">NOC</span></h1>
-                <p className="text-[8px] font-bold text-slate-500 uppercase tracking-widest leading-none mt-0.5">Gestão de Atendimentos</p>
+                <h1 className="text-[11px] font-black text-white tracking-tighter leading-none">COCKPIT <span className="text-cyan-400">NOC</span></h1>
+                <p className="text-[7px] font-bold text-slate-500 uppercase tracking-widest leading-none mt-0.5">Automations</p>
               </div>
             </div>
 
-            <div className="flex bg-slate-800 p-0.5 rounded-lg border border-slate-700 shadow-inner ml-2">
-              <button onClick={() => setViewAtiva("operacional")} className={`py-1 px-3 rounded-md text-[10px] font-black tracking-wide transition-all ${viewAtiva === "operacional" ? "bg-slate-700 text-cyan-400 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}>OPERACIONAL</button>
-              <button onClick={() => setViewAtiva("wiki")} className={`py-1 px-3 rounded-md text-[10px] font-black tracking-wide transition-all ${viewAtiva === "wiki" ? "bg-slate-700 text-cyan-400 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}>BASE DE CONHECIMENTO</button>
+            <div className="flex bg-slate-800 p-0.5 rounded-md border border-slate-700 shadow-inner">
+              <button onClick={() => setViewAtiva("operacional")} className={`py-1 px-2.5 rounded text-[9px] font-black tracking-wide transition-all ${viewAtiva === "operacional" ? "bg-slate-700 text-cyan-400 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}>OPERACIONAL</button>
+              <button onClick={() => setViewAtiva("wiki")} className={`py-1 px-2.5 rounded text-[9px] font-black tracking-wide transition-all ${viewAtiva === "wiki" ? "bg-slate-700 text-cyan-400 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}>WIKI</button>
             </div>
           </div>
 
-          {/* PAINEL CENTRAL DE MÉTRICAS E BOTÕES DO TURNO (Consolidados no Topo) */}
+          {/* Centro: Métricas Rápidas e Botões Otimizados (Mais compactos e atraentes) */}
           {viewAtiva === "operacional" && (
-            <div className="flex items-center gap-6 flex-wrap md:flex-nowrap justify-center animate-fade-in">
-              <div className="flex gap-4 border-r border-slate-700 pr-6">
-                <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider flex items-center gap-1.5">Listados: <strong className="text-white text-sm font-mono bg-slate-800 px-2 py-0.5 rounded border border-slate-700 shadow-inner">{atendimentosFiltrados.length}</strong></span>
-                <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider flex items-center gap-1.5">Abertos: <strong className="text-amber-400 text-sm font-mono bg-amber-950/30 px-2 py-0.5 rounded border border-amber-900/30 shadow-inner">{abertos}</strong></span>
+            <div className="flex items-center gap-4 flex-wrap md:flex-nowrap justify-center animate-fade-in flex-1 max-w-2xl px-2">
+              <div className="flex gap-3 border-r border-slate-700 pr-4 flex-shrink-0">
+                <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider flex items-center gap-1">Listados: <strong className="text-white text-xs font-mono bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700 shadow-inner">{atendimentosFiltrados.length}</strong></span>
+                <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider flex items-center gap-1">Abertos: <strong className="text-amber-400 text-xs font-mono bg-amber-950/30 px-1.5 py-0.5 rounded border border-amber-900/30 shadow-inner">{abertos}</strong></span>
               </div>
               
-              <div className="flex items-center gap-2">
-                <button onClick={gerarRelatorioTurno} title="Baixar relatório do turno em .txt" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 border border-slate-700 px-2.5 py-1.5 rounded-lg transition-colors active:scale-95 shadow-sm">Gerar Relatório</button>
-                <button onClick={exportarJSON} title="Exportar Backup do Banco de Dados" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 border border-slate-700 px-2.5 py-1.5 rounded-lg transition-colors active:scale-95 shadow-sm">Exportar Backup</button>
-                <label title="Importar Backup anterior" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 border border-slate-700 px-2.5 py-1.5 rounded-lg transition-colors active:scale-95 shadow-sm cursor-pointer">
-                  Importar <input type="file" accept=".json" onChange={importarBackup} className="hidden" />
+              <div className="flex items-center gap-1.5 flex-wrap md:flex-nowrap">
+                <button onClick={gerarRelatorioTurno} title="Baixar relatório do turno em .txt" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 hover:bg-slate-700 border border-slate-700 px-2 py-1 rounded-md transition-colors active:scale-95 flex items-center gap-1">
+                  📄 Relatório
+                </button>
+                <button onClick={exportarJSON} title="Exportar Backup do Banco de Dados" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 hover:bg-slate-700 border border-slate-700 px-2 py-1 rounded-md transition-colors active:scale-95 flex items-center gap-1">
+                  📦 Backup
+                </button>
+                <label title="Importar Backup anterior" className="text-[9px] font-black text-slate-300 hover:text-white uppercase tracking-wider bg-slate-800 hover:bg-slate-700 border border-slate-700 px-2 py-1 rounded-md transition-colors active:scale-95 cursor-pointer flex items-center gap-1">
+                  📥 Importar <input type="file" accept=".json" onChange={importarBackup} className="hidden" />
                 </label>
-                <button onClick={encerrarExpediente} className="text-[9px] font-black text-white uppercase tracking-wider bg-rose-600 hover:bg-rose-500 px-3 py-1.5 rounded-lg transition-all active:scale-95 shadow-md flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> Encerrar Expediente
+                <button onClick={encerrarExpediente} className="text-[9px] font-black text-white uppercase tracking-wider bg-rose-600 hover:bg-rose-500 px-2.5 py-1 rounded-md transition-all active:scale-95 shadow-md flex items-center gap-1">
+                  🛑 Fechar Turno
                 </button>
               </div>
             </div>
           )}
 
-          {/* Lado Direito: Relógio, Filtro e Modos */}
-          <div className="flex items-center gap-3 w-full md:w-auto justify-center md:justify-end">
-            <div className="flex items-center gap-2 px-2.5 py-1 bg-slate-800 border border-slate-700 rounded-lg shadow-inner font-mono text-[10px]">
+          {/* Lado Direito: Relógio, Filtro Compacto e Controles de Modo */}
+          <div className="flex items-center gap-2 flex-shrink-0 w-full md:w-auto justify-center md:justify-end">
+            
+            {/* Relógio Reduzido */}
+            <div className="flex items-center gap-1.5 px-2 py-0.5 bg-slate-800 border border-slate-700 rounded-md shadow-inner font-mono text-[9px] h-6">
               <span className="text-slate-400 font-bold">{dataNocFormatada}</span>
               <span className="text-slate-600">|</span>
               <span className="text-white font-black">{horaNocFormatada}</span>
             </div>
 
-            <button onClick={() => setDarkMode(!darkMode)} title={darkMode ? "Modo Claro" : "Modo Escuro"} className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-amber-400 hover:scale-105 transition-all shadow-inner">
-              {darkMode ? "☀️" : "🌙"}
-            </button>
-            <button onClick={() => setModoNoc(!modoNoc)} title={modoNoc ? "Sair da Tela Cheia" : "Modo NOC Monitor Gigante"} className={`p-1.5 rounded-lg border transition-all hover:scale-105 shadow-inner ${modoNoc ? "bg-cyan-600 border-cyan-500 text-white animate-pulse" : "bg-slate-800 border-slate-700 text-cyan-400"}`}>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0lorder l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
-            </button>
-
+            {/* Barra de Pesquisa Slim */}
             {viewAtiva === "operacional" && (
-              <div className="flex items-center bg-slate-800 border border-slate-700 rounded-lg px-2.5 shadow-inner focus-within:border-cyan-500/50 transition-all">
-                <svg className="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                <input type="text" placeholder="Pesquisar..." value={filtro} onChange={(e) => setFiltro(e.target.value)} className="py-1.5 px-2 text-[11px] w-32 outline-none bg-transparent text-white placeholder-slate-500" />
+              <div className="flex items-center bg-slate-800 border border-slate-700 rounded-md px-2 shadow-inner focus-within:border-cyan-500/50 transition-all h-6">
+                <svg className="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                <input type="text" placeholder="Filtrar..." value={filtro} onChange={(e) => setFiltro(e.target.value)} className="py-0.5 px-1 text-[10px] w-20 focus:w-28 outline-none bg-transparent text-white placeholder-slate-500 transition-all duration-300" />
               </div>
             )}
+
+            <button onClick={() => setDarkMode(!darkMode)} title={darkMode ? "Modo Claro" : "Modo Escuro"} className="p-1 rounded-md bg-slate-800 border border-slate-700 text-amber-400 hover:scale-105 transition-all shadow-inner text-[10px] w-6 h-6 flex items-center justify-center">
+              {darkMode ? "☀️" : "🌙"}
+            </button>
+            <button onClick={() => setModoNoc(!modoNoc)} title={modoNoc ? "Sair da Tela Cheia" : "Modo NOC Monitor Gigante"} className={`p-1 rounded-md border transition-all hover:scale-105 shadow-inner text-[10px] w-6 h-6 flex items-center justify-center ${modoNoc ? "bg-cyan-600 border-cyan-500 text-white animate-pulse" : "bg-slate-800 border-slate-700 text-cyan-400"}`}>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
+            </button>
           </div>
         </header>
 
@@ -1537,18 +1540,19 @@ return (
           </div>
         )}
 
-        {/* TABELA DE ALTA DENSIDADE CORPORATIVA (Ocupa o espaço máximo em 100% de zoom) */}
+{/* TABELA DE ALTA DENSIDADE CORPORATIVA (Ocupa o espaço máximo em 100% de zoom) */}
         <div className="w-full bg-slate-50 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden transition-colors">
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse whitespace-nowrap">
+            <table className="w-full text-left border-collapse whitespace-nowrap table-fixed">
               <thead>
                 <tr className="bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-b border-slate-200 dark:border-slate-700 select-none">
+                  {/* Redistribuição precisa de larguras totalizando 100% */}
                   <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[12%]">Designação</th>
-                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[18%]">Identificador / Protocolo</th>
-                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[15%]">Grupo Técnico</th>
-                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[12%]">Data / Hora</th>
-                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider">Último Posicionamento Técnico</th>
-                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider text-center w-[15%]">Ações táticas</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[14%]">Identificador / Protocolo</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[13%]">Grupo Técnico</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[11%]">Data / Hora</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider w-[30%]">Último Posicionamento Técnico</th>
+                  <th className="px-4 py-2.5 text-[10px] font-black uppercase tracking-wider text-center w-[20%]">Ações táticas</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-700/60 text-xs font-bold">
@@ -1573,27 +1577,33 @@ return (
                           onClick={() => setCircuitoExpandido(scaleOpen ? null : item.id)}
                           className={`border-b border-slate-200 dark:border-slate-700/60 transition-colors group cursor-pointer ${scaleOpen ? "bg-slate-200/60 dark:bg-slate-700/40" : "bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700/30"}`}
                         >
-                          <td className="px-4 py-2.5 font-mono font-black text-cyan-600 dark:text-cyan-400 select-all flex items-center gap-1.5">
-                            <span className={`text-slate-400 transition-transform duration-200 text-[8px] ${scaleOpen ? "rotate-90 text-cyan-500" : ""}`}>▶</span>
-                            📡 {item.designacao}
-                          </td>
-                          <td className="px-4 py-2.5 font-mono text-slate-500 dark:text-slate-400 text-[11px] font-normal">{item.protocolo}</td>
-                          <td className="px-4 py-2.5 text-slate-700 dark:text-slate-300">{item.gtNome}</td>
-                          <td className="px-4 py-2.5 font-mono text-slate-500 dark:text-slate-400 text-[11px] font-normal">{item.dataHora ? item.dataHora.replace(', ', ' | ') : ''}</td>
-                          <td className="px-4 py-2.5 text-slate-700 dark:text-slate-300 max-w-xl truncate font-normal">
-                            <div className="flex items-center gap-1.5 overflow-hidden">
-                              <span className="bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-cyan-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-300 dark:border-cyan-100/10 font-mono flex-shrink-0">LATEST</span>
-                              <span className="truncate font-medium">{ultimaNotaBruta}</span>
+                          <td className="px-4 py-2.5 font-mono font-black text-cyan-600 dark:text-cyan-400 select-all truncate">
+                            <div className="flex items-center gap-1.5 truncate">
+                              <span className={`text-slate-400 transition-transform duration-200 text-[8px] flex-shrink-0 ${scaleOpen ? "rotate-90 text-cyan-500" : ""}`}>▶</span>
+                              <span className="truncate">📡 {item.designacao}</span>
                             </div>
                           </td>
-                          <td className="px-4 py-2.5 text-center" onClick={(e) => e.stopPropagation()}>
-                            <div className="flex items-center justify-center gap-2">
-                              <select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className={`border rounded-md px-1.5 py-0.5 text-[9px] uppercase tracking-wide focus:outline-none cursor-pointer border-slate-200 dark:border-slate-600 dark:bg-slate-900 shadow-sm ${corStatusBg}`}>
+                          <td className="px-4 py-2.5 font-mono text-slate-500 dark:text-slate-400 text-[11px] font-normal truncate">{item.protocolo}</td>
+                          <td className="px-4 py-2.5 text-slate-700 dark:text-slate-300 truncate">{item.gtNome}</td>
+                          <td className="px-4 py-2.5 font-mono text-slate-500 dark:text-slate-400 text-[11px] font-normal truncate">{item.dataHora ? item.dataHora.replace(', ', ' | ') : ''}</td>
+                          
+                          <td className="px-4 py-2.5 text-slate-700 dark:text-slate-300 font-normal truncate" title={ultimaNotaBruta}>
+                            <div className="flex items-center gap-1.5 overflow-hidden">
+                              <span className="bg-slate-200 dark:bg-slate-900 text-slate-800 dark:text-cyan-400 text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-300 dark:border-cyan-100/10 font-mono flex-shrink-0">LATEST</span>
+                              <span className="truncate font-medium cursor-help">{ultimaNotaBruta}</span>
+                            </div>
+                          </td>
+                          
+                          {/* COLUNA DE AÇÕES ULTRA COMPACTADA EM LINHA ÚNICA */}
+                          <td className="px-2 py-2 text-center" onClick={(e) => e.stopPropagation()}>
+                            <div className="flex items-center justify-center gap-1.5 flex-nowrap">
+                              <select value={item.status} onChange={(e) => alterarStatus(item.id, e.target.value)} className={`border rounded px-1 py-0.5 text-[9px] uppercase tracking-wide focus:outline-none cursor-pointer border-slate-200 dark:border-slate-600 dark:bg-slate-900 shadow-sm max-w-[90px] truncate ${corStatusBg}`}>
                                 <option value="Aberto">Aberto</option>
-                                <option value="Em andamento">Em andamento</option>
+                                <option value="Em andamento">Andamento</option>
                                 <option value="Encerrado">Encerrado</option>
                               </select>
 
+                              {/* Botão + Nota reduzido e otimizado */}
                               <button onClick={() => {
                                 const hora = new Date().toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit' });
                                 setRascunho(`DESIGNAÇÃO: ${item.designacao}\nGT NOME: ${item.gtNome}\nPOSICIONAMENTO: \n\n[${hora}] - `);
@@ -1601,10 +1611,11 @@ return (
                                 if (modoNoc) setModoNoc(false);
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                                 setTimeout(() => rascunhoRef.current?.focus(), 100);
-                              }} className="text-cyan-600 bg-cyan-50 hover:bg-cyan-100 dark:bg-cyan-900/20 dark:text-cyan-400 p-1 px-2 rounded border border-cyan-200 dark:border-cyan-800 active:scale-95 text-[9px] font-black uppercase flex items-center gap-1">
-                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg> + Nota
+                              }} className="text-cyan-600 bg-cyan-50 hover:bg-cyan-100 dark:bg-cyan-900/20 dark:text-cyan-400 p-1 px-1.5 rounded border border-cyan-200 dark:border-cyan-800 active:scale-95 text-[9px] font-black uppercase flex items-center gap-0.5" title="Adicionar nota rápida de posicionamento">
+                                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" /></svg> Nota
                               </button>
 
+                              {/* Botões de ícones com tamanhos fixados para evitar quebra */}
                               <button onClick={() => {
                                 let conteudoLimpo = item.resumo.replace(/\[\d{2}:\d{2}\]\s*-\s*/g, "").trim();
                                 let textoFinal = "";
@@ -1617,22 +1628,22 @@ return (
                                 }
                                 navigator.clipboard.writeText(textoFinal.replace(/\n\n/g, "\n"));
                                 mostrarToast("Encerramento estruturado copiado!");
-                              }} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95">
+                              }} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 flex-shrink-0" title="Copiar Histórico Estruturado">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
                               </button>
 
-                              <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95">
+                              <button onClick={() => iniciarEdicao(item)} className="text-slate-400 hover:text-cyan-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 flex-shrink-0" title="Editar Registro">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
                               </button>
 
-                              <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95">
+                              <button onClick={() => removerAtendimento(item.id)} className="text-slate-400 hover:text-rose-600 p-1 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 active:scale-95 flex-shrink-0" title="Excluir Registro">
                                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
                               </button>
                             </div>
                           </td>
                         </tr>
 
-                        {/* SUB-LINHA / GAVETA COMPLETA (ROLAGEM INTELIGENTE SEM LIMITES) */}
+                        {/* GAVETA DE NOTAS HISTÓRICAS */}
                         {scaleOpen && (
                           <tr className="bg-slate-100/50 dark:bg-slate-900/60 border-l-4 border-l-cyan-500 animate-fade-in">
                             <td colSpan="6" className="p-4">
@@ -1666,10 +1677,10 @@ return (
                   })
                 )}
               </tbody>
-                                                      </table>
+            </table>
           </div>
         </div>
-      </>
+                  </>
     );
   }
 
