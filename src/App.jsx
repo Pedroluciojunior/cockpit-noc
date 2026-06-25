@@ -1455,31 +1455,7 @@ return (
     if (viewAtiva !== "operacional") return null;
     return (
       <>
-        {/* FILTROS DE STATUS INTEGRADOS EM BARRA ÚNICA */}
-        {!modoNoc && (
-          <div className="bg-white dark:bg-slate-800 rounded-xl p-2 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between gap-4 animate-fade-in select-none">
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-2">Filtros Táticos:</span>
-              <div className="flex bg-slate-100 dark:bg-slate-900 p-0.5 rounded-lg border border-slate-200/60 dark:border-slate-700/80 gap-1">
-                {["Todos", "Aberto", "Em andamento", "Encerrado"].map(st => (
-                  <button key={st} onClick={() => setStatusFiltro(st)} className={`px-4 py-1 rounded-md text-[10px] font-black uppercase tracking-wider transition-all ${statusFiltro === st ? (st === "Aberto" ? "bg-emerald-500 text-white shadow-sm" : st === "Em andamento" ? "bg-amber-500 text-white shadow-sm" : st === "Encerrado" ? "bg-blue-500 text-white shadow-sm" : "bg-white dark:bg-slate-700 text-cyan-800 dark:text-cyan-300 shadow-sm") : "text-slate-500 hover:text-slate-800 dark:hover:text-slate-300"}`}>
-                    {st}
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            <div className="flex items-center bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-2 py-0.5 shadow-inner mr-2">
-              <label className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mr-2 ml-1">Filtro Data:</label>
-              <select value={dataFiltro} onChange={(e) => setDataFiltro(e.target.value)} className="bg-transparent text-slate-800 dark:text-slate-200 font-bold text-[11px] outline-none cursor-pointer pr-2 focus:ring-0 border-none py-1">
-                <option value={new Date().toLocaleDateString("pt-BR")}>HOJE</option>
-                <option value="Todas">TODAS AS DATAS</option>
-              </select>
-            </div>
-          </div>
-        )}
-
-        {/* EVENT INTAKE - 100% LARGURA TOTAL COM TEXTAREAS COMPACTOS FOCUS-EXPANSÍVEIS */}
+{/* EVENT INTAKE - LADO A LADO FIXO (Auto-Extrator 8/12 e Bloco de Apoio 4/12) */}
         {!modoNoc && (
           <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-4 shadow-sm transition-colors animate-fade-in">
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-3 mb-3">
@@ -1496,13 +1472,14 @@ return (
                 </div>
               </div>
 
-              <button onClick={adicionarAtendimento} className="px-6 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-[11px] uppercase tracking-widest transition-all shadow-md active:scale-95 whitespace-nowrap">
-                Injetar Registro (New Ticket)
-              </button>
+<button onClick={adicionarAtendimento} className="px-6 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-xl text-[11px] uppercase tracking-widest transition-all shadow-md active:scale-95 whitespace-nowrap">
+  NEW TICKET
+</button>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
-              {/* Auto-Extrator: Altura inteligente para liberar o monitor */}
+            {/* O SEGREDO ESTÁ AQUI: Forçando o grid a manter colunas lado a lado na horizontal */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+              {/* Auto-Extrator: Ocupa 8 das 12 colunas */}
               <div className="lg:col-span-8 flex flex-col">
                 <div className="flex items-center justify-between mb-1.5 ml-1">
                   <label className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Auto-Extrator de Dados (Ctrl + Enter)</label>
@@ -1511,31 +1488,34 @@ return (
                     {macrosAvancadas.map((m, idx) => <option key={idx} value={m.texto}>{m.label}</option>)}
                   </select>
                 </div>
-{/* Auto-Extrator de Dados */}
-<textarea 
-  ref={rascunhoRef}
-  value={rascunho} 
-  onChange={(e) => handleRascunhoChange(e.target.value)}
-  onKeyDown={(e) => {
-    if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); adicionarAtendimento(); }
-  }}
-  placeholder="Preencha a máscara aqui..." 
-  spellCheck="true"
-  lang="pt-BR"
-  className="w-full h-[90px] focus:h-[200px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-mono text-xs rounded-xl p-3 outline-none focus:border-cyan-500 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
-/>
+                <textarea 
+                  ref={rascunhoRef}
+                  value={rascunho} 
+                  onChange={(e) => handleRascunhoChange(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); adicionarAtendimento(); }
+                  }}
+                  placeholder="Preencha a máscara aqui..." 
+                  spellCheck="true"
+                  lang="pt-BR"
+                  className="w-full h-[90px] focus:h-[200px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-mono text-xs rounded-xl p-3 outline-none focus:border-cyan-500 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
+                />
+              </div>
 
-{/* ... */}
-
-{/* Rascunho Temporário / Bloco de Apoio Rápido */}
-<textarea 
-  value={blocoNotasTemporario}
-  onChange={(e) => setBlocoNotasTemporario(e.target.value)}
-  placeholder="Cole listas de circuitos ou dados avulsos aqui..." 
-  spellCheck="true"
-  lang="pt-BR"
-  className="w-full h-[90px] focus:h-[200px] bg-amber-50/10 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
-/>
+              {/* Rascunho Temporário: Ocupa 4 das 12 colunas */}
+              <div className="lg:col-span-4 flex flex-col">
+                <div className="flex items-center justify-between mb-1.5 ml-1">
+                  <label className="text-[9px] font-black text-amber-500 uppercase tracking-widest font-mono">📝 Bloco de Apoio Rápido</label>
+                  <button onClick={() => { if(window.confirm("Limpar anotações?")) setBlocoNotasTemporario(""); }} className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider">Limpar</button>
+                </div>
+                <textarea 
+                  value={blocoNotasTemporario}
+                  onChange={(e) => setBlocoNotasTemporario(e.target.value)}
+                  placeholder="Cole listas de circuitos ou dados avulsos aqui..." 
+                  spellCheck="true"
+                  lang="pt-BR"
+                  className="w-full h-[90px] focus:h-[200px] bg-amber-50/10 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
+                />
               </div>
             </div>
           </div>
