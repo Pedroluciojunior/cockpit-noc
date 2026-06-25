@@ -1629,10 +1629,9 @@ return (
                           <tr className="bg-slate-100/50 dark:bg-slate-900/60 border-l-4 border-l-cyan-500 animate-fade-in">
                             <td colSpan="6" className="p-4">
                               <div className="flex flex-col gap-2.5 max-w-7xl">
-                                <div className="text-[10px] font-black text-cyan-600 dark:text-cyan-400 uppercase tracking-widest font-sans flex items-center gap-1.5 select-none">
-                                   Adilson Roteiro de Notas (Histórico Completo do Circuito)
-                                </div>
-                                <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4 font-semibold text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed shadow-inner max-h-[300px] overflow-y-auto pr-6 font-mono select-all">
+<div className="text-[10px] font-black text-cyan-600 dark:text-cyan-400 uppercase tracking-widest font-sans flex items-center gap-1.5 select-none">
+   HISTÓRICO DO CIRCUITO
+</div>                                <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-4 font-semibold text-slate-800 dark:text-slate-200 whitespace-pre-wrap leading-relaxed shadow-inner max-h-[300px] overflow-y-auto pr-6 font-mono select-all">
                                   {item.resumo.split('\n\n').map((notaBloco, nIdx) => {
                                     const matchHoraNota = notaBloco.match(/^\[([0-9]{2}:[0-9]{2})\]\s*-\s*/);
                                     if (matchHoraNota) {
