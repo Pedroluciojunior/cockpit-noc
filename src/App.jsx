@@ -1511,30 +1511,31 @@ return (
                     {macrosAvancadas.map((m, idx) => <option key={idx} value={m.texto}>{m.label}</option>)}
                   </select>
                 </div>
-                <textarea 
-                  ref={rascunhoRef}
-                  value={rascunho} 
-                  onChange={(e) => handleRascunhoChange(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); adicionarAtendimento(); }
-                  }}
-                  placeholder="Preencha a máscara aqui..." 
-                  className="w-full h-[90px] focus:h-[200px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-mono text-xs rounded-xl p-3 outline-none focus:border-cyan-500 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
-                />
-              </div>
+{/* Auto-Extrator de Dados */}
+<textarea 
+  ref={rascunhoRef}
+  value={rascunho} 
+  onChange={(e) => handleRascunhoChange(e.target.value)}
+  onKeyDown={(e) => {
+    if (e.ctrlKey && e.key === 'Enter') { e.preventDefault(); adicionarAtendimento(); }
+  }}
+  placeholder="Preencha a máscara aqui..." 
+  spellCheck="true"
+  lang="pt-BR"
+  className="w-full h-[90px] focus:h-[200px] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-mono text-xs rounded-xl p-3 outline-none focus:border-cyan-500 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
+/>
 
-              {/* Rascunho Temporário: Altura inteligente expansível */}
-              <div className="lg:col-span-4 flex flex-col">
-                <div className="flex items-center justify-between mb-1.5 ml-1">
-                  <label className="text-[9px] font-black text-amber-500 uppercase tracking-widest font-mono">📝 Bloco de Apoio Rápido</label>
-                  <button onClick={() => { if(window.confirm("Limpar anotações?")) setBlocoNotasTemporario(""); }} className="text-[8px] font-black text-rose-500 hover:text-rose-600 uppercase tracking-wider">Limpar</button>
-                </div>
-                <textarea 
-                  value={blocoNotasTemporario}
-                  onChange={(e) => setBlocoNotasTemporario(e.target.value)}
-                  placeholder="Cole listas de circuitos ou dados avulsos aqui..." 
-                  className="w-full h-[90px] focus:h-[200px] bg-amber-50/10 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
-                />
+{/* ... */}
+
+{/* Rascunho Temporário / Bloco de Apoio Rápido */}
+<textarea 
+  value={blocoNotasTemporario}
+  onChange={(e) => setBlocoNotasTemporario(e.target.value)}
+  placeholder="Cole listas de circuitos ou dados avulsos aqui..." 
+  spellCheck="true"
+  lang="pt-BR"
+  className="w-full h-[90px] focus:h-[200px] bg-amber-50/10 dark:bg-amber-950/10 border border-amber-200/40 dark:border-amber-900/30 text-slate-700 dark:text-amber-200/90 font-mono rounded-xl p-3 text-[11px] outline-none focus:border-amber-400 resize-y leading-relaxed transition-all duration-300 shadow-inner" 
+/>
               </div>
             </div>
           </div>
