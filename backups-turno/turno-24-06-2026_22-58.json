@@ -1,0 +1,221 @@
+[
+  {
+    "id": 1782341656166.8975,
+    "protocolo": "ATD-1782341656166-129",
+    "designacao": "JCR5010048",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[22:24] - - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS  [22:21]  H), JUNTO COM NUMERO DE PROTOCOLO DE ABERTURA// AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[19:54] - HR VIA EMAIL: 19:53 // DESCRIÇÃO: FALHA -INOPERANTE- //CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "24/06/2026, 19:54:16",
+    "ultimaAtualizacao": "24/06/2026, 22:24:00",
+    "historico": [
+      {
+        "data": "24/06/2026, 22:24:00",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "24/06/2026, 19:54:16",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782346376045.5083,
+    "protocolo": "ATD-1782346376045-163",
+    "designacao": "CBA5011679",
+    "gtNome": "MAMTECH",
+    "resumo": "[22:20] - FALHA- INOPERANTE//SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 22:18H)ASSIM COMO NÚMEORO DO PROTOCOLO DE ATENDIMENTO // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[21:12] - HR VIA EMAIL: 21:12 // DESCRIÇÃO: FALHAINOPERANTE - //CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "24/06/2026, 21:12:56",
+    "ultimaAtualizacao": "24/06/2026, 22:20:23",
+    "historico": [
+      {
+        "data": "24/06/2026, 22:20:23",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "24/06/2026, 21:12:56",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782350187207.8022,
+    "protocolo": "ATD-1782350187207-747",
+    "designacao": "CBA0478852",
+    "gtNome": "RONALDO-VTAL",
+    "resumo": "[22:16] - NºTT: 220025991(BA) // DESCRIÇÃO: FALHA -INOPERANTE //AÇÃO -CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Aberto",
+    "qtdAtualizacoes": 0,
+    "dataHora": "24/06/2026, 22:16:27",
+    "ultimaAtualizacao": "24/06/2026, 22:16:27",
+    "historico": [
+      {
+        "data": "24/06/2026, 22:16:27",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782323628870.3918,
+    "protocolo": "ATD-1782323628870-907",
+    "designacao": "BAG5010154",
+    "gtNome": "QUICK",
+    "resumo": "[19:57] - #00514#\n\nFALHA: CLIENTE - FALTA DE ENERGIA\n\nINÍCIO: 24/06/2026 14:24\n\nNORMALIZAÇÃO: 24/06/26 19:56\n\nCAUSA: PÚBLICA\n\nSOLUÇÃO: [CLIENTE - FALHA ELÉTRICA ENERGIA] FALHA ELÉTRICA NO CLIENTE POR PARTE DA CONCESSIONÁRIA DE ENERGIA\n\n[16:48] - CIRCUITO PERMANECE INOPERANTE. // IDENTIFICADOS INDÍCIOS DE POSSÍVEL INTERRUPÇÃO NO FORNECIMENTO DE ENERGIA NA LOCALIDADE. // SOLICITADA VALIDAÇÃO JUNTO AO CLIENTE QUANTO À ENERGIA ELÉTRICA E AO STATUS OPERACIONAL DOS EQUIPAMENTOS INTERNOS. // AGUARDANDO RETORNO PARA CONTINUIDADE DAS TRATATIVAS. //SOLICITADO APOIO VIA EMAIL (16:47) PARA GESTAO MAGNO.\n\n\n[16:47] -\n\n[14:53] - HR VIA EMAIL: 14:53 // DESCRIÇÃO: FALHA - INOPERANTE//CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "24/06/2026, 14:53:48",
+    "ultimaAtualizacao": "24/06/2026, 19:57:11",
+    "historico": [
+      {
+        "data": "24/06/2026, 19:57:11",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "24/06/2026, 16:48:37",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "24/06/2026, 14:53:48",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782328956706.9868,
+    "protocolo": "ATD-1782328956706-735",
+    "designacao": "AUH5010005",
+    "gtNome": "MAMINFO",
+    "resumo": "[16:50] - SEGUE AGENDAMENTO 25/06/2026 10:00\n\n[16:50] -\n\n[16:22] - CPE AUH 5010006-SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 16:21H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "24/06/2026, 16:22:36",
+    "ultimaAtualizacao": "24/06/2026, 16:50:26",
+    "historico": [
+      {
+        "data": "24/06/2026, 16:50:26",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "24/06/2026, 16:22:36",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782329892051.4082,
+    "protocolo": "ATD-1782329892051-271",
+    "designacao": "NMGA5010014",
+    "gtNome": "ELESSANDRO — TEL: (65) 99267-8373 EMAIL DO CLIENTE: PIMENTELPMMT@GMAIL.COM",
+    "resumo": "[16:38] - SOLICITADO APOIO DO CLIENTE ATRAVES DO EMAIL \"PIMENTELPMMT@GMAIL.COM\" <PIMENTELPMMT@GMAIL.COM> (16:36). // TBM SOLICITADO APOIO A GESTAO DO CLIENTE , SR MARIO // AGUARDANDO RETORNO PARA CONTINUIDADE.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "24/06/2026, 16:38:12",
+    "ultimaAtualizacao": "24/06/2026, 16:38:12",
+    "historico": [
+      {
+        "data": "24/06/2026, 16:38:12",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782329259155.2131,
+    "protocolo": "ATD-1782329259155-207",
+    "designacao": "TXU5010017",
+    "gtNome": "MAMINFO",
+    "resumo": "[16:27] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 16:27H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "24/06/2026, 16:27:39",
+    "ultimaAtualizacao": "24/06/2026, 16:27:39",
+    "historico": [
+      {
+        "data": "24/06/2026, 16:27:39",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782324134232.0054,
+    "protocolo": "ATD-1782324134232-78",
+    "designacao": "KAS5010086",
+    "gtNome": "SOC-OI",
+    "resumo": "[16:08] - CASO ESCALONADO AO GESTOR RESPONSÁVEL VIA EMAIL 16:08H\n\n[16:02] - CONFORME VALIDAÇÃO DA EQUIPE SOC, O MSS KAS5010123 PERTENCE AO AMBIENTE DO CLIENTE PJC. // A GESTÃO DOS EQUIPAMENTOS E DO FIREWALL É DE RESPONSABILIDADE DO CLIENTE. // NÃO HÁ GERÊNCIA DO SOC SOBRE OS DISPOSITIVOS ENVOLVIDOS. // NECESSÁRIO DIRECIONAR A TRATATIVA AO RESPONSÁVEL PELO AMBIENTE. // CHAMADO ENCERRADO PELA EQUIPE RESPONSÁVEL. //CASO ESCALONADO AO GESTOR RESPONSÁVEL PARA APOIO // TRATATIVA EM ACOMPANHAMENTO. // AGUARDANDO RETORNO.\n\n[15:03] - FOI REGISTRADO  CHAMADO WO0000001183763,   EM ATENDIMENTO A SUA SOLICITAÇÃO.//AGUARDANDO PREVISAO //\n\n[15:02] - ACIONADO APOIO DA EQUIPE SOC POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL (ÀS 14:38H). // SOLICITAÇÃO EM ACOMPANHAMENTO. // AGUARDANDO RETORNO PARA PROSSEGUIMENTO DA ANÁLISE.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "24/06/2026, 15:02:14",
+    "ultimaAtualizacao": "24/06/2026, 16:08:30",
+    "historico": [
+      {
+        "data": "24/06/2026, 16:08:30",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "24/06/2026, 16:02:28",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "24/06/2026, 15:03:53",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "24/06/2026, 15:02:14",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782323876573.6094,
+    "protocolo": "ATD-1782323876573-999",
+    "designacao": "SJK5010047",
+    "gtNome": "QUICK",
+    "resumo": "[14:57] - #015#\n\nFALHA: ENCONTRADO OK - SEM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 23/06/2026 11:32\n\nNORMALIZAÇÃO: 24/06/2026 12:12\n\nCAUSA: .--\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA APÓS EFETUAR TESTES NO LINK",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "24/06/2026, 14:57:56",
+    "ultimaAtualizacao": "24/06/2026, 14:57:56",
+    "historico": [
+      {
+        "data": "24/06/2026, 14:57:56",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1782323398055.0193,
+    "protocolo": "ATD-1782323398055-915",
+    "designacao": "PCK5010129",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[14:49] - // AGUARDANDO POSICIONAMENTO DO GESTOR PARA CONTINUIDADE DAS TRATATIVAS. //",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "24/06/2026, 14:49:58",
+    "ultimaAtualizacao": "24/06/2026, 14:49:58",
+    "historico": [
+      {
+        "data": "24/06/2026, 14:49:58",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782323188914.4182,
+    "protocolo": "ATD-1782323188914-478",
+    "designacao": "NBAN5010040",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[14:46] - NECESSÁRIA VALIDAÇÃO DO FIREWALL JUNTO AO RESPONSÁVEL PELA ADMINISTRAÇÃO. // AGUARDANDO POSICIONAMENTO DO GESTOR PARA CONTINUIDADE DAS TRATATIVAS. //",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "24/06/2026, 14:46:28",
+    "ultimaAtualizacao": "24/06/2026, 14:46:28",
+    "historico": [
+      {
+        "data": "24/06/2026, 14:46:28",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
