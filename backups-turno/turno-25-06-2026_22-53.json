@@ -1,0 +1,657 @@
+[
+  {
+    "id": 1782422438526.8762,
+    "protocolo": "ATD-1782422438526-641",
+    "designacao": "SJDX5010021",
+    "gtNome": "QUICK",
+    "resumo": "[22:05] - -SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL A EQUIPE N2-SR LINCON(ÀS  [22:04]H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[18:20] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 18:20H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "25/06/2026, 18:20:38",
+    "ultimaAtualizacao": "25/06/2026, 22:05:18",
+    "historico": [
+      {
+        "data": "25/06/2026, 22:05:18",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 18:20:45",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "25/06/2026, 18:20:38",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782422019044.415,
+    "protocolo": "ATD-1782422019044-417",
+    "designacao": "PTP5010073",
+    "gtNome": "QUICK",
+    "resumo": "[20:56] - AGUARDANDO POSICIONAMENTO DA EQUIPE SOC-OI PARA VERIFICAÇÃO DO FIREWALL//\n\n[18:13] - FALHA- INOPERANTE //PERMANECE INOPERANTE//VERIFICAMOS QUE ATÉ O NOSSO TRECHO DE LINK ENCONTRA-SE OPERACIONAL, SEM REGISTRO DE FALHAS//RECOMENDAMOS O ACIONAMENTO DA EQUIPE RESPONSÁVEL PELO FIREWALL PARA VALIDAÇÃO DO EQUIPAMENTO.//\nACIONADO APOIO DA EQUIPE SOC POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL (ÀS 18:13H). // SOLICITAÇÃO EM ACOMPANHAMENTO. // AGUARDANDO RETORNO PARA PROSSEGUIMENTO DA ANÁLISE.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "25/06/2026, 18:13:39",
+    "ultimaAtualizacao": "25/06/2026, 20:56:06",
+    "historico": [
+      {
+        "data": "25/06/2026, 20:56:06",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 18:13:44",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "25/06/2026, 18:13:39",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782416709649.5955,
+    "protocolo": "ATD-1782416709649-270",
+    "designacao": "BBG5010057",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[20:53] - - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL A EQP N3(ÀS [20:46]H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[17:15] - PERMANECE INOPERANTE. A CAUSA É UM ROMPIMENTO AINDA EM TRATATIVA.//SEM PREVISAO\n\n[16:45] - HR VIA EMAIL: 16:44 // DESCRIÇÃO: FALHA -INOPERANTE //CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO PROTOCOLO DE ABERTURA, ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "25/06/2026, 16:45:09",
+    "ultimaAtualizacao": "25/06/2026, 20:53:35",
+    "historico": [
+      {
+        "data": "25/06/2026, 20:53:35",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:15:59",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 16:45:09",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782415248955.4749,
+    "protocolo": "ATD-1782415248955-523",
+    "designacao": "JNA5010132",
+    "gtNome": "ELIEL GUILHERME (CLIENTE)",
+    "resumo": "[20:50] - AGUARDANDO RETORNO DO CLIENTE OU DA GESTÃO _MAGNO//\n\n[17:06] - TENTATIVA DE CONTATO COM CLIENTE VIA FONE (66) 99255-0414 , SEM SUCESSO// ENCAMINHADO EMAIL (17:03) LIEL@PM.MT.GOV.BR , COM COPIA PARA GESTÃO MAGNO// SOLICITANDO DO CLIENTE: CIRCUITO REPORTADO COMO NORMALIZADO PELA PARCEIRA // SOLICITAÇÃO DE APOIO DO CLIENTE // NECESSÁRIA VALIDAÇÃO LOCAL DO SERVIÇO // VERIFICAR OCORRÊNCIA DE FALTA DE ENERGIA // INSPECIONAR INFRAESTRUTURA INTERNA // CONFIRMAR FUNCIONAMENTO DOS EQUIPAMENTOS // VALIDAR CONECTIVIDADE LOCAL // REALIZAR TESTES NO AMBIENTE DO CLIENTE // ENCAMINHAR FOTOS DOS EQUIPAMENTOS // EVIDÊNCIAS SOLICITADAS PARA CONTINUIDADE DA ANÁLISE//AGUARDANDO RETORNO\n\n[17:03] - SEM NECESSIDADE DE ATUAÇÃO TÉCNICA DA OPERADORA // NENHUMA INTERVENÇÃO REALIZADA PELA EQUIPE TÉCNICA // CIRCUITO SEM FALHAS IDENTIFICADAS NA REDE DA OPERADORA // RECOMENDADA ANÁLISE DO AMBIENTE LOCAL // VERIFICAR EQUIPAMENTO FORTINET // INSPECIONAR CABEAMENTO FÍSICO // VALIDAR CONFIGURAÇÕES DE REDE // CONFERIR CONECTIVIDADE INTERNA //\n\n[16:20] - HR VIA EMAIL: 16:18 // DESCRIÇÃO: FALHA -INOPERANTE  //CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO PROTOCOLO DE ABERTURA, ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "25/06/2026, 16:20:48",
+    "ultimaAtualizacao": "25/06/2026, 20:50:57",
+    "historico": [
+      {
+        "data": "25/06/2026, 20:50:57",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:06:51",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:03:39",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 16:20:48",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782414430821.698,
+    "protocolo": "ATD-1782414430821-257",
+    "designacao": "JCR5010048",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[20:47] - - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL A EQP N3(ÀS [20:46]H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[16:07] - CIRCUITO EM ANÁLISE //  NECESSÁRIA VERIFICAÇÃO PRESENCIAL // ENVIO DE TÉCNICO AUTORIZADO PARA AVALIAÇÃO E POSSÍVEL CORREÇÃO EM CAMPO // TÉCNICO RESPONSÁVEL: JOSÉ RICARDO PENA DA COSTA -RG: 3274716-0//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "25/06/2026, 16:07:10",
+    "ultimaAtualizacao": "25/06/2026, 20:47:33",
+    "historico": [
+      {
+        "data": "25/06/2026, 20:47:33",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 16:07:10",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782416136223.6885,
+    "protocolo": "ATD-1782416136223-607",
+    "designacao": "BBG5010063",
+    "gtNome": "QUICK",
+    "resumo": "[20:42] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 25/06/2026 16:23\n\nNORMALIZAÇÃO: 25/06/26 18:37\n\nCAUSA: PAR METÁLICO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//CIRCUITO NORMALIZADO // CONECTIVIDADE RESTABELECIDA // ROMPIMENTO DE INFRAESTRUTURA IDENTIFICADO // REPARO CONCLUÍDO // FALHA SANADA // LINK OPERACIONAL // SERVIÇO RESTABELECIDO //\n\n[17:09] - PERMANECE INOPERANTE. A CAUSA É UM ROMPIMENTO AINDA EM TRATATIVA// SEM PREVISAO DE NORMALIZAÇÃO\n\n[16:35] - HR VIA EMAIL: 16:34 // DESCRIÇÃO: FALHA -INOPERANTE //CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO PROTOCOLO DE ABERTURA, ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "25/06/2026, 16:35:36",
+    "ultimaAtualizacao": "25/06/2026, 20:42:15",
+    "historico": [
+      {
+        "data": "25/06/2026, 20:42:15",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "25/06/2026, 17:09:22",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 16:35:36",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782416709650.844,
+    "protocolo": "ATD-1782416709649-453",
+    "designacao": "BBG5010046",
+    "gtNome": "QUICK",
+    "resumo": "[20:38] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 25/06/2026 16:22\n\nNORMALIZAÇÃO: 25/06/26 18:35\n\nCAUSA: PAR METÁLICO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//CIRCUITO NORMALIZADO // CONECTIVIDADE RESTABELECIDA // ROMPIMENTO DE INFRAESTRUTURA IDENTIFICADO // REPARO CONCLUÍDO // FALHA SANADA // LINK OPERACIONAL // SERVIÇO RESTABELECIDO //\n\n[17:14] - PERMANECE INOPERANTE. A CAUSA É UM ROMPIMENTO AINDA EM TRATATIVA.//SEM PREVISAO\n\n[17:14] -\n\n[16:45] - HR VIA EMAIL: 16:44 // DESCRIÇÃO: FALHA -INOPERANTE //CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO PROTOCOLO DE ABERTURA, ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "25/06/2026, 16:45:09",
+    "ultimaAtualizacao": "25/06/2026, 20:38:17",
+    "historico": [
+      {
+        "data": "25/06/2026, 20:38:17",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "25/06/2026, 17:14:25",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 16:45:09",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782408816451.5054,
+    "protocolo": "ATD-1782408816451-643",
+    "designacao": "SSZ5010117",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[20:32] - A SITUAÇÃO DESTE CIRCUITO JÁ FOI ENVIADA ANTERIORMENTE. NO MOMENTO, ELE CONTINUA APRESENTANDO ALARME DE ENERGIA.*//AGUARDANDO ESTABILIZAÇÃO DA REDE ELÉTRICA// RETORNO DE CTT COM QUICK NO PROX DIA ÚTIL //\n\n[18:22] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 18:21H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[16:24] - CIRCUITO PERMANECE INDISPONÍVEL DEVIDO À INTERRUPÇÃO NO FORNECIMENTO DE ENERGIA ELÉTRICA NAS DEPENDÊNCIAS DO CLIENTE, IMPACTANDO DIRETAMENTE A OPERAÇÃO DO SERVIÇO.//EM TRATATIVA\n\n[14:33] - FALHA- INOPERANTE //SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 14:52H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "25/06/2026, 14:33:36",
+    "ultimaAtualizacao": "25/06/2026, 20:32:54",
+    "historico": [
+      {
+        "data": "25/06/2026, 20:32:54",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 18:22:29",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 16:24:21",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 14:33:36",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782421614954.8198,
+    "protocolo": "ATD-1782421614954-27",
+    "designacao": "SNO5010338",
+    "gtNome": "TELESPAZIO",
+    "resumo": "[18:28] - VERIFICADO, O LINK EM QUESTÃO ULTRAPASSOU O VOLUME DE DADOS PREVISTO NO CONTRATO FIRMADO COM A TELESPAZIO. EM FUNÇÃO DISSO, A VELOCIDADE DA CONEXÃO FOI AUTOMATICAMENTE REDUZIDA, CONFORME AS CONDIÇÕES ESTABELECIDAS. PARA RESTABELECER A VELOCIDADE ORIGINAL, ORIENTAMOS QUE ENTRE EM CONTATO COM A SUA EQUIPE COMERCIAL, A FIM DE AVALIAR A POSSIBILIDADE DE CONTRATAÇÃO DE UM PACOTE ADICIONAL DE DADOS. //ENCAMINHADO EMAIL (18:28) PARA GESTOR DO CLIENTE MAGNO//NO AGUARDO\n\n[18:25] -\n\n[18:06] - HR VIA EMAIL: 18:05 // DESCRIÇÃO: FALHA - INOPERANTE//CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO PROTOCOLO DE ABERTURA, ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "25/06/2026, 18:06:54",
+    "ultimaAtualizacao": "25/06/2026, 18:28:33",
+    "historico": [
+      {
+        "data": "25/06/2026, 18:28:33",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 18:06:54",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782244591077.199,
+    "protocolo": "ATD-1782244591077-665",
+    "designacao": "SJDX5010021",
+    "gtNome": "QUICK",
+    "resumo": "[18:20] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 18:20H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[18:20] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 18:20H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[19:53] - FALHA-INOPERANTE//REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (19:53)ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[16:56] - HR VIA EMAIL: 16:56 // DESCRIÇÃO: FALHA -SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "23/06/2026, 16:56:31",
+    "ultimaAtualizacao": "25/06/2026, 18:20:28",
+    "historico": [
+      {
+        "data": "25/06/2026, 18:20:28",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 18:20:24",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 19:53:32",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:56:31",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782422300053.1904,
+    "protocolo": "ATD-1782422300053-980",
+    "designacao": "CBA5011679",
+    "gtNome": "MAMTECH",
+    "resumo": "[18:18] - SOLICITADO POSICIONAMENTO A EQUIPE N2(SUPERVISÃO - HERMÍNIA MATEUS)// NO AGUARDO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "25/06/2026, 18:18:20",
+    "ultimaAtualizacao": "25/06/2026, 18:18:20",
+    "historico": [
+      {
+        "data": "25/06/2026, 18:18:20",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782242691051.9153,
+    "protocolo": "ATD-1782242691051-911",
+    "designacao": "PTP5010073",
+    "gtNome": "QUICK",
+    "resumo": "[18:13] - FALHA- INOPERANTE //PERMANECE INOPERANTE//VERIFICAMOS QUE ATÉ O NOSSO TRECHO DE LINK ENCONTRA-SE OPERACIONAL, SEM REGISTRO DE FALHAS//RECOMENDAMOS O ACIONAMENTO DA EQUIPE RESPONSÁVEL PELO FIREWALL PARA VALIDAÇÃO DO EQUIPAMENTO.//\nACIONADO APOIO DA EQUIPE SOC POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL (ÀS 18:13H). // SOLICITAÇÃO EM ACOMPANHAMENTO. // AGUARDANDO RETORNO PARA PROSSEGUIMENTO DA ANÁLISE.\n\n[18:13] - FALHA- INOPERANTE //PERMANECE INOPERANTE//VERIFICAMOS QUE ATÉ O NOSSO TRECHO DE LINK ENCONTRA-SE OPERACIONAL, SEM REGISTRO DE FALHAS//RECOMENDAMOS O ACIONAMENTO DA EQUIPE RESPONSÁVEL PELO FIREWALL PARA VALIDAÇÃO DO EQUIPAMENTO.//\nACIONADO APOIO DA EQUIPE SOC POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL (ÀS 18:13H). // SOLICITAÇÃO EM ACOMPANHAMENTO. // AGUARDANDO RETORNO PARA PROSSEGUIMENTO DA ANÁLISE.\n\n[16:45] - HR VIA EMAIL: 16:44 // DESCRIÇÃO: FALHA -INOPERANTE //CHAMADO DE REPARO SOLICITADO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO PROTOCOLO DE ABERTURA, ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.\n\n[16:24] - SOC,-CHAMADO WO0000001183239 CONCLUÍDO COM SUCESSO. //TRATATIVA REALIZADA NA DATA AGENDADA E FINALIZADA COM SUCESSO. //CHAMADO ENCERRADO APÓS CONCLUSÃO DAS TRATATIVAS. //ENC. GESTOR MAGNO PARA VALIDAR JUNTO AO CLIENTE",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "23/06/2026, 16:24:51",
+    "ultimaAtualizacao": "25/06/2026, 18:13:23",
+    "historico": [
+      {
+        "data": "25/06/2026, 18:13:23",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 18:13:20",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 16:45:09",
+        "acao": "Atualizado para [Aberto]"
+      },
+      {
+        "data": "23/06/2026, 16:24:51",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782421122930.7915,
+    "protocolo": "ATD-1782421122930-756",
+    "designacao": "PCK5010129",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[17:58] - CASO ESCALONADO AO GESTOR RESPONSÁVEL VIA EMAIL (17:57)PARA APOIO NA OBTENÇÃO DE CONTATOS E VALIDAÇÕES JUNTO À LOCALIDADE. // TRATATIVA EM ACOMPANHAMENTO. // AGUARDANDO RETORNO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "25/06/2026, 17:58:42",
+    "ultimaAtualizacao": "25/06/2026, 17:58:56",
+    "historico": [
+      {
+        "data": "25/06/2026, 17:58:56",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "25/06/2026, 17:58:42",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782254871076.613,
+    "protocolo": "ATD-1782254871076-368",
+    "designacao": "PCK5010129",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[17:58] - CASO ESCALONADO AO GESTOR RESPONSÁVEL VIA EMAIL (17:57)PARA APOIO NA OBTENÇÃO DE CONTATOS E VALIDAÇÕES JUNTO À LOCALIDADE. // TRATATIVA EM ACOMPANHAMENTO. // AGUARDANDO RETORNO.\n\n[17:58] - CASO ESCALONADO AO GESTOR RESPONSÁVEL VIA EMAIL (17:57)PARA APOIO NA OBTENÇÃO DE CONTATOS E VALIDAÇÕES JUNTO À LOCALIDADE. // TRATATIVA EM ACOMPANHAMENTO. // AGUARDANDO RETORNO.\n\n[22:15] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL(22:15) ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[19:47] - HR VIA EMAIL: 19:47 // DESCRIÇÃO: FALHA - INOPERANTE //REPARO ABERTO//REPARO EM TRIAGEM.//RETORNO PARA POSICIONAMENTO EM 3H//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 3,
+    "dataHora": "23/06/2026, 19:47:51",
+    "ultimaAtualizacao": "25/06/2026, 17:58:31",
+    "historico": [
+      {
+        "data": "25/06/2026, 17:58:31",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:58:15",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 22:15:56",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 19:47:51",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782420270898.0605,
+    "protocolo": "ATD-1782420270898-99",
+    "designacao": "NMGA5010014",
+    "gtNome": "ELESSANDRO — TEL: (65) 99267-8373 ",
+    "resumo": "TENTATIVA DE CTT FONE , SEM SUCESSO// ENVIADO EMAIL(17:36) PARA CLIENTE E GETSAO MAGNO SOLICITANDO APOIO//NO AGAURDO DO RETORNO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "25/06/2026, 17:44:30",
+    "ultimaAtualizacao": "25/06/2026, 17:45:45",
+    "historico": [
+      {
+        "data": "25/06/2026, 17:45:45",
+        "acao": "Edição Manual"
+      },
+      {
+        "data": "25/06/2026, 17:44:30",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782236163090.4866,
+    "protocolo": "ATD-1782236163090-581",
+    "designacao": "NMGA5010014",
+    "gtNome": "ELESSANDRO — TEL: (65) 99267-8373",
+    "resumo": "[17:44] - FALHA/ //AÇÃO -- //\n\n[17:44] - FALHA/ //AÇÃO -- //\n\n[17:43] - TENTATIVA DE CONTATO TELEFONE, SEM SUCESSO// ENCAMINHADO EMAIL (17:36) COM COPIA PARA GESTAO MAGNO SOLICITANDO APOIO//AGUARDANDO RETORNO\n\n[17:41] - TENTATIVA DE CTT TELEFÔNICO, SEM SUCESSO//ENCAMINHADO EMAIL (17:38) AO CLIENTE E AO GESTOR MAGNO, SOLICITANDO APOIO// AGUARDANDO RETORNO\n\n[17:39] - ENCAMINHADO EMAIL (17:38) AO CLIENTE E AO GESTOR MAGNO APOIO PARA DARMOS CONTINUIDADE NA TRATATIVA// AGUARDANDO RETORNO DO CLIENTE\n\n[16:58] - SEM RETORNO DO CLIENTE CLIENTE ELESSANDRO//AGUARANDADO RETORNO DO GESTOR MAGNO\n\n[14:36] - // AGUARDANDO ENVIO DAS FOTOS DO EQUIPAMENTO E DE SUAS CONEXÕES PARA ANÁLISE TÉCNICA. // SOLICITAÇÃO ENCAMINHADA AO CLIENTE PARA COLETA DAS EVIDÊNCIAS NECESSÁRIAS. // ACIONADO TAMBÉM O GESTOR MAGNO OI, COM SOLICITAÇÃO DE APOIO PARA CONTATO COM O CLIENTE E VALIDAÇÃO DOS EQUIPAMENTOS ENVOLVIDOS. // CHAMADO PERMANECE EM ACOMPANHAMENTO AGUARDANDO RETORNO PARA CONTINUIDADE DAS TRATATIVAS. //",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 6,
+    "dataHora": "23/06/2026, 14:36:03",
+    "ultimaAtualizacao": "25/06/2026, 17:44:17",
+    "historico": [
+      {
+        "data": "25/06/2026, 17:44:17",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:44:12",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:43:45",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:41:30",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "25/06/2026, 17:39:28",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:58:45",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 14:36:03",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782409142944.5615,
+    "protocolo": "ATD-1782409142944-755",
+    "designacao": "PCK5010097",
+    "gtNome": "HUDSON 6599931-5529",
+    "resumo": "[14:39] - TENTATIVA DE CONTATO SEM SUCESSO// LIGAÇÃO ENCAMINHADA A CAIXA POSTAL.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "25/06/2026, 14:39:02",
+    "ultimaAtualizacao": "25/06/2026, 14:39:02",
+    "historico": [
+      {
+        "data": "25/06/2026, 14:39:02",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782259117485.968,
+    "protocolo": "ATD-1782259117485-116",
+    "designacao": "BLM5701787",
+    "gtNome": "VALIDADO PELOS CLIENTES EDNALDO, RAFAEL E BRYAN CASSI.",
+    "resumo": "[20:58] - #S8328#\n\nFALHA: REDE DE DADOS (OEMP) - SEM AÇÃO\n\nINÍCIO: 22/06/2026 11:54\n\nNORMALIZAÇÃO: 23/06/26 17:27\n\nCAUSA: . MAL CONTATO NO CABEAMENTO INTERNO\n\nSOLUÇÃO: NOSSOS ANALISTAS SOLICITARAM PARA O CLIENTE CASSI QUE SE POSSÍVEL SEJA ABERTO CHAMADO JUNTO A VIVO.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 0,
+    "dataHora": "23/06/2026, 20:58:37",
+    "ultimaAtualizacao": "23/06/2026, 20:58:37",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:58:37",
+        "acao": "Criado [Encerrado]"
+      }
+    ]
+  },
+  {
+    "id": 1782246553913.5647,
+    "protocolo": "ATD-1782246553913-906",
+    "designacao": "AGPL5010001",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[19:41] - #015#\n\nFALHA: ENCONTRADO OK - SEM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 23/06/2026 17:14\n\nNORMALIZAÇÃO: 23/06/26 18:52\n\nCAUSA: .TRAVAMENTO DO EQUIPAMENTO,\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA APÓS EFETUAR TESTES NO LINK//IDENTIFICADO TRAVAMENTO DO EQUIPAMENTO COMO CAUSA DA FALHA. //REALIZADO REINÍCIO DO EQUIPAMENTO COM SUCESSO. //SERVIÇO RESTABELECIDO E OPERANDO NORMALMENTE. //\n\n[17:29] - HR VIA EMAIL: 17:29 // DESCRIÇÃO: FALHA - SERVIÇO INOPERANTE////CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 17:29:13",
+    "ultimaAtualizacao": "23/06/2026, 19:41:37",
+    "historico": [
+      {
+        "data": "23/06/2026, 19:41:37",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 17:29:13",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835128.3691,
+    "protocolo": "ATD-1782241835124-429",
+    "designacao": "BAG5010138",
+    "gtNome": "QUICK",
+    "resumo": "[20:48] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\nROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\nFALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 20:48:54",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:48:54",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835127.9314,
+    "protocolo": "ATD-1782241835124-69",
+    "designacao": "BAG5010156",
+    "gtNome": "QUICK",
+    "resumo": "[20:48] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\nROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\nFALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 20:48:54",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:48:54",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835126.849,
+    "protocolo": "ATD-1782241835124-383",
+    "designacao": "BAG5010146",
+    "gtNome": "QUICK",
+    "resumo": "[20:48] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\nROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\nFALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 20:48:54",
+    "historico": [
+      {
+        "data": "23/06/2026, 20:48:54",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835125.9805,
+    "protocolo": "ATD-1782241835124-479",
+    "designacao": "BAG5010158",
+    "gtNome": "QUICK",
+    "resumo": "[16:46] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 16:46:33",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:46:33",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782241835124.1318,
+    "protocolo": "ATD-1782241835124-378",
+    "designacao": "BAG5010148",
+    "gtNome": "QUICK",
+    "resumo": "[16:46] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 15:56\n\nNORMALIZAÇÃO: 23/06/26 16:42\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE//SERVIÇO ENCONTRA-SE NORMALIZADO. //A CAUSA DA FALHA FOI IDENTIFICADA COMO ROMPIMENTO DE LINK, SENDO REALIZADA A CORREÇÃO E SOLUÇÃO DO INCIDENTE. //\n\n[16:32] - ROMPIMENTO NA REGIÃO DO BARRA DO GARCAS, A PREVISÃO E ATE FINAL DO DIA NORMALIZAR\n\n[16:10] - FALHA/ //AÇÃO -- //SERVIÇO INOPERANTE//CHAMADO SOLICITADO À OPERADORA QUICK//SEM PREVISÃO DE NORMALIZAÇÃO",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "23/06/2026, 16:10:35",
+    "ultimaAtualizacao": "23/06/2026, 16:46:33",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:46:33",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 16:32:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 16:10:35",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782239186210.809,
+    "protocolo": "ATD-1782239186210-968",
+    "designacao": "MIS5010051",
+    "gtNome": "QUICK/MEGALINK",
+    "resumo": "[19:44] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 23/06/2026 12:16\n\nNORMALIZAÇÃO: 23/06/26 18:31\n\nCAUSA: ROMPIMENTO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE/IDENTIFICADO ROMPIMENTO COMO CAUSA DA FALHA. //ROMPIMENTO CORRIGIDO COM SUCESSO. //SERVIÇO RESTABELECIDO E OPERANDO NORMALMENTE. //\n\n[15:26] - CIRCUITO MIS5010051 // MIRASSOL D'OESTE/MT // IP 177.222.233.114 // CIRCUITO PERMANECE INOPERANTE // FALHA OCASIONADA POR ROMPIMENTO DE FIBRA DURANTE ATIVIDADE DE SUBSTITUIÇÃO DE POSTES REALIZADA PELA ENERGISA // SERVIÇOS DA CONCESSIONÁRIA AINDA EM ANDAMENTO // AGUARDANDO LIBERAÇÃO DA ÁREA PARA EXECUÇÃO DOS REPAROS E POSTERIOR NORMALIZAÇÃO DO CIRCUITO.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 15:26:26",
+    "ultimaAtualizacao": "23/06/2026, 19:44:28",
+    "historico": [
+      {
+        "data": "23/06/2026, 19:44:28",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "23/06/2026, 15:26:26",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782237225807.8267,
+    "protocolo": "ATD-1782237225807-881",
+    "designacao": "APT5010030",
+    "gtNome": "MAGNO LOUREIRO",
+    "resumo": "[17:01] - REITERADA SOLICITAÇÃO DE APOIO À GESTÃO TÉCNICA POR MEIO DE E-MAIL PARA AVANÇO DAS TRATATIVAS, PERMANECENDO NO AGUARDO DE RETORNO.\n\n[14:53] - CIRCUITO APT5010030 // ARAPUTANGA/MT // IP 187.103.16.170 // CIRCUITO RESTABELECIDO E OPERANDO NORMALMENTE // TENTATIVAS DE CONTATO COM OS RESPONSÁVEIS LOCAIS SEM SUCESSO // SOLICITADA VALIDAÇÃO (VIA EMAIL 14:52)DO SERVIÇO NA PONTA DO CLIENTE PARA CONFIRMAÇÃO DA NORMALIZAÇÃO OU IDENTIFICAÇÃO DE EVENTUAL ANORMALIDADE REMANESCENTE.// AGUARDANDO VALIDAÇÃO DO CLIENTE//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 14:53:45",
+    "ultimaAtualizacao": "23/06/2026, 17:01:01",
+    "historico": [
+      {
+        "data": "23/06/2026, 17:01:01",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 14:53:45",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782235959649.8408,
+    "protocolo": "ATD-1782235959649-569",
+    "designacao": "SJK5010047",
+    "gtNome": "QUICK",
+    "resumo": "[16:38] - REALIZADO ACOMPANHAMENTO DA OCORRÊNCIA COM COBRANÇA FORMAL VIA E-MAIL (16:37)ÀS ÁREAS RESPONSÁVEIS, AGUARDANDO ATUALIZAÇÃO DAS TRATATIVAS.\n\n[14:32] - FALHA-PERMANECE INOPERANTE. // CONFORME ATUALIZAÇÃO DA OPERADORA, O CIRCUITO ENCONTRA-SE EM PROCESSO DE MUDANÇA DE ENDEREÇO NA PRESENTE DATA. // A INDISPONIBILIDADE DO SERVIÇO É PREVISTA DURANTE A EXECUÇÃO DA MIGRAÇÃO DA INFRAESTRUTURA. // RESTABELECIMENTO CONDICIONADO À CONCLUSÃO DA MUDANÇA E À REALIZAÇÃO DOS TESTES DE VALIDAÇÃO NO NOVO ENDEREÇO. // CHAMADO SEGUE EM ACOMPANHAMENTO AGUARDANDO FINALIZAÇÃO DA ATIVIDADE E NORMALIZAÇÃO DO CIRCUITO. //",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "23/06/2026, 14:32:39",
+    "ultimaAtualizacao": "23/06/2026, 16:38:05",
+    "historico": [
+      {
+        "data": "23/06/2026, 16:38:05",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "23/06/2026, 14:32:39",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
