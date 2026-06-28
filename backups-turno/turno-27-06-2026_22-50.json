@@ -1,0 +1,486 @@
+[
+  {
+    "id": 1782584973002.1619,
+    "protocolo": "ATD-1782584973002-661",
+    "designacao": "IAU5061564",
+    "gtNome": "VTAL-WEB",
+    "resumo": "[22:46] - #5307F#\n\nFALHA: REDE ÓPTICA - ACESSO\n\nINÍCIO: 27/06/2026 15:02\n\nNORMALIZAÇÃO: 27/06/26 21:18\n\nCAUSA: FIBRA\n\nSOLUÇÃO: [FIBRA JUMPER] FALHA RESTABELECIDA APÓS TROCA DE JUMPER NO ACESSO CLIENTE\n\n[15:29] - NºTT: 308332 // DESCRIÇÃO: FALHA - INOPERANTE// REPARO SENDO ANALISADO PELA EQUIPE DE PLANTA INTERNA, VERIFICANDO FIBRA OPTICA//PENDENCIAMENTO SOLICITADO PELO TC/ÁREA TÉCNICA MATRICULA: TR581146 POSTO: TRIAV MOTIVO PENDENCIA: SITUAÇÃO DE RISCO (TEMPORÁRIO OU PERMANENTE) DATA:01/07/2026 18:00",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 15:29:33",
+    "ultimaAtualizacao": "27/06/2026, 22:46:26",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:46:26",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "27/06/2026, 15:29:33",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782610907960.5403,
+    "protocolo": "ATD-1782610907958-539",
+    "designacao": "ROI5010282",
+    "gtNome": "VICTOR-N1-QUICK(TELEFONE)",
+    "resumo": "[22:41] - RESPOSTA VIA EMAIL, SEM SUCESSO// MANTIDO CTT VIA FONE- 0800 065 3110 - OPÇÃO 1// ANALISTA INFORMA QUE NAO POSSUI AS TRATATIVAS //SOMENTE NA PROX SEGUNDA QDO SETOR RESPONSÁVEL ESTARÁ OPERACIONAL.//APESAR DO LINK ESTÁ UP, NÃO CONSEGUIMOS AS INFORMAÇÕES TECNICAS PARA SEU ENCERRAMENTO//",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 22:41:47",
+    "ultimaAtualizacao": "27/06/2026, 22:41:47",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:41:47",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782586126813.5327,
+    "protocolo": "ATD-1782586126813-264",
+    "designacao": "GGA5010028",
+    "gtNome": "VICTOR-N1-QUICK(TELEFONE)",
+    "resumo": "[22:41] - RESPOSTA VIA EMAIL, SEM SUCESSO// MANTIDO CTT VIA FONE- 0800 065 3110 - OPÇÃO 1// ANALISTA INFORMA QUE NAO POSSUI AS TRATATIVAS //SOMENTE NA PROX SEGUNDA QDO SETOR RESPONSÁVEL ESTARÁ OPERACIONAL.//APESAR DO LINK ESTÁ UP, NÃO CONSEGUIMOS AS INFORMAÇÕES TECNICAS PARA SEU ENCERRAMENTO//\n\n[15:48] - FALHA- INOPERANTE // SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:47H) PARA EQUIPE N2, LINCON. // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 15:48:46",
+    "ultimaAtualizacao": "27/06/2026, 22:41:47",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:41:47",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 15:48:46",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782584712577.806,
+    "protocolo": "ATD-1782584712577-967",
+    "designacao": "AOU5010044",
+    "gtNome": "VICTOR-N1-QUICK(TELEFONE)",
+    "resumo": "[22:41] - RESPOSTA VIA EMAIL, SEM SUCESSO// MANTIDO CTT VIA FONE- 0800 065 3110 - OPÇÃO 1// ANALISTA INFORMA QUE NAO POSSUI AS TRATATIVAS //SOMENTE NA PROX SEGUNDA QDO SETOR RESPONSÁVEL ESTARÁ OPERACIONAL.//APESAR DO LINK ESTÁ UP, NÃO CONSEGUIMOS AS INFORMAÇÕES TECNICAS PARA SEU ENCERRAMENTO//\n\n[15:25] - FALHA- INOPERANTE // SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:24H), JUNTO COM PEDIDO DO NUMERO DO PROTOCOLO DE CHAMADO// ESCALONADO N3 LINCON. // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 15:25:12",
+    "ultimaAtualizacao": "27/06/2026, 22:41:47",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:41:47",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 15:25:12",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782609717182.8064,
+    "protocolo": "ATD-1782609717177-969",
+    "designacao": "CBA0475627.",
+    "gtNome": "VTAL-EMAIL",
+    "resumo": "[22:21] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 22:19H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 22:21:57",
+    "ultimaAtualizacao": "27/06/2026, 22:21:57",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:21:57",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782598696768.2512,
+    "protocolo": "ATD-1782598696764-717",
+    "designacao": "CBA0477004",
+    "gtNome": "VTAL-EMAIL",
+    "resumo": "[22:21] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 22:19H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[19:18] - FALHA- INOPERANTE //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO, ATA PROMESSA 28/06/2026 01:53.// AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO .",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 19:18:16",
+    "ultimaAtualizacao": "27/06/2026, 22:21:57",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:21:57",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 19:18:16",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782598696767.0647,
+    "protocolo": "ATD-1782598696764-612",
+    "designacao": "CBA0475686",
+    "gtNome": "VTAL-EMAIL",
+    "resumo": "[22:21] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 22:19H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[19:18] - FALHA- INOPERANTE //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO, ATA PROMESSA 28/06/2026 01:53.// AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO .",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 19:18:16",
+    "ultimaAtualizacao": "27/06/2026, 22:21:57",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:21:57",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 19:18:16",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782598696766.373,
+    "protocolo": "ATD-1782598696764-4",
+    "designacao": "CBA0475713",
+    "gtNome": "VTAL-EMAIL",
+    "resumo": "[22:21] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 22:19H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[19:18] - FALHA- INOPERANTE //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO, ATA PROMESSA 28/06/2026 01:53.// AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO .",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 19:18:16",
+    "ultimaAtualizacao": "27/06/2026, 22:21:57",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:21:57",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 19:18:16",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782598696765.747,
+    "protocolo": "ATD-1782598696764-186",
+    "designacao": "CBA0475687",
+    "gtNome": "VTAL-EMAIL",
+    "resumo": "[22:21] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 22:19H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[19:18] - FALHA- INOPERANTE //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO, ATA PROMESSA 28/06/2026 01:53.// AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO .",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 19:18:16",
+    "ultimaAtualizacao": "27/06/2026, 22:21:57",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:21:57",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 19:18:16",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782598696764.8206,
+    "protocolo": "ATD-1782598696764-844",
+    "designacao": "CBA0477654",
+    "gtNome": "VTAL-EMAIL",
+    "resumo": "[22:21] - SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 22:19H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.\n\n[19:18] - FALHA- INOPERANTE //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO, ATA PROMESSA 28/06/2026 01:53.// AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO .",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 19:18:16",
+    "ultimaAtualizacao": "27/06/2026, 22:21:57",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:21:57",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 19:18:16",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782589958508.775,
+    "protocolo": "ATD-1782589958508-314",
+    "designacao": "CBA0477029",
+    "gtNome": "MARIA",
+    "resumo": "[22:14] - #2N3052#\n\nFALHA: REDE METÁLICA - REDE PRIMÁRIA/SECUNDÁRIA\n\nINÍCIO: 27/06/2026 15:54\n\nNORMALIZAÇÃO: 27/06/26 20:22\n\nCAUSA: PAR METÁLICO\n\nSOLUÇÃO: [PAR METÁLICO] FALHA RESTABELECIDA APÓS FUSÃO DE CABO METALICO OCASIONADO POR ACIDENTE// ENCERRADO AUTOMATICAMENTE APOS MASSIVO//ROMPIMENTO DE FIBRA /LINK UP//IDENTIFICADO NA PORTA 6/1/2, NÃO PERTENCENTE A BUNDLE, UTILIZANDO A VLAN 2255. O ENLACE ESTÁ CONFIGURADO COM O IP 177.203.179.189/30, TENDO COMO VIZINHO 177.203.179.190, E BANDA PROVISIONADA DE 30 MBPS. A INTERFACE APRESENTA STATUS ADMINISTRATIVO E OPERACIONAL UP (UP/UP), SEM REGISTRO DE PICOS DE UTILIZAÇÃO, INDICANDO QUE O CIRCUITO ENCONTRA-SE OPERACIONAL E SEM EVIDÊNCIAS DE SATURAÇÃO.\n\n[20:00] - ESTÁ EM UMA MASSIVA FIBRA // SEM ATUALIZAÇÃO DA EQP DE FIBRA// ESCALONADO SUPV LUAN//PREVISAO PARA 27/06/26 AS 22H\n\n[16:52] - NºTT: 423214 // DESCRIÇÃO: FALHA - \nMULTIPLOS CIRCUITOS INTERROMPIDOS //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 2,
+    "dataHora": "27/06/2026, 16:52:38",
+    "ultimaAtualizacao": "27/06/2026, 22:14:51",
+    "historico": [
+      {
+        "data": "27/06/2026, 22:14:51",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "27/06/2026, 20:00:31",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 16:52:38",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782587194043.0015,
+    "protocolo": "ATD-1782587194043-365",
+    "designacao": "RBO0419925",
+    "gtNome": "VINICIUS-N1-VTAL",
+    "resumo": "[20:07] - SUPV. MARCELO INFORMA QUE FOI TRANSMITIDO PARA EQP  DADOS//ESCALONADO SUPV LUIZ//SEM ATUALIZAÇÃO//SOLICITADA ATUALIZAÇÃO EQP DADOS/SEM PREVISAO\n\n[16:06] - NºTT: 423199 // DESCRIÇÃO: FALHA - INOPERANTE //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 16:06:34",
+    "ultimaAtualizacao": "27/06/2026, 20:07:48",
+    "historico": [
+      {
+        "data": "27/06/2026, 20:07:48",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 16:06:34",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782586558604.5693,
+    "protocolo": "ATD-1782586558602-15",
+    "designacao": "CBA0477054",
+    "gtNome": "VINICIUS-N1-VTAL",
+    "resumo": "[20:05] - POSTO TRASNMISSAO//SEM INFORMAÇÃO TECNICA DISPONÍVEL //ESCALONADO SUPV ALEXANDRO//SEM PREVISAO\n\n[16:38] - CONFORME SUPERVISOR ALEXSANDRO EQUIPE EM ANÁLISE DESSA TRATATIVA, AINDA SEM PREVISÃO.\n\n[15:55] - FALHA- INOPERANTE// SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:55H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "27/06/2026, 15:55:58",
+    "ultimaAtualizacao": "27/06/2026, 20:05:44",
+    "historico": [
+      {
+        "data": "27/06/2026, 20:05:44",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 16:38:47",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 15:55:58",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782586558603.388,
+    "protocolo": "ATD-1782586558602-684",
+    "designacao": "CBA0478926",
+    "gtNome": "VINICIUS-N1-VTAL",
+    "resumo": "[20:04] - ASSIVA DE FIBRA QUE AFETOU CIRCUITO// CAUSA VANDALISMOS CABOS CORTADOS// REPUXADA SOBRAS TECNICAS // INSERIDAS NOVAS CX DE EMENDAS// POREM LINK DOWN// REABERTO BA//NºTT:423259\n\n[16:37] - ASSOCIADO A FALHA MASSIVA. ROMPIMENTO PARCIAL, REDE SUBTERRÂNEA, EQUIPE BATENDO A REDE PARA IDENTIFICAR AS FALHAS, NOVO STATUS AS 19HRS.\n\n[15:55] - FALHA- INOPERANTE// SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:55H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "27/06/2026, 15:55:58",
+    "ultimaAtualizacao": "27/06/2026, 20:04:02",
+    "historico": [
+      {
+        "data": "27/06/2026, 20:04:02",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 16:37:12",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 15:55:58",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782586558602.7092,
+    "protocolo": "ATD-1782586558602-762",
+    "designacao": "CBA0475627",
+    "gtNome": "VINICIUS-N1-VTAL",
+    "resumo": "[20:02] - MASSIVA DE FIBRA QUE AFETOU CIRCUITO// CAUSA VANDALISMOS CABOS CORTADOS// REPUXADA SOBRAS TECNICAS // INSERIDAS NOVAS CX DE EMENDAS// POREM LINK DOWN// REABERTO BA// NºTT:423258\n\n[16:36] - ASSOCIADO A FALHA MASSIVA. ROMPIMENTO PARCIAL, REDE SUBTERRÂNEA, EQUIPE BATENDO A REDE PARA IDENTIFICAR AS FALHAS, NOVO STATUS AS 19HRS.\n\n[15:55] - FALHA- INOPERANTE// SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:55H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 2,
+    "dataHora": "27/06/2026, 15:55:58",
+    "ultimaAtualizacao": "27/06/2026, 20:02:03",
+    "historico": [
+      {
+        "data": "27/06/2026, 20:02:03",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 16:36:18",
+        "acao": "Atualizado para [Em andamento]"
+      },
+      {
+        "data": "27/06/2026, 15:55:58",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782601138779.5327,
+    "protocolo": "ATD-1782601138779-671",
+    "designacao": "BRE7211949",
+    "gtNome": "VINICIUS-VTAL-N1",
+    "resumo": "[19:58] - FALHA-INOPERANTE //POSTO TRASNSMISSAO//REALIZADO TESTE TXT NAS PONTA DE MG E SP//CONSTATADO FALHA NA AREA DE SP// ESCALONADO SUPV LEONARDO// SEM PREVISAO",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 19:58:58",
+    "ultimaAtualizacao": "27/06/2026, 19:58:58",
+    "historico": [
+      {
+        "data": "27/06/2026, 19:58:58",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782584825053.5002,
+    "protocolo": "ATD-1782584825053-661",
+    "designacao": "IAU5061566",
+    "gtNome": "VTAL",
+    "resumo": "[19:51] - #S8123#\n\nFALHA: REDE DE DADOS (OEMP) - SUBSTITUÍDO O EQUIPAMENTO\n\nINÍCIO: 27/06/2026 15:06\n\nNORMALIZAÇÃO: 27/06/26 19:49\n\nCAUSA: EQUIPAMENTO COM DEFEITO\n\nSOLUÇÃO: [OEMP EQUIPAMENTO] FALHA RESTABELECIDA APÓS TROCA EQUIPAMENTO\n\n[15:27] - NºTT: 308332 // DESCRIÇÃO: FALHA - INOPERANTE //CHAMADO DE REPARO ABERTO JUNTO À OPERADORA RESPONSÁVEL. // OCORRÊNCIA EM ACOMPANHAMENTO. // AGUARDANDO ANÁLISE E POSICIONAMENTO TÉCNICO PARA CONTINUIDADE DAS TRATATIVAS.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 15:27:05",
+    "ultimaAtualizacao": "27/06/2026, 19:51:04",
+    "historico": [
+      {
+        "data": "27/06/2026, 19:51:04",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "27/06/2026, 15:27:05",
+        "acao": "Criado [Aberto]"
+      }
+    ]
+  },
+  {
+    "id": 1782585763855.3596,
+    "protocolo": "ATD-1782585763855-339",
+    "designacao": "ITM5010185",
+    "gtNome": "ATIVA TELECOM",
+    "resumo": "[19:41] - #00105#\n\nFALHA: ENCONTRADO OK - COM REALIZAÇÃO DE TESTE FÍSICO\n\nINÍCIO: 27/06/2026 07:08\n\nNORMALIZAÇÃO: 27/06/26 19:39\n\nCAUSA: .INOPERANTE\n\nSOLUÇÃO: [LINK ENCONTRADO OK] FALHA RESTABELECIDA SEM INTERVENÇÃO TÉCNICA NO LINK// LINK UP :---- 100.127.40.134 PING STATISTICS ----100 PACKETS TRANSMITTED, 100 PACKETS RECEIVED, 0.00% PACKET LOSS//ROUND-TRIP MIN = 26.1MS, AVG = 26.8MS, MAX = 28.6MS, STDDEV = 0.441MS\n\n \n\n19:37:37 :$ FINALIZADO COM SUCESSO\n\n[15:42] - FALHA - INOPERANTE // SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:41H) A EQUIPE N2. // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Encerrado",
+    "qtdAtualizacoes": 1,
+    "dataHora": "27/06/2026, 15:42:43",
+    "ultimaAtualizacao": "27/06/2026, 19:41:45",
+    "historico": [
+      {
+        "data": "27/06/2026, 19:41:45",
+        "acao": "Atualizado para [Encerrado]"
+      },
+      {
+        "data": "27/06/2026, 15:42:43",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782589635551.3975,
+    "protocolo": "ATD-1782589635551-964",
+    "designacao": "CWP5010497",
+    "gtNome": "ATIVA TELECOM-",
+    "resumo": "[16:47] - INOPERANTE //SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 16:45H) A EQP N2. // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 16:47:15",
+    "ultimaAtualizacao": "27/06/2026, 16:47:15",
+    "historico": [
+      {
+        "data": "27/06/2026, 16:47:15",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782589394792.65,
+    "protocolo": "ATD-1782589394792-200",
+    "designacao": "SSZ5010117",
+    "gtNome": "QUICK",
+    "resumo": "[16:43] - FALHA- INOPERANTE // SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 16:41H) A EQP N2-LINCON. // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 16:43:14",
+    "ultimaAtualizacao": "27/06/2026, 16:43:14",
+    "historico": [
+      {
+        "data": "27/06/2026, 16:43:14",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782586813379.867,
+    "protocolo": "ATD-1782586813379-864",
+    "designacao": "AGPL5010001",
+    "gtNome": "QUICK",
+    "resumo": "[16:00] - FALHA- INOPERANTE // SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:59H) A EQP N2- LINCON. // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 16:00:13",
+    "ultimaAtualizacao": "27/06/2026, 16:00:13",
+    "historico": [
+      {
+        "data": "27/06/2026, 16:00:13",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782585333669.6157,
+    "protocolo": "ATD-1782585333669-850",
+    "designacao": "IIE5046994",
+    "gtNome": "MAMTECH",
+    "resumo": "[15:35] - FALHA- REPARO VOZ // SOLICITADA ATUALIZAÇÃO DO INCIDENTE VIA E-MAIL (ÀS 15:34H). // AGUARDANDO POSICIONAMENTO DA ÁREA RESPONSÁVEL. // PENDENTE ESTIMATIVA PARA NORMALIZAÇÃO DO SERVIÇO.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 15:35:33",
+    "ultimaAtualizacao": "27/06/2026, 15:35:33",
+    "historico": [
+      {
+        "data": "27/06/2026, 15:35:33",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782584250162.5498,
+    "protocolo": "ATD-1782584250162-279",
+    "designacao": "SPO0430492",
+    "gtNome": "VINICIUS_VTAL",
+    "resumo": "[15:17] - FALHA- INOPERANTE // CONFORME BA FALHA MASSIVA DE FIBRA// ROMPIMENTO CAUSADO POR DESCARGA ELÉTRICA// BA ENCERRADO AS 22:57 DIA 26/06/26//SOLICITADO APOIO DA GESTÃO TÉCNICA POR MEIO DE E-MAIL (ÀS 15:19H). PARA CONFIRMAÇÃO NORMALIZAÇÃO DO CIRCUITO // DEMANDA EM ACOMPANHAMENTO. .",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 15:17:30",
+    "ultimaAtualizacao": "27/06/2026, 15:17:30",
+    "historico": [
+      {
+        "data": "27/06/2026, 15:17:30",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  },
+  {
+    "id": 1782583220400.7783,
+    "protocolo": "ATD-1782583220400-591",
+    "designacao": "SPO5245309",
+    "gtNome": "MAMINFO",
+    "resumo": "[15:00] - FALHA-INOPERANTE -ACIONADO APOIO DA EQUIPE MAM POR MEIO DE COMUNICAÇÃO FORMAL VIA E-MAIL (ÀS 15H). // SOLICITAÇÃO EM ACOMPANHAMENTO. // AGUARDANDO RETORNO PARA PROSSEGUIMENTO DA ANÁLISE.",
+    "status": "Em andamento",
+    "qtdAtualizacoes": 0,
+    "dataHora": "27/06/2026, 15:00:20",
+    "ultimaAtualizacao": "27/06/2026, 15:00:20",
+    "historico": [
+      {
+        "data": "27/06/2026, 15:00:20",
+        "acao": "Criado [Em andamento]"
+      }
+    ]
+  }
+]
