@@ -459,28 +459,28 @@ const [escalaExpandida, setEscalaExpandida] = useState(null);
             { id: "stc", sistema: "Sistema STC", usuario: "J48435", senha: "Não requer / Padrão", obs: "Controle de Chamados", icone: "📡", cor: "bg-emerald-500" }
           ] 
         },
-{
+{ 
           id: "dia_escala",
-          titulo: "Escala Operacional (Junho 2026)",
+          titulo: "Escala Operacional (Julho 2026)",
           tipo: "escala_inteligente",
           manha: [
-            { nome: "Fabio Roberto Ribeiro de Alvarenga", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Raymundo Serrate dos Santos Neto", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 19:'SAB', 22:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Girlene de Lima Silva", turno: "J2", horario: "07:00 as 16:00", escala: { 1:'BH', 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Lucas Ribeiro Araujo", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 12:'SAB', 15:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Samara de Lima", turno: "J2", horario: "07:00 as 16:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Antonio Davi Silva de Araujo", turno: "J3", horario: "08:00 as 17:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Winnie Lidsley Perales Villamonte", turno: "J3", horario: "08:00 as 17:00", escala: { 1:'FERIAS', 2:'FERIAS', 3:'FERIAS', 4:'FERIAS', 5:'FERIAS', 6:'FERIAS', 7:'FERIAS', 8:'FERIAS', 9:'FERIAS', 10:'FERIAS', 12:'SAB', 13:'DOM', 19:'SAB', 20:'DOM', 26:'SAB', 29:'DOM' } },
-            { nome: "Julian Brendon Fortunato Alves", turno: "J3", horario: "08:00 as 17:00", escala: { 2:'SAB', 9:'DOM', 12:'SAB', 13:'DOM', 19:'SAB', 20:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Charlie Magiver Perales Villamontes", turno: "J5", horario: "09:00 as 18:00", escala: { 1:'FERIAS', 2:'FERIAS', 3:'FERIAS', 4:'FERIAS', 5:'FERIAS', 6:'FERIAS', 7:'FERIAS', 8:'FERIAS', 9:'FERIAS', 10:'FERIAS', 11:'FERIAS', 12:'FERIAS', 13:'FERIAS', 14:'FERIAS', 15:'FERIAS', 16:'FERIAS', 17:'FERIAS', 18:'FERIAS', 19:'FERIAS', 20:'FERIAS', 21:'FERIAS', 22:'FERIAS', 27:'SAB', 28:'DOM' } }
+            { nome: "Fabio Roberto Ribeiro de Alvarenga", turno: "J2", horario: "07:00 as 16:00", escala: { 1: 'FÉRIAS', 12: 'DOM', 13: 'J2', 14: 'J2', 15: 'J2', 16: 'J2', 17: 'J2', 18: 'SAB', 19: 'DOM', 20: 'J2', 21: 'J2', 22: 'J2', 23: 'SAB', 24: 'J2', 25: 'J2', 26: 'J2', 27: 'J2', 28: 'DOM', 29: 'J2', 30: 'J2', 31: 'J2' } },
+            { nome: "Raymundo Serrate dos Santos Neto", turno: "J2", horario: "07:00 as 16:00", escala: { 1: 'J2', 2: 'J2', 3: 'J2', 4: 'SAB', 5: 'DOM', 6: 'J2', 7: 'J2', 8: 'J2', 9: 'J2', 10: 'J2', 11: 'SAB', 12: 'DOM', 13: 'J2', 14: 'J2', 15: 'J2', 16: 'J2', 17: 'J2', 18: 'SAB', 19: 'DOM', 20: 'J2', 21: 'J2', 22: 'J2', 23: 'J2', 24: 'J2', 25: 'SAB', 26: 'DOM', 27: 'J2', 28: 'J2', 29: 'J2', 30: 'J2', 31: 'J2' } },
+            { nome: "Girlene de Lima Silva", turno: "J2", horario: "07:00 as 16:00", escala: { 1: 'J2', 2: 'J2', 3: 'J2', 4: 'SAB', 5: 'DOM', 6: 'J2', 7: 'J2', 8: 'SAB', 9: 'J2', 10: 'J2', 11: 'J2', 12: 'J2', 13: 'J2', 14: 'DOM', 15: 'J2', 16: 'J2', 17: 'J2', 18: 'SAB', 19: 'DOM', 20: 'J2', 21: 'J2', 22: 'J2', 23: 'J2', 24: 'J2', 25: 'SAB', 26: 'DOM', 27: 'J2', 28: 'J2', 29: 'J2', 30: 'J2', 31: 'J2' } },
+            { nome: "Lucas Ribeiro Araujo", turno: "J2", horario: "07:00 as 16:00", escala: { 1: 'J2', 2: 'J2', 3: 'J2', 4: 'SAB', 5: 'DOM', 6: 'J2', 7: 'J2', 8: 'J2', 9: 'J2', 10: 'J2', 11: 'SAB', 12: 'DOM', 13: 'J2', 14: 'J2', 15: 'J2', 16: 'J2', 17: 'J2', 18: 'SAB', 19: 'DOM', 20: 'J2', 21: 'J2', 22: 'J2', 23: 'J2', 24: 'J2', 25: 'SAB', 26: 'DOM', 27: 'J2', 28: 'J2', 29: 'J2', 30: 'J2', 31: 'J2' } },
+            { nome: "Samara de Lima", turno: "J2", horario: "07:00 as 16:00", escala: { 1: 'J2', 2: 'J2', 3: 'J2', 4: 'SAB', 5: 'DOM', 6: 'J2', 7: 'J2', 8: 'J2', 9: 'J2', 10: 'J2', 11: 'SAB', 12: 'DOM', 13: 'FÉRIAS', 14: 'FÉRIAS', 15: 'FÉRIAS', 16: 'FÉRIAS', 17: 'FÉRIAS', 18: 'FÉRIAS', 19: 'FÉRIAS', 20: 'FÉRIAS', 21: 'FÉRIAS', 22: 'FÉRIAS', 23: 'FÉRIAS', 24: 'FÉRIAS', 25: 'FÉRIAS', 26: 'FÉRIAS', 27: 'FÉRIAS', 28: 'FÉRIAS', 29: 'FÉRIAS', 30: 'FÉRIAS', 31: 'FÉRIAS' } },
+            { nome: "Antonio Davi Silva de Araujo", turno: "J3", horario: "08:00 as 17:00", escala: { 1: 'J3', 2: 'J3', 3: 'J3', 4: 'SAB', 5: 'DOM', 6: 'J3', 7: 'J3', 8: 'J3', 9: 'J2', 10: 'J3', 11: 'SAB', 12: 'DOM', 13: 'J3', 14: 'J3', 15: 'J3', 16: 'J3', 17: 'J3', 18: 'SAB', 19: 'DOM', 20: 'J3', 21: 'J3', 22: 'J3', 23: 'J3', 24: 'J3', 25: 'SAB', 26: 'DOM', 27: 'J3', 28: 'J3', 29: 'J3', 30: 'J3', 31: 'J3' } },
+            { nome: "Winnie Lidsley Perales Villamonte", turno: "J3", horario: "08:00 as 17:00", escala: { 1: 'J3', 2: 'J3', 3: 'J3', 4: 'SAB', 5: 'DOM', 6: 'J3', 7: 'J3', 8: 'J3', 9: 'J3', 10: 'J3', 11: 'SAB', 12: 'DOM', 13: 'J3', 14: 'J3', 15: 'J3', 16: 'SAB', 17: 'J3', 18: 'J2', 19: 'J2', 20: 'J3', 21: 'DOM', 22: 'J3', 23: 'J3', 24: 'J3', 25: 'SAB', 26: 'DOM', 27: 'J3', 28: 'J3', 29: 'J3', 30: 'J3', 31: 'J3' } },
+            { nome: "Julian Brendon Fortunato Alves", turno: "J3", horario: "08:00 as 17:00", escala: { 1: 'J3', 2: 'J3', 3: 'J3', 4: 'SAB', 5: 'DOM', 6: 'J3', 7: 'J3', 8: 'J3', 9: 'J3', 10: 'J3', 11: 'SAB', 12: 'DOM', 13: 'J3', 14: 'J3', 15: 'J3', 16: 'J3', 17: 'J3', 18: 'SAB', 19: 'DOM', 20: 'J3', 21: 'J3', 22: 'J3', 23: 'J3', 24: 'J3', 25: 'SAB', 26: 'DOM', 27: 'J3', 28: 'J3', 29: 'J3', 30: 'J3', 31: 'J3' } },
+            { nome: "Charlie Magiver Perales Villamontes", turno: "J5", horario: "09:00 as 18:00", escala: { 1: 'J5', 2: 'SAB', 3: 'J5', 4: 'J2', 5: 'J2', 6: 'J5', 7: 'DOM', 8: 'J5', 9: 'J5', 10: 'J5', 11: 'SAB', 12: 'DOM', 13: 'J5', 14: 'J5', 15: 'J5', 16: 'J5', 17: 'J5', 18: 'SAB', 19: 'DOM', 20: 'J5', 21: 'J5', 22: 'J5', 23: 'J5', 24: 'J5', 25: 'SAB', 26: 'DOM', 27: 'J5', 28: 'J5', 29: 'J5', 30: 'J5', 31: 'J5' } }
           ],
           tarde: [
-{ nome: "Gleison de Torres Loiola", turno: "J9", horario: "14:00 as 23:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 19:'SAB', 22:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Miguel Alexsander do Nascimento", turno: "J9", horario: "14:00 as 23:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 26:'SAB', 29:'DOM' } },            { nome: "Isaac Nogueira Veras Damasceno", turno: "J9", horario: "14:00 as 23:00", escala: { 1:'FERIAS', 2:'FERIAS', 3:'SAB', 8:'DOM', 13:'SAB', 14:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } },
-            { nome: "Pedro Lucio Cardoso Matos Junior", turno: "J9", horario: "14:00 as 23:00", escala: { 4:'F', 5:'BH', 6:'SAB', 7:'DOM', 12:'SAB', 15:'DOM', 20:'SAB', 21:'DOM', 27:'SAB', 28:'DOM' } }
+            { nome: "Gleison de Torres Loiola", turno: "J9", horario: "14:00 as 23:00", escala: { 1: 'J9', 2: 'J9', 3: 'J9', 4: 'SAB', 5: 'DOM', 6: 'J9', 7: 'J9', 8: 'J9', 9: 'J9', 10: 'SAB', 11: 'J9', 12: 'J9', 13: 'DOM', 14: 'J9', 15: 'J9', 16: 'J9', 17: 'J9', 18: 'SAB', 19: 'DOM', 21: 'J9', 22: 'J9', 23: 'J9', 24: 'J9', 25: 'SAB', 26: 'DOM', 27: 'J9', 28: 'J9', 29: 'J9', 30: 'J9', 31: 'J9' } },
+            { nome: "Miguel Alexsander do Nascimento", turno: "J9", horario: "14:00 as 23:00", escala: { 1: 'J9', 2: 'J9', 3: 'J9', 4: 'SAB', 5: 'DOM', 6: 'J9', 7: 'J9', 8: 'J9', 9: 'J2', 10: 'J9', 11: 'SAB', 12: 'DOM', 13: 'J9', 14: 'J9', 15: 'J9', 16: 'J9', 17: 'SAB', 18: 'J9', 19: 'J9', 20: 'DOM', 21: 'J9', 22: 'J9', 23: 'J9', 24: 'J9', 25: 'SAB', 26: 'DOM', 27: 'J9', 28: 'J9', 29: 'J9', 30: 'J9', 31: 'J9' } },
+            { nome: "Isaac Nogueira Veras Damasceno", turno: "J9", horario: "14:00 as 23:00", escala: { 1: 'J9', 2: 'J9', 3: 'SAB', 4: 'J9', 5: 'J9', 6: 'DOM', 7: 'J9', 8: 'J9', 9: 'J9', 10: 'J9', 11: 'SAB', 12: 'DOM', 13: 'J9', 14: 'J9', 15: 'J9', 16: 'J9', 17: 'J9', 18: 'SAB', 19: 'DOM', 20: 'J9', 21: 'J9', 22: 'J9', 23: 'J9', 24: 'J9', 25: 'SAB', 26: 'DOM', 27: 'J9', 28: 'J9', 29: 'J9', 30: 'J9', 31: 'J9' } },
+            { nome: "Pedro Lucio Cardoso Matos Junior", turno: "J9", horario: "14:00 as 23:00", escala: { 1: 'J9', 2: 'J9', 3: 'J9', 4: 'SAB', 5: 'DOM', 6: 'J9', 7: 'J9', 8: 'J9', 9: 'J9', 10: 'J9', 11: 'SAB', 12: 'DOM', 13: 'J9', 14: 'J9', 15: 'J9', 16: 'J9', 17: 'J9', 18: 'SAB', 19: 'DOM', 20: 'J9', 21: 'J9', 22: 'J9', 23: 'J9', 24: 'SAB', 25: 'J9', 26: 'J9', 27: 'DOM', 28: 'J9', 29: 'J9', 30: 'J9', 31: 'J9' } }
           ]
-        }
-                        ]
+        }                        ]
     },
     {
       categoria: "MANUAIS / POSICIONAMENTOS",
